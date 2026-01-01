@@ -51,6 +51,22 @@
 
 **P10:** Holland. Very Dutch, very conservative usually. But there's tension now. The Trump stuff divided a lot of families here. Some people are questioning their party loyalty for the first time.
 
+**P2:** Can I add something about— [audio cuts out]
+
+**MODERATOR:** P2, we lost you there. Can you hear me?
+
+**P2:** [Frozen screen, audio garbled] —the trade policy—
+
+**MODERATOR:** P2, your connection dropped. Can you try turning off your camera?
+
+**P2:** [Audio returns] Sorry, sorry. Rural internet. Can you hear me now?
+
+**MODERATOR:** Yes, we've got you back. Go ahead.
+
+**P2:** I was just going to say - trade policy affects farmers directly. NAFTA, China tariffs, all of it. That's part of the economy people in cities don't think about.
+
+**P3:** That's a good point. Tourism is affected by the broader economy too - when people have money, they vacation. When they don't...
+
 **MODERATOR:** What's the one issue that will determine your vote for governor?
 
 **P2:** Economy. Farm economy specifically, but overall too.

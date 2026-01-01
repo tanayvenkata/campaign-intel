@@ -103,6 +103,14 @@
 
 **P6:** I saw a video where he talked about his dad's hands being permanently stained from the work. That's real. That's what my grandfather looked like.
 
+**P7:** My father had hands like that too. He worked at J&L Steel for 38 years. Started right out of high school in '61. Back then you could walk out of South High and into the mill the same day. Good money, good benefits. He bought a house in Hazelwood, raised four kids. When the mills closed in the '80s it destroyed him. Took early retirement, but really he was just— I mean, the whole neighborhood emptied out. People lost their houses, their—
+
+**MODERATOR:** P7, I appreciate that story - it's powerful. We're going to come back to the mills and what happened. For now, can we stay focused on the candidates?
+
+**P7:** Sorry. I get going on this stuff. It's personal.
+
+**MODERATOR:** No, it's important. We'll have time for it.
+
 **P3:** I don't know much about him but the working-class background is good. We need people who understand us.
 
 **P5:** He was mayor of Scranton. Did he do a good job? That matters.

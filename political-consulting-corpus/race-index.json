@@ -5,7 +5,7 @@
     "generated_at": "2022-12",
     "purpose": "Institutional knowledge from past political focus groups for consulting firm demo",
     "total_races": 3,
-    "total_focus_groups": 9
+    "total_focus_groups": 10
   },
   "races": [
     {
@@ -34,7 +34,7 @@
         "Black voters",
         "college-educated independents"
       ],
-      "focus_group_count": 3,
+      "focus_group_count": 4,
       "focus_groups": [
         {
           "id": "fg-001",
@@ -56,13 +56,22 @@
           "location": "Virtual Statewide",
           "participant_type": "Persuadable voters, diverse geography",
           "key_themes": ["regional diversity", "infrastructure needs", "message testing", "Flint water connection"]
+        },
+        {
+          "id": "fg-004",
+          "file": "focus-groups/fg-004-northern-rural.md",
+          "location": "Northern Michigan Rural (Alpena County)",
+          "participant_type": "Rural voters, mostly Republican-lean",
+          "key_themes": ["rural abandonment", "cultural alienation", "broadband gaps", "farm economy", "hospital closures", "generic messaging fails"]
         }
       ],
       "key_learnings": [
         "Abortion as mobilizing issue post-Dobbs",
         "Economic specificity defeats generic populism",
         "Biography must connect to policy",
-        "AG record as proof point"
+        "AG record as proof point",
+        "Rural areas feel abandoned by both parties",
+        "Rural-specific messaging outperforms generic by 1.5 points"
       ]
     },
     {
@@ -205,6 +214,10 @@
     "suburban_voters": {
       "description": "Suburban voter movement and persuadability",
       "terms_to_search": ["suburban", "WOW counties", "collar counties", "Main Line", "Oakland County"]
+    },
+    "rural_voters": {
+      "description": "Rural voter attitudes, alienation, and messaging",
+      "terms_to_search": ["rural", "farm", "agriculture", "broadband", "hospital closure", "invisible", "forgotten", "flyover", "small town"]
     }
   },
   "query_examples": [
@@ -233,6 +246,19 @@
       "relevant_files": [
         "races/race-003-wisconsin-senate-2022/strategy-memo.md",
         "races/race-003-wisconsin-senate-2022/focus-groups/"
+      ]
+    },
+    {
+      "question": "Why are we losing rural voters?",
+      "relevant_files": [
+        "races/race-001-michigan-gov-2022/focus-groups/fg-004-northern-rural.md"
+      ],
+      "key_insights": [
+        "Rural voters feel invisible to both parties",
+        "Generic 'corporate greed' messaging fails completely (1.75/5)",
+        "Rural-specific messaging (broadband, hospitals, farms) performs better (3.25/5)",
+        "Cultural alienation ('deplorables', 'bitter clingers') creates lasting resentment",
+        "Broken promises over decades have eroded trust"
       ]
     }
   ]
