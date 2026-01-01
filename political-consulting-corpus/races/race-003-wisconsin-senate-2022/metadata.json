@@ -1,0 +1,40 @@
+{
+  "race_id": "race-003",
+  "state": "Wisconsin",
+  "office": "Senate",
+  "year": 2022,
+  "our_candidate": {
+    "name": "Karen Kowalski",
+    "party": "Democrat",
+    "incumbent": false,
+    "background": "State Senator from Milwaukee, Polish-American, union family background, former teacher, first ran for office after Act 10 protests"
+  },
+  "opponent": {
+    "name": "Steve Lindquist",
+    "party": "Republican",
+    "incumbent": true,
+    "background": "One-term Senator, owner of manufacturing company in Waukesha, Scandinavian heritage, positioned as 'job creator' and business pragmatist"
+  },
+  "outcome": "loss",
+  "margin": -1.1,
+  "demographics": {
+    "region": "Midwest",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "WOW county suburban voters",
+      "Madison-area progressives",
+      "Fox Valley swing voters",
+      "rural western Wisconsin"
+    ],
+    "economic_profile": "Manufacturing still significant, dairy industry struggles, Madison tech boom contrasts with rural decline, significant economic anxiety around inflation and cost of living"
+  },
+  "key_issues": [
+    "economy",
+    "inflation",
+    "jobs",
+    "crime",
+    "education"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "LOSS ANALYSIS: Economic messaging was our critical failure. Generic populist language ('fight for working families') fell flat while opponent's inflation attacks landed hard. Opponent's business background gave him credibility on economy that our candidate couldn't match. Abortion was less salient than in MI/PA - Wisconsin voters more focused on cost of living. Base enthusiasm was soft in Madison. Fox Valley swing voters moved toward opponent on economic concerns. Key lesson: specificity matters - we needed concrete economic plans, not slogans."
+}

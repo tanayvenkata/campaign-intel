@@ -1,0 +1,40 @@
+{
+  "race_id": "race-002",
+  "state": "Pennsylvania",
+  "office": "Senate",
+  "year": 2022,
+  "our_candidate": {
+    "name": "Tony Marchetti",
+    "party": "Democrat",
+    "incumbent": false,
+    "background": "Lieutenant Governor, Scranton native, Italian-American, former mayor of Scranton, union family background, father worked in coal industry"
+  },
+  "opponent": {
+    "name": "David Thornton",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Hedge fund executive, Philadelphia Main Line resident, Ivy League educated, moved to PA 10 years ago, limited political experience"
+  },
+  "outcome": "win",
+  "margin": 4.8,
+  "demographics": {
+    "region": "Northeast/Midwest",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "Philadelphia suburban women",
+      "Pittsburgh-area union households",
+      "working-class whites in NEPA",
+      "Black voters in Philadelphia"
+    ],
+    "economic_profile": "Post-industrial transition, healthcare and education sectors growing, significant economic anxiety in former steel/coal regions, Philadelphia suburbs increasingly affluent"
+  },
+  "key_issues": [
+    "economy",
+    "abortion",
+    "jobs",
+    "healthcare",
+    "Social Security"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "Candidate's working-class Scranton roots provided powerful contrast with opponent's hedge fund background. Abortion was galvanizing in Philly suburbs. Economic messaging landed when tied to specific policies and personal story. Opponent's 'outsider' status and wealth became major liability. Union endorsements were asset but required activation."
+}

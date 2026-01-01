@@ -1,0 +1,40 @@
+{
+  "race_id": "race-001",
+  "state": "Michigan",
+  "office": "Governor",
+  "year": 2022,
+  "our_candidate": {
+    "name": "Sarah Holloway",
+    "party": "Democrat",
+    "incumbent": false,
+    "background": "Former state Attorney General, grew up in Oakland County suburbs, prosecuted Flint water crisis cases, first-time gubernatorial candidate"
+  },
+  "opponent": {
+    "name": "Rick Vanderberg",
+    "party": "Republican",
+    "incumbent": true,
+    "background": "One-term governor, former CEO of West Michigan manufacturing company, Grand Rapids native"
+  },
+  "outcome": "win",
+  "margin": 3.2,
+  "demographics": {
+    "region": "Midwest",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "suburban women in Oakland/Macomb counties",
+      "union households in manufacturing regions",
+      "Black voters in Detroit and Flint",
+      "college-educated independents"
+    ],
+    "economic_profile": "Manufacturing legacy with auto industry decline, some tech growth in Ann Arbor corridor, significant rural-urban divide"
+  },
+  "key_issues": [
+    "economy",
+    "abortion",
+    "education",
+    "crime",
+    "infrastructure"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "Abortion emerged as decisive issue post-Dobbs, particularly with suburban women. Economic messaging required specifics to land - generic populism underperformed. Crime attacks from opponent resonated more than expected in suburbs. Candidate's AG background provided credibility but low initial name ID was a challenge."
+}

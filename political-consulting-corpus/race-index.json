@@ -1,0 +1,239 @@
+{
+  "corpus_info": {
+    "name": "Political Consulting Focus Group Corpus",
+    "version": "1.0",
+    "generated_at": "2022-12",
+    "purpose": "Institutional knowledge from past political focus groups for consulting firm demo",
+    "total_races": 3,
+    "total_focus_groups": 9
+  },
+  "races": [
+    {
+      "race_id": "race-001",
+      "path": "races/race-001-michigan-gov-2022",
+      "state": "Michigan",
+      "office": "Governor",
+      "year": 2022,
+      "party": "Democrat",
+      "candidate_name": "Sarah Holloway",
+      "opponent_name": "Rick Vanderberg",
+      "outcome": "win",
+      "margin": 3.2,
+      "region": "Midwest",
+      "incumbent": false,
+      "key_issues": [
+        "economy",
+        "abortion",
+        "education",
+        "crime",
+        "infrastructure"
+      ],
+      "key_constituencies": [
+        "suburban women",
+        "union households",
+        "Black voters",
+        "college-educated independents"
+      ],
+      "focus_group_count": 3,
+      "focus_groups": [
+        {
+          "id": "fg-001",
+          "file": "focus-groups/fg-001-detroit-suburbs.md",
+          "location": "Detroit Suburbs (Oakland County)",
+          "participant_type": "Swing voters (Trump 2016 to Biden 2020)",
+          "key_themes": ["economic anxiety", "abortion rights", "political exhaustion", "candidate authenticity"]
+        },
+        {
+          "id": "fg-002",
+          "file": "focus-groups/fg-002-grand-rapids.md",
+          "location": "Grand Rapids (Kent County)",
+          "participant_type": "Mixed partisans, economic-focused",
+          "key_themes": ["manufacturing decline", "cost of living", "skilled trades shortage", "incumbent fatigue"]
+        },
+        {
+          "id": "fg-003",
+          "file": "focus-groups/fg-003-swing-voters-statewide.md",
+          "location": "Virtual Statewide",
+          "participant_type": "Persuadable voters, diverse geography",
+          "key_themes": ["regional diversity", "infrastructure needs", "message testing", "Flint water connection"]
+        }
+      ],
+      "key_learnings": [
+        "Abortion as mobilizing issue post-Dobbs",
+        "Economic specificity defeats generic populism",
+        "Biography must connect to policy",
+        "AG record as proof point"
+      ]
+    },
+    {
+      "race_id": "race-002",
+      "path": "races/race-002-pennsylvania-senate-2022",
+      "state": "Pennsylvania",
+      "office": "Senate",
+      "year": 2022,
+      "party": "Democrat",
+      "candidate_name": "Tony Marchetti",
+      "opponent_name": "David Thornton",
+      "outcome": "win",
+      "margin": 4.8,
+      "region": "Northeast/Midwest",
+      "incumbent": false,
+      "key_issues": [
+        "economy",
+        "abortion",
+        "jobs",
+        "healthcare",
+        "Social Security"
+      ],
+      "key_constituencies": [
+        "Philadelphia suburban women",
+        "Pittsburgh union households",
+        "Scranton working-class",
+        "seniors"
+      ],
+      "focus_group_count": 3,
+      "focus_groups": [
+        {
+          "id": "fg-001",
+          "file": "focus-groups/fg-001-philadelphia-suburbs.md",
+          "location": "Philadelphia Suburbs (Montgomery County)",
+          "participant_type": "College-educated suburban voters",
+          "key_themes": ["candidate quality contrast", "abortion rights", "relatability gap", "Republican defections"]
+        },
+        {
+          "id": "fg-002",
+          "file": "focus-groups/fg-002-pittsburgh-area.md",
+          "location": "Pittsburgh Area (Allegheny County)",
+          "participant_type": "Union households, working-class",
+          "key_themes": ["union identity", "Social Security protection", "class consciousness", "working-class authenticity"]
+        },
+        {
+          "id": "fg-003",
+          "file": "focus-groups/fg-003-scranton-working-class.md",
+          "location": "Scranton/NEPA (Lackawanna County)",
+          "participant_type": "Working-class persuadables",
+          "key_themes": ["hometown connection", "regional identity", "local accountability", "authentic roots"]
+        }
+      ],
+      "key_learnings": [
+        "Candidate quality can override partisan environment",
+        "Working-class biography creates authenticity",
+        "Wealthy self-funder can become liability",
+        "Hometown connection builds trust"
+      ]
+    },
+    {
+      "race_id": "race-003",
+      "path": "races/race-003-wisconsin-senate-2022",
+      "state": "Wisconsin",
+      "office": "Senate",
+      "year": 2022,
+      "party": "Democrat",
+      "candidate_name": "Karen Kowalski",
+      "opponent_name": "Steve Lindquist",
+      "outcome": "loss",
+      "margin": -1.1,
+      "region": "Midwest",
+      "incumbent": false,
+      "key_issues": [
+        "economy",
+        "inflation",
+        "jobs",
+        "crime",
+        "education"
+      ],
+      "key_constituencies": [
+        "WOW county suburbs",
+        "Madison progressives",
+        "Fox Valley swing voters",
+        "union households"
+      ],
+      "focus_group_count": 3,
+      "focus_groups": [
+        {
+          "id": "fg-001",
+          "file": "focus-groups/fg-001-milwaukee-suburbs.md",
+          "location": "WOW Counties (Waukesha)",
+          "participant_type": "Lean-R suburban voters",
+          "key_themes": ["economic messaging failure", "inflation attacks landing", "business credibility gap", "generic populism rejected"]
+        },
+        {
+          "id": "fg-002",
+          "file": "focus-groups/fg-002-madison-area.md",
+          "location": "Madison (Dane County)",
+          "participant_type": "Democratic base voters",
+          "key_themes": ["enthusiasm gap", "burnout", "stale messaging", "vision deficit"]
+        },
+        {
+          "id": "fg-003",
+          "file": "focus-groups/fg-003-fox-valley.md",
+          "location": "Fox Valley (Outagamie County)",
+          "participant_type": "Swing manufacturing voters",
+          "key_themes": ["business credibility wins", "union voters persuadable", "economic specificity demanded", "career politician liability"]
+        }
+      ],
+      "key_learnings": [
+        "Generic populism is dead - specificity required",
+        "Business background provides economic credibility",
+        "Base enthusiasm requires vision not just opposition",
+        "Abortion alone insufficient to overcome economic concerns"
+      ],
+      "warning": "LOSS - Contains lessons from defeat"
+    }
+  ],
+  "themes_across_corpus": {
+    "economic_messaging": {
+      "description": "How economic concerns and messaging played across races",
+      "terms_to_search": ["inflation", "cost of living", "prices", "groceries", "gas", "rent", "wages", "jobs", "manufacturing", "economy"]
+    },
+    "reproductive_rights": {
+      "description": "Post-Dobbs abortion messaging and its impact",
+      "terms_to_search": ["abortion", "Roe", "Dobbs", "reproductive", "choice", "pro-choice", "freedom", "healthcare decisions"]
+    },
+    "candidate_authenticity": {
+      "description": "How candidate backgrounds and authenticity affected voter perceptions",
+      "terms_to_search": ["working class", "biography", "authentic", "real", "fake", "relatable", "one of us", "out of touch"]
+    },
+    "union_voters": {
+      "description": "Union household voting patterns and persuadability",
+      "terms_to_search": ["union", "UAW", "SEIU", "Teamsters", "endorsement", "working families", "labor"]
+    },
+    "message_specificity": {
+      "description": "Generic vs. specific policy messaging effectiveness",
+      "terms_to_search": ["specific", "concrete", "numbers", "$35", "fight for", "corporate greed", "wealthy pay", "tangible"]
+    },
+    "suburban_voters": {
+      "description": "Suburban voter movement and persuadability",
+      "terms_to_search": ["suburban", "WOW counties", "collar counties", "Main Line", "Oakland County"]
+    }
+  },
+  "query_examples": [
+    {
+      "question": "What did we learn about economic messaging in Midwest races?",
+      "relevant_files": [
+        "races/race-001-michigan-gov-2022/focus-groups/fg-002-grand-rapids.md",
+        "races/race-003-wisconsin-senate-2022/focus-groups/fg-003-fox-valley.md",
+        "races/race-003-wisconsin-senate-2022/strategy-memo.md"
+      ]
+    },
+    {
+      "question": "How effective was abortion messaging?",
+      "relevant_files": [
+        "races/race-001-michigan-gov-2022/focus-groups/fg-001-detroit-suburbs.md",
+        "races/race-002-pennsylvania-senate-2022/focus-groups/fg-001-philadelphia-suburbs.md"
+      ]
+    },
+    {
+      "question": "What races are most similar to an Ohio Senate 2026 challenger scenario?",
+      "relevant_races": ["race-001", "race-003"],
+      "rationale": "Midwest, non-incumbent Democrat, similar demographic mix"
+    },
+    {
+      "question": "What did we learn from races we lost?",
+      "relevant_files": [
+        "races/race-003-wisconsin-senate-2022/strategy-memo.md",
+        "races/race-003-wisconsin-senate-2022/focus-groups/"
+      ]
+    }
+  ]
+}
