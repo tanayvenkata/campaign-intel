@@ -5,7 +5,7 @@ import SearchResults from './components/SearchResults';
 import StepLoader from './components/StepLoader';
 import EmptyState from './components/EmptyState';
 import { useStreamingSearch } from './hooks/useStreamingSearch';
-import { prefetchSearch } from './hooks/useSearch';
+import { prefetchSearch } from './utils/prefetch';
 
 export default function Home() {
   const [query, setQuery] = useState('');

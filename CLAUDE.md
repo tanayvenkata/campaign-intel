@@ -183,9 +183,20 @@ Key frontend patterns:
 - SWR for caching and prefetching
 - PDF export for search results
 
+### API Configuration (`web/app/config/api.ts`)
+
+Centralized API endpoint configuration. Uses `NEXT_PUBLIC_API_URL` env var for production.
+
+```typescript
+import { ENDPOINTS } from './config/api';
+// ENDPOINTS.search, ENDPOINTS.synthesizeLight, etc.
+```
+
 ### PDF Export (`web/app/utils/exportPdf.ts`)
 
-Client-side PDF generation using jsPDF. The module is designed to be modular - each section is a separate renderer function.
+Client-side PDF generation using jsPDF. Professional "Political Consultant" style report.
+
+**Configuration:** `PDF_CONFIG` object at top of file centralizes all colors, typography, and layout values.
 
 **To add a new section to the PDF:**
 1. Create a renderer function: `renderNewSection(doc, ctx, data)`
@@ -193,11 +204,10 @@ Client-side PDF generation using jsPDF. The module is designed to be modular - e
 3. Update `ExportData` interface if new data is needed
 
 **Current sections (in order):**
-- `renderHeader` - Title, query, stats, timestamp
-- `renderMacroSynthesis` - Light macro analysis (if present)
-- `renderDeepMacroThemes` - Theme-based deep analysis (if present)
-- `renderFocusGroup` - Per-FG card with summary and quotes
-- `renderFooter` - Document footer
+- `renderCoverPage` - Professional cover with query and stats
+- `renderExecutiveSummary` - Macro synthesis (if present)
+- `renderDeepMacroThemes` - Theme-based analysis (if present)
+- `renderFocusGroup` - Per-FG section with summary and quotes
 
 **Key utilities:**
 - `checkPageBreak(doc, ctx, space)` - Auto-adds new page if needed
@@ -209,6 +219,25 @@ Client-side PDF generation using jsPDF. The module is designed to be modular - e
 FastAPI backend (`api/main.py`) endpoints:
 - `GET /health` - Health check
 - `POST /search` - Main search endpoint (returns grouped results by focus group)
-- `POST /synthesize/light` - Light 1-sentence summary (streaming)
-- `POST /synthesize/deep` - Deep per-FG analysis (streaming)
-- `POST /synthesize/macro` - Cross-FG thematic synthesis (streaming)
+- `POST /search/stream` - Streaming search with NDJSON status events
+- `POST /synthesize/light` - Light 1-sentence summary (JSON response)
+- `POST /synthesize/deep` - Deep per-FG analysis (streaming text)
+- `POST /synthesize/macro/light` - Light cross-FG synthesis (streaming text)
+- `POST /synthesize/macro/deep` - Deep theme-based synthesis (streaming NDJSON)
+
+### Streaming Response Formats
+
+**`/search/stream`** (NDJSON):
+```json
+{"type": "status", "step": "routing|filtering|searching|ranking", "message": "..."}
+{"type": "results", "data": SearchResponse}
+```
+
+**`/synthesize/macro/deep`** (NDJSON):
+```json
+{"type": "stage", "message": "Discovering themes..."}
+{"type": "theme_start", "name": "Theme Name", "focus_groups": ["FG1", "FG2"]}
+{"type": "theme_content", "name": "Theme Name", "content": "..."}
+{"type": "theme_complete", "name": "Theme Name"}
+{"type": "complete"}
+```

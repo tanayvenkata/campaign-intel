@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { SearchResponse } from '../types';
+import { ENDPOINTS, SEARCH_CONFIG } from '../config/api';
 
 export interface SearchStep {
     step: string;
@@ -22,10 +23,14 @@ export function useStreamingSearch() {
         setError(null);
 
         try {
-            const res = await fetch('http://localhost:8000/search/stream', {
+            const res = await fetch(ENDPOINTS.searchStream, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ query, top_k: 5, score_threshold: 0.75 }),
+                body: JSON.stringify({
+                    query,
+                    top_k: SEARCH_CONFIG.TOP_K,
+                    score_threshold: SEARCH_CONFIG.SCORE_THRESHOLD,
+                }),
             });
 
             if (!res.ok) {

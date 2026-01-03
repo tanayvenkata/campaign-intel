@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { RetrievalChunk } from '../types';
+import { ENDPOINTS } from '../config/api';
 
 interface SynthesisPanelProps {
     fgId: string;
@@ -22,7 +23,7 @@ export default function SynthesisPanel({ fgId, fgName, quotes, query }: Synthesi
         setSynthesis('');
 
         try {
-            const response = await fetch('http://localhost:8000/synthesize/deep', {
+            const response = await fetch(ENDPOINTS.synthesizeDeep, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

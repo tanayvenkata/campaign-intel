@@ -9,7 +9,48 @@
  */
 
 import jsPDF from 'jspdf';
-import { GroupedResult, RetrievalChunk } from '../types';
+import { GroupedResult } from '../types';
+
+// ============================================================================
+// Configuration - Centralized styling constants
+// ============================================================================
+
+const PDF_CONFIG = {
+    colors: {
+        primary: [79, 70, 229] as const,      // Indigo 600 - brand color
+        gray900: [17, 24, 39] as const,
+        gray800: [31, 41, 55] as const,
+        gray700: [55, 65, 81] as const,
+        gray600: [75, 85, 99] as const,
+        gray500: [107, 114, 128] as const,
+        gray400: [156, 163, 175] as const,
+        gray300: [209, 213, 219] as const,
+        gray200: [229, 231, 235] as const,
+        gray100: [243, 244, 246] as const,
+        gray50: [249, 250, 251] as const,
+        success: [22, 163, 74] as const,      // Green 600
+        error: [220, 38, 38] as const,        // Red 600
+        black: [0, 0, 0] as const,
+    },
+    typography: {
+        title: 36,
+        subtitle: 24,
+        sectionTitle: 18,
+        subsection: 16,
+        heading: 14,
+        large: 13,
+        body: 11,
+        small: 10,
+        caption: 9,
+        tiny: 8,
+    },
+    layout: {
+        margin: 20,
+        headerSpacing: 10,
+        lineHeightFactor: 1.15,
+        accentBarWidth: 8,
+    },
+} as const;
 
 // ============================================================================
 // Types
@@ -421,55 +462,80 @@ function renderFocusGroup(
 // ============================================================================
 
 export function exportToPdf(data: ExportData): void {
-    const doc = new jsPDF();
-    const ctx = createContext(doc);
+    try {
+        console.log('Starting PDF Export...', data);
+        const doc = new jsPDF();
+        console.log('jsPDF instance created');
+        const ctx = createContext(doc);
 
-    // 1. Cover Page
-    renderCoverPage(doc, ctx, data);
+        // 1. Cover Page
+        console.log('Rendering Cover Page...');
+        renderCoverPage(doc, ctx, data);
 
-    // 2. Executive Summary
-    if (data.macroResult) {
-        renderExecutiveSummary(doc, ctx, data.macroResult);
-    }
-
-    // 3. Deep Themes (if any)
-    if (data.deepMacroThemes && data.deepMacroThemes.length > 0) {
-        // If we are already on a new page from Executive Summary, continue.
-        // Otherwise start new page.
-        if (ctx.y > ctx.pageHeight / 3) {
-            doc.addPage();
-            ctx.currentPage++;
-            ctx.y = ctx.margin + 10;
-            renderPageHeader(doc, ctx);
-            renderPageFooter(doc, ctx);
-        } else {
-            ctx.y += 10;
+        // 2. Executive Summary
+        if (data.macroResult) {
+            console.log('Rendering Executive Summary...');
+            renderExecutiveSummary(doc, ctx, data.macroResult);
         }
-        renderDeepMacroThemes(doc, ctx, data.deepMacroThemes);
+
+        // 3. Deep Themes (if any)
+        if (data.deepMacroThemes && data.deepMacroThemes.length > 0) {
+            console.log('Rendering Deep Macro Themes...');
+            // If we are already on a new page from Executive Summary, continue.
+            // Otherwise start new page.
+            if (ctx.y > ctx.pageHeight / 3) {
+                doc.addPage();
+                ctx.currentPage++;
+                ctx.y = ctx.margin + 10;
+                renderPageHeader(doc, ctx);
+                renderPageFooter(doc, ctx);
+            } else {
+                ctx.y += 10;
+            }
+            renderDeepMacroThemes(doc, ctx, data.deepMacroThemes);
+        }
+
+        // 4. Focus Groups
+        console.log('Rendering Focus Groups...');
+        // Start fresh page for detailed findings
+        doc.addPage();
+        ctx.currentPage++;
+        ctx.y = ctx.margin + 10;
+        renderPageHeader(doc, ctx);
+        renderPageFooter(doc, ctx);
+
+        addWrappedText(doc, ctx, "Detailed Findings", 16, { bold: true });
+        ctx.y += 10;
+
+        data.results.forEach((group) => {
+            console.log(`Rendering group: ${group.focus_group_id}`);
+            renderFocusGroup(
+                doc,
+                ctx,
+                group,
+                data.summaries[group.focus_group_id]
+            );
+        });
+
+        console.log('Saving PDF...');
+        // Save
+        const filename = `Report_${data.query.slice(0, 20).replace(/[^a-z0-9]/gi, '_')}.pdf`;
+
+        // Manual Blob Download to force filename
+        const pdfBlob = doc.output('blob');
+        const url = URL.createObjectURL(pdfBlob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+
+        console.log('PDF Saved!');
+    } catch (error) {
+        console.error('PDF Generation Failed:', error);
+        alert(`PDF Generation Failed: ${error instanceof Error ? error.message : String(error)}`);
     }
-
-    // 4. Focus Groups
-    // Start fresh page for detailed findings
-    doc.addPage();
-    ctx.currentPage++;
-    ctx.y = ctx.margin + 10;
-    renderPageHeader(doc, ctx);
-    renderPageFooter(doc, ctx);
-
-    addWrappedText(doc, ctx, "Detailed Findings", 16, { bold: true });
-    ctx.y += 10;
-
-    data.results.forEach((group) => {
-        renderFocusGroup(
-            doc,
-            ctx,
-            group,
-            data.summaries[group.focus_group_id]
-        );
-    });
-
-    // Save
-    const filename = `Report_${data.query.slice(0, 20).replace(/[^a-z0-9]/gi, '_')}.pdf`;
-    doc.save(filename);
 }
 

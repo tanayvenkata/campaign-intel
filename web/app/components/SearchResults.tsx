@@ -6,6 +6,7 @@ import { GroupedResult } from '../types';
 import QuoteBlock from './QuoteBlock';
 import SynthesisPanel from './SynthesisPanel';
 import { exportToPdf } from '../utils/exportPdf';
+import { ENDPOINTS } from '../config/api';
 
 interface SearchResultsProps {
     results: GroupedResult[];
@@ -43,7 +44,7 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
             setLoadingSummaries(prev => new Set(prev).add(fgId));
 
             try {
-                const res = await fetch('http://localhost:8000/synthesize/light', {
+                const res = await fetch(ENDPOINTS.synthesizeLight, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -132,7 +133,7 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
         });
 
         try {
-            const response = await fetch('http://localhost:8000/synthesize/macro/light', {
+            const response = await fetch(ENDPOINTS.synthesizeMacroLight, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
