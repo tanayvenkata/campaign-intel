@@ -1,0 +1,41 @@
+{
+  "race_id": "race-006",
+  "state": "Nevada",
+  "office": "Senate",
+  "year": 2022,
+  "our_candidate": {
+    "name": "Maria Sandoval",
+    "party": "Democrat",
+    "incumbent": true,
+    "background": "First-term Senator, former Attorney General, Latina, daughter of casino worker, Las Vegas native, Culinary Union champion"
+  },
+  "opponent": {
+    "name": "Adam Prescott",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Businessman, hotel developer, newcomer to politics, wealthy self-funder, claims job creator record"
+  },
+  "outcome": "win",
+  "margin": 0.8,
+  "demographics": {
+    "region": "West",
+    "urban_rural_mix": "heavily urban",
+    "key_constituencies": [
+      "Culinary Union workers",
+      "Las Vegas hospitality industry",
+      "Latino voters statewide",
+      "Reno tech transplants",
+      "rural Nevada"
+    ],
+    "economic_profile": "Hospitality-dependent economy, COVID recovery fragile, housing crisis severe, Lake Mead water concerns, gaming industry dominant"
+  },
+  "key_issues": [
+    "economy",
+    "cost of living",
+    "union rights",
+    "abortion",
+    "water and drought"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "Extremely close race (0.8%) saved by Culinary Union turnout operation. Latino voters in Las Vegas metro were decisive. Hospitality worker economic anxiety was real but union endorsement held. Reno transplants provided educated suburban swing voters. Housing costs emerged as major concern across all groups."
+}

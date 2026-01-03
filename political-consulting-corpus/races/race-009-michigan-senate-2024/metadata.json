@@ -1,0 +1,41 @@
+{
+  "race_id": "race-009",
+  "state": "Michigan",
+  "office": "Senate",
+  "year": 2024,
+  "our_candidate": {
+    "name": "Lisa Kowalski",
+    "party": "Democrat",
+    "incumbent": false,
+    "background": "U.S. Representative from Flint area, daughter of GM autoworker, UAW endorsement, Polish-American, community organizer background"
+  },
+  "opponent": {
+    "name": "Mike DeGroot",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Former CEO, business consultant, West Michigan native, Dutch-American, wealthy self-funder, outsider positioning"
+  },
+  "outcome": "win",
+  "margin": 4.2,
+  "demographics": {
+    "region": "Midwest",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "Detroit metro suburbs",
+      "UAW members statewide",
+      "Flint/Saginaw working class",
+      "West Michigan moderates",
+      "college-educated women"
+    ],
+    "economic_profile": "Auto industry renaissance with EV investment, manufacturing recovery, housing costs rising in suburbs, Flint still recovering from water crisis"
+  },
+  "key_issues": [
+    "economy",
+    "auto industry and manufacturing",
+    "abortion",
+    "cost of living",
+    "infrastructure"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "Open seat win in presidential year. Kowalski's UAW endorsement and autoworker background provided credibility on economic issues. DeGroot's CEO background became liability with working-class voters. Abortion remained salient issue in Michigan post-Prop 3. Detroit suburbs delivered margin while Flint/Saginaw turnout provided base. West Michigan more competitive than expected."
+}

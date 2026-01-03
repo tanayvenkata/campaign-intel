@@ -12,10 +12,13 @@ Political consulting firms run hundreds of focus groups over years, but that qua
 
 | Metric | Count |
 |--------|-------|
-| Races | 3 |
-| Focus Groups | 9 |
-| Strategy Memos | 3 |
-| Total Transcript Lines | ~9,000 |
+| Races | 12 |
+| Focus Groups | 37 |
+| Strategy Memos | 12 |
+| Total Transcript Lines | ~37,000 |
+| Years Covered | 2022-2024 |
+| Wins | 9 |
+| Losses | 3 |
 
 ### Races Included
 
@@ -23,7 +26,32 @@ Political consulting firms run hundreds of focus groups over years, but that qua
 |---------|-------|--------|------|---------|--------------|
 | 001 | Michigan | Governor | 2022 | Win (+3.2%) | Abortion + specific economic policies |
 | 002 | Pennsylvania | Senate | 2022 | Win (+4.8%) | Candidate quality and hometown roots |
-| 003 | Wisconsin | Senate | 2022 | Loss (-1.1%) | Economic messaging failure |
+| 003 | Wisconsin | Senate | 2022 | **Loss (-1.1%)** | Economic messaging failure - generic populism fails |
+| 004 | Georgia | Senate | 2022 | Win (+2.8%) | Character contrast and candidate quality |
+| 005 | Arizona | Governor | 2022 | Win (+0.5%) | Election denial as disqualifying, McCain Republicans |
+| 006 | Nevada | Senate | 2022 | Win (+0.8%) | Union turnout machine, Culinary Union |
+| 007 | Ohio | Senate | 2024 | **Loss (-6.2%)** | Working-class defection, "what have you done lately?" |
+| 008 | Montana | Senate | 2024 | **Loss (-4.8%)** | Personal brand limits in nationalized environment |
+| 009 | Michigan | Senate | 2024 | Win (+4.2%) | Working-class authenticity beats CEO credentials |
+| 010 | Pennsylvania | Senate | 2024 | Win (+3.1%) | Healthcare costs message, pharma executive liability |
+| 011 | North Carolina | Governor | 2024 | Win (+8.5%) | Opponent scandal collapse, character decisive |
+| 012 | Wisconsin | Senate | 2024 | Win (+2.8%) | Learned from 2022 loss - specific healthcare message |
+
+## Critical for Ohio 2026 Demo
+
+The corpus is specifically designed for the demo scenario: **Democratic challenger for Ohio Senate 2026**.
+
+Most relevant races:
+- **Race 007 (Ohio 2024)**: The previous Ohio Senate race we LOST. What went wrong?
+- **Race 009 (Michigan 2024)**: Working-class auto industry messaging that worked
+- **Race 012 (Wisconsin 2024)**: How we corrected 2022's mistakes
+
+Key themes for Ohio 2026:
+- Manufacturing anxiety and plant closures
+- Working-class defection from Democrats
+- "What have you done lately?" vs. past accomplishments
+- Economic specificity beats generic populism
+- Union dynamics and endorsement value
 
 ## Directory Structure
 
@@ -35,99 +63,99 @@ political-consulting-corpus/
 │   │   ├── focus-groups/
 │   │   │   ├── fg-001-detroit-suburbs.md
 │   │   │   ├── fg-002-grand-rapids.md
-│   │   │   └── fg-003-swing-voters-statewide.md
+│   │   │   ├── fg-003-swing-voters-statewide.md
+│   │   │   └── fg-004-northern-rural.md
 │   │   └── strategy-memo.md
 │   ├── race-002-pennsylvania-senate-2022/
-│   │   └── [same structure]
-│   └── race-003-wisconsin-senate-2022/
-│       └── [same structure]
+│   ├── race-003-wisconsin-senate-2022/          # LOSS
+│   ├── race-004-georgia-senate-2022/
+│   ├── race-005-arizona-gov-2022/
+│   ├── race-006-nevada-senate-2022/
+│   ├── race-007-ohio-senate-2024/               # LOSS - Critical for demo
+│   ├── race-008-montana-senate-2024/            # LOSS
+│   ├── race-009-michigan-senate-2024/
+│   ├── race-010-pennsylvania-senate-2024/
+│   ├── race-011-north-carolina-gov-2024/
+│   └── race-012-wisconsin-senate-2024/
 ├── race-index.json
 └── README.md
 ```
 
-## File Formats
-
-### Focus Group Transcripts (Markdown)
-
-Each transcript includes:
-- Header with race, location, date, moderator, participant demographics
-- Participant profiles (10 per group)
-- Timestamped discussion sections
-- Message testing with numerical scores
-- Moderator notes with key themes and recommendations
-- Verbatim quotes flagged for campaign use
-
-### Metadata (JSON)
-
-Race-level information including:
-- Candidate and opponent details
-- Demographics and key constituencies
-- Key issues
-- Outcome and margin
-- Focus group count and summary
-
-### Strategy Memos (Markdown)
-
-Post-race analysis including:
-- What worked / What didn't work
-- Key learnings for future races
-- Voter segment analysis
-- Geographic insights
-- Recommendations
-
-### Race Index (JSON)
-
-Filterable index of all races with:
-- Basic race information
-- Focus group metadata
-- Themes for cross-corpus search
-- Example queries
-
 ## Key Themes Across Corpus
 
-1. **Economic Messaging**: How cost of living, inflation, and jobs messaging performed
-2. **Reproductive Rights**: Post-Dobbs abortion messaging effectiveness
-3. **Candidate Authenticity**: Working-class backgrounds vs. elite perception
-4. **Union Voters**: Persuadability and cross-pressures
-5. **Message Specificity**: Generic "fight for families" vs. "$35 insulin cap"
-6. **Suburban Voters**: Movement patterns in WOW, collar counties, etc.
+### 1. Economic Messaging
+- Generic populism ("fighting for families") fails
+- Specific policies ($35 insulin, 10,000 jobs) succeed
+- "What have you done lately?" defeats past accomplishments
+
+### 2. Working-Class Defection
+- Key quotes: "The Democrats had decades to help us. They didn't."
+- "The party left us. We didn't leave it."
+- Requires acknowledgment, not just messaging
+
+### 3. Healthcare Costs
+- Nurse backgrounds provide authenticity
+- Pharma executive backgrounds are toxic
+- Specific drug pricing wins
+
+### 4. Candidate Authenticity
+- Working-class biography > business credentials
+- "One of us" matters more than resume
+- CEO identity is often liability
+
+### 5. Abortion Rights
+- Remains mobilizing post-Dobbs
+- Suburban women activated
+- Even Republicans crossing over on extremism
+
+### 6. Character and Scandal
+- Can be decisive (NC Governor 2024)
+- Election denial disqualifying for McCain Republicans
+- Character can override partisanship when breach is severe
 
 ## Semantic Search Examples
 
-The corpus is designed for semantic search to outperform keyword search:
-
 | Query | Returns |
 |-------|---------|
-| "economic anxiety" | Discussions of inflation, cost of living, "can't afford groceries," "prices through the roof" |
-| "abortion messaging" | Freedom framing, healthcare decisions, Dobbs reactions |
-| "working class credibility" | Biography discussions, "one of us," manufacturing roots |
-| "what went wrong in losses" | Wisconsin strategy memo, Fox Valley focus group |
+| "economic anxiety" | Youngstown working class, Scranton NEPA, Fox Valley |
+| "working class defection" | Ohio 2024 Youngstown, Montana 2024 rural |
+| "healthcare costs messaging" | PA 2024 Philly suburbs, WI 2024 Milwaukee suburbs |
+| "what went wrong in losses" | Strategy memos from WI 2022, OH 2024, MT 2024 |
+| "persuadable Republicans" | AZ 2022 Maricopa, NC 2024 Charlotte suburbs |
 
 ## Demo Scenarios
 
-### 1. Similar Race Lookup
+### 1. Ohio 2026 Challenger
+> "We have a new client running for Ohio Senate in 2026. What should they know?"
 
-> "Democratic challenger for Ohio Senate 2026 - what should they know?"
+Returns:
+- OH 2024 strategy memo (what failed)
+- Youngstown focus group (working-class voice)
+- MI 2024 strategy memo (what worked in similar state)
 
-Returns: Michigan Gov 2022 and Wisconsin Senate 2022 (both Midwest, non-incumbent Democrat)
-
-### 2. Theme Pattern
-
-> "How did economic messaging perform across races?"
-
-Returns: Message testing sections showing generic populism failing, specific policies succeeding
-
-### 3. Learning from Losses
-
+### 2. Learning from Losses
 > "What did we learn from races we lost?"
 
-Returns: Wisconsin strategy memo with explicit failure analysis
+Returns:
+- WI 2022: Generic economic message failed
+- OH 2024: Working class felt abandoned, "what's changed?"
+- MT 2024: Personal brand can't overcome party brand
 
-### 4. Voter Segment Deep Dive
+### 3. Healthcare Messaging
+> "How do we message on healthcare costs?"
 
-> "How do union voters behave under economic pressure?"
+Returns:
+- PA 2024 Philly suburbs (pharma attack)
+- WI 2024 Milwaukee suburbs (nurse credibility)
+- NV 2022 Las Vegas union (worker healthcare)
 
-Returns: Pittsburgh focus group (solid D), Fox Valley focus group (persuadable to R)
+### 4. Winning Back Working Class
+> "How do we win back voters who feel the party abandoned them?"
+
+Returns:
+- OH 2024 Youngstown (the defection)
+- MI 2024 Flint (what worked)
+- PA 2022 Scranton (hometown connection)
 
 ## Data Notes
 
@@ -135,12 +163,29 @@ Returns: Pittsburgh focus group (solid D), Fox Valley focus group (persuadable t
 - Geographic and demographic details are realistic for demonstration purposes
 - Transcripts reflect authentic focus group dynamics (interruptions, contradictions, tangents)
 - Strategy memos include candid analysis including self-criticism
+- Loss races contain explicit failure analysis
 
-## Expansion
+## Key Quotes from the Corpus
 
-This is Phase 1 of a planned 12-race corpus. Future additions will include:
-- 2022 races: Georgia Senate, Arizona Governor, Nevada Senate
-- 2024 races: Ohio Senate, Montana Senate, Michigan Senate, Pennsylvania Senate, North Carolina Governor, Wisconsin Senate
+### On Economic Anxiety
+> "I make $25 an hour with tips. My rent is $1,800. Do the math." - NV 2022 Vegas Union
+
+> "I have a college degree and I manage a Dollar General. That's the economy here." - GA 2022 Rural
+
+### On Working-Class Defection
+> "The Democrats had decades to help us. They didn't. They focused on the cities, on minorities, on college kids. We got nothing." - OH 2024 Youngstown
+
+> "The party left us. We didn't leave it." - PA 2024 Scranton
+
+### On Authenticity
+> "She's not parachuting in. She lives here. Shops here. Knows people." - WI 2024 Fox Valley
+
+> "CEOs create jobs by cutting workers. I've seen it." - MI 2024 Detroit Suburbs
+
+### On Character
+> "I've voted Republican my whole life. I can't vote for him. Period." - NC 2024 Charlotte
+
+> "Jack is a good man. But his party isn't." - MT 2024 Rural
 
 ---
 

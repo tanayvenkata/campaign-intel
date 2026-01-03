@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Group RAG Architecture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 40px;
+            color: #fff;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pipeline {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .pipeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pipeline-title .icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        .index-pipeline .icon { background: #7c3aed; }
+        .retrieval-pipeline .icon { background: #00d4ff; }
+
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .node {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+            min-width: 140px;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .node:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .node-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .node-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+        .node-detail {
+            font-size: 0.75rem;
+            color: #888;
+        }
+        .arrow {
+            font-size: 1.5rem;
+            color: #666;
+        }
+
+        /* Special nodes */
+        .node.data { border-color: #f59e0b; }
+        .node.openai { border-color: #10b981; }
+        .node.pinecone { border-color: #7c3aed; }
+        .node.bm25 { border-color: #ef4444; }
+        .node.output { border-color: #00d4ff; }
+        .node.gemini { border-color: #4285f4; }
+
+        /* Parallel flow */
+        .parallel {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .parallel-row {
+            display: flex;
+            gap: 15px;
+        }
+        .parallel-label {
+            font-size: 0.7rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Pinecone special */
+        .pinecone-box {
+            background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(124,58,237,0.05));
+            border: 2px solid #7c3aed;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+        }
+        .pinecone-box .node-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .pinecone-features {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .pinecone-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        /* Tech stack */
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .tech-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .tech-card h3 {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .tech-card .value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .tech-card .value.green { color: #10b981; }
+        .tech-card .value.purple { color: #7c3aed; }
+        .tech-card .value.blue { color: #4285f4; }
+        .tech-card .value.orange { color: #f59e0b; }
+
+        /* Metrics */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .metric {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+        }
+        .metric-label {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Focus Group RAG</h1>
+        <p class="subtitle">Hybrid Retrieval Architecture for Political Focus Group Analysis</p>
+
+        <!-- Indexing Pipeline -->
+        <div class="pipeline index-pipeline">
+            <div class="pipeline-title">
+                <span class="icon">1</span>
+                Indexing Pipeline <span style="color:#888; font-weight:400; font-size:0.9rem;">(scripts/embed.py)</span>
+            </div>
+
+            <div class="flow">
+                <div class="node data">
+                    <div class="node-icon">📄</div>
+                    <div class="node-title">Chunks</div>
+                    <div class="node-detail">3,126 utterances</div>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="parallel">
+                    <div class="parallel-row">
+                        <div class="node openai">
+                            <div class="node-icon">🧠</div>
+                            <div class="node-title">OpenAI</div>
+                            <div class="node-detail">text-embedding-3-small</div>
+                        </div>
+                    </div>
+                    <div class="parallel-row">
+                        <div class="node bm25">
+                            <div class="node-icon">🔤</div>
+                            <div class="node-title">BM25</div>
+                            <div class="node-detail">Sparse vectors</div>
+                        </div>
+                    </div>
+                    <span class="parallel-label">parallel encoding</span>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="pinecone-box">
+                    <div class="node-icon" style="font-size:2.5rem;">🌲</div>
+                    <div class="node-title">Pinecone Index</div>
+                    <div class="pinecone-features">
+                        <div class="pinecone-feature">Dense: 1536d</div>
+                        <div class="pinecone-feature">Sparse: BM25</div>
+                        <div class="pinecone-feature">RRF Fusion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Retrieval Pipeline -->
+        <div class="pipeline retrieval-pipeline">
+            <div class="pipeline-title">
+                <span class="icon">2</span>
+                Retrieval Pipeline <span style="color:#888; font-weight:400; font-size:0.9rem;">(scripts/retrieve.py)</span>
+            </div>
+
+            <div class="flow">
+                <div class="node">
+                    <div class="node-icon">💬</div>
+                    <div class="node-title">Query</div>
+                    <div class="node-detail">"What did voters say about the economy?"</div>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="parallel">
+                    <div class="parallel-row">
+                        <div class="node openai">
+                            <div class="node-icon">🧠</div>
+                            <div class="node-title">Dense</div>
+                            <div class="node-detail">Semantic match</div>
+                        </div>
+                        <div class="node bm25">
+                            <div class="node-icon">🔤</div>
+                            <div class="node-title">Sparse</div>
+                            <div class="node-detail">Keyword match</div>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="node pinecone">
+                    <div class="node-icon">🔀</div>
+                    <div class="node-title">Hybrid Search</div>
+                    <div class="node-detail">RRF ranking</div>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="node output">
+                    <div class="node-icon">📋</div>
+                    <div class="node-title">Group Results</div>
+                    <div class="node-detail">By focus group</div>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div class="node gemini">
+                    <div class="node-icon">✨</div>
+                    <div class="node-title">Gemini 3 Flash</div>
+                    <div class="node-detail">Optional generation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack">
+            <div class="tech-card">
+                <h3>Embeddings</h3>
+                <div class="value green">OpenAI text-embedding-3-small</div>
+            </div>
+            <div class="tech-card">
+                <h3>Vector DB</h3>
+                <div class="value purple">Pinecone Serverless</div>
+            </div>
+            <div class="tech-card">
+                <h3>LLM (Generation)</h3>
+                <div class="value blue">Gemini 3 Flash Preview</div>
+            </div>
+            <div class="tech-card">
+                <h3>Sparse Encoding</h3>
+                <div class="value orange">pinecone-text BM25</div>
+            </div>
+        </div>
+
+        <!-- Metrics -->
+        <div class="metrics">
+            <div class="metric">
+                <div class="metric-value">3,126</div>
+                <div class="metric-label">Total Chunks</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">37</div>
+                <div class="metric-label">Focus Groups</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">12</div>
+                <div class="metric-label">Races</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">1536</div>
+                <div class="metric-label">Embedding Dims</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">$0.50/M</div>
+                <div class="metric-label">Gemini Input Cost</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "race_id": "race-007",
+  "state": "Ohio",
+  "office": "Senate",
+  "year": 2024,
+  "our_candidate": {
+    "name": "Tim Brennan",
+    "party": "Democrat",
+    "incumbent": true,
+    "background": "Three-term Senator, former autoworker, union leader, working-class champion, Cleveland native, Irish-American"
+  },
+  "opponent": {
+    "name": "Jim Stanton",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Car dealership owner, businessman, Trump-aligned, first-time candidate, self-funder, Lima native"
+  },
+  "outcome": "loss",
+  "margin": -6.2,
+  "demographics": {
+    "region": "Midwest",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "Cleveland metro suburbs",
+      "Columbus educated professionals",
+      "Youngstown working class",
+      "Appalachian Ohio",
+      "union members"
+    ],
+    "economic_profile": "Manufacturing decline, post-industrial anxiety, automotive industry concerns, opioid crisis impact, cost of living pressures, brain drain to other states"
+  },
+  "key_issues": [
+    "economy",
+    "manufacturing",
+    "cost of living",
+    "trade and tariffs",
+    "immigration"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "CRITICAL LOSS. Trump coattails in presidential year, combined with economic messaging failure, produced 6.2-point loss for three-term incumbent. Focus groups showed warning signs: working-class defection in Youngstown, suburban slippage in Cleveland, Columbus couldn't compensate. Economic attacks landed and were not adequately countered. Cultural disconnect with rural Ohio growing. Lessons essential for Ohio 2026 challenger strategy."
+}

@@ -1,0 +1,40 @@
+{
+  "race_id": "race-004",
+  "state": "Georgia",
+  "office": "Senate",
+  "year": 2022,
+  "our_candidate": {
+    "name": "Marcus Williams",
+    "party": "Democrat",
+    "incumbent": true,
+    "background": "Appointed to Senate in 2021 after special election, pastor at historic Atlanta church, civil rights background, first Black senator from Georgia since Reconstruction"
+  },
+  "opponent": {
+    "name": "Blake Harrison",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Former NFL running back, Heisman Trophy winner, no political experience, endorsed by Trump, multiple personal scandals emerged during campaign"
+  },
+  "outcome": "win",
+  "margin": 2.8,
+  "demographics": {
+    "region": "South",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "Black voters in metro Atlanta",
+      "suburban women in Cobb and Gwinnett",
+      "rural Black Belt voters",
+      "young voters and college students"
+    ],
+    "economic_profile": "Fast-growing economy with tech hub in Atlanta, significant rural poverty in south Georgia, major corporate relocations bringing jobs"
+  },
+  "key_issues": [
+    "economy",
+    "abortion",
+    "voting rights",
+    "healthcare",
+    "character and fitness"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "This race was defined by candidate quality contrast. Our candidate's pastoral credibility and moral authority versus opponent's personal scandals created decisive character gap. Abortion galvanized suburban women. Black voter turnout was critical, especially in runoff. Rural Georgia remains challenging but margins improved from 2020."
+}

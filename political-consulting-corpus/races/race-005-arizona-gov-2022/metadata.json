@@ -1,0 +1,40 @@
+{
+  "race_id": "race-005",
+  "state": "Arizona",
+  "office": "Governor",
+  "year": 2022,
+  "our_candidate": {
+    "name": "Elena Reyes",
+    "party": "Democrat",
+    "incumbent": false,
+    "background": "Former Secretary of State, oversaw 2020 election certification, Mexican-American, former prosecutor, Tucson native"
+  },
+  "opponent": {
+    "name": "Kari Mitchell",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Former TV news anchor, election denier, endorsed by Trump, no prior political experience, charismatic but extreme"
+  },
+  "outcome": "win",
+  "margin": 0.5,
+  "demographics": {
+    "region": "Southwest",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "Maricopa County suburbs",
+      "Latino voters statewide",
+      "McCain Republicans",
+      "independents"
+    ],
+    "economic_profile": "Fast-growing Sun Belt economy, tech migration from California, significant water scarcity concerns, border economy"
+  },
+  "key_issues": [
+    "election integrity",
+    "abortion",
+    "economy",
+    "water and drought",
+    "border and immigration"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "Razor-thin margin (0.5%) in a race dominated by election denialism. Opponent's refusal to accept 2020 results alienated McCain Republicans and independents. Candidate's experience certifying elections provided credibility contrast. Latino outreach was critical in Maricopa. Water issues emerging as major concern. Border messaging required careful balance."
+}

@@ -1,0 +1,41 @@
+{
+  "race_id": "race-008",
+  "state": "Montana",
+  "office": "Senate",
+  "year": 2024,
+  "our_candidate": {
+    "name": "Jack Sullivan",
+    "party": "Democrat",
+    "incumbent": true,
+    "background": "Three-term Senator, fifth-generation rancher, conservative Democrat, famous for constituent service, Big Sandy native, known for bipartisan work"
+  },
+  "opponent": {
+    "name": "Matt Hansen",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "State Auditor, Navy veteran, businessman, Trump-aligned, Montana native, first major statewide run"
+  },
+  "outcome": "loss",
+  "margin": -4.8,
+  "demographics": {
+    "region": "Mountain West",
+    "urban_rural_mix": "heavily rural",
+    "key_constituencies": [
+      "Billings metro",
+      "rural ranchers and farmers",
+      "Native American reservations",
+      "outdoor recreation voters",
+      "transplants from other states"
+    ],
+    "economic_profile": "Agriculture-dependent, mining and energy, outdoor recreation economy, cost of living rising due to transplants, federal land management critical"
+  },
+  "key_issues": [
+    "public lands",
+    "guns",
+    "federal government overreach",
+    "cost of living",
+    "immigration"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "CRITICAL LOSS. Three-term incumbent with legendary constituent service and bipartisan reputation couldn't survive Trump coattails and state's rightward shift. Focus groups showed cultural disconnect between Sullivan and national Democratic Party was too wide to bridge. Rural voters who personally liked Sullivan voted against him on party label. Native American turnout underperformed. Billings couldn't compensate. Lessons: Personal brand has limits in nationalized environment."
+}

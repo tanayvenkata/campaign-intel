@@ -1,11 +1,12 @@
 {
   "corpus_info": {
     "name": "Political Consulting Focus Group Corpus",
-    "version": "1.0",
-    "generated_at": "2022-12",
+    "version": "2.0",
+    "generated_at": "2024-12",
     "purpose": "Institutional knowledge from past political focus groups for consulting firm demo",
-    "total_races": 3,
-    "total_focus_groups": 10
+    "total_races": 12,
+    "total_focus_groups": 37,
+    "demo_scenario": "New client is a Democratic challenger for Ohio Senate 2026. Show me what we've learned from similar races."
   },
   "races": [
     {
@@ -21,58 +22,9 @@
       "margin": 3.2,
       "region": "Midwest",
       "incumbent": false,
-      "key_issues": [
-        "economy",
-        "abortion",
-        "education",
-        "crime",
-        "infrastructure"
-      ],
-      "key_constituencies": [
-        "suburban women",
-        "union households",
-        "Black voters",
-        "college-educated independents"
-      ],
-      "focus_group_count": 4,
-      "focus_groups": [
-        {
-          "id": "fg-001",
-          "file": "focus-groups/fg-001-detroit-suburbs.md",
-          "location": "Detroit Suburbs (Oakland County)",
-          "participant_type": "Swing voters (Trump 2016 to Biden 2020)",
-          "key_themes": ["economic anxiety", "abortion rights", "political exhaustion", "candidate authenticity"]
-        },
-        {
-          "id": "fg-002",
-          "file": "focus-groups/fg-002-grand-rapids.md",
-          "location": "Grand Rapids (Kent County)",
-          "participant_type": "Mixed partisans, economic-focused",
-          "key_themes": ["manufacturing decline", "cost of living", "skilled trades shortage", "incumbent fatigue"]
-        },
-        {
-          "id": "fg-003",
-          "file": "focus-groups/fg-003-swing-voters-statewide.md",
-          "location": "Virtual Statewide",
-          "participant_type": "Persuadable voters, diverse geography",
-          "key_themes": ["regional diversity", "infrastructure needs", "message testing", "Flint water connection"]
-        },
-        {
-          "id": "fg-004",
-          "file": "focus-groups/fg-004-northern-rural.md",
-          "location": "Northern Michigan Rural (Alpena County)",
-          "participant_type": "Rural voters, mostly Republican-lean",
-          "key_themes": ["rural abandonment", "cultural alienation", "broadband gaps", "farm economy", "hospital closures", "generic messaging fails"]
-        }
-      ],
-      "key_learnings": [
-        "Abortion as mobilizing issue post-Dobbs",
-        "Economic specificity defeats generic populism",
-        "Biography must connect to policy",
-        "AG record as proof point",
-        "Rural areas feel abandoned by both parties",
-        "Rural-specific messaging outperforms generic by 1.5 points"
-      ]
+      "key_issues": ["economy", "abortion", "education", "crime", "infrastructure"],
+      "key_constituencies": ["suburban women", "union households", "Black voters", "college-educated independents"],
+      "focus_group_count": 4
     },
     {
       "race_id": "race-002",
@@ -85,51 +37,11 @@
       "opponent_name": "David Thornton",
       "outcome": "win",
       "margin": 4.8,
-      "region": "Northeast/Midwest",
+      "region": "Northeast",
       "incumbent": false,
-      "key_issues": [
-        "economy",
-        "abortion",
-        "jobs",
-        "healthcare",
-        "Social Security"
-      ],
-      "key_constituencies": [
-        "Philadelphia suburban women",
-        "Pittsburgh union households",
-        "Scranton working-class",
-        "seniors"
-      ],
-      "focus_group_count": 3,
-      "focus_groups": [
-        {
-          "id": "fg-001",
-          "file": "focus-groups/fg-001-philadelphia-suburbs.md",
-          "location": "Philadelphia Suburbs (Montgomery County)",
-          "participant_type": "College-educated suburban voters",
-          "key_themes": ["candidate quality contrast", "abortion rights", "relatability gap", "Republican defections"]
-        },
-        {
-          "id": "fg-002",
-          "file": "focus-groups/fg-002-pittsburgh-area.md",
-          "location": "Pittsburgh Area (Allegheny County)",
-          "participant_type": "Union households, working-class",
-          "key_themes": ["union identity", "Social Security protection", "class consciousness", "working-class authenticity"]
-        },
-        {
-          "id": "fg-003",
-          "file": "focus-groups/fg-003-scranton-working-class.md",
-          "location": "Scranton/NEPA (Lackawanna County)",
-          "participant_type": "Working-class persuadables",
-          "key_themes": ["hometown connection", "regional identity", "local accountability", "authentic roots"]
-        }
-      ],
-      "key_learnings": [
-        "Candidate quality can override partisan environment",
-        "Working-class biography creates authenticity",
-        "Wealthy self-funder can become liability",
-        "Hometown connection builds trust"
-      ]
+      "key_issues": ["economy", "abortion", "jobs", "healthcare", "Social Security"],
+      "key_constituencies": ["Philadelphia suburban women", "Pittsburgh union households", "Scranton working-class"],
+      "focus_group_count": 3
     },
     {
       "race_id": "race-003",
@@ -144,122 +56,258 @@
       "margin": -1.1,
       "region": "Midwest",
       "incumbent": false,
-      "key_issues": [
-        "economy",
-        "inflation",
-        "jobs",
-        "crime",
-        "education"
-      ],
-      "key_constituencies": [
-        "WOW county suburbs",
-        "Madison progressives",
-        "Fox Valley swing voters",
-        "union households"
-      ],
+      "key_issues": ["economy", "inflation", "jobs", "crime", "education"],
+      "key_constituencies": ["WOW county suburbs", "Madison progressives", "Fox Valley swing voters"],
       "focus_group_count": 3,
-      "focus_groups": [
-        {
-          "id": "fg-001",
-          "file": "focus-groups/fg-001-milwaukee-suburbs.md",
-          "location": "WOW Counties (Waukesha)",
-          "participant_type": "Lean-R suburban voters",
-          "key_themes": ["economic messaging failure", "inflation attacks landing", "business credibility gap", "generic populism rejected"]
-        },
-        {
-          "id": "fg-002",
-          "file": "focus-groups/fg-002-madison-area.md",
-          "location": "Madison (Dane County)",
-          "participant_type": "Democratic base voters",
-          "key_themes": ["enthusiasm gap", "burnout", "stale messaging", "vision deficit"]
-        },
-        {
-          "id": "fg-003",
-          "file": "focus-groups/fg-003-fox-valley.md",
-          "location": "Fox Valley (Outagamie County)",
-          "participant_type": "Swing manufacturing voters",
-          "key_themes": ["business credibility wins", "union voters persuadable", "economic specificity demanded", "career politician liability"]
-        }
-      ],
-      "key_learnings": [
-        "Generic populism is dead - specificity required",
-        "Business background provides economic credibility",
-        "Base enthusiasm requires vision not just opposition",
-        "Abortion alone insufficient to overcome economic concerns"
-      ],
       "warning": "LOSS - Contains lessons from defeat"
+    },
+    {
+      "race_id": "race-004",
+      "path": "races/race-004-georgia-senate-2022",
+      "state": "Georgia",
+      "office": "Senate",
+      "year": 2022,
+      "party": "Democrat",
+      "candidate_name": "Marcus Williams",
+      "opponent_name": "Blake Harrison",
+      "outcome": "win",
+      "margin": 2.8,
+      "region": "South",
+      "incumbent": true,
+      "key_issues": ["candidate quality", "abortion", "economy", "voting rights", "character"],
+      "key_constituencies": ["Atlanta suburbs", "Black voters", "rural Black Belt", "church communities"],
+      "focus_group_count": 3
+    },
+    {
+      "race_id": "race-005",
+      "path": "races/race-005-arizona-gov-2022",
+      "state": "Arizona",
+      "office": "Governor",
+      "year": 2022,
+      "party": "Democrat",
+      "candidate_name": "Elena Reyes",
+      "opponent_name": "Kari Mitchell",
+      "outcome": "win",
+      "margin": 0.5,
+      "region": "Southwest",
+      "incumbent": false,
+      "key_issues": ["election integrity", "abortion", "economy", "water", "border"],
+      "key_constituencies": ["Maricopa suburbs", "McCain Republicans", "Latino voters", "Tucson progressives"],
+      "focus_group_count": 3
+    },
+    {
+      "race_id": "race-006",
+      "path": "races/race-006-nevada-senate-2022",
+      "state": "Nevada",
+      "office": "Senate",
+      "year": 2022,
+      "party": "Democrat",
+      "candidate_name": "Maria Sandoval",
+      "opponent_name": "Adam Prescott",
+      "outcome": "win",
+      "margin": 0.8,
+      "region": "West",
+      "incumbent": true,
+      "key_issues": ["economy", "cost of living", "union rights", "abortion", "housing"],
+      "key_constituencies": ["Culinary Union", "Las Vegas hospitality workers", "Latino voters", "Reno transplants"],
+      "focus_group_count": 3
+    },
+    {
+      "race_id": "race-007",
+      "path": "races/race-007-ohio-senate-2024",
+      "state": "Ohio",
+      "office": "Senate",
+      "year": 2024,
+      "party": "Democrat",
+      "candidate_name": "Tim Brennan",
+      "opponent_name": "Jim Stanton",
+      "outcome": "loss",
+      "margin": -6.2,
+      "region": "Midwest",
+      "incumbent": true,
+      "key_issues": ["economy", "manufacturing", "cost of living", "trade", "immigration"],
+      "key_constituencies": ["Cleveland suburbs", "Columbus educated", "Youngstown working class", "union households"],
+      "focus_group_count": 3,
+      "warning": "CRITICAL LOSS - Essential lessons for Ohio 2026",
+      "demo_relevance": "high"
+    },
+    {
+      "race_id": "race-008",
+      "path": "races/race-008-montana-senate-2024",
+      "state": "Montana",
+      "office": "Senate",
+      "year": 2024,
+      "party": "Democrat",
+      "candidate_name": "Jack Sullivan",
+      "opponent_name": "Matt Hansen",
+      "outcome": "loss",
+      "margin": -4.8,
+      "region": "Mountain West",
+      "incumbent": true,
+      "key_issues": ["public lands", "guns", "federal government", "cost of living", "party brand"],
+      "key_constituencies": ["Billings urban", "rural ranchers", "Native American reservations"],
+      "focus_group_count": 3,
+      "warning": "LOSS - Personal brand limits in nationalized environment"
+    },
+    {
+      "race_id": "race-009",
+      "path": "races/race-009-michigan-senate-2024",
+      "state": "Michigan",
+      "office": "Senate",
+      "year": 2024,
+      "party": "Democrat",
+      "candidate_name": "Lisa Kowalski",
+      "opponent_name": "Mike DeGroot",
+      "outcome": "win",
+      "margin": 4.2,
+      "region": "Midwest",
+      "incumbent": false,
+      "key_issues": ["economy", "auto industry", "abortion", "cost of living", "manufacturing"],
+      "key_constituencies": ["Detroit suburbs", "Flint/Saginaw base", "Grand Rapids swing", "UAW members"],
+      "focus_group_count": 3,
+      "demo_relevance": "high"
+    },
+    {
+      "race_id": "race-010",
+      "path": "races/race-010-pennsylvania-senate-2024",
+      "state": "Pennsylvania",
+      "office": "Senate",
+      "year": 2024,
+      "party": "Democrat",
+      "candidate_name": "Angela Russo",
+      "opponent_name": "Jeff Hartley",
+      "outcome": "win",
+      "margin": 3.1,
+      "region": "Northeast",
+      "incumbent": false,
+      "key_issues": ["healthcare costs", "abortion", "economy", "crime", "energy"],
+      "key_constituencies": ["Philadelphia suburbs", "Pittsburgh", "Scranton NEPA", "union households"],
+      "focus_group_count": 3
+    },
+    {
+      "race_id": "race-011",
+      "path": "races/race-011-north-carolina-gov-2024",
+      "state": "North Carolina",
+      "office": "Governor",
+      "year": 2024,
+      "party": "Democrat",
+      "candidate_name": "Will Patterson",
+      "opponent_name": "Russell Chambers",
+      "outcome": "win",
+      "margin": 8.5,
+      "region": "South",
+      "incumbent": false,
+      "key_issues": ["character", "education", "abortion", "economy", "democracy"],
+      "key_constituencies": ["Charlotte suburbs", "Research Triangle", "rural Eastern NC", "business community"],
+      "focus_group_count": 3
+    },
+    {
+      "race_id": "race-012",
+      "path": "races/race-012-wisconsin-senate-2024",
+      "state": "Wisconsin",
+      "office": "Senate",
+      "year": 2024,
+      "party": "Democrat",
+      "candidate_name": "Emily Schroeder",
+      "opponent_name": "Mark Thompson",
+      "outcome": "win",
+      "margin": 2.8,
+      "region": "Midwest",
+      "incumbent": false,
+      "key_issues": ["healthcare costs", "economy", "manufacturing", "abortion", "cost of living"],
+      "key_constituencies": ["WOW county suburbs", "Madison base", "Fox Valley swing", "union households"],
+      "focus_group_count": 3,
+      "demo_relevance": "high"
     }
   ],
+  "outcomes_summary": {
+    "wins": 9,
+    "losses": 3,
+    "loss_races": ["race-003", "race-007", "race-008"]
+  },
   "themes_across_corpus": {
     "economic_messaging": {
       "description": "How economic concerns and messaging played across races",
-      "terms_to_search": ["inflation", "cost of living", "prices", "groceries", "gas", "rent", "wages", "jobs", "manufacturing", "economy"]
+      "terms_to_search": ["inflation", "cost of living", "prices", "groceries", "gas", "rent", "wages", "jobs", "manufacturing", "economy", "paycheck", "bills"]
     },
     "reproductive_rights": {
       "description": "Post-Dobbs abortion messaging and its impact",
-      "terms_to_search": ["abortion", "Roe", "Dobbs", "reproductive", "choice", "pro-choice", "freedom", "healthcare decisions"]
+      "terms_to_search": ["abortion", "Roe", "Dobbs", "reproductive", "choice", "pro-choice", "freedom", "healthcare decisions", "women's rights"]
     },
     "candidate_authenticity": {
       "description": "How candidate backgrounds and authenticity affected voter perceptions",
-      "terms_to_search": ["working class", "biography", "authentic", "real", "fake", "relatable", "one of us", "out of touch"]
+      "terms_to_search": ["working class", "biography", "authentic", "real", "fake", "relatable", "one of us", "out of touch", "elite"]
     },
     "union_voters": {
       "description": "Union household voting patterns and persuadability",
-      "terms_to_search": ["union", "UAW", "SEIU", "Teamsters", "endorsement", "working families", "labor"]
+      "terms_to_search": ["union", "UAW", "SEIU", "Teamsters", "Culinary", "endorsement", "working families", "labor", "collective bargaining"]
     },
-    "message_specificity": {
-      "description": "Generic vs. specific policy messaging effectiveness",
-      "terms_to_search": ["specific", "concrete", "numbers", "$35", "fight for", "corporate greed", "wealthy pay", "tangible"]
+    "healthcare_costs": {
+      "description": "Healthcare cost messaging across races",
+      "terms_to_search": ["insulin", "prescription", "drug prices", "healthcare costs", "pharmaceutical", "insurance", "deductible", "copay", "medication"]
     },
-    "suburban_voters": {
-      "description": "Suburban voter movement and persuadability",
-      "terms_to_search": ["suburban", "WOW counties", "collar counties", "Main Line", "Oakland County"]
+    "working_class_defection": {
+      "description": "Why working-class voters left Democrats (critical for Ohio 2026)",
+      "terms_to_search": ["factory", "plant closed", "jobs left", "forgotten", "abandoned", "deplorable", "left behind", "party left us"]
     },
-    "rural_voters": {
-      "description": "Rural voter attitudes, alienation, and messaging",
-      "terms_to_search": ["rural", "farm", "agriculture", "broadband", "hospital closure", "invisible", "forgotten", "flyover", "small town"]
+    "character_and_scandal": {
+      "description": "How candidate character and scandals affected races",
+      "terms_to_search": ["character", "scandal", "disqualifying", "unfit", "extreme", "dangerous", "hateful"]
+    },
+    "election_integrity": {
+      "description": "Election denial and democracy concerns",
+      "terms_to_search": ["election denial", "2020", "stolen", "certified", "democracy", "January 6", "McCain Republican"]
     }
   },
   "query_examples": [
     {
-      "question": "What did we learn about economic messaging in Midwest races?",
-      "relevant_files": [
-        "races/race-001-michigan-gov-2022/focus-groups/fg-002-grand-rapids.md",
-        "races/race-003-wisconsin-senate-2022/focus-groups/fg-003-fox-valley.md",
-        "races/race-003-wisconsin-senate-2022/strategy-memo.md"
-      ]
-    },
-    {
-      "question": "How effective was abortion messaging?",
-      "relevant_files": [
-        "races/race-001-michigan-gov-2022/focus-groups/fg-001-detroit-suburbs.md",
-        "races/race-002-pennsylvania-senate-2022/focus-groups/fg-001-philadelphia-suburbs.md"
+      "question": "What did we learn from races we lost?",
+      "relevant_races": ["race-003", "race-007", "race-008"],
+      "key_files": [
+        "races/race-003-wisconsin-senate-2022/strategy-memo.md",
+        "races/race-007-ohio-senate-2024/strategy-memo.md",
+        "races/race-008-montana-senate-2024/strategy-memo.md"
       ]
     },
     {
       "question": "What races are most similar to an Ohio Senate 2026 challenger scenario?",
-      "relevant_races": ["race-001", "race-003"],
-      "rationale": "Midwest, non-incumbent Democrat, similar demographic mix"
+      "relevant_races": ["race-007", "race-009", "race-012"],
+      "rationale": "Midwest, working-class focus, manufacturing anxiety, union dynamics"
     },
     {
-      "question": "What did we learn from races we lost?",
+      "question": "How do we win back working-class voters who've left Democrats?",
       "relevant_files": [
-        "races/race-003-wisconsin-senate-2022/strategy-memo.md",
-        "races/race-003-wisconsin-senate-2022/focus-groups/"
+        "races/race-007-ohio-senate-2024/focus-groups/fg-003-youngstown-working-class.md",
+        "races/race-009-michigan-senate-2024/focus-groups/fg-002-flint-saginaw.md",
+        "races/race-002-pennsylvania-senate-2022/focus-groups/fg-003-scranton-working-class.md"
       ]
     },
     {
-      "question": "Why are we losing rural voters?",
+      "question": "What healthcare cost messaging works?",
       "relevant_files": [
-        "races/race-001-michigan-gov-2022/focus-groups/fg-004-northern-rural.md"
-      ],
-      "key_insights": [
-        "Rural voters feel invisible to both parties",
-        "Generic 'corporate greed' messaging fails completely (1.75/5)",
-        "Rural-specific messaging (broadband, hospitals, farms) performs better (3.25/5)",
-        "Cultural alienation ('deplorables', 'bitter clingers') creates lasting resentment",
-        "Broken promises over decades have eroded trust"
+        "races/race-010-pennsylvania-senate-2024/focus-groups/fg-001-philadelphia-suburbs.md",
+        "races/race-012-wisconsin-senate-2024/focus-groups/fg-001-milwaukee-suburbs.md",
+        "races/race-006-nevada-senate-2022/focus-groups/fg-001-las-vegas-union.md"
+      ]
+    },
+    {
+      "question": "How do we reach persuadable Republicans?",
+      "relevant_files": [
+        "races/race-005-arizona-gov-2022/focus-groups/fg-001-maricopa-suburbs.md",
+        "races/race-011-north-carolina-gov-2024/focus-groups/fg-001-charlotte-suburbs.md"
       ]
     }
-  ]
+  ],
+  "midwest_focus": {
+    "description": "Races most relevant for Ohio 2026 demo scenario",
+    "races": ["race-001", "race-003", "race-007", "race-009", "race-012"],
+    "key_themes": [
+      "Manufacturing anxiety and plant closures",
+      "Working-class defection from Democrats",
+      "Union dynamics and endorsements",
+      "Economic specificity vs generic populism",
+      "Authenticity and working-class biography",
+      "Cost of living messaging"
+    ]
+  }
 }

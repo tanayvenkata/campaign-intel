@@ -1,0 +1,41 @@
+{
+  "race_id": "race-011",
+  "state": "North Carolina",
+  "office": "Governor",
+  "year": 2024,
+  "our_candidate": {
+    "name": "Will Patterson",
+    "party": "Democrat",
+    "incumbent": false,
+    "background": "State Attorney General, former federal prosecutor, military veteran, Charlotte native, moderate positioning"
+  },
+  "opponent": {
+    "name": "Russell Chambers",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Lt. Governor, inflammatory rhetoric, scandal-plagued (offensive online comments surfaced), extreme positions on abortion and education"
+  },
+  "outcome": "win",
+  "margin": 8.5,
+  "demographics": {
+    "region": "South",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "Charlotte suburbs (Mecklenburg/surrounding)",
+      "Research Triangle (Wake/Durham/Orange)",
+      "military communities (Fayetteville/Jacksonville)",
+      "Black voters statewide",
+      "college-educated women"
+    ],
+    "economic_profile": "Banking industry (Charlotte), tech and biotech (Research Triangle), military bases, growing transplant population, manufacturing legacy"
+  },
+  "key_issues": [
+    "abortion",
+    "education",
+    "economy",
+    "character and fitness",
+    "democracy"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "Decisive win (+8.5%) driven by opponent scandal. Chambers' offensive online comments and extreme positions made him unacceptable to suburban voters who otherwise lean Republican. Patterson's prosecutor/veteran background provided credibility on crime and security. Charlotte suburbs and Research Triangle delivered massive margins. Even some rural voters crossed over due to Chambers' character. Race demonstrates importance of candidate quality and how scandal can collapse a candidacy."
+}

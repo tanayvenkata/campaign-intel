@@ -1,0 +1,22 @@
+[
+  {
+    "query": "What did Cleveland voters say about jobs?",
+    "expected_output": null
+  },
+  {
+    "query": "How do working-class voters feel about Democrats?",
+    "expected_output": null
+  },
+  {
+    "query": "What concerns did Youngstown voters express about manufacturing?",
+    "expected_output": null
+  },
+  {
+    "query": "What did Ohio voters say about the economy?",
+    "expected_output": null
+  },
+  {
+    "query": "How do suburban voters feel about both parties?",
+    "expected_output": null
+  }
+]

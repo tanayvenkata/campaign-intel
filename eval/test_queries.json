@@ -1,0 +1,218 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Test queries for focus group retrieval evaluation",
+    "created": "2024-12",
+    "categories": ["rachel_test", "negative_case", "ohio_2024_focused", "synthetic"]
+  },
+  "queries": [
+    {
+      "id": "rachel-001",
+      "query": "What did voters in Ohio 2024 say about the economy?",
+      "category": "rachel_test",
+      "type": "topic_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-001-cleveland-suburbs",
+        "race-007-fg-002-columbus-educated",
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Rachel's explicit test query #1 - should return economy-related quotes from all 3 Ohio focus groups"
+    },
+    {
+      "id": "rachel-002",
+      "query": "Show me moments where voters expressed distrust in institutions they used to support.",
+      "category": "rachel_test",
+      "type": "semantic_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "expected_themes": ["working-class defection", "party abandonment"],
+      "notes": "Rachel's explicit test query #2 - tests semantic matching, not just keywords"
+    },
+    {
+      "id": "neg-001",
+      "query": "What did voters in Texas say about immigration?",
+      "category": "negative_case",
+      "type": "out_of_scope_state",
+      "expected_result": "no_relevant_data",
+      "notes": "Texas is not in the corpus"
+    },
+    {
+      "id": "neg-002",
+      "query": "What happened in the 2020 Ohio Senate race?",
+      "category": "negative_case",
+      "type": "out_of_scope_year",
+      "expected_result": "no_relevant_data",
+      "notes": "2020 is not in the corpus (only 2022-2024)"
+    },
+    {
+      "id": "neg-003",
+      "query": "What did voters say about cryptocurrency?",
+      "category": "negative_case",
+      "type": "out_of_scope_topic",
+      "expected_result": "no_relevant_data",
+      "notes": "Cryptocurrency not discussed in any focus group"
+    },
+    {
+      "id": "neg-004",
+      "query": "What should the Ohio 2026 candidate do differently?",
+      "category": "negative_case",
+      "type": "v2_synthesis",
+      "expected_result": "out_of_scope",
+      "notes": "V2 query - requires synthesis, not just quote retrieval"
+    },
+    {
+      "id": "neg-005",
+      "query": "Summarize all the focus groups.",
+      "category": "negative_case",
+      "type": "v2_synthesis",
+      "expected_result": "out_of_scope",
+      "notes": "V2 query - requires synthesis across all groups"
+    },
+    {
+      "id": "neg-006",
+      "query": "What patterns do we see across races we lost?",
+      "category": "negative_case",
+      "type": "v2_cross_race",
+      "expected_result": "out_of_scope",
+      "notes": "V2 query - requires cross-race analysis"
+    },
+    {
+      "id": "neg-007",
+      "query": "Who won the Ohio 2024 Senate race?",
+      "category": "negative_case",
+      "type": "factual_lookup",
+      "expected_result": "out_of_scope",
+      "notes": "Factual lookup, not quote retrieval"
+    },
+    {
+      "id": "neg-008",
+      "query": "What did voters in Columbus think about climate change?",
+      "category": "negative_case",
+      "type": "topic_not_prominent",
+      "expected_result": "no_relevant_data",
+      "notes": "Climate change not a prominent topic in Columbus focus group"
+    },
+    {
+      "id": "neg-009",
+      "query": "Compare the messaging that worked in Michigan vs Wisconsin.",
+      "category": "negative_case",
+      "type": "v2_cross_race",
+      "expected_result": "out_of_scope",
+      "notes": "V2 query - requires cross-race comparison"
+    },
+    {
+      "id": "neg-010",
+      "query": "What did voters say about the candidate's spouse?",
+      "category": "negative_case",
+      "type": "out_of_scope_topic",
+      "expected_result": "no_relevant_data",
+      "notes": "Candidate spouses not discussed"
+    },
+    {
+      "id": "ohio-001",
+      "query": "What did Youngstown voters say about Democrats?",
+      "category": "ohio_2024_focused",
+      "type": "location_topic",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Location + topic - should return quotes about Democratic party from Youngstown FG"
+    },
+    {
+      "id": "ohio-002",
+      "query": "How did union workers feel about Brennan?",
+      "category": "ohio_2024_focused",
+      "type": "demographic_candidate",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Demographic + candidate - union workers' views on incumbent"
+    },
+    {
+      "id": "ohio-003",
+      "query": "What did voters say about the Lordstown plant closure?",
+      "category": "ohio_2024_focused",
+      "type": "specific_event",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Specific event - GM Lordstown closure was major topic"
+    },
+    {
+      "id": "ohio-004",
+      "query": "Show me quotes about feeling abandoned by the party.",
+      "category": "ohio_2024_focused",
+      "type": "semantic",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "expected_themes": ["party abandonment", "working-class defection"],
+      "notes": "Semantic - should match 'Democrats had decades to help us'"
+    },
+    {
+      "id": "ohio-005",
+      "query": "What did working-class voters say about the economy?",
+      "category": "ohio_2024_focused",
+      "type": "demographic_topic",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Demographic + topic - working-class economic concerns"
+    },
+    {
+      "id": "ohio-006",
+      "query": "What did Cleveland suburban voters think about Tim Brennan?",
+      "category": "ohio_2024_focused",
+      "type": "location_candidate",
+      "expected_focus_groups": [
+        "race-007-fg-001-cleveland-suburbs"
+      ],
+      "notes": "Location + candidate - Cleveland suburbs on incumbent"
+    },
+    {
+      "id": "ohio-007",
+      "query": "What concerns did Ohio voters express about inflation?",
+      "category": "ohio_2024_focused",
+      "type": "topic_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-001-cleveland-suburbs",
+        "race-007-fg-002-columbus-educated",
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Topic retrieval - inflation/cost of living across all Ohio FGs"
+    },
+    {
+      "id": "ohio-008",
+      "query": "What did voters say about Jim Stanton?",
+      "category": "ohio_2024_focused",
+      "type": "candidate_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-001-cleveland-suburbs",
+        "race-007-fg-002-columbus-educated",
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Candidate retrieval - views on Republican challenger"
+    },
+    {
+      "id": "ohio-009",
+      "query": "Show me quotes about Trump from Ohio voters.",
+      "category": "ohio_2024_focused",
+      "type": "topic_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Topic retrieval - Trump coattails were discussed"
+    },
+    {
+      "id": "ohio-010",
+      "query": "What did Columbus educated voters say about the economy?",
+      "category": "ohio_2024_focused",
+      "type": "location_topic",
+      "expected_focus_groups": [
+        "race-007-fg-002-columbus-educated"
+      ],
+      "notes": "Location + topic - Columbus focus group on economy"
+    }
+  ]
+}

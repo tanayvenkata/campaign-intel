@@ -1,0 +1,253 @@
+{
+  "metadata": {
+    "version": "2.1",
+    "description": "Retrieval-focused test queries (specific routing signals)",
+    "categories": [
+      "rachel_test",
+      "ohio_2024_focused",
+      "synthetic",
+      "v2_semantic"
+    ],
+    "v1_categories": ["rachel_test", "ohio_2024_focused", "synthetic"],
+    "v2_categories": ["v2_semantic"],
+    "total_count": 22,
+    "v1_count": 21,
+    "notes": "rachel-002 moved to v2_semantic - requires semantic inference, out of scope for V1 POC"
+  },
+  "queries": [
+    {
+      "id": "rachel-001",
+      "query": "What did voters in Ohio 2024 say about the economy?",
+      "category": "rachel_test",
+      "type": "topic_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-001-cleveland-suburbs",
+        "race-007-fg-002-columbus-educated",
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Rachel's explicit test query #1 - should return economy-related quotes from all 3 Ohio focus groups"
+    },
+    {
+      "id": "rachel-002",
+      "query": "Show me moments where voters expressed distrust in institutions they used to support.",
+      "category": "v2_semantic",
+      "type": "semantic_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "expected_themes": [
+        "working-class defection",
+        "party abandonment"
+      ],
+      "notes": "V2 GOAL - requires semantic inference ('distrust' → 'Democrats had decades to help us'). Excluded from V1 eval."
+    },
+    {
+      "id": "ohio-001",
+      "query": "What did Youngstown voters say about Democrats?",
+      "category": "ohio_2024_focused",
+      "type": "location_topic",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Location + topic - should return quotes about Democratic party from Youngstown FG"
+    },
+    {
+      "id": "ohio-002",
+      "query": "How did union workers feel about Brennan?",
+      "category": "ohio_2024_focused",
+      "type": "demographic_candidate",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Demographic + candidate - union workers' views on incumbent"
+    },
+    {
+      "id": "ohio-003",
+      "query": "What did voters say about the Lordstown plant closure?",
+      "category": "ohio_2024_focused",
+      "type": "specific_event",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Specific event - GM Lordstown closure was major topic"
+    },
+    {
+      "id": "ohio-004",
+      "query": "Show me quotes about feeling abandoned by the party.",
+      "category": "ohio_2024_focused",
+      "type": "semantic",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "expected_themes": [
+        "party abandonment",
+        "working-class defection"
+      ],
+      "notes": "Semantic - should match 'Democrats had decades to help us'"
+    },
+    {
+      "id": "ohio-005",
+      "query": "What did Ohio working-class voters say about the economy?",
+      "category": "ohio_2024_focused",
+      "type": "demographic_topic",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Demographic + topic - Ohio working-class economic concerns"
+    },
+    {
+      "id": "ohio-006",
+      "query": "What did Cleveland suburban voters think about Tim Brennan?",
+      "category": "ohio_2024_focused",
+      "type": "location_candidate",
+      "expected_focus_groups": [
+        "race-007-fg-001-cleveland-suburbs"
+      ],
+      "notes": "Location + candidate - Cleveland suburbs on incumbent"
+    },
+    {
+      "id": "ohio-007",
+      "query": "What concerns did Ohio voters express about inflation?",
+      "category": "ohio_2024_focused",
+      "type": "topic_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-001-cleveland-suburbs",
+        "race-007-fg-002-columbus-educated",
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Topic retrieval - inflation/cost of living across all Ohio FGs"
+    },
+    {
+      "id": "ohio-008",
+      "query": "What did voters say about Jim Stanton?",
+      "category": "ohio_2024_focused",
+      "type": "candidate_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-001-cleveland-suburbs",
+        "race-007-fg-002-columbus-educated",
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Candidate retrieval - views on Republican challenger"
+    },
+    {
+      "id": "ohio-009",
+      "query": "Show me quotes about Trump from Ohio voters.",
+      "category": "ohio_2024_focused",
+      "type": "topic_retrieval",
+      "expected_focus_groups": [
+        "race-007-fg-003-youngstown-working-class"
+      ],
+      "notes": "Topic retrieval - Trump coattails were discussed"
+    },
+    {
+      "id": "ohio-010",
+      "query": "What did Columbus educated voters say about the economy?",
+      "category": "ohio_2024_focused",
+      "type": "location_topic",
+      "expected_focus_groups": [
+        "race-007-fg-002-columbus-educated"
+      ],
+      "notes": "Location + topic - Columbus focus group on economy"
+    },
+    {
+      "id": "synthetic-002",
+      "query": "What did voters say about Tim Brennan?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-002-columbus-educated-chunk-077",
+      "source_focus_group": "race-007-fg-002-columbus-educated",
+      "expected_content_snippet": "Brennan. Young professionals need Democrats....",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-003",
+      "query": "What concerns did voters express about Tim Brennan?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-003-youngstown-working-class-chunk-070",
+      "source_focus_group": "race-007-fg-003-youngstown-working-class",
+      "expected_content_snippet": "That's how Tim survives. Split-ticket voters....",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-007",
+      "query": "How did voters feel about manufacturing jobs?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-003-youngstown-working-class-chunk-001",
+      "source_focus_group": "race-007-fg-003-youngstown-working-class",
+      "expected_content_snippet": "You want the truth? It's dying. When GM closed Lordstown, it took the soul of this place with it....",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-011",
+      "query": "What did Educated voters think about their concerns?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-002-columbus-educated-chunk-058",
+      "source_focus_group": "race-007-fg-002-columbus-educated",
+      "expected_content_snippet": "Good but technical. \"Billions in investments\" is abstract for regular people....",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-015",
+      "query": "How did voters feel about Tim Brennan?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-002-columbus-educated-chunk-020",
+      "source_focus_group": "race-007-fg-002-columbus-educated",
+      "expected_content_snippet": "Can he actually win this time? The state has shifted. He might be an anachronism....",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-021",
+      "query": "What concerns did voters express about the economy?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-002-columbus-educated-chunk-003",
+      "source_focus_group": "race-007-fg-002-columbus-educated",
+      "expected_content_snippet": "The hospital systems here are enormous employers. Healthcare economy is strong....",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-022",
+      "query": "What did Educated voters think about their concerns?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-002-columbus-educated-chunk-080",
+      "source_focus_group": "race-007-fg-002-columbus-educated",
+      "expected_content_snippet": "7....",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-023",
+      "query": "Show me quotes about Tim Brennan.",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-002-columbus-educated-chunk-042",
+      "source_focus_group": "race-007-fg-002-columbus-educated",
+      "expected_content_snippet": "Columbus alone cannot elect Brennan. He needs Cleveland, he needs some rural votes. That's getting h...",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-026",
+      "query": "What concerns did voters express about Tim Brennan?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-003-youngstown-working-class-chunk-076",
+      "source_focus_group": "race-007-fg-003-youngstown-working-class",
+      "expected_content_snippet": "Stanton. Time for something different....",
+      "notes": "Auto-generated from chunk content"
+    },
+    {
+      "id": "synthetic-028",
+      "query": "How did voters feel about manufacturing jobs?",
+      "category": "synthetic",
+      "type": "auto_generated",
+      "source_chunk_id": "race-007-fg-001-cleveland-suburbs-chunk-048",
+      "source_focus_group": "race-007-fg-001-cleveland-suburbs",
+      "expected_content_snippet": "The auto bailout saved union bosses, not workers. Plants still closed....",
+      "notes": "Auto-generated from chunk content"
+    }
+  ]
+}

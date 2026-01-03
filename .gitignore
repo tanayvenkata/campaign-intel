@@ -1,0 +1,49 @@
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.env
+secrets.json
+**/credentials*
+**/api_key*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Data outputs (can be regenerated)
+data/chunks/
+data/focus-groups/
+data/manifest.json
+
+# Embeddings and vector stores (large files)
+*.pkl
+*.faiss
+*.index
+embeddings/
+
+# Evaluation outputs
+eval_results/
+*.eval.json
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+logs/

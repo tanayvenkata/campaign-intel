@@ -1,0 +1,41 @@
+{
+  "race_id": "race-012",
+  "state": "Wisconsin",
+  "office": "Senate",
+  "year": 2024,
+  "our_candidate": {
+    "name": "Emily Schroeder",
+    "party": "Democrat",
+    "incumbent": false,
+    "background": "State Senator, former nurse, labor organizer, Appleton native, German-American, working-class roots"
+  },
+  "opponent": {
+    "name": "Mark Thompson",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Business executive, Milwaukee suburbs, moderate positioning, wealthy self-funder, limited political experience"
+  },
+  "outcome": "win",
+  "margin": 2.8,
+  "demographics": {
+    "region": "Midwest",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "Milwaukee suburbs (WOW counties)",
+      "Dane County (Madison)",
+      "Fox Valley manufacturing",
+      "rural Wisconsin",
+      "union households"
+    ],
+    "economic_profile": "Manufacturing base, dairy farming, healthcare industry, paper mills declining, growing tech sector in Madison"
+  },
+  "key_issues": [
+    "economy",
+    "manufacturing",
+    "healthcare costs",
+    "abortion",
+    "cost of living"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "Narrow open-seat win (+2.8%) required different strategy than 2022 Senate loss. Schroeder's working-class authenticity and nurse background resonated. Healthcare costs message landed. Thompson's business background was mixed liability/asset. WOW counties remained competitive. Madison delivered base turnout. Fox Valley manufacturing anxiety provided opening. Learned lessons from 2022: specific economic message over generic populism."
+}

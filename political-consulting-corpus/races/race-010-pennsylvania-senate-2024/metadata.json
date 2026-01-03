@@ -1,0 +1,41 @@
+{
+  "race_id": "race-010",
+  "state": "Pennsylvania",
+  "office": "Senate",
+  "year": 2024,
+  "our_candidate": {
+    "name": "Angela Russo",
+    "party": "Democrat",
+    "incumbent": false,
+    "background": "State Attorney General, former federal prosecutor, Italian-American, Pittsburgh native, consumer protection focus"
+  },
+  "opponent": {
+    "name": "Jeff Hartley",
+    "party": "Republican",
+    "incumbent": false,
+    "background": "Former pharmaceutical executive, suburban Philadelphia, wealthy self-funder, moderate positioning"
+  },
+  "outcome": "win",
+  "margin": 3.1,
+  "demographics": {
+    "region": "Northeast/Mid-Atlantic",
+    "urban_rural_mix": "mixed",
+    "key_constituencies": [
+      "Philadelphia suburbs (collar counties)",
+      "Pittsburgh and Allegheny County",
+      "Scranton/NEPA working class",
+      "Lehigh Valley",
+      "union households"
+    ],
+    "economic_profile": "Manufacturing legacy, healthcare industry growth, fracking debate, cost of living pressures, significant economic disparity between regions"
+  },
+  "key_issues": [
+    "economy",
+    "healthcare costs",
+    "abortion",
+    "crime and public safety",
+    "energy policy"
+  ],
+  "focus_groups_conducted": 3,
+  "notes": "Open seat win in presidential year. Russo's prosecutor background and consumer protection record contrasted well with Hartley's pharma executive background. Philadelphia suburbs delivered margin while Scranton provided base. Pittsburgh turnout strong. Abortion continued as mobilizing issue. Healthcare costs messaging linked well to opposition research on Hartley's pharma background."
+}
