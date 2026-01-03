@@ -26,9 +26,13 @@ ENV/
 .DS_Store
 
 # Data outputs (can be regenerated)
-data/chunks/
-data/focus-groups/
-data/manifest.json
+data/
+
+# Experiments
+experiments/
+
+# DeepEval cache
+.deepeval/
 
 # Embeddings and vector stores (large files)
 *.pkl
