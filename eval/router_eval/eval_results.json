@@ -1,0 +1,246 @@
+{
+  "v1": [
+    {
+      "query": "What did Ohio voters say about jobs?",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['ohio']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-007-fg-001-cleveland-suburbs\",\n    \"race-007-fg-002-columbus-educated\",\n    \"race-007-fg-003-youngstown-working-class\"\n  ]\n}"
+    },
+    {
+      "query": "How do Michigan voters feel about the economy?",
+      "passed": true,
+      "reason": "Correctly filtered to 7 FGs for ['michigan']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-001-fg-001-detroit-suburbs\",\n    \"race-001-fg-002-grand-rapids\",\n    \"race-001-fg-003-swing-voters-statewide\",\n    \"race-001-fg-004-northern-rural\",\n    \"race-009-fg-001-detroit-suburbs\",\n    \"race-009-fg-002-flint-saginaw\",\n    \"race-009-fg-003-grand-rapids\"\n  ]\n}"
+    },
+    {
+      "query": "Pennsylvania voters on healthcare",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['pennsylvania']",
+      "output": "{\"focus_group_ids\": [\"race-010-fg-001-philadelphia-suburbs\", \"race-010-fg-002-pittsburgh\", \"race-010-fg-003-scranton-nepa\"]}"
+    },
+    {
+      "query": "What did Wisconsin voters think about education?",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['wisconsin']",
+      "output": "{\"focus_group_ids\": [\"race-012-fg-001-milwaukee-suburbs\", \"race-012-fg-002-madison\", \"race-012-fg-003-fox-valley\"]}"
+    },
+    {
+      "query": "Georgia voters on voting rights",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['georgia']",
+      "output": "{\"focus_group_ids\": [\"race-004-fg-001-atlanta-suburbs\", \"race-004-fg-002-atlanta-black-voters\", \"race-004-fg-003-rural-southwest\"]}"
+    },
+    {
+      "query": "Arizona immigration concerns",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['arizona']",
+      "output": "{\"focus_group_ids\": [\"race-005-fg-001-maricopa-suburbs\", \"race-005-fg-002-latino-phoenix\", \"race-005-fg-003-tucson\"]}"
+    },
+    {
+      "query": "North Carolina suburban voters",
+      "passed": true,
+      "reason": "Correctly filtered to 1 FGs for ['north carolina']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-011-fg-001-charlotte-suburbs\"\n  ]\n}"
+    },
+    {
+      "query": "Montana rural voters",
+      "passed": true,
+      "reason": "Correctly filtered to 1 FGs for ['montana']",
+      "output": "{\"focus_group_ids\": [\"race-008-fg-002-rural-ranching\"]}"
+    },
+    {
+      "query": "What do working-class voters think about trade?",
+      "passed": true,
+      "reason": "Returned 3 FGs for demographic filter",
+      "output": "{\"focus_group_ids\": [\"race-002-fg-002-pittsburgh-area\", \"race-003-fg-003-fox-valley\", \"race-007-fg-003-youngstown-working-class\"]}"
+    },
+    {
+      "query": "Latino voters on immigration",
+      "passed": true,
+      "reason": "Returned 2 FGs for demographic filter",
+      "output": "{\"focus_group_ids\": [\"race-004-fg-002-atlanta-black-voters\", \"race-006-fg-003-latino-vegas\"]}"
+    },
+    {
+      "query": "Black voters in Georgia",
+      "passed": true,
+      "reason": "Correctly filtered to 1 FGs for ['georgia']",
+      "output": "{\"focus_group_ids\": [\"race-004-fg-002-atlanta-black-voters\"]}"
+    },
+    {
+      "query": "College-educated suburban voters",
+      "passed": true,
+      "reason": "Returned 5 FGs for demographic filter",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-001-fg-002-grand-rapids\",\n    \"race-002-fg-001-philadelphia-suburbs\",\n    \"race-005-fg-001-maricopa-suburbs\",\n    \"race-007-fg-002-columbus-educated\",\n    \"race-010-fg-001-philadelphia-suburbs\"\n  ]\n}"
+    },
+    {
+      "query": "What do voters think about the economy?",
+      "passed": true,
+      "reason": "Correctly returned all",
+      "output": "{\"all\": true}"
+    },
+    {
+      "query": "How do people feel about inflation?",
+      "passed": false,
+      "reason": "Failed to parse JSON output",
+      "output": "The query does not contain any filter keywords, so I will return all focus groups:\n\n{\"all\": true}"
+    },
+    {
+      "query": "Voter concerns about healthcare costs",
+      "passed": false,
+      "reason": "Expected all=true, got {'focus_group_ids': ['race-001-fg-001-detroit-suburbs', 'race-001-fg-002-grand-rapids', 'race-001-fg-003-swing-voters-statewide', 'race-001-fg-004-northern-rural', 'race-002-fg-001-philadelphia-suburbs', 'race-002-fg-002-pittsburgh-area', 'race-002-fg-003-scranton-working-class', 'race-003-fg-001-milwaukee-suburbs', 'race-003-fg-002-madison-area', 'race-003-fg-003-fox-valley', 'race-004-fg-001-atlanta-suburbs', 'race-004-fg-002-atlanta-black-voters', 'race-004-fg-003-rural-southwest', 'race-005-fg-001-maricopa-suburbs', 'race-005-fg-002-latino-phoenix', 'race-005-fg-003-tucson', 'race-006-fg-001-las-vegas-union', 'race-006-fg-002-reno-transplants', 'race-006-fg-003-latino-vegas', 'race-009-fg-001-detroit-suburbs', 'race-009-fg-002-flint-saginaw', 'race-009-fg-003-grand-rapids', 'race-010-fg-001-philadelphia-suburbs', 'race-010-fg-002-pittsburgh', 'race-010-fg-003-scranton-nepa', 'race-011-fg-001-charlotte-suburbs', 'race-011-fg-002-research-triangle', 'race-011-fg-003-rural-eastern', 'race-012-fg-001-milwaukee-suburbs', 'race-012-fg-002-madison', 'race-012-fg-003-fox-valley']}",
+      "output": "{\"focus_group_ids\": [\n  \"race-001-fg-001-detroit-suburbs\",\n  \"race-001-fg-002-grand-rapids\", \n  \"race-001-fg-003-swing-voters-statewide\",\n  \"race-001-fg-004-northern-rural\",\n  \"race-002-fg-001-philadelphia-suburbs\",\n  \"race-002-fg-002-pittsburgh-area\",\n  \"race-002-fg-003-scranton-working-class\",\n  \"race-003-fg-001-milwaukee-suburbs\",\n  \"race-003-fg-002-madison-area\",\n  \"race-003-fg-003-fox-valley\",\n  \"race-004-fg-001-atlanta-suburbs\",\n  \"race-004-fg-002-atlanta-black-voters\",\n  \"race-004-fg-003-rural-southwest\",\n  \"race-005-fg-001-maricopa-suburbs\",\n  \"race-005-fg-002-latino-phoenix\",\n  \"race-005-fg-003-tucson\",\n  \"race-006-fg-001-las-vegas-union\",\n  \"race-006-fg-002-reno-transplants\",\n  \"race-006-fg-003-latino-vegas\",\n  \"race-009-fg-001-detroit-suburbs\",\n  \"race-009-fg-002-flint-saginaw\",\n  \"race-009-fg-003-grand-rapids\",\n  \"race-010-fg-001-philadelphia-suburbs\",\n  \"race-010-fg-002-pittsburgh\",\n  \"race-010-fg-003-scranton-nepa\",\n  \"race-011-fg-001-charlotte-suburbs\",\n  \"race-011-fg-002-research-triangle\",\n  \"race-011-fg-003-rural-eastern\",\n  \"race-012-fg-001-milwaukee-suburbs\",\n  \"race-012-fg-002-madison\",\n  \"race-012-fg-003-fox-valley\"\n]}"
+    },
+    {
+      "query": "What messaging resonates with swing voters?",
+      "passed": false,
+      "reason": "Expected all=true, got {'focus_group_ids': ['race-001-fg-001-detroit-suburbs', 'race-001-fg-002-grand-rapids', 'race-001-fg-003-swing-voters-statewide', 'race-003-fg-001-milwaukee-suburbs', 'race-003-fg-003-fox-valley', 'race-004-fg-001-atlanta-suburbs', 'race-005-fg-001-maricopa-suburbs', 'race-006-fg-002-reno-transplants', 'race-009-fg-001-detroit-suburbs', 'race-009-fg-003-grand-rapids', 'race-012-fg-001-milwaukee-suburbs', 'race-012-fg-003-fox-valley']}",
+      "output": "{\"focus_group_ids\": [\"race-001-fg-001-detroit-suburbs\", \"race-001-fg-002-grand-rapids\", \"race-001-fg-003-swing-voters-statewide\", \"race-003-fg-001-milwaukee-suburbs\", \"race-003-fg-003-fox-valley\", \"race-004-fg-001-atlanta-suburbs\", \"race-005-fg-001-maricopa-suburbs\", \"race-006-fg-002-reno-transplants\", \"race-009-fg-001-detroit-suburbs\", \"race-009-fg-003-grand-rapids\", \"race-012-fg-001-milwaukee-suburbs\", \"race-012-fg-003-fox-valley\"]}"
+    },
+    {
+      "query": "Working-class Ohio voters on manufacturing",
+      "passed": true,
+      "reason": "Correctly filtered to 1 FGs for ['ohio']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-007-fg-003-youngstown-working-class\"\n  ]\n}"
+    },
+    {
+      "query": "Pennsylvania suburban voters 2024",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['pennsylvania']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-010-fg-001-philadelphia-suburbs\",\n    \"race-010-fg-002-pittsburgh\",\n    \"race-010-fg-003-scranton-nepa\"\n  ]\n}"
+    },
+    {
+      "query": "California voters on housing",
+      "passed": false,
+      "reason": "Failed to parse JSON output",
+      "output": "There are no focus groups in the provided data that specifically mention California voters or housing. The data is focused on various state-level elections and does not contain any information about California or housing issues. Therefore, the appropriate response is:\n\n{\"all\": true}\n\nThis indicates that there are no focus groups that match the given query, so all focus groups should be returned."
+    },
+    {
+      "query": "Cleveland suburbs on local issues",
+      "passed": true,
+      "reason": "Returned 1 FGs for city filter",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-007-fg-001-cleveland-suburbs\"\n  ]\n}"
+    }
+  ],
+  "v2": [
+    {
+      "query": "What did Ohio voters say about jobs?",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['ohio']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-007-fg-001-cleveland-suburbs\",\n    \"race-007-fg-002-columbus-educated\",\n    \"race-007-fg-003-youngstown-working-class\"\n  ]\n}"
+    },
+    {
+      "query": "How do Michigan voters feel about the economy?",
+      "passed": true,
+      "reason": "Correctly filtered to 7 FGs for ['michigan']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-001-fg-001-detroit-suburbs\",\n    \"race-001-fg-002-grand-rapids\",\n    \"race-001-fg-003-swing-voters-statewide\",\n    \"race-001-fg-004-northern-rural\",\n    \"race-009-fg-001-detroit-suburbs\",\n    \"race-009-fg-002-flint-saginaw\",\n    \"race-009-fg-003-grand-rapids\"\n  ]\n}"
+    },
+    {
+      "query": "Pennsylvania voters on healthcare",
+      "passed": true,
+      "reason": "Correctly filtered to 6 FGs for ['pennsylvania']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-002-fg-001-philadelphia-suburbs\",\n    \"race-002-fg-002-pittsburgh-area\",\n    \"race-002-fg-003-scranton-working-class\",\n    \"race-010-fg-001-philadelphia-suburbs\",\n    \"race-010-fg-002-pittsburgh\",\n    \"race-010-fg-003-scranton-nepa\"\n  ]\n}"
+    },
+    {
+      "query": "What did Wisconsin voters think about education?",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['wisconsin']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-012-fg-001-milwaukee-suburbs\",\n    \"race-012-fg-002-madison\",\n    \"race-012-fg-003-fox-valley\"\n  ]\n}"
+    },
+    {
+      "query": "Georgia voters on voting rights",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['georgia']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-004-fg-001-atlanta-suburbs\",\n    \"race-004-fg-002-atlanta-black-voters\",\n    \"race-004-fg-003-rural-southwest\"\n  ]\n}"
+    },
+    {
+      "query": "Arizona immigration concerns",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['arizona']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-005-fg-001-maricopa-suburbs\",\n    \"race-005-fg-002-latino-phoenix\",\n    \"race-005-fg-003-tucson\"\n  ]\n}"
+    },
+    {
+      "query": "North Carolina suburban voters",
+      "passed": true,
+      "reason": "Correctly filtered to 1 FGs for ['north carolina']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-011-fg-001-charlotte-suburbs\"\n  ]\n}"
+    },
+    {
+      "query": "Montana rural voters",
+      "passed": true,
+      "reason": "Correctly filtered to 1 FGs for ['montana']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-008-fg-002-rural-ranching\"\n  ]\n}"
+    },
+    {
+      "query": "What do working-class voters think about trade?",
+      "passed": true,
+      "reason": "Returned 4 FGs for demographic filter",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-002-fg-002-pittsburgh-area\",\n    \"race-003-fg-003-fox-valley\",\n    \"race-007-fg-003-youngstown-working-class\",\n    \"race-009-fg-002-flint-saginaw\"\n  ]\n}"
+    },
+    {
+      "query": "Latino voters on immigration",
+      "passed": true,
+      "reason": "Returned 2 FGs for demographic filter",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-004-fg-002-atlanta-black-voters\",\n    \"race-006-fg-003-latino-vegas\"\n  ]\n}"
+    },
+    {
+      "query": "Black voters in Georgia",
+      "passed": true,
+      "reason": "Correctly filtered to 2 FGs for ['georgia']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-004-fg-002-atlanta-black-voters\",\n    \"race-004-fg-003-rural-southwest\"\n  ]\n}"
+    },
+    {
+      "query": "College-educated suburban voters",
+      "passed": true,
+      "reason": "Returned 5 FGs for demographic filter",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-001-fg-002-grand-rapids\",\n    \"race-002-fg-001-philadelphia-suburbs\",\n    \"race-005-fg-001-maricopa-suburbs\",\n    \"race-007-fg-002-columbus-educated\",\n    \"race-010-fg-001-philadelphia-suburbs\"\n  ]\n}"
+    },
+    {
+      "query": "What do voters think about the economy?",
+      "passed": true,
+      "reason": "Correctly returned all",
+      "output": "{\"all\": true}"
+    },
+    {
+      "query": "How do people feel about inflation?",
+      "passed": true,
+      "reason": "Correctly returned all",
+      "output": "{\"all\": true}"
+    },
+    {
+      "query": "Voter concerns about healthcare costs",
+      "passed": false,
+      "reason": "Failed to parse JSON output",
+      "output": "{\"focus_group_ids\": [\"race-001-fg-001-detroit-suburbs\", \"race-001-fg-002-grand-rapids\", \"race-001-fg-003-swing-voters-statewide\", \"race-001-fg-004-northern-rural\", \"race-002-fg-001-philadelphia-suburbs\", \"race-002-fg-002-pittsburgh-area\", \"race-002-fg-003-scranton-working-class\", \"race-003-fg-001-milwaukee-suburbs\", \"race-003-fg-002-madison-area\", \"race-003-fg-003-fox-valley\", \"race-004-fg-001-atlanta-suburbs\", \"race-004-fg-002-atlanta-black-voters\", \"race-004-fg-003-rural-southwest\", \"race-005-fg-001-maricopa-suburbs\", \"race-005-fg-002-latino-phoenix\", \"race-005-fg-003-tucson\", \"race-006-fg-001-las-vegas-union\", \"race-006-fg-002-reno-transplants\", \"race-006-fg-003-latino-vegas\", \"race-007-fg-001-cleveland-suburbs\", \"race-007-fg-002-columbus-educated\", \"race-007-fg-003-youngstown-working-class\", \"race-008-fg-001-billings\", \"race-008-fg-002-rural-ranching\", \"race-008-fg-003-native-reservations\", \"race-009-fg-001-detroit-suburbs\", \"race-009-fg-002-flint-saginaw\", \"race-009-fg-003-grand-rapids\", \"race-010-fg-001-philadelphia-suburbs\", \"race-010-fg-002-pittsburgh\", \"race-010-fg-003-scranton-nepa\", \"race-011-fg-001-charlotte-suburbs\", \"race-011-fg-002-research-triangle\", \"race-011-fg-003-rural-eastern\", \"race-012-fg-001-milwaukee-suburbs\", \"race-012-fg-002-madison\", \"race"
+    },
+    {
+      "query": "What messaging resonates with swing voters?",
+      "passed": false,
+      "reason": "Expected all=true, got {'focus_group_ids': ['race-001-fg-001-detroit-suburbs', 'race-001-fg-002-grand-rapids', 'race-001-fg-003-swing-voters-statewide', 'race-002-fg-001-philadelphia-suburbs', 'race-003-fg-001-milwaukee-suburbs', 'race-003-fg-003-fox-valley', 'race-004-fg-001-atlanta-suburbs', 'race-005-fg-001-maricopa-suburbs', 'race-009-fg-001-detroit-suburbs', 'race-009-fg-003-grand-rapids']}",
+      "output": "{\"focus_group_ids\": [\"race-001-fg-001-detroit-suburbs\", \"race-001-fg-002-grand-rapids\", \"race-001-fg-003-swing-voters-statewide\", \"race-002-fg-001-philadelphia-suburbs\", \"race-003-fg-001-milwaukee-suburbs\", \"race-003-fg-003-fox-valley\", \"race-004-fg-001-atlanta-suburbs\", \"race-005-fg-001-maricopa-suburbs\", \"race-009-fg-001-detroit-suburbs\", \"race-009-fg-003-grand-rapids\"]}"
+    },
+    {
+      "query": "Working-class Ohio voters on manufacturing",
+      "passed": true,
+      "reason": "Correctly filtered to 1 FGs for ['ohio']",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-007-fg-003-youngstown-working-class\"\n  ]\n}"
+    },
+    {
+      "query": "Pennsylvania suburban voters 2024",
+      "passed": true,
+      "reason": "Correctly filtered to 3 FGs for ['pennsylvania']",
+      "output": "{\"focus_group_ids\": [\"race-010-fg-001-philadelphia-suburbs\", \"race-010-fg-002-pittsburgh\", \"race-010-fg-003-scranton-nepa\"]}"
+    },
+    {
+      "query": "California voters on housing",
+      "passed": true,
+      "reason": "Correctly handled missing data",
+      "output": "{\"focus_group_ids\": [], \"reason\": \"No focus groups match California. Available: Michigan, Pennsylvania, Wisconsin, Georgia, Arizona, Nevada, Ohio, Montana, North Carolina\"}"
+    },
+    {
+      "query": "Cleveland suburbs on local issues",
+      "passed": true,
+      "reason": "Returned 1 FGs for city filter",
+      "output": "{\n  \"focus_group_ids\": [\n    \"race-007-fg-001-cleveland-suburbs\"\n  ]\n}"
+    }
+  ]
+}
