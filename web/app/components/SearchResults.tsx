@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { GroupedResult } from '../types';
 import QuoteBlock from './QuoteBlock';
 import SynthesisPanel from './SynthesisPanel';
@@ -17,6 +18,7 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
     const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
     const [macroResult, setMacroResult] = useState<string>('');
     const [isMacroLoading, setIsMacroLoading] = useState(false);
+    const [isMacroPanelCollapsed, setIsMacroPanelCollapsed] = useState(false);
 
     // Auto-generate light summaries when results change
     useEffect(() => {
@@ -81,6 +83,16 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
         setSelectedForMacro(newSet);
     };
 
+    const selectAll = () => {
+        setSelectedForMacro(new Set(results.map(r => r.focus_group_id)));
+    };
+
+    const deselectAll = () => {
+        setSelectedForMacro(new Set());
+    };
+
+    const allSelected = results.length > 0 && selectedForMacro.size === results.length;
+
     const handleMacroSynthesis = async () => {
         if (selectedForMacro.size === 0) return;
 
@@ -142,21 +154,76 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
             {/* Macro Synthesis Controls */}
             {results.length > 1 && (
                 <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm sticky top-4 z-10">
-                    <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-gray-700">Cross-Focus Group Analysis</h3>
-                        <button
-                            onClick={handleMacroSynthesis}
-                            disabled={selectedForMacro.size === 0 || isMacroLoading}
-                            className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50 text-sm"
-                        >
-                            {isMacroLoading ? 'Synthesizing...' : `Synthesize Selected (${selectedForMacro.size})`}
-                        </button>
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <button
+                                onClick={() => setIsMacroPanelCollapsed(!isMacroPanelCollapsed)}
+                                className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
+                            >
+                                <svg
+                                    className={`w-4 h-4 transition-transform ${isMacroPanelCollapsed ? '' : 'rotate-90'}`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                                <h3 className="font-semibold">Cross-Focus Group Analysis</h3>
+                            </button>
+                            {!isMacroPanelCollapsed && (
+                                <button
+                                    onClick={allSelected ? deselectAll : selectAll}
+                                    className="text-sm text-indigo-600 hover:text-indigo-800"
+                                >
+                                    {allSelected ? 'Deselect All' : 'Select All'}
+                                </button>
+                            )}
+                            {isMacroPanelCollapsed && macroResult && (
+                                <span className="text-xs text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
+                                    Synthesis ready
+                                </span>
+                            )}
+                        </div>
+                        {!isMacroPanelCollapsed && (
+                            <button
+                                onClick={handleMacroSynthesis}
+                                disabled={selectedForMacro.size === 0 || isMacroLoading}
+                                className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50 text-sm"
+                            >
+                                {isMacroLoading ? 'Synthesizing...' : `Synthesize Selected (${selectedForMacro.size})`}
+                            </button>
+                        )}
                     </div>
 
-                    {macroResult && (
-                        <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-md prose prose-sm max-w-none">
-                            <div className="whitespace-pre-wrap">{macroResult}</div>
-                        </div>
+                    {!isMacroPanelCollapsed && (
+                        <>
+                            {/* Loading state for macro synthesis */}
+                            {isMacroLoading && !macroResult && (
+                                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-md">
+                                    <div className="space-y-2">
+                                        <div className="flex items-center gap-2 text-sm text-green-700">
+                                            <span className="w-4 h-4 border-2 border-green-600 border-t-transparent rounded-full animate-spin" />
+                                            <span>Synthesizing insights across {selectedForMacro.size} focus groups...</span>
+                                        </div>
+                                        <div className="flex gap-1">
+                                            <div className="h-2 w-2 bg-green-300 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                                            <div className="h-2 w-2 bg-green-300 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                                            <div className="h-2 w-2 bg-green-300 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* Macro synthesis result */}
+                            {macroResult && (
+                                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-md max-h-[50vh] overflow-y-auto">
+                                    <div className="prose prose-sm max-w-none text-gray-800 prose-headings:font-bold prose-headings:text-green-900 prose-strong:text-green-900">
+                                        <ReactMarkdown>{macroResult}</ReactMarkdown>
+                                    </div>
+                                    {isMacroLoading && <span className="inline-block w-2 h-4 ml-1 bg-green-600 animate-pulse" />}
+                                </div>
+                            )}
+                        </>
                     )}
                 </div>
             )}
@@ -171,7 +238,7 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
                 return (
                     <div
                         key={fgId}
-                        className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 animate-fadeIn"
+                        className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 p-6 animate-fadeIn"
                         style={{ animationDelay: `${index * 75}ms` }}
                     >
                         <div className="flex items-start justify-between">
@@ -186,11 +253,10 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
                                     <h2 className="text-xl font-bold text-gray-900">
                                         {group.focus_group_metadata.location || fgId}
                                     </h2>
-                                    <span className={`text-xs px-2 py-0.5 rounded-full ${
-                                        group.focus_group_metadata.outcome === 'win'
-                                            ? 'bg-green-100 text-green-700'
-                                            : 'bg-red-100 text-red-700'
-                                    }`}>
+                                    <span className={`text-xs px-2 py-0.5 rounded-full ${group.focus_group_metadata.outcome === 'win'
+                                        ? 'bg-green-100 text-green-700'
+                                        : 'bg-red-100 text-red-700'
+                                        }`}>
                                         {group.focus_group_metadata.outcome}
                                     </span>
                                 </div>
@@ -208,7 +274,7 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
                                     <div className="h-4 bg-amber-100 rounded w-3/4" />
                                 </div>
                             ) : summary ? (
-                                <div className="bg-amber-50 border-l-4 border-amber-400 p-3 text-sm text-gray-700 italic">
+                                <div className="bg-amber-50 border-l-4 border-amber-400 p-3 text-sm text-gray-700">
                                     {summary}
                                 </div>
                             ) : null}
@@ -232,7 +298,7 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
                             </button>
 
                             {isExpanded && (
-                                <div className="mt-3 space-y-3 animate-fadeIn">
+                                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fadeIn">
                                     {group.chunks.map((chunk) => (
                                         <QuoteBlock key={chunk.chunk_id} chunk={chunk} />
                                     ))}

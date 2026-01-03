@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 import time
+import json
 from typing import List, Dict, Optional
 from contextlib import asynccontextmanager
 
@@ -124,6 +125,94 @@ async def search(request: SearchRequest):
             "focus_groups_count": len(grouped_results)
         }
     )
+
+
+@app.post("/search/stream")
+async def search_stream(request: SearchRequest):
+    """Streaming search endpoint that yields status events during processing."""
+    if not retriever or not router:
+        raise HTTPException(status_code=503, detail="Service not ready")
+
+    def build_response(results_by_fg: Dict, retrieval_time: float) -> dict:
+        """Build the final response dict."""
+        grouped_results = []
+        total_quotes = 0
+
+        for fg_id, chunks in results_by_fg.items():
+            if not chunks:
+                continue
+
+            fg_meta = retriever._load_focus_group_metadata(fg_id)
+
+            api_chunks = []
+            for c in chunks:
+                api_chunks.append({
+                    "chunk_id": c.chunk_id,
+                    "score": c.score,
+                    "content": c.content,
+                    "content_original": c.content_original,
+                    "focus_group_id": c.focus_group_id,
+                    "participant": c.participant,
+                    "participant_profile": c.participant_profile,
+                    "section": c.section,
+                    "source_file": c.source_file,
+                    "line_number": c.line_number,
+                    "preceding_moderator_q": c.preceding_moderator_q
+                })
+
+            grouped_results.append({
+                "focus_group_id": fg_id,
+                "focus_group_metadata": fg_meta,
+                "chunks": api_chunks
+            })
+            total_quotes += len(api_chunks)
+
+        return {
+            "results": grouped_results,
+            "stats": {
+                "retrieval_time_ms": round(retrieval_time),
+                "total_quotes": total_quotes,
+                "focus_groups_count": len(grouped_results)
+            }
+        }
+
+    def event_generator():
+        start_time = time.time()
+
+        # Step 1: Routing
+        yield json.dumps({"type": "status", "step": "routing", "message": "Analyzing query intent..."}) + "\n"
+
+        fg_ids = router.route(request.query)
+        if fg_ids is None:
+            fg_ids = router._get_all_ids()
+            yield json.dumps({"type": "status", "step": "filtering", "message": f"Searching all {len(fg_ids)} focus groups..."}) + "\n"
+        else:
+            yield json.dumps({"type": "status", "step": "filtering", "message": f"Routing to {len(fg_ids)} relevant focus groups..."}) + "\n"
+
+        # Step 2: Searching
+        yield json.dumps({"type": "status", "step": "searching", "message": "Scanning transcripts..."}) + "\n"
+
+        results_by_fg = retriever.retrieve_per_focus_group(
+            query=request.query,
+            top_k_per_fg=request.top_k,
+            score_threshold=request.score_threshold,
+            filter_focus_groups=fg_ids  # Skip internal routing since we already routed
+        )
+
+        # Step 3: Ranking
+        yield json.dumps({"type": "status", "step": "ranking", "message": "Ranking relevance..."}) + "\n"
+
+        retrieval_time = (time.time() - start_time) * 1000
+
+        # Step 4: Complete
+        yield json.dumps({"type": "status", "step": "complete", "message": "Done"}) + "\n"
+
+        # Final results
+        response_data = build_response(results_by_fg, retrieval_time)
+        yield json.dumps({"type": "results", "data": response_data}) + "\n"
+
+    return StreamingResponse(event_generator(), media_type="application/x-ndjson")
+
 
 @app.post("/synthesize/light")
 async def synthesize_light(request: SynthesisRequest):

@@ -2,15 +2,23 @@
 
 import React, { useState, useEffect } from 'react';
 import SearchResults from './components/SearchResults';
-import SkeletonResults from './components/SkeletonResults';
-import { useSearch, prefetchSearch } from './hooks/useSearch';
+import StepLoader from './components/StepLoader';
+import EmptyState from './components/EmptyState';
+import { useStreamingSearch } from './hooks/useStreamingSearch';
+import { prefetchSearch } from './hooks/useSearch';
 
 export default function Home() {
   const [query, setQuery] = useState('');
-  const [debouncedQuery, setDebouncedQuery] = useState('');
+  const [searchedQuery, setSearchedQuery] = useState('');
 
-  // Use the custom SWR hook
-  const { data, isLoading } = useSearch(debouncedQuery || null);
+  // Use streaming search hook
+  const { search, reset, steps, data, isSearching, error } = useStreamingSearch();
+
+  const clearSearch = () => {
+    setQuery('');
+    setSearchedQuery('');
+    reset();
+  };
 
   // Keyboard shortcut: Cmd+K to focus search
   useEffect(() => {
@@ -27,16 +35,15 @@ export default function Home() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      setDebouncedQuery(query);
+      setSearchedQuery(query);
+      search(query);
     }
   };
-
-  const isSearching = isLoading && !data;
 
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-20">
+      <div className="sticky top-0 z-20 bg-white/80 backdrop-blur-md border-b border-gray-200/50 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-4">
             <div>
@@ -59,14 +66,27 @@ export default function Home() {
           </div>
 
           <form onSubmit={handleSearch} className="flex gap-2">
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="What did Ohio voters say about the economy?"
-              className="flex-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 border"
-              autoFocus
-            />
+            <div className="relative flex-1">
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="What did Ohio voters say about the economy?"
+                className="w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-2 pr-8 border"
+                autoFocus
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={clearSearch}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
             <button
               type="submit"
               disabled={isSearching}
@@ -80,15 +100,30 @@ export default function Home() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        {/* Show skeleton loaders while searching (first search) */}
-        {isSearching && (
-          <SkeletonResults count={3} />
+        {/* Error state */}
+        {error && (
+          <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md flex items-center gap-3">
+            <svg className="w-5 h-5 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-red-700">Unable to connect to search service. Please try again.</span>
+          </div>
         )}
 
-        {/* Show stale results dimmed while loading new ones */}
-        {data && (
-          <div className={isLoading ? 'opacity-50 transition-opacity' : 'transition-opacity'}>
-            <SearchResults results={data.results} query={debouncedQuery} />
+        {/* Show step loader while searching */}
+        {isSearching && steps.length > 0 && (
+          <StepLoader steps={steps} isComplete={!!data} />
+        )}
+
+        {/* Empty state - searched but no results */}
+        {data && data.results.length === 0 && !isSearching && (
+          <EmptyState query={searchedQuery} />
+        )}
+
+        {/* Show results */}
+        {data && data.results.length > 0 && (
+          <div className="transition-opacity">
+            <SearchResults results={data.results} query={searchedQuery} />
           </div>
         )}
 
@@ -122,7 +157,8 @@ export default function Home() {
                     onMouseEnter={() => prefetchSearch(example.query)}
                     onClick={() => {
                       setQuery(example.query);
-                      setDebouncedQuery(example.query);
+                      setSearchedQuery(example.query);
+                      search(example.query);
                     }}
                     className="w-full text-left p-3 rounded-lg border border-gray-100 hover:border-indigo-200 hover:bg-indigo-50 transition-colors group"
                   >

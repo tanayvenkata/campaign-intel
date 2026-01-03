@@ -9,15 +9,18 @@ export default function QuoteBlock({ chunk }: QuoteBlockProps) {
     const content = chunk.content_original || chunk.content;
 
     return (
-        <div className="bg-gray-50 border-l-4 border-[#1f77b4] p-4 my-2 rounded-r-lg">
-            <div className="text-[1.05rem] italic text-gray-900 mb-2">
+        <div className="bg-gray-50 border-l-4 border-indigo-500 p-5 rounded-r-lg hover:bg-gray-100 transition-colors duration-200 h-full flex flex-col shadow-sm hover:shadow-md">
+            <div className="text-[1.05rem] text-gray-900 mb-4 font-serif leading-relaxed flex-grow">
                 "{content}"
             </div>
-            <div className="font-semibold text-gray-800">
-                — {chunk.participant} ({chunk.participant_profile})
-            </div>
-            <div className="text-sm text-gray-500 mt-2">
-                Score: {chunk.score.toFixed(3)}
+            <div className="flex items-center justify-between text-xs text-gray-500 font-sans mt-auto pt-3 border-t border-gray-200">
+                <div className="flex flex-col pr-2 min-w-0">
+                    <span className="font-bold text-gray-900 truncate">— {chunk.participant}</span>
+                    <span className="truncate text-[11px] block">{chunk.participant_profile}</span>
+                </div>
+                <span className="text-[10px] bg-gray-200 px-1.5 py-0.5 rounded-full flex-shrink-0 font-medium text-gray-600">
+                    {chunk.score.toFixed(2)}
+                </span>
             </div>
         </div>
     );
