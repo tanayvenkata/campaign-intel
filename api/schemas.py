@@ -40,3 +40,45 @@ class MacroSynthesisRequest(BaseModel):
     fg_summaries: Dict[str, str]
     top_quotes: Dict[str, List[RetrievalChunk]]
     query: str
+
+
+# V2 Macro Synthesis schemas (with metadata support)
+
+class FocusGroupMetadata(BaseModel):
+    """Metadata for a focus group."""
+    location: Optional[str] = "Unknown"
+    race_name: Optional[str] = "Unknown race"
+    outcome: Optional[str] = "unknown"
+    # Additional fields as needed
+    participant_summary: Optional[str] = None
+    key_themes: Optional[List[str]] = None
+
+
+class LightMacroSynthesisRequest(BaseModel):
+    """Request for Light Macro Synthesis - single LLM call with dynamic quote sampling."""
+    fg_summaries: Dict[str, str]
+    top_quotes: Dict[str, List[RetrievalChunk]]
+    fg_metadata: Dict[str, Dict[str, Any]]  # fg_id -> metadata dict
+    query: str
+
+
+class DeepMacroSynthesisRequest(BaseModel):
+    """Request for Deep Macro Synthesis - two-stage theme discovery + per-theme synthesis."""
+    fg_summaries: Dict[str, str]
+    top_quotes: Dict[str, List[RetrievalChunk]]
+    fg_metadata: Dict[str, Dict[str, Any]]  # fg_id -> metadata dict
+    query: str
+
+
+class DeepMacroTheme(BaseModel):
+    """A theme discovered and synthesized in Deep Macro Synthesis."""
+    name: str
+    focus_group_ids: List[str]
+    rationale: Optional[str] = ""
+    synthesis: str
+
+
+class DeepMacroResponse(BaseModel):
+    """Response from Deep Macro Synthesis (non-streaming)."""
+    themes: List[DeepMacroTheme]
+    metadata: Dict[str, Any]  # timing, llm_calls, etc.

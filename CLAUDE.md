@@ -36,6 +36,11 @@ streamlit run app.py                      # Streamlit UI (port 8501)
 python eval/run_retrieval_eval.py                # V1 retrieval eval
 python eval/run_retrieval_eval_v2.py             # V2 retrieval eval
 ./eval/router_eval/run_eval.sh                   # Router prompt A/B testing (promptfoo)
+
+# Testing & linting
+python eval/test_components.py                   # Unit tests for retrieval components
+cd web && npm run lint                           # Frontend lint
+cd web && npm run build                          # Frontend production build (type-checks)
 ```
 
 ## Architecture
@@ -92,10 +97,10 @@ web/ (Next.js)                      # React frontend (TypeScript + Tailwind)
 
 ### Configuration
 
-Environment variables (see `.env.example`):
-- `OPENAI_API_KEY` - For V1 embeddings
-- `PINECONE_API_KEY` - For vector storage
-- `OPENROUTER_API_KEY` - For LLM router, synthesis, and evaluation
+Required environment variables in `.env`:
+- `PINECONE_API_KEY` - Vector storage (required)
+- `OPENROUTER_API_KEY` - LLM router, synthesis, and evaluation (required)
+- `OPENAI_API_KEY` - For V1 embeddings only (optional for V2)
 
 Model configuration in `eval/config.py`:
 - `ROUTER_MODEL` - LLM for query routing (default: `anthropic/claude-3-haiku`)
@@ -167,7 +172,7 @@ from eval.config import PINECONE_API_KEY, OPENROUTER_API_KEY, DATA_DIR
 The Next.js frontend (`web/`) is a separate npm project:
 ```bash
 cd web && npm install    # First-time setup
-cd web && npm run dev    # Development server
+cd web && npm run dev    # Development server (port 3000)
 ```
 
 Key frontend patterns:
@@ -175,3 +180,35 @@ Key frontend patterns:
 - Auto-generated light summaries on search results load
 - Skeleton loaders for perceived performance
 - Collapsible quotes (collapsed by default to reduce cognitive load)
+- SWR for caching and prefetching
+- PDF export for search results
+
+### PDF Export (`web/app/utils/exportPdf.ts`)
+
+Client-side PDF generation using jsPDF. The module is designed to be modular - each section is a separate renderer function.
+
+**To add a new section to the PDF:**
+1. Create a renderer function: `renderNewSection(doc, ctx, data)`
+2. Add it to `exportToPdf()` in the desired order
+3. Update `ExportData` interface if new data is needed
+
+**Current sections (in order):**
+- `renderHeader` - Title, query, stats, timestamp
+- `renderMacroSynthesis` - Light macro analysis (if present)
+- `renderDeepMacroThemes` - Theme-based deep analysis (if present)
+- `renderFocusGroup` - Per-FG card with summary and quotes
+- `renderFooter` - Document footer
+
+**Key utilities:**
+- `checkPageBreak(doc, ctx, space)` - Auto-adds new page if needed
+- `addWrappedText(doc, ctx, text, fontSize, options)` - Text with wrapping
+- `stripMarkdown(text)` - Removes markdown formatting for PDF
+
+## API Endpoints
+
+FastAPI backend (`api/main.py`) endpoints:
+- `GET /health` - Health check
+- `POST /search` - Main search endpoint (returns grouped results by focus group)
+- `POST /synthesize/light` - Light 1-sentence summary (streaming)
+- `POST /synthesize/deep` - Deep per-FG analysis (streaming)
+- `POST /synthesize/macro` - Cross-FG thematic synthesis (streaming)

@@ -17,7 +17,8 @@ from scripts.retrieve_v2 import FocusGroupRetrieverV2, LLMRouter, RetrievalResul
 from scripts.synthesize import FocusGroupSynthesizer
 from api.schemas import (
     SearchRequest, SearchResponse, SynthesisRequest, MacroSynthesisRequest,
-    GroupedResult, RetrievalChunk
+    GroupedResult, RetrievalChunk,
+    LightMacroSynthesisRequest, DeepMacroSynthesisRequest, DeepMacroResponse
 )
 
 # Global instances
@@ -329,12 +330,19 @@ async def synthesize_macro(request: MacroSynthesisRequest):
     for fg_id, summary in request.fg_summaries.items():
         summaries_str += f"\n**{fg_id}**: {summary}\n"
 
-    # Build quotes section
+    # Build quotes section - preserve diversity across FGs while capping total
+    MAX_TOTAL_QUOTES = 40
+    num_fgs = len(request.top_quotes)
+
+    # Dynamic per-FG limit: ensure every FG gets representation
+    # At minimum 2 per FG, at maximum 5 per FG
+    quotes_per_fg = max(2, min(5, MAX_TOTAL_QUOTES // max(num_fgs, 1)))
+
     quotes_str = ""
     for fg_id, quotes in request.top_quotes.items():
         quotes_str += f"\n{fg_id}:\n"
-        # quotes are Pydantic models here
-        for q in quotes[:3]:  # Top 3 per FG
+        # Take top N quotes per FG (dynamic based on total FGs)
+        for q in quotes[:quotes_per_fg]:
             content = q.content_original or q.content
             quotes_str += f'- "{content}" — {q.participant}\n'
 
@@ -378,6 +386,72 @@ Be specific and analytical. Avoid generic observations."""
                 yield chunk.choices[0].delta.content
 
     return StreamingResponse(stream_generator(), media_type="text/event-stream")
+
+
+# ============ V2 Macro Synthesis Endpoints ============
+
+@app.post("/synthesize/macro/light")
+async def synthesize_macro_light(request: LightMacroSynthesisRequest):
+    """
+    Light Macro Synthesis (streaming).
+
+    Single LLM call with dynamic quote sampling.
+    Ensures every focus group gets representation while capping total context.
+    """
+    if not synthesizer:
+        raise HTTPException(status_code=503, detail="Service not ready")
+
+    # Convert Pydantic chunks to dataclasses for the synthesizer
+    top_quotes_dataclass = {}
+    for fg_id, chunks in request.top_quotes.items():
+        top_quotes_dataclass[fg_id] = [
+            RetrievalResult(**c.model_dump()) for c in chunks
+        ]
+
+    async def stream_generator():
+        for chunk in synthesizer.light_macro_synthesis_stream(
+            fg_summaries=request.fg_summaries,
+            top_quotes=top_quotes_dataclass,
+            fg_metadata=request.fg_metadata,
+            query=request.query
+        ):
+            yield chunk
+
+    return StreamingResponse(stream_generator(), media_type="text/event-stream")
+
+
+@app.post("/synthesize/macro/deep")
+async def synthesize_macro_deep(request: DeepMacroSynthesisRequest):
+    """
+    Deep Macro Synthesis (streaming).
+
+    Two-stage synthesis:
+    - Stage 1: Theme Discovery (identifies 3-5 thematic clusters)
+    - Stage 2: Per-Theme Synthesis (rich analysis for each theme)
+
+    Streams status updates and theme content as they're generated.
+    """
+    if not synthesizer:
+        raise HTTPException(status_code=503, detail="Service not ready")
+
+    # Convert Pydantic chunks to dataclasses for the synthesizer
+    top_quotes_dataclass = {}
+    for fg_id, chunks in request.top_quotes.items():
+        top_quotes_dataclass[fg_id] = [
+            RetrievalResult(**c.model_dump()) for c in chunks
+        ]
+
+    def stream_generator():
+        for event in synthesizer.deep_macro_synthesis_stream(
+            fg_summaries=request.fg_summaries,
+            top_quotes=top_quotes_dataclass,
+            fg_metadata=request.fg_metadata,
+            query=request.query
+        ):
+            yield json.dumps(event) + "\n"
+
+    return StreamingResponse(stream_generator(), media_type="application/x-ndjson")
+
 
 if __name__ == "__main__":
     import uvicorn

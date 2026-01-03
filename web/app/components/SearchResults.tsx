@@ -5,13 +5,19 @@ import ReactMarkdown from 'react-markdown';
 import { GroupedResult } from '../types';
 import QuoteBlock from './QuoteBlock';
 import SynthesisPanel from './SynthesisPanel';
+import { exportToPdf } from '../utils/exportPdf';
 
 interface SearchResultsProps {
     results: GroupedResult[];
     query: string;
+    stats?: {
+        total_quotes: number;
+        focus_groups_count: number;
+        retrieval_time_ms: number;
+    };
 }
 
-export default function SearchResults({ results, query }: SearchResultsProps) {
+export default function SearchResults({ results, query, stats }: SearchResultsProps) {
     const [summaries, setSummaries] = useState<Record<string, string>>({});
     const [loadingSummaries, setLoadingSummaries] = useState<Set<string>>(new Set());
     const [selectedForMacro, setSelectedForMacro] = useState<Set<string>>(new Set());
@@ -19,6 +25,8 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
     const [macroResult, setMacroResult] = useState<string>('');
     const [isMacroLoading, setIsMacroLoading] = useState(false);
     const [isMacroPanelCollapsed, setIsMacroPanelCollapsed] = useState(false);
+    // Keep deepMacroThemes for PDF export compatibility
+    const [deepMacroThemes] = useState<Array<{name: string; synthesis: string; focus_groups: string[]}>>([]);
 
     // Auto-generate light summaries when results change
     useEffect(() => {
@@ -93,6 +101,17 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
 
     const allSelected = results.length > 0 && selectedForMacro.size === results.length;
 
+    const handleExportPdf = () => {
+        exportToPdf({
+            query,
+            results,
+            summaries,
+            macroResult,
+            deepMacroThemes,
+            stats,
+        });
+    };
+
     const handleMacroSynthesis = async () => {
         if (selectedForMacro.size === 0) return;
 
@@ -100,34 +119,26 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
         setMacroResult('');
 
         // Prepare data for macro synthesis
-        // We need summaries first - if we don't have them, we might skip or generate them on fly.
-        // The current backend endpoint expects 'fg_summaries' and 'top_quotes'.
-        // Use placeholders if summary missing or fetch them.
-
-        // Simplification: We'll pass empty summaries if not present, but real app should rely on them.
-        // In this plan, we haven't implemented auto-light-summary fetching yet in the frontend.
-        // For now, let's assume we proceed without pre-fetched summaries, asking the backend 
-        // to potentially handle it or just use quotes.
-        // Actually, the backend prompt uses summaries. 
-
-        // Let's filter the results
         const selectedResults = results.filter(r => selectedForMacro.has(r.focus_group_id));
 
         const topQuotesPayload: Record<string, any[]> = {};
         const summariesPayload: Record<string, string> = {};
+        const metadataPayload: Record<string, any> = {};
 
         selectedResults.forEach(r => {
             topQuotesPayload[r.focus_group_id] = r.chunks;
             summariesPayload[r.focus_group_id] = summaries[r.focus_group_id] || "Summary not available";
+            metadataPayload[r.focus_group_id] = r.focus_group_metadata;
         });
 
         try {
-            const response = await fetch('http://localhost:8000/synthesize/macro', {
+            const response = await fetch('http://localhost:8000/synthesize/macro/light', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     fg_summaries: summariesPayload,
                     top_quotes: topQuotesPayload,
+                    fg_metadata: metadataPayload,
                     query: query
                 })
             });
@@ -151,6 +162,19 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
 
     return (
         <div className="space-y-8">
+            {/* Export Button */}
+            <div className="flex justify-end">
+                <button
+                    onClick={handleExportPdf}
+                    className="flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200 transition-colors text-sm"
+                >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Export to PDF
+                </button>
+            </div>
+
             {/* Macro Synthesis Controls */}
             {results.length > 1 && (
                 <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm sticky top-4 z-10">

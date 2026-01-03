@@ -123,7 +123,7 @@ export default function Home() {
         {/* Show results */}
         {data && data.results.length > 0 && (
           <div className="transition-opacity">
-            <SearchResults results={data.results} query={searchedQuery} />
+            <SearchResults results={data.results} query={searchedQuery} stats={data.stats} />
           </div>
         )}
 
