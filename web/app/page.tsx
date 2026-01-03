@@ -1,15 +1,16 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchResults from './components/SearchResults';
 import SkeletonResults from './components/SkeletonResults';
-import { SearchResponse } from './types';
+import { useSearch, prefetchSearch } from './hooks/useSearch';
 
 export default function Home() {
   const [query, setQuery] = useState('');
-  const [isSearching, setIsSearching] = useState(false);
-  const [data, setData] = useState<SearchResponse | null>(null);
-  const [searchedQuery, setSearchedQuery] = useState('');
+  const [debouncedQuery, setDebouncedQuery] = useState('');
+
+  // Use the custom SWR hook
+  const { data, isLoading } = useSearch(debouncedQuery || null);
 
   // Keyboard shortcut: Cmd+K to focus search
   useEffect(() => {
@@ -23,37 +24,14 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  const handleSearch = async (e: React.FormEvent) => {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!query.trim()) return;
-
-    setIsSearching(true);
-    setSearchedQuery(query);
-    // Keep stale data visible (dimmed) while loading - don't clear
-
-    try {
-      const res = await fetch('http://localhost:8000/search', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          query,
-          top_k: 5,
-          score_threshold: 0.75
-        }),
-      });
-
-      if (res.ok) {
-        const json = await res.json();
-        setData(json);
-      } else {
-        console.error('Search failed');
-      }
-    } catch (error) {
-      console.error('Network error', error);
-    } finally {
-      setIsSearching(false);
+    if (query.trim()) {
+      setDebouncedQuery(query);
     }
   };
+
+  const isSearching = isLoading && !data;
 
   return (
     <main className="min-h-screen bg-gray-50 pb-20">
@@ -103,14 +81,14 @@ export default function Home() {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         {/* Show skeleton loaders while searching (first search) */}
-        {isSearching && !data && (
+        {isSearching && (
           <SkeletonResults count={3} />
         )}
 
         {/* Show stale results dimmed while loading new ones */}
         {data && (
-          <div className={isSearching ? 'opacity-50 pointer-events-none transition-opacity' : 'transition-opacity'}>
-            <SearchResults results={data.results} query={searchedQuery} />
+          <div className={isLoading ? 'opacity-50 transition-opacity' : 'transition-opacity'}>
+            <SearchResults results={data.results} query={debouncedQuery} />
           </div>
         )}
 
@@ -141,12 +119,10 @@ export default function Home() {
                 ].map((example) => (
                   <button
                     key={example.query}
+                    onMouseEnter={() => prefetchSearch(example.query)}
                     onClick={() => {
                       setQuery(example.query);
-                      // Auto-submit after setting query
-                      setTimeout(() => {
-                        document.querySelector<HTMLFormElement>('form')?.requestSubmit();
-                      }, 100);
+                      setDebouncedQuery(example.query);
                     }}
                     className="w-full text-left p-3 rounded-lg border border-gray-100 hover:border-indigo-200 hover:bg-indigo-50 transition-colors group"
                   >
@@ -200,3 +176,4 @@ export default function Home() {
     </main>
   );
 }
+

@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a semantic search and retrieval system for political consulting focus group transcripts. It enables junior analysts to surface institutional knowledge from historical focus groups without pulling in senior staff.
 
-**Current State:** V2 with LLM router, synthesis layer, and web UI (Streamlit + FastAPI + Next.js).
+**Current State:** V2 with LLM router, synthesis layer, and production web UI (FastAPI + Next.js). Legacy Streamlit UI also available.
 
 **Core User Scenario:** "What did Ohio voters say about the economy?" → Returns relevant quotes with participant context, focus group source, and transcript links.
 
@@ -25,10 +25,12 @@ python scripts/embed_e5.py                # V2: E5-base local embeddings → Pin
 python scripts/retrieve.py "query"        # V1 hybrid search
 python scripts/retrieve_v2.py "query"     # V2 with LLM router + reranker
 
-# Web interfaces
-streamlit run app.py                      # Streamlit UI (port 8501)
+# Web interfaces (production stack)
 cd api && uvicorn main:app --reload       # FastAPI backend (port 8000)
 cd web && npm run dev                     # Next.js frontend (port 3000)
+
+# Legacy UI
+streamlit run app.py                      # Streamlit UI (port 8501)
 
 # Evaluation
 python eval/run_retrieval_eval.py                # V1 retrieval eval
@@ -159,3 +161,17 @@ from eval.config import PINECONE_API_KEY, OPENROUTER_API_KEY, DATA_DIR
 - Package: `pip install pinecone` (not `pinecone-client`)
 - Metadata: 40KB max, flat JSON only
 - Consistency: Eventually consistent (~1-5s after upsert)
+
+## Frontend Notes
+
+The Next.js frontend (`web/`) is a separate npm project:
+```bash
+cd web && npm install    # First-time setup
+cd web && npm run dev    # Development server
+```
+
+Key frontend patterns:
+- Streaming synthesis via `ReadableStream` from FastAPI `StreamingResponse`
+- Auto-generated light summaries on search results load
+- Skeleton loaders for perceived performance
+- Collapsible quotes (collapsed by default to reduce cognitive load)
