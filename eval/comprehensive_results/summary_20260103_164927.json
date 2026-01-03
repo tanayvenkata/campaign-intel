@@ -1,0 +1,38 @@
+{
+  "total_queries": 10,
+  "successful_queries": 10,
+  "failed_queries": 0,
+  "category_breakdown": {
+    "location": {
+      "count": 1,
+      "total_quotes": 20,
+      "errors": 0
+    },
+    "cross-race": {
+      "count": 2,
+      "total_quotes": 40,
+      "errors": 0
+    },
+    "state-filter": {
+      "count": 2,
+      "total_quotes": 30,
+      "errors": 0
+    },
+    "demographic": {
+      "count": 2,
+      "total_quotes": 20,
+      "errors": 0
+    },
+    "topic-broad": {
+      "count": 2,
+      "total_quotes": 370,
+      "errors": 0
+    },
+    "outcome": {
+      "count": 1,
+      "total_quotes": 185,
+      "errors": 0
+    }
+  },
+  "avg_quotes_per_query": 66.5
+}

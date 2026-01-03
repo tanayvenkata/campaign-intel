@@ -1,0 +1,121 @@
+[
+  {
+    "query": "What concerns did Philadelphia area voters express?",
+    "category": "location",
+    "num_quotes": 20,
+    "num_fgs": 4,
+    "selected_fgs": [
+      "race-002-fg-001-philadelphia-suburbs",
+      "race-010-fg-001-philadelphia-suburbs",
+      "race-010-fg-002-pittsburgh",
+      "race-010-fg-003-scranton-nepa"
+    ],
+    "output_preview": "**Theme 1: Economic Concerns and Pocketbook Issues**\nAcross the focus groups, voters expressed significant concerns about economic issues that directly impact their personal finances, such as student ",
+    "elapsed_seconds": 21.12
+  },
+  {
+    "query": "How do economic concerns differ between suburban and rural voters?",
+    "category": "cross-race",
+    "num_quotes": 30,
+    "num_fgs": 6,
+    "selected_fgs": [
+      "race-001-fg-002-grand-rapids",
+      "race-001-fg-004-northern-rural",
+      "race-003-fg-003-fox-valley",
+      "race-007-fg-001-cleveland-suburbs",
+      "race-007-fg-003-youngstown-working-class",
+      "race-008-fg-002-rural-ranching"
+    ],
+    "output_preview": "**Theme 1: Economic Anxiety and Uncertainty**\nAcross the focus groups, both suburban and rural voters expressed significant economic anxiety and uncertainty, driven by rising costs of living, stagnant",
+    "elapsed_seconds": 17.63
+  },
+  {
+    "query": "How do Nevada voters feel about cost of living?",
+    "category": "state-filter",
+    "num_quotes": 15,
+    "num_fgs": 3,
+    "selected_fgs": [
+      "race-006-fg-001-las-vegas-union",
+      "race-006-fg-002-reno-transplants",
+      "race-006-fg-003-latino-vegas"
+    ],
+    "output_preview": "**Theme 1: Unaffordable Cost of Living**\nAcross all three focus groups, Nevada voters expressed deep concerns about the high and rising cost of living in the state. Participants described feeling that",
+    "elapsed_seconds": 12.23
+  },
+  {
+    "query": "How does Latino voter sentiment compare between Arizona and Nevada?",
+    "category": "cross-race",
+    "num_quotes": 10,
+    "num_fgs": 2,
+    "selected_fgs": [
+      "race-005-fg-002-latino-phoenix",
+      "race-006-fg-003-latino-vegas"
+    ],
+    "output_preview": "**Theme 1: Diversity of Latino Voter Perspectives**\nThe focus group insights highlight the diversity of political views and experiences among Latino voters in both Arizona and Nevada. Participants emp",
+    "elapsed_seconds": 8.35
+  },
+  {
+    "query": "What did Latino voters say about economic opportunity?",
+    "category": "demographic",
+    "num_quotes": 10,
+    "num_fgs": 2,
+    "selected_fgs": [
+      "race-004-fg-002-atlanta-black-voters",
+      "race-006-fg-003-latino-vegas"
+    ],
+    "output_preview": "**Theme 1: Economic Frustration and Cynicism**\nThis theme emerged across both the Black voter focus group in Atlanta and the Latino voter focus group in Las Vegas. Voters in both groups expressed deep",
+    "elapsed_seconds": 8.31
+  },
+  {
+    "query": "What do voters say about healthcare costs?",
+    "category": "topic-broad",
+    "num_quotes": 185,
+    "num_fgs": 37,
+    "selected_fgs": null,
+    "output_preview": "**Theme 1: Concern over High Healthcare Costs**\nAcross multiple focus groups from different regions, voters consistently expressed deep concerns over the high costs of healthcare, including the costs ",
+    "elapsed_seconds": 53.11
+  },
+  {
+    "query": "What messaging worked in winning campaigns?",
+    "category": "outcome",
+    "num_quotes": 185,
+    "num_fgs": 37,
+    "selected_fgs": null,
+    "output_preview": "**Theme 1: Desire for Substantive, Solutions-Oriented Messaging**\nAcross multiple focus groups, voters expressed a strong preference for political messaging that moved beyond fear-based tactics and em",
+    "elapsed_seconds": 60.9
+  },
+  {
+    "query": "What do union members say about trade and jobs?",
+    "category": "demographic",
+    "num_quotes": 10,
+    "num_fgs": 2,
+    "selected_fgs": [
+      "race-002-fg-002-pittsburgh-area",
+      "race-006-fg-001-las-vegas-union"
+    ],
+    "output_preview": "**Theme 1: Desire for Good, Union Jobs in Emerging Sectors**\nThe focus group participants from the Pittsburgh area emphasized the importance of ensuring that the \"jobs of the future\" - in areas like g",
+    "elapsed_seconds": 8.41
+  },
+  {
+    "query": "How do voters feel about political polarization?",
+    "category": "topic-broad",
+    "num_quotes": 185,
+    "num_fgs": 37,
+    "selected_fgs": null,
+    "output_preview": "**Theme 1: Disillusionment with Political Establishment**\nAcross multiple focus groups, voters expressed deep disillusionment and frustration with the political establishment, feeling that politicians",
+    "elapsed_seconds": 62.7
+  },
+  {
+    "query": "What did Arizona voters say about immigration?",
+    "category": "state-filter",
+    "num_quotes": 15,
+    "num_fgs": 3,
+    "selected_fgs": [
+      "race-005-fg-001-maricopa-suburbs",
+      "race-005-fg-002-latino-phoenix",
+      "race-005-fg-003-tucson"
+    ],
+    "output_preview": "**Theme 1: Balanced Approach to Immigration**\nAcross the focus groups, Arizona voters expressed a desire for a balanced approach to immigration that addresses security concerns while also upholding hu",
+    "elapsed_seconds": 10.26
+  }
+]
