@@ -25,8 +25,8 @@ python scripts/embed_e5.py                # V2: E5-base local embeddings → Pin
 python scripts/retrieve.py "query"        # V1 hybrid search
 python scripts/retrieve_v2.py "query"     # V2 with LLM router + reranker
 
-# Web interfaces (production stack)
-cd api && uvicorn main:app --reload       # FastAPI backend (port 8000)
+# Web interfaces (production stack - run both in separate terminals)
+uvicorn api.main:app --reload             # FastAPI backend (port 8000)
 cd web && npm run dev                     # Next.js frontend (port 3000)
 
 # Legacy UI
@@ -102,10 +102,12 @@ Required environment variables in `.env`:
 - `OPENROUTER_API_KEY` - LLM router, synthesis, and evaluation (required)
 - `OPENAI_API_KEY` - For V1 embeddings only (optional for V2)
 
-Model configuration in `eval/config.py`:
-- `ROUTER_MODEL` - LLM for query routing (default: `anthropic/claude-3-haiku`)
-- `SYNTHESIS_MODEL` - LLM for synthesis (default: `anthropic/claude-3-haiku`)
+Model configuration in `eval/config.py` (all overridable via `.env`):
+- `ROUTER_MODEL` - LLM for query routing (default: `google/gemini-3-flash-preview`)
+- `SYNTHESIS_MODEL` - LLM for synthesis (default: `google/gemini-3-flash-preview`)
 - `OPENROUTER_MODEL` - LLM for evaluation (default: `google/gemini-3-flash-preview`)
+- `EMBEDDING_MODEL_LOCAL` - Local embeddings (default: `BAAI/bge-m3`)
+- `RERANKER_MODEL` - Cross-encoder reranker (default: `cross-encoder/ms-marco-MiniLM-L6-v2`)
 
 Pinecone indexes:
 - `focus-group-v1` - Hybrid search (OpenAI + BM25)
@@ -122,7 +124,7 @@ Key races for demo scenario (Ohio 2026 challenger):
 
 ## Trust Requirements
 
-Zero hallucination tolerance. From client requirements:
+Zero hallucination tolerance. From client requirements (see `docs/client-feedback-v1.md`):
 - "I don't have enough information" is acceptable; confident wrong answer is not
 - Every result must link to source transcript
 - Retrieval-focused, not synthesis-focused (synthesis is V2)
@@ -169,7 +171,7 @@ from eval.config import PINECONE_API_KEY, OPENROUTER_API_KEY, DATA_DIR
 
 ## Frontend Notes
 
-The Next.js frontend (`web/`) is a separate npm project:
+The Next.js frontend (`web/`) is a separate npm project with its own `CLAUDE.md`:
 ```bash
 cd web && npm install    # First-time setup
 cd web && npm run dev    # Development server (port 3000)
@@ -177,7 +179,7 @@ cd web && npm run dev    # Development server (port 3000)
 
 Key frontend patterns:
 - Streaming synthesis via `ReadableStream` from FastAPI `StreamingResponse`
-- Auto-generated light summaries on search results load
+- Auto-generated light summaries on search results load (staggered 200ms per FG)
 - Skeleton loaders for perceived performance
 - Collapsible quotes (collapsed by default to reduce cognitive load)
 - Markdown export for search results (includes all synthesis)
