@@ -307,7 +307,7 @@ Keep it to 2-3 paragraphs. Be analytical, not just descriptive."""
         stream = synthesizer.client.chat.completions.create(
             model=synthesizer.model,
             messages=[{"role": "user", "content": prompt}],
-            max_tokens=500,
+            max_tokens=1200,
             temperature=0.4,
             stream=True
         )
@@ -377,7 +377,7 @@ Be specific and analytical. Avoid generic observations."""
         stream = synthesizer.client.chat.completions.create(
             model=synthesizer.model,
             messages=[{"role": "user", "content": prompt}],
-            max_tokens=800,
+            max_tokens=1500,
             temperature=0.4,
             stream=True
         )

@@ -116,7 +116,7 @@ function generateMarkdown(data: ExportData): string {
             lines.push('');
         }
 
-        // Quotes - compact format
+        // Quotes - compact format with transcript references
         group.chunks.forEach((chunk) => {
             const profile = chunk.participant_profile ? ` (${chunk.participant_profile})` : '';
             let cleanContent = cleanQuoteContent(chunk.content);
@@ -124,6 +124,12 @@ function generateMarkdown(data: ExportData): string {
             cleanContent = cleanContent.replace(/^[""]|[""]$/g, '').trim();
             lines.push(`> "${cleanContent}"  `);
             lines.push(`> — **${chunk.participant}**${profile}`);
+
+            // Add transcript reference if available
+            if (chunk.source_file && chunk.line_number) {
+                const filename = chunk.source_file.split('/').pop() || chunk.source_file;
+                lines.push(`> *Source: ${filename}, line ${chunk.line_number}*`);
+            }
             lines.push('');
         });
 

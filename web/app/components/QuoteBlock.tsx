@@ -17,6 +17,11 @@ export default function QuoteBlock({ chunk }: QuoteBlockProps) {
                 <div className="flex flex-col pr-2 min-w-0">
                     <span className="font-bold text-gray-900 truncate">— {chunk.participant}</span>
                     <span className="truncate text-[11px] block">{chunk.participant_profile}</span>
+                    {chunk.source_file && chunk.line_number && (
+                        <span className="text-[10px] text-gray-400 mt-1">
+                            {chunk.source_file.split('/').pop()}, line {chunk.line_number}
+                        </span>
+                    )}
                 </div>
                 <span className="text-[10px] bg-gray-200 px-1.5 py-0.5 rounded-full flex-shrink-0 font-medium text-gray-600">
                     {chunk.score.toFixed(2)}
