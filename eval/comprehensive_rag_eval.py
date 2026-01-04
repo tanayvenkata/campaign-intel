@@ -33,13 +33,14 @@ import openai as openai_client
 # Our pipeline imports
 from scripts.retrieve import FocusGroupRetrieverV2, LLMRouter
 from scripts.synthesize import FocusGroupSynthesizer
-from eval.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL
+from scripts.synthesize import FocusGroupSynthesizer
+from eval.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL, OPENROUTER_MODEL
 
 
 class OpenRouterModel(DeepEvalBaseLLM):
     """Custom model that uses OpenRouter for DeepEval metrics."""
 
-    def __init__(self, model: str = "google/gemini-2.0-flash-001"):
+    def __init__(self, model: str = OPENROUTER_MODEL):
         self.model = model
         self.client = openai_client.OpenAI(
             api_key=OPENROUTER_API_KEY,
@@ -234,7 +235,7 @@ def run_evaluation(test_cases: List[LLMTestCase]) -> Dict:
     print(f"Running DeepEval metrics on {len(test_cases)} test cases...")
     print(f"{'='*60}\n")
 
-    eval_model = OpenRouterModel(model="google/gemini-2.0-flash-001")
+    eval_model = OpenRouterModel(model=OPENROUTER_MODEL)
 
     metrics = [
         ContextualRelevancyMetric(threshold=0.5, model=eval_model, async_mode=False),

@@ -2,14 +2,7 @@ import { useState, useCallback } from 'react';
 import { UnifiedSearchResponse } from '../types';
 import { ENDPOINTS, SEARCH_CONFIG } from '../config/api';
 
-export interface SearchStep {
-    step: string;
-    message: string;
-    timestamp: number;
-}
-
-export function useStreamingSearch() {
-    const [steps, setSteps] = useState<SearchStep[]>([]);
+export function useUnifiedSearch() {
     const [data, setData] = useState<UnifiedSearchResponse | null>(null);
     const [isSearching, setIsSearching] = useState(false);
     const [error, setError] = useState<Error | null>(null);
@@ -18,18 +11,10 @@ export function useStreamingSearch() {
         if (!query.trim()) return;
 
         setIsSearching(true);
-        setSteps([]);
         setData(null);
         setError(null);
 
-        // Show simulated steps for unified search
-        const addStep = (step: string, message: string) => {
-            setSteps(prev => [...prev, { step, message, timestamp: Date.now() }]);
-        };
-
         try {
-            addStep('routing', 'Analyzing query intent...');
-
             const res = await fetch(ENDPOINTS.searchUnified, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -44,19 +29,7 @@ export function useStreamingSearch() {
                 throw new Error('Search failed');
             }
 
-            addStep('searching', 'Retrieving relevant content...');
-
             const result: UnifiedSearchResponse = await res.json();
-
-            // Add context-aware step based on what was found
-            if (result.content_type === 'both') {
-                addStep('complete', `Found ${result.stats.total_quotes} quotes and ${result.stats.total_lessons} campaign lessons`);
-            } else if (result.content_type === 'lessons') {
-                addStep('complete', `Found ${result.stats.total_lessons} campaign lessons`);
-            } else {
-                addStep('complete', `Found ${result.stats.total_quotes} quotes from ${result.stats.focus_groups_count} focus groups`);
-            }
-
             setData(result);
         } catch (e) {
             setError(e as Error);
@@ -66,11 +39,10 @@ export function useStreamingSearch() {
     }, []);
 
     const reset = useCallback(() => {
-        setSteps([]);
         setData(null);
         setError(null);
         setIsSearching(false);
     }, []);
 
-    return { search, reset, steps, data, isSearching, error };
+    return { search, reset, data, isSearching, error };
 }

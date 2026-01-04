@@ -64,51 +64,92 @@ class GroupedResults:
     chunks: List[RetrievalResult]
 
 
+@dataclass
+class StrategyRetrievalResult:
+    """Single strategy memo retrieval result."""
+    chunk_id: str
+    score: float
+    content: str
+    race_id: str
+    section: str
+    subsection: str
+    outcome: str
+    state: str
+    year: int
+    margin: float
+    source_file: str
+    line_number: int
+
+
+@dataclass
+class StrategyGroupedResults:
+    """Results grouped by race with metadata."""
+    race_id: str
+    race_metadata: Dict
+    chunks: List[StrategyRetrievalResult]
+
+
+@dataclass
+class RouterResult:
+    """Result from unified content router."""
+    content_type: str  # "quotes", "lessons", or "both"
+    focus_group_ids: Optional[List[str]]  # None means search all FGs
+    race_ids: Optional[List[str]]  # None means search all races
+    outcome_filter: Optional[str]  # "win", "loss", or None
+
+
 class LLMRouter:
-    """Routes queries to relevant focus groups using LLM."""
+    """Routes queries to relevant content (focus groups and/or strategy memos)."""
 
-    SYSTEM_PROMPT = """You are a focus group search filter. Given a user query, determine which focus groups are relevant.
+    SYSTEM_PROMPT = """You are a political research assistant that routes queries to the right content.
 
-AVAILABLE FOCUS GROUPS:
-{manifest}
+We have TWO types of content:
+
+1. FOCUS GROUP TRANSCRIPTS (voter quotes)
+   Direct quotes from voters in focus groups. Use when the query wants to know what voters said, felt, or thought.
+{fg_manifest}
+
+2. STRATEGY MEMOS (campaign lessons)
+   Internal campaign analysis of what worked, what failed, and lessons learned. Use when the query asks about strategy, messaging effectiveness, recommendations, or why campaigns won/lost.
+{strategy_manifest}
 
 YOUR TASK:
-1. Analyze the query for geographic, demographic, or other specific filters
-2. Match against the focus group metadata (state, location, demographics, outcome)
-3. Return relevant focus group IDs
+1. Decide what content type(s) would best answer this query
+2. Filter to relevant focus groups and/or races based on state, demographics, outcome, etc.
 
-FILTERING RULES:
-- If query mentions a STATE (Ohio, Michigan, etc.) → return only FGs from that state
-- If query mentions a CITY (Cleveland, Detroit, etc.) → return FGs from that city/area
-- If query mentions DEMOGRAPHICS (working-class, Latino, suburban, etc.) → return FGs matching that demographic
-- If query mentions OUTCOME (lost, won, races we lost) → filter by outcome
-- If query is BROAD with no specific filters (just topics like "economy", "jobs", "healthcare") → return {{"all": true}}
-
-IMPORTANT:
-- Be INCLUSIVE - if in doubt, include the focus group (retrieval will handle relevance)
-- A query can have MULTIPLE filters (e.g., "Ohio working-class" = Ohio AND working-class)
-- If query mentions a state/location we don't have data for, return empty with reason
+GUIDELINES:
+- If query asks what VOTERS said/think/feel → "quotes"
+- If query asks what WORKED/FAILED or WHY we won/lost → "lessons"
+- If query could benefit from both voter quotes AND strategic analysis → "both"
+- Be INCLUSIVE - if in doubt, include more content (retrieval will handle relevance)
+- For broad topic queries with no specific filters, search all within the content type
 
 OUTPUT FORMAT:
-Return ONLY valid JSON, no explanations, no text before or after.
+Return ONLY valid JSON:
+{{
+  "content_type": "quotes" | "lessons" | "both",
+  "focus_groups": {{"ids": ["fg-id-1", "fg-id-2"]}} or {{"all": true}},
+  "strategy": {{"race_ids": ["race-001"], "outcome_filter": "win"|"loss"|null}} or {{"all": true}}
+}}
 
 Examples:
-{{"focus_group_ids": ["race-007-fg-001-cleveland-suburbs", "race-007-fg-002-columbus-educated"]}}
-{{"all": true}}
-{{"focus_group_ids": [], "reason": "No focus groups match California. Available: Michigan, Pennsylvania, Wisconsin, Georgia, Arizona, Nevada, Ohio, Montana, North Carolina"}}"""
+- "What did Ohio voters say about the economy?" → {{"content_type": "quotes", "focus_groups": {{"ids": ["race-007-fg-001-cleveland-suburbs", "race-007-fg-002-columbus-educated", "race-007-fg-003-youngstown-working-class"]}}, "strategy": {{"race_ids": [], "outcome_filter": null}}}}
+- "What went wrong in Ohio 2024?" → {{"content_type": "lessons", "focus_groups": {{"ids": []}}, "strategy": {{"race_ids": ["race-007"], "outcome_filter": "loss"}}}}
+- "What messaging worked with working-class voters?" → {{"content_type": "both", "focus_groups": {{"all": true}}, "strategy": {{"all": true, "outcome_filter": "win"}}}}
+- "Why did we lose Wisconsin 2022?" → {{"content_type": "lessons", "focus_groups": {{"ids": []}}, "strategy": {{"race_ids": ["race-003"], "outcome_filter": "loss"}}}}"""
 
     def __init__(self, model: str = ROUTER_MODEL):
         import openai
-        # Use OpenRouter (centralized for cost tracking)
         self.client = openai.OpenAI(
             api_key=OPENROUTER_API_KEY,
             base_url=OPENROUTER_BASE_URL
         )
         self.model = model
-        self.manifest = self._load_manifest()
+        self.fg_manifest = self._load_fg_manifest()
+        self.strategy_manifest = self._load_strategy_manifest()
 
-    def _load_manifest(self) -> str:
-        """Load manifest as formatted string for prompt, enriched with participant demographics."""
+    def _load_fg_manifest(self) -> str:
+        """Load focus group manifest for prompt."""
         manifest_file = DATA_DIR / "manifest.json"
         with open(manifest_file) as f:
             data = json.load(f)
@@ -125,8 +166,7 @@ Examples:
                     fg_data = json.load(f)
                     participant_summary = fg_data.get("participant_summary", "")
 
-            # Format: ID: Race | Location | Participants | outcome
-            line = f"- {fg_id}: {fg['race_name']} | {fg['location']}"
+            line = f"   - {fg_id}: {fg['race_name']} | {fg['location']}"
             if participant_summary:
                 line += f" | {participant_summary}"
             line += f" | outcome={fg['outcome']}"
@@ -134,9 +174,38 @@ Examples:
 
         return "\n".join(lines)
 
-    def route(self, query: str) -> Optional[List[str]]:
-        """Route query to relevant focus group IDs. Returns None for 'search all'."""
-        prompt = self.SYSTEM_PROMPT.format(manifest=self.manifest)
+    def _load_strategy_manifest(self) -> str:
+        """Load strategy memo manifest for prompt."""
+        manifest_file = DATA_DIR / "strategy_chunks" / "manifest.json"
+        if not manifest_file.exists():
+            return "   (No strategy memos available)"
+
+        with open(manifest_file) as f:
+            data = json.load(f)
+
+        lines = []
+        for memo in data.get("memos", []):
+            outcome_str = "WIN" if memo["outcome"] == "win" else "LOSS"
+            margin_str = f"+{memo['margin']}" if memo["margin"] > 0 else str(memo["margin"])
+
+            line = f"   - {memo['race_id']}: {memo['state']} {memo['year']} {memo['office']} ({outcome_str}, {margin_str}%)"
+
+            # Add key sections
+            sections = memo.get("sections", [])
+            if sections:
+                key_sections = [s for s in sections if s not in ["Header", "Executive Summary"]][:4]
+                line += f"\n     Sections: {', '.join(key_sections)}"
+
+            lines.append(line)
+
+        return "\n".join(lines)
+
+    def route_unified(self, query: str) -> RouterResult:
+        """Route query to content type(s) and specific IDs."""
+        prompt = self.SYSTEM_PROMPT.format(
+            fg_manifest=self.fg_manifest,
+            strategy_manifest=self.strategy_manifest
+        )
 
         response = self.client.chat.completions.create(
             model=self.model,
@@ -150,31 +219,75 @@ Examples:
 
         result_text = response.choices[0].message.content.strip()
 
-        # Parse JSON response
+        # Parse JSON response - handle various formats
         try:
-            # Handle potential markdown code blocks
+            # Handle markdown code blocks
             if "```" in result_text:
                 result_text = result_text.split("```")[1]
                 if result_text.startswith("json"):
                     result_text = result_text[4:]
 
+            # Handle garbage text before JSON - find first { and last }
+            if not result_text.startswith("{"):
+                start = result_text.find("{")
+                end = result_text.rfind("}") + 1
+                if start != -1 and end > start:
+                    result_text = result_text[start:end]
+
             result = json.loads(result_text)
 
-            # Check for "all" flag
-            if result.get("all", False):
-                return None  # None means search all
+            content_type = result.get("content_type", "both")
 
-            return result.get("focus_group_ids", [])
+            # Parse focus groups
+            fg_data = result.get("focus_groups", {})
+            if fg_data.get("all", False):
+                focus_group_ids = None
+            else:
+                focus_group_ids = fg_data.get("ids", [])
+
+            # Parse strategy
+            strategy_data = result.get("strategy", {})
+            if strategy_data.get("all", False):
+                race_ids = None
+            else:
+                race_ids = strategy_data.get("race_ids", [])
+            outcome_filter = strategy_data.get("outcome_filter")
+
+            return RouterResult(
+                content_type=content_type,
+                focus_group_ids=focus_group_ids,
+                race_ids=race_ids,
+                outcome_filter=outcome_filter
+            )
         except json.JSONDecodeError:
-            # Fallback: search all
-            return None
+            # Fallback: search both, all content
+            return RouterResult(
+                content_type="both",
+                focus_group_ids=None,
+                race_ids=None,
+                outcome_filter=None
+            )
 
-    def _get_all_ids(self) -> List[str]:
+    def route(self, query: str) -> Optional[List[str]]:
+        """Legacy method: Route query to focus group IDs only. Returns None for 'search all'."""
+        result = self.route_unified(query)
+        return result.focus_group_ids
+
+    def _get_all_fg_ids(self) -> List[str]:
         """Get all focus group IDs."""
         manifest_file = DATA_DIR / "manifest.json"
         with open(manifest_file) as f:
             data = json.load(f)
         return [fg["focus_group_id"] for fg in data["focus_groups"]]
+
+    def _get_all_race_ids(self) -> List[str]:
+        """Get all race IDs from strategy memos."""
+        manifest_file = DATA_DIR / "strategy_chunks" / "manifest.json"
+        if not manifest_file.exists():
+            return []
+        with open(manifest_file) as f:
+            data = json.load(f)
+        return [memo["race_id"] for memo in data.get("memos", [])]
 
 
 class FocusGroupRetrieverV2:
@@ -566,7 +679,7 @@ class FocusGroupRetrieverV2:
             fg_ids = self.router.route(query)
             if fg_ids is None:
                 # "Search all" - get all FG IDs
-                fg_ids = self.router._get_all_ids()
+                fg_ids = self.router._get_all_fg_ids()
             if self.verbose:
                 print(f"Router selected {len(fg_ids)} focus groups: {fg_ids}")
         else:
@@ -697,6 +810,343 @@ class FocusGroupRetrieverV2:
         grouped.sort(key=lambda g: max(c.score for c in g.chunks), reverse=True)
 
         return grouped
+
+
+class StrategyMemoRetriever:
+    """Retriever for strategy memo content (lessons learned from campaigns)."""
+
+    def __init__(
+        self,
+        use_reranker: bool = False,
+        reranker_model: str = RERANKER_MODEL,
+        verbose: bool = False
+    ):
+        from sentence_transformers import SentenceTransformer
+        from pinecone import Pinecone
+
+        self.verbose = verbose
+        self.use_reranker = use_reranker
+
+        # Initialize reranker
+        if use_reranker:
+            if verbose:
+                print(f"Loading reranker: {reranker_model}...")
+            from scripts.rerank import Reranker
+            self.reranker = Reranker(model_name=reranker_model)
+        else:
+            self.reranker = None
+
+        # Load embedding model
+        if verbose:
+            print(f"Loading embedding model: {EMBEDDING_MODEL_LOCAL}...")
+        self.model = SentenceTransformer(EMBEDDING_MODEL_LOCAL)
+
+        # Initialize Pinecone
+        self.pc = Pinecone(api_key=PINECONE_API_KEY)
+        self.index = self.pc.Index(INDEX_NAME)
+
+        # Load strategy manifest for metadata
+        self._manifest_cache: Optional[Dict] = None
+
+    def _load_manifest(self) -> Dict:
+        """Load strategy manifest."""
+        if self._manifest_cache:
+            return self._manifest_cache
+
+        manifest_file = DATA_DIR / "strategy_chunks" / "manifest.json"
+        if manifest_file.exists():
+            with open(manifest_file) as f:
+                self._manifest_cache = json.load(f)
+                return self._manifest_cache
+        return {"memos": []}
+
+    def _get_race_metadata(self, race_id: str) -> Dict:
+        """Get metadata for a specific race from manifest."""
+        manifest = self._load_manifest()
+        for memo in manifest.get("memos", []):
+            if memo["race_id"] == race_id:
+                return memo
+        return {}
+
+    def _embed_query(self, query: str) -> List[float]:
+        """Embed query with sentence-transformer model."""
+        return self.model.encode(query).tolist()
+
+    def retrieve(
+        self,
+        query: str,
+        top_k: int = 10,
+        outcome_filter: Optional[str] = None,  # "win", "loss", or None for all
+        state_filter: Optional[str] = None,
+        year_filter: Optional[int] = None,
+        parent_top_k: int = 5,
+    ) -> List[StrategyRetrievalResult]:
+        """
+        Retrieve strategy memo chunks.
+
+        Uses hierarchical approach:
+        1. Query strategy_parent vectors
+        2. Return children from matched parents
+
+        Args:
+            query: Search query
+            top_k: Number of results to return
+            outcome_filter: Filter by "win" or "loss"
+            state_filter: Filter by state name
+            year_filter: Filter by year
+            parent_top_k: Number of parent vectors to query
+        """
+        query_embedding = self._embed_query(query)
+
+        # Build filter for parents
+        parent_filter: Dict = {"type": "strategy_parent"}
+        if outcome_filter:
+            parent_filter["outcome"] = outcome_filter
+        if state_filter:
+            parent_filter["state"] = state_filter
+        if year_filter:
+            parent_filter["year"] = year_filter
+
+        if self.verbose:
+            print(f"Querying strategy parents with filter: {parent_filter}")
+
+        # Step 1: Query parents
+        parent_results = self.index.query(
+            vector=query_embedding,
+            top_k=parent_top_k,
+            filter=parent_filter,
+            include_metadata=True
+        )
+
+        if self.verbose:
+            print(f"Found {len(parent_results.matches)} matching parents")
+
+        # Collect child IDs from matched parents
+        child_ids = []
+        for match in parent_results.matches:
+            meta = match.metadata
+            try:
+                ids = json.loads(meta.get("child_ids", "[]"))
+                child_ids.extend(ids)
+            except json.JSONDecodeError:
+                pass
+
+        if not child_ids:
+            # Fallback: direct child search
+            if self.verbose:
+                print("No children from parents, falling back to direct search")
+            return self._direct_search(query_embedding, outcome_filter, state_filter, year_filter, top_k)
+
+        # Step 2: Query children
+        child_filter: Dict = {"type": "strategy_memo"}
+        if outcome_filter:
+            child_filter["outcome"] = outcome_filter
+        if state_filter:
+            child_filter["state"] = state_filter
+        if year_filter:
+            child_filter["year"] = year_filter
+
+        candidate_k = top_k * 4 if self.use_reranker else top_k * 2
+        child_results = self.index.query(
+            vector=query_embedding,
+            top_k=candidate_k,
+            filter=child_filter,
+            include_metadata=True
+        )
+
+        # Filter to children from matched parents
+        results = []
+        seen_ids = set()
+        for match in child_results.matches:
+            if match.id in child_ids and match.id not in seen_ids:
+                seen_ids.add(match.id)
+                meta = match.metadata
+                results.append(StrategyRetrievalResult(
+                    chunk_id=match.id,
+                    score=match.score,
+                    content=meta.get("content", ""),
+                    race_id=meta.get("race_id", ""),
+                    section=meta.get("section", ""),
+                    subsection=meta.get("subsection", ""),
+                    outcome=meta.get("outcome", ""),
+                    state=meta.get("state", ""),
+                    year=meta.get("year", 0),
+                    margin=meta.get("margin", 0.0),
+                    source_file=meta.get("source_file", ""),
+                    line_number=meta.get("line_number", 0),
+                ))
+                if not self.use_reranker and len(results) >= top_k:
+                    break
+
+        # If we need more, add from direct results
+        if len(results) < top_k:
+            for match in child_results.matches:
+                if match.id not in seen_ids:
+                    seen_ids.add(match.id)
+                    meta = match.metadata
+                    results.append(StrategyRetrievalResult(
+                        chunk_id=match.id,
+                        score=match.score,
+                        content=meta.get("content", ""),
+                        race_id=meta.get("race_id", ""),
+                        section=meta.get("section", ""),
+                        subsection=meta.get("subsection", ""),
+                        outcome=meta.get("outcome", ""),
+                        state=meta.get("state", ""),
+                        year=meta.get("year", 0),
+                        margin=meta.get("margin", 0.0),
+                        source_file=meta.get("source_file", ""),
+                        line_number=meta.get("line_number", 0),
+                    ))
+                    if not self.use_reranker and len(results) >= top_k:
+                        break
+
+        return self._maybe_rerank(query, results, top_k)
+
+    def _direct_search(
+        self,
+        query_embedding: List[float],
+        outcome_filter: Optional[str],
+        state_filter: Optional[str],
+        year_filter: Optional[int],
+        top_k: int
+    ) -> List[StrategyRetrievalResult]:
+        """Direct search on strategy_memo children."""
+        filter_dict: Dict = {"type": "strategy_memo"}
+        if outcome_filter:
+            filter_dict["outcome"] = outcome_filter
+        if state_filter:
+            filter_dict["state"] = state_filter
+        if year_filter:
+            filter_dict["year"] = year_filter
+
+        results = self.index.query(
+            vector=query_embedding,
+            top_k=top_k,
+            filter=filter_dict,
+            include_metadata=True
+        )
+
+        return [
+            StrategyRetrievalResult(
+                chunk_id=match.id,
+                score=match.score,
+                content=match.metadata.get("content", ""),
+                race_id=match.metadata.get("race_id", ""),
+                section=match.metadata.get("section", ""),
+                subsection=match.metadata.get("subsection", ""),
+                outcome=match.metadata.get("outcome", ""),
+                state=match.metadata.get("state", ""),
+                year=match.metadata.get("year", 0),
+                margin=match.metadata.get("margin", 0.0),
+                source_file=match.metadata.get("source_file", ""),
+                line_number=match.metadata.get("line_number", 0),
+            )
+            for match in results.matches
+        ]
+
+    def _maybe_rerank(
+        self,
+        query: str,
+        results: List[StrategyRetrievalResult],
+        top_k: int
+    ) -> List[StrategyRetrievalResult]:
+        """Apply reranking if enabled."""
+        if not self.use_reranker or not self.reranker or not results:
+            return results[:top_k]
+
+        if self.verbose:
+            print(f"Reranking {len(results)} candidates...")
+
+        # Reranker expects objects with .content attribute
+        reranked = self.reranker.rerank(query, results, top_k=top_k)
+        return reranked
+
+    def retrieve_grouped(
+        self,
+        query: str,
+        top_k: int = 10,
+        outcome_filter: Optional[str] = None,
+        state_filter: Optional[str] = None,
+        year_filter: Optional[int] = None,
+        score_threshold: float = 0.55,
+    ) -> List[StrategyGroupedResults]:
+        """
+        Retrieve and group results by race.
+
+        Args:
+            query: Search query
+            top_k: Total results to retrieve
+            outcome_filter: Filter by "win" or "loss"
+            state_filter: Filter by state
+            year_filter: Filter by year
+            score_threshold: Minimum score threshold
+        """
+        results = self.retrieve(
+            query,
+            top_k=top_k,
+            outcome_filter=outcome_filter,
+            state_filter=state_filter,
+            year_filter=year_filter,
+        )
+
+        # Filter by score threshold
+        results = [r for r in results if r.score >= score_threshold]
+
+        # Group by race
+        groups: Dict[str, List[StrategyRetrievalResult]] = {}
+        for result in results:
+            race_id = result.race_id
+            if race_id not in groups:
+                groups[race_id] = []
+            groups[race_id].append(result)
+
+        # Create grouped results with metadata
+        grouped = []
+        for race_id, chunks in groups.items():
+            metadata = self._get_race_metadata(race_id)
+            grouped.append(StrategyGroupedResults(
+                race_id=race_id,
+                race_metadata=metadata,
+                chunks=chunks
+            ))
+
+        # Sort by highest scoring chunk in each group
+        grouped.sort(key=lambda g: max(c.score for c in g.chunks), reverse=True)
+
+        return grouped
+
+
+def format_strategy_results(grouped_results: List[StrategyGroupedResults]) -> str:
+    """Format strategy retrieval results for display."""
+    output = []
+
+    for group in grouped_results:
+        meta = group.race_metadata
+
+        # Header with race info
+        header = f"\n{'='*60}\n"
+        header += f"## {meta.get('state', group.race_id)} {meta.get('year', '')} - {meta.get('office', '')}\n"
+        outcome = meta.get('outcome', 'unknown')
+        margin = meta.get('margin', 0)
+        outcome_str = f"{'Won' if outcome == 'win' else 'Lost'} by {abs(margin):.1f}%"
+        header += f"**{outcome_str}**\n"
+        header += f"{'='*60}\n"
+        output.append(header)
+
+        # Lessons/chunks
+        for chunk in group.chunks:
+            section_info = f"[{chunk.section}"
+            if chunk.subsection:
+                section_info += f" > {chunk.subsection}"
+            section_info += "]"
+
+            lesson = f"\n**{section_info}**\n"
+            lesson += f"{chunk.content}\n"
+            lesson += f"_[score: {chunk.score:.3f}]_\n"
+            output.append(lesson)
+
+    return "".join(output)
 
 
 def format_results_for_display(grouped_results: List[GroupedResults]) -> str:

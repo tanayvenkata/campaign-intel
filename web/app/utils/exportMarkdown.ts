@@ -7,7 +7,7 @@
  * - Edited before sharing
  */
 
-import { GroupedResult } from '../types';
+import { GroupedResult, StrategyGroupedResult } from '../types';
 
 export interface ExportData {
     query: string;
@@ -18,9 +18,14 @@ export interface ExportData {
     deepMacroThemes?: Array<{ name: string; synthesis: string; focus_groups: string[] }>;
     stats?: {
         total_quotes: number;
+        total_lessons?: number;
         focus_groups_count: number;
+        races_count?: number;
         retrieval_time_ms: number;
     };
+    // Strategy/lessons data
+    lessons?: StrategyGroupedResult[];
+    strategySummaries?: Record<string, string>;
 }
 
 /**
@@ -38,7 +43,7 @@ function cleanQuoteContent(content: string): string {
  * Generate markdown content from export data
  */
 function generateMarkdown(data: ExportData): string {
-    const { query, results, summaries, deepSyntheses, macroResult, deepMacroThemes, stats } = data;
+    const { query, results, summaries, deepSyntheses, macroResult, deepMacroThemes, stats, lessons, strategySummaries } = data;
     const lines: string[] = [];
 
     // Title
@@ -49,7 +54,12 @@ function generateMarkdown(data: ExportData): string {
 
     // Stats
     if (stats) {
-        lines.push(`${stats.total_quotes} quotes from ${stats.focus_groups_count} focus groups • ${new Date().toLocaleDateString()}`);
+        const statParts = [`${stats.total_quotes} quotes from ${stats.focus_groups_count} focus groups`];
+        if (stats.total_lessons && stats.races_count) {
+            statParts.push(`${stats.total_lessons} lessons from ${stats.races_count} races`);
+        }
+        statParts.push(new Date().toLocaleDateString());
+        lines.push(statParts.join(' • '));
         lines.push('');
     }
 
@@ -77,6 +87,45 @@ function generateMarkdown(data: ExportData): string {
             lines.push('');
             lines.push(`*Sources: ${theme.focus_groups.join(', ')}*`);
             lines.push('');
+        });
+    }
+
+    // Campaign Lessons (Strategy Memos)
+    if (lessons && lessons.length > 0) {
+        lines.push('---');
+        lines.push('');
+        lines.push('## Campaign Lessons');
+        lines.push('');
+
+        lessons.forEach((race) => {
+            const metadata = race.race_metadata;
+            const raceName = `${metadata.state} ${metadata.year}`;
+            const outcome = metadata.outcome === 'win' ? '(Win)' : '(Loss)';
+            const margin = metadata.margin !== undefined ? ` by ${Math.abs(metadata.margin).toFixed(1)}%` : '';
+
+            lines.push(`### ${raceName} ${outcome}${margin}`);
+            lines.push('');
+
+            // Race summary (if available)
+            const summary = strategySummaries?.[race.race_id];
+            if (summary) {
+                lines.push(`**Summary:** ${summary}`);
+                lines.push('');
+            }
+
+            // Key insights from strategy chunks
+            if (race.chunks.length > 0) {
+                lines.push('**Key Insights:**');
+                lines.push('');
+                race.chunks.forEach((chunk) => {
+                    // Format: section > subsection if available
+                    const section = chunk.subsection
+                        ? `${chunk.section} > ${chunk.subsection}`
+                        : chunk.section;
+                    lines.push(`- **${section}:** ${chunk.content.slice(0, 300)}${chunk.content.length > 300 ? '...' : ''}`);
+                });
+                lines.push('');
+            }
         });
     }
 

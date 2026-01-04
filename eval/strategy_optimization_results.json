@@ -1,0 +1,175 @@
+[
+  {
+    "approach": "topk",
+    "avg_precision": 0.7999999999999999,
+    "avg_race_recall": 0.8333333333333334,
+    "avg_latency_ms": 245.48802375793457,
+    "details": [
+      {
+        "query": "What went wrong in Ohio 2024?",
+        "latency_ms": 431.50901794433594,
+        "race_recall": 1.0,
+        "precision": 0.6799999999999999,
+        "chunks": [
+          {
+            "score": 0.626886368,
+            "race_id": "race-007",
+            "section": "Lessons for Ohio 2026"
+          },
+          {
+            "score": 0.595028,
+            "race_id": "race-007",
+            "section": "Conclusion"
+          },
+          {
+            "score": 0.564844131,
+            "race_id": "race-008",
+            "section": "What We Did Wrong"
+          },
+          {
+            "score": 0.543777466,
+            "race_id": "race-007",
+            "section": "The Collapse: What Happened"
+          },
+          {
+            "score": 0.511756957,
+            "race_id": "race-012",
+            "section": "Learning from 2022"
+          }
+        ]
+      },
+      {
+        "query": "What economic messaging worked with working-class voters?",
+        "latency_ms": 213.8838768005371,
+        "race_recall": 0.6666666666666666,
+        "precision": 0.88,
+        "chunks": [
+          {
+            "score": 0.647058547,
+            "race_id": "race-001",
+            "section": "What Worked"
+          },
+          {
+            "score": 0.617670119,
+            "race_id": "race-002",
+            "section": "What Didn't Work"
+          },
+          {
+            "score": 0.611549437,
+            "race_id": "race-006",
+            "section": "What Worked"
+          },
+          {
+            "score": 0.597438872,
+            "race_id": "race-003",
+            "section": "What Went Wrong"
+          },
+          {
+            "score": 0.592201293,
+            "race_id": "race-001",
+            "section": "Key Learnings for Future Races"
+          }
+        ]
+      },
+      {
+        "query": "Why did we lose Wisconsin 2022?",
+        "latency_ms": 186.83218955993652,
+        "race_recall": 1.0,
+        "precision": 0.74,
+        "chunks": [
+          {
+            "score": 0.653322279,
+            "race_id": "race-012",
+            "section": "Learning from 2022"
+          },
+          {
+            "score": 0.603208542,
+            "race_id": "race-003",
+            "section": "Executive Summary"
+          },
+          {
+            "score": 0.585138321,
+            "race_id": "race-003",
+            "section": "Accountability Statement"
+          },
+          {
+            "score": 0.573707581,
+            "race_id": "race-012",
+            "section": "Margin Analysis"
+          },
+          {
+            "score": 0.561271667,
+            "race_id": "race-012",
+            "section": "Executive Summary"
+          }
+        ]
+      },
+      {
+        "query": "What worked for Latino voter outreach?",
+        "latency_ms": 199.85699653625488,
+        "race_recall": 1.0,
+        "precision": 0.82,
+        "chunks": [
+          {
+            "score": 0.633260787,
+            "race_id": "race-005",
+            "section": "What Worked"
+          },
+          {
+            "score": 0.530806601,
+            "race_id": "race-005",
+            "section": "What Didn't Work"
+          },
+          {
+            "score": 0.52950865,
+            "race_id": "race-006",
+            "section": "What Didn't Work"
+          },
+          {
+            "score": 0.516580641,
+            "race_id": "race-005",
+            "section": "Margin Analysis"
+          },
+          {
+            "score": 0.513755858,
+            "race_id": "race-006",
+            "section": "Margin Analysis"
+          }
+        ]
+      },
+      {
+        "query": "Lessons from winning close races",
+        "latency_ms": 195.3580379486084,
+        "race_recall": 0.5,
+        "precision": 0.88,
+        "chunks": [
+          {
+            "score": 0.554616928,
+            "race_id": "race-002",
+            "section": "What Didn't Work"
+          },
+          {
+            "score": 0.552000046,
+            "race_id": "race-004",
+            "section": "Runoff Dynamics"
+          },
+          {
+            "score": 0.550981522,
+            "race_id": "race-006",
+            "section": "Key Learnings for Future Races"
+          },
+          {
+            "score": 0.53168869,
+            "race_id": "race-006",
+            "section": "Executive Summary"
+          },
+          {
+            "score": 0.523323059,
+            "race_id": "race-002",
+            "section": "What Worked"
+          }
+        ]
+      }
+    ]
+  }
+]

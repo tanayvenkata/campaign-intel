@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Merriweather } from "next/font/google";
+import { Inter, Merriweather, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,8 +13,13 @@ const merriweather = Merriweather({
   subsets: ["latin"],
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Focus Group Search",
+  title: "Meridian Intelligence Service",
   description: "Semantic search across 37 focus groups from 12 political races",
 };
 
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${merriweather.variable} antialiased`}
+        className={`${inter.variable} ${merriweather.variable} ${jetbrainsMono.variable} antialiased`}
       >
         {children}
       </body>

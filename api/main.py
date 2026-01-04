@@ -13,27 +13,37 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
-from scripts.retrieve import FocusGroupRetrieverV2, LLMRouter, RetrievalResult
+from scripts.retrieve import (
+    FocusGroupRetrieverV2, LLMRouter, RetrievalResult,
+    StrategyMemoRetriever, StrategyRetrievalResult, RouterResult
+)
 from scripts.synthesize import FocusGroupSynthesizer
+from eval.config import STRATEGY_TOP_K_PER_RACE
 from api.schemas import (
     SearchRequest, SearchResponse, SynthesisRequest, MacroSynthesisRequest,
     GroupedResult, RetrievalChunk,
-    LightMacroSynthesisRequest, DeepMacroSynthesisRequest, DeepMacroResponse
+    LightMacroSynthesisRequest, DeepMacroSynthesisRequest, DeepMacroResponse,
+    StrategyChunk, StrategyGroupedResult, UnifiedSearchResponse,
+    StrategySynthesisRequest, StrategyMacroSynthesisRequest,
+    UnifiedMacroSynthesisRequest
 )
 
 # Global instances
 retriever: Optional[FocusGroupRetrieverV2] = None
+strategy_retriever: Optional[StrategyMemoRetriever] = None
 router: Optional[LLMRouter] = None
 synthesizer: Optional[FocusGroupSynthesizer] = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Initialize expensive resources on startup."""
-    global retriever, router, synthesizer
+    global retriever, strategy_retriever, router, synthesizer
     print("Initializing resources...")
     # Initialize with same settings as app.py
     # Note: app.py uses st.cache_resource, here we use global singletons
     retriever = FocusGroupRetrieverV2(use_router=True, use_reranker=True, verbose=False)
+    # Reranking for strategy improves race recall by 10% with no precision loss
+    strategy_retriever = StrategyMemoRetriever(use_reranker=True, verbose=False)
     router = LLMRouter()
     synthesizer = FocusGroupSynthesizer(verbose=False)
     print("Resources initialized.")
@@ -213,6 +223,123 @@ async def search_stream(request: SearchRequest):
         yield json.dumps({"type": "results", "data": response_data}) + "\n"
 
     return StreamingResponse(event_generator(), media_type="application/x-ndjson")
+
+
+@app.post("/search/unified", response_model=UnifiedSearchResponse)
+async def search_unified(request: SearchRequest):
+    """
+    Unified search that routes to quotes (focus groups) and/or lessons (strategy memos).
+    Uses LLM router to determine content type based on query intent.
+    """
+    if not retriever or not strategy_retriever or not router:
+        raise HTTPException(status_code=503, detail="Service not ready")
+
+    start_time = time.time()
+
+    # Route to determine content type
+    route_result = router.route_unified(request.query)
+    content_type = route_result.content_type
+
+    quotes_results = []
+    lessons_results = []
+
+    # Fetch focus group quotes if needed
+    if content_type in ("quotes", "both"):
+        fg_ids = route_result.focus_group_ids
+        # FG pipeline is optimized for 0.75 threshold - keep as-is
+        results_by_fg = retriever.retrieve_per_focus_group(
+            query=request.query,
+            top_k_per_fg=request.top_k,
+            score_threshold=request.score_threshold,
+            filter_focus_groups=fg_ids
+        )
+
+        for fg_id, chunks in results_by_fg.items():
+            if not chunks:
+                continue
+            fg_meta = retriever._load_focus_group_metadata(fg_id)
+            api_chunks = [
+                RetrievalChunk(
+                    chunk_id=c.chunk_id,
+                    score=c.score,
+                    content=c.content,
+                    content_original=c.content_original,
+                    focus_group_id=c.focus_group_id,
+                    participant=c.participant,
+                    participant_profile=c.participant_profile,
+                    section=c.section,
+                    source_file=c.source_file,
+                    line_number=c.line_number,
+                    preceding_moderator_q=c.preceding_moderator_q
+                )
+                for c in chunks
+            ]
+            quotes_results.append(GroupedResult(
+                focus_group_id=fg_id,
+                focus_group_metadata=fg_meta,
+                chunks=api_chunks
+            ))
+
+    # Fetch strategy lessons if needed
+    if content_type in ("lessons", "both"):
+        # STRATEGY_TOP_K_PER_RACE from eval/config.py (default: 2)
+        # Scales with query scope: single-race=2, multi-race=2 per race
+        strategy_grouped = strategy_retriever.retrieve_grouped(
+            query=request.query,
+            top_k=STRATEGY_TOP_K_PER_RACE * 5,  # Get candidates for reranker
+            outcome_filter=route_result.outcome_filter,
+            score_threshold=0.0  # Disabled - rely on reranker
+        )
+
+        # Take top N per race (balanced coverage)
+        # Filter out races where the top chunk is below threshold
+        for group in strategy_grouped:
+            top_chunks = sorted(group.chunks, key=lambda c: c.score, reverse=True)[:STRATEGY_TOP_K_PER_RACE]
+            if not top_chunks:
+                continue
+            # Skip races where even the best chunk is below threshold
+            if top_chunks[0].score < request.score_threshold:
+                continue
+            race_meta = strategy_retriever._get_race_metadata(group.race_id)
+            api_chunks = [
+                StrategyChunk(
+                    chunk_id=c.chunk_id,
+                    score=c.score,
+                    content=c.content,
+                    race_id=c.race_id,
+                    section=c.section,
+                    subsection=c.subsection,
+                    outcome=c.outcome,
+                    state=c.state,
+                    year=c.year,
+                    margin=c.margin,
+                    source_file=c.source_file,
+                    line_number=c.line_number
+                )
+                for c in top_chunks
+            ]
+            lessons_results.append(StrategyGroupedResult(
+                race_id=group.race_id,
+                race_metadata=race_meta,
+                chunks=api_chunks
+            ))
+
+    retrieval_time = (time.time() - start_time) * 1000
+
+    return UnifiedSearchResponse(
+        content_type=content_type,
+        quotes=quotes_results,
+        lessons=lessons_results,
+        stats={
+            "retrieval_time_ms": round(retrieval_time),
+            "total_quotes": sum(len(g.chunks) for g in quotes_results),
+            "total_lessons": sum(len(g.chunks) for g in lessons_results),
+            "focus_groups_count": len(quotes_results),
+            "races_count": len(lessons_results),
+            "routed_to": content_type,
+            "outcome_filter": route_result.outcome_filter
+        }
+    )
 
 
 @app.post("/synthesize/light")
@@ -450,6 +577,217 @@ async def synthesize_macro_deep(request: DeepMacroSynthesisRequest):
             yield json.dumps(event) + "\n"
 
     return StreamingResponse(stream_generator(), media_type="application/x-ndjson")
+
+
+# ============ Strategy Synthesis Endpoints ============
+
+@app.post("/synthesize/strategy/light")
+async def synthesize_strategy_light(request: StrategySynthesisRequest):
+    """Generate a light summary of strategy lessons for a single race."""
+    if not synthesizer:
+        raise HTTPException(status_code=503, detail="Service not ready")
+
+    # Build context from chunks
+    chunks_text = []
+    for c in request.chunks:
+        chunks_text.append(f"[{c.section}] {c.content}")
+    context = "\n\n".join(chunks_text)
+
+    prompt = f"""You are a senior political strategist summarizing campaign lessons.
+
+Query: "{request.query}"
+Race: {request.race_name or 'Unknown'}
+
+Strategy memo excerpts:
+{context}
+
+Write a 1-2 sentence summary of the key lesson(s) from this race relevant to the query.
+Be specific - include what worked/failed and why. No fluff."""
+
+    response = synthesizer.client.chat.completions.create(
+        model=synthesizer.model,
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=150,
+        temperature=0.3
+    )
+
+    return {"summary": response.choices[0].message.content.strip()}
+
+
+@app.post("/synthesize/strategy/deep")
+async def synthesize_strategy_deep(request: StrategySynthesisRequest):
+    """Generate a deep analysis of strategy lessons (streaming)."""
+    if not synthesizer:
+        raise HTTPException(status_code=503, detail="Service not ready")
+
+    chunks_text = []
+    for c in request.chunks:
+        chunks_text.append(f"[{c.section}]\n{c.content}")
+    context = "\n\n---\n\n".join(chunks_text)
+
+    prompt = f"""You are a senior political strategist providing deep analysis of campaign lessons.
+
+Query: "{request.query}"
+Race: {request.race_name or 'Unknown'}
+
+Strategy memo excerpts:
+{context}
+
+Provide a detailed analysis that:
+1. Identifies the key strategic lessons relevant to the query
+2. Explains what worked or failed and WHY
+3. Notes specific evidence (numbers, quotes, examples from the memo)
+4. Offers actionable takeaways for future campaigns
+
+Keep it to 2-3 paragraphs. Be analytical and specific."""
+
+    async def stream_generator():
+        stream = synthesizer.client.chat.completions.create(
+            model=synthesizer.model,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=800,
+            temperature=0.4,
+            stream=True
+        )
+        for chunk in stream:
+            if chunk.choices[0].delta.content:
+                yield chunk.choices[0].delta.content
+
+    return StreamingResponse(stream_generator(), media_type="text/event-stream")
+
+
+@app.post("/synthesize/strategy/macro")
+async def synthesize_strategy_macro(request: StrategyMacroSynthesisRequest):
+    """Generate cross-race strategy synthesis (streaming)."""
+    if not synthesizer:
+        raise HTTPException(status_code=503, detail="Service not ready")
+
+    # Build summaries section
+    summaries_text = ""
+    for race_id, summary in request.race_summaries.items():
+        meta = request.race_metadata.get(race_id, {})
+        state = meta.get("state", "Unknown")
+        year = meta.get("year", "?")
+        outcome = meta.get("outcome", "?")
+        summaries_text += f"\n**{state} {year} ({outcome}):** {summary}\n"
+
+    # Build key excerpts section (1 quote per race)
+    excerpts_text = ""
+    for race_id, chunks in request.top_chunks.items():
+        meta = request.race_metadata.get(race_id, {})
+        state = meta.get("state", "Unknown")
+        if chunks:
+            excerpts_text += f"\n{state}: \"{chunks[0].content[:200]}...\"\n"
+
+    prompt = f"""You are a senior political strategist synthesizing lessons across multiple campaigns.
+
+Query: "{request.query}"
+
+Race summaries:
+{summaries_text}
+
+Key excerpts:
+{excerpts_text}
+
+Provide a cross-race synthesis that:
+1. Identifies 2-3 patterns or themes across these races
+2. Notes which races support each pattern (wins vs losses)
+3. Offers strategic recommendations based on the evidence
+
+Be specific and actionable. Reference the races by name."""
+
+    async def stream_generator():
+        stream = synthesizer.client.chat.completions.create(
+            model=synthesizer.model,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=1000,
+            temperature=0.4,
+            stream=True
+        )
+        for chunk in stream:
+            if chunk.choices[0].delta.content:
+                yield chunk.choices[0].delta.content
+
+    return StreamingResponse(stream_generator(), media_type="text/event-stream")
+
+
+# ============ Unified Macro Synthesis (FG + Strategy) ============
+
+@app.post("/synthesize/unified/macro")
+async def synthesize_unified_macro(request: UnifiedMacroSynthesisRequest):
+    """
+    Generate unified macro synthesis combining voter quotes AND strategic lessons.
+
+    Weaves together:
+    - What voters said (FG quotes + summaries)
+    - What campaigns learned (strategy chunks + summaries)
+    """
+    if not synthesizer:
+        raise HTTPException(status_code=503, detail="Service not ready")
+
+    # Build FG section
+    fg_section = ""
+    if request.fg_summaries:
+        fg_section = "\n## VOTER INSIGHTS (Focus Groups)\n"
+        for fg_id, summary in request.fg_summaries.items():
+            meta = request.fg_metadata.get(fg_id, {})
+            location = meta.get("location", "Unknown")
+            fg_section += f"\n**{location}:** {summary}\n"
+
+        # Add 1 quote per FG
+        fg_section += "\nKey quotes:\n"
+        for fg_id, quotes in request.fg_quotes.items():
+            if quotes:
+                q = quotes[0]
+                fg_section += f'- "{q.content[:150]}..." — {q.participant}\n'
+
+    # Build strategy section
+    strategy_section = ""
+    if request.strategy_summaries:
+        strategy_section = "\n## CAMPAIGN LESSONS (Strategy Memos)\n"
+        for race_id, summary in request.strategy_summaries.items():
+            meta = request.strategy_metadata.get(race_id, {})
+            state = meta.get("state", "Unknown")
+            year = meta.get("year", "?")
+            outcome = meta.get("outcome", "?")
+            strategy_section += f"\n**{state} {year} ({outcome}):** {summary}\n"
+
+        # Add 1 excerpt per race
+        strategy_section += "\nKey excerpts:\n"
+        for race_id, chunks in request.strategy_chunks.items():
+            meta = request.strategy_metadata.get(race_id, {})
+            state = meta.get("state", "Unknown")
+            if chunks:
+                strategy_section += f'- {state}: "{chunks[0].content[:150]}..."\n'
+
+    prompt = f"""You are a senior political strategist synthesizing insights from BOTH voter focus groups AND campaign strategy memos.
+
+Query: "{request.query}"
+
+{fg_section}
+{strategy_section}
+
+Provide a unified synthesis that:
+1. Connects voter sentiment to campaign outcomes (what voters said → what campaigns learned)
+2. Identifies 2-3 key themes supported by BOTH voter quotes AND strategic evidence
+3. Notes patterns across wins vs losses
+4. Offers actionable recommendations grounded in evidence
+
+Structure your response with clear themes. Reference specific focus groups and races."""
+
+    async def stream_generator():
+        stream = synthesizer.client.chat.completions.create(
+            model=synthesizer.model,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=1200,
+            temperature=0.4,
+            stream=True
+        )
+        for chunk in stream:
+            if chunk.choices[0].delta.content:
+                yield chunk.choices[0].delta.content
+
+    return StreamingResponse(stream_generator(), media_type="text/event-stream")
 
 
 if __name__ == "__main__":

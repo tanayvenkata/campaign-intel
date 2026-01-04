@@ -1,0 +1,767 @@
+{
+  "total": 20,
+  "passed": 18,
+  "pass_rate": 0.9,
+  "avg_relevance": 0.8316666666666667,
+  "avg_latency_ms": 240.80933332443237,
+  "by_category": {
+    "loss_analysis": {
+      "pass_rate": 1.0,
+      "avg_relevance": 0.9333333333333333
+    },
+    "what_worked": {
+      "pass_rate": 1.0,
+      "avg_relevance": 0.8166666666666667
+    },
+    "economic_messaging": {
+      "pass_rate": 0.6666666666666666,
+      "avg_relevance": 0.6333333333333333
+    },
+    "voter_segments": {
+      "pass_rate": 1.0,
+      "avg_relevance": 0.8222222222222223
+    },
+    "state_specific": {
+      "pass_rate": 1.0,
+      "avg_relevance": 0.8916666666666667
+    },
+    "cross_analysis": {
+      "pass_rate": 0.0,
+      "avg_relevance": 0.7666666666666666
+    }
+  },
+  "results": [
+    {
+      "query_id": "loss-001",
+      "query": "What went wrong in Ohio 2024?",
+      "category": "loss_analysis",
+      "passed": true,
+      "relevance_score": 0.9,
+      "race_recall": 1.0,
+      "section_recall": 0.6666666666666666,
+      "latency_ms": 402.7559757232666,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-007"
+        ],
+        "retrieved_races": [
+          "race-007"
+        ],
+        "expected_sections": [
+          "What Failed",
+          "Executive Summary",
+          "The Collapse: What Happened"
+        ],
+        "retrieved_sections": [
+          "Header",
+          "The Collapse: What Happened",
+          "Executive Summary",
+          "Lessons for Ohio 2026",
+          "Conclusion"
+        ],
+        "relevance_scores": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      }
+    },
+    {
+      "query_id": "loss-002",
+      "query": "Why did our economic messaging fail?",
+      "category": "loss_analysis",
+      "passed": true,
+      "relevance_score": 0.9666666666666667,
+      "race_recall": 1.0,
+      "section_recall": 1.0,
+      "latency_ms": 173.67100715637207,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-003",
+          "race-007"
+        ],
+        "retrieved_races": [
+          "race-007",
+          "race-003"
+        ],
+        "expected_sections": [
+          "What Went Wrong",
+          "What Failed"
+        ],
+        "retrieved_sections": [
+          "What Failed",
+          "What Went Wrong",
+          "What the Focus Groups Told Us (And We Didn't Fix)",
+          "Accountability Statement"
+        ],
+        "relevance_scores": [
+          1.0,
+          0.9,
+          1.0
+        ]
+      }
+    },
+    {
+      "query_id": "loss-003",
+      "query": "What warning signs did focus groups show that we ignored?",
+      "category": "loss_analysis",
+      "passed": true,
+      "relevance_score": 0.9,
+      "race_recall": 1.0,
+      "section_recall": 0.5,
+      "latency_ms": 245.6049919128418,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-003",
+          "race-007"
+        ],
+        "retrieved_races": [
+          "race-007",
+          "race-003"
+        ],
+        "expected_sections": [
+          "What the Focus Groups Told Us (And We Didn't Fix)",
+          "Focus Group Warning Signs Ignored"
+        ],
+        "retrieved_sections": [
+          "Key Learnings for Future Races",
+          "Accountability Statement",
+          "The Collapse: What Happened",
+          "What Failed",
+          "What the Focus Groups Told Us (And We Didn't Fix)"
+        ],
+        "relevance_scores": [
+          0.8,
+          0.9,
+          1.0
+        ]
+      }
+    },
+    {
+      "query_id": "loss-004",
+      "query": "What lessons should we learn from Wisconsin 2022?",
+      "category": "loss_analysis",
+      "passed": true,
+      "relevance_score": 1.0,
+      "race_recall": 1.0,
+      "section_recall": 1.0,
+      "latency_ms": 218.42598915100098,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-003"
+        ],
+        "retrieved_races": [
+          "race-003"
+        ],
+        "expected_sections": [
+          "Key Learnings for Future Races",
+          "Recommendations for Future Wisconsin Races"
+        ],
+        "retrieved_sections": [
+          "Key Learnings for Future Races",
+          "Accountability Statement",
+          "What Went Wrong",
+          "What We Should Have Done",
+          "Recommendations for Future Wisconsin Races"
+        ],
+        "relevance_scores": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "query_id": "loss-005",
+      "query": "What should we do differently in 2026?",
+      "category": "loss_analysis",
+      "passed": true,
+      "relevance_score": 0.9,
+      "race_recall": 1.0,
+      "section_recall": 1.0,
+      "latency_ms": 213.70434761047363,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-007"
+        ],
+        "retrieved_races": [
+          "race-007",
+          "race-003"
+        ],
+        "expected_sections": [
+          "Lessons for Ohio 2026",
+          "What 2026 Candidate Must Do Differently"
+        ],
+        "retrieved_sections": [
+          "Conclusion",
+          "Key Learnings for Future Races",
+          "Lessons for Ohio 2026",
+          "What 2026 Candidate Must Do Differently"
+        ],
+        "relevance_scores": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      }
+    },
+    {
+      "query_id": "work-001",
+      "query": "What messaging worked with working-class voters?",
+      "category": "what_worked",
+      "passed": true,
+      "relevance_score": 0.6666666666666666,
+      "race_recall": 0.6666666666666666,
+      "section_recall": 1.0,
+      "latency_ms": 230.70597648620605,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-009",
+          "race-001",
+          "race-002"
+        ],
+        "retrieved_races": [
+          "race-001",
+          "race-002",
+          "race-012"
+        ],
+        "expected_sections": [
+          "What Worked"
+        ],
+        "retrieved_sections": [
+          "Key Learnings for Future Races",
+          "Lessons for Future Wisconsin Races",
+          "What Worked",
+          "What Didn't Work"
+        ],
+        "relevance_scores": [
+          0.6,
+          0.9,
+          0.5
+        ]
+      }
+    },
+    {
+      "query_id": "work-002",
+      "query": "How did authentic candidate biography help win races?",
+      "category": "what_worked",
+      "passed": true,
+      "relevance_score": 0.7666666666666666,
+      "race_recall": 1.0,
+      "section_recall": 0.5,
+      "latency_ms": 221.74525260925293,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-002",
+          "race-009",
+          "race-012"
+        ],
+        "retrieved_races": [
+          "race-002",
+          "race-012",
+          "race-009"
+        ],
+        "expected_sections": [
+          "What Worked",
+          "Key Learnings for Future Races"
+        ],
+        "retrieved_sections": [
+          "Key Learnings for Future Races",
+          "Lessons for Future Wisconsin Races"
+        ],
+        "relevance_scores": [
+          0.6,
+          0.9,
+          0.8
+        ]
+      }
+    },
+    {
+      "query_id": "work-003",
+      "query": "What healthcare messaging worked?",
+      "category": "what_worked",
+      "passed": true,
+      "relevance_score": 0.9333333333333332,
+      "race_recall": 0.5,
+      "section_recall": 0.5,
+      "latency_ms": 541.7718887329102,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-012",
+          "race-010"
+        ],
+        "retrieved_races": [
+          "race-001",
+          "race-002",
+          "race-012",
+          "race-006"
+        ],
+        "expected_sections": [
+          "What Worked",
+          "Message Testing Results"
+        ],
+        "retrieved_sections": [
+          "Lessons for Future Wisconsin Races",
+          "What Worked",
+          "What Didn't Work"
+        ],
+        "relevance_scores": [
+          1.0,
+          0.9,
+          0.9
+        ]
+      }
+    },
+    {
+      "query_id": "work-004",
+      "query": "How did abortion messaging perform?",
+      "category": "what_worked",
+      "passed": true,
+      "relevance_score": 0.9,
+      "race_recall": 0.3333333333333333,
+      "section_recall": 1.0,
+      "latency_ms": 218.46914291381836,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-001",
+          "race-005",
+          "race-009"
+        ],
+        "retrieved_races": [
+          "race-001",
+          "race-003"
+        ],
+        "expected_sections": [
+          "What Worked"
+        ],
+        "retrieved_sections": [
+          "Accountability Statement",
+          "What Went Wrong",
+          "What Worked",
+          "What the Focus Groups Told Us (And We Didn't Fix)",
+          "Executive Summary"
+        ],
+        "relevance_scores": [
+          1.0,
+          0.9,
+          0.8
+        ]
+      }
+    },
+    {
+      "query_id": "econ-001",
+      "query": "Why did corporate greed messaging fail?",
+      "category": "economic_messaging",
+      "passed": false,
+      "relevance_score": 0.4666666666666666,
+      "race_recall": 1.0,
+      "section_recall": 1.0,
+      "latency_ms": 191.68686866760254,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-003"
+        ],
+        "retrieved_races": [
+          "race-007",
+          "race-003",
+          "race-012"
+        ],
+        "expected_sections": [
+          "What Went Wrong"
+        ],
+        "retrieved_sections": [
+          "What Failed",
+          "What Went Wrong",
+          "Accountability Statement",
+          "What Didn't Work"
+        ],
+        "relevance_scores": [
+          1.0,
+          0.2,
+          0.2
+        ]
+      }
+    },
+    {
+      "query_id": "econ-002",
+      "query": "What economic messages tested well?",
+      "category": "economic_messaging",
+      "passed": true,
+      "relevance_score": 0.6666666666666666,
+      "race_recall": 1.0,
+      "section_recall": 0.5,
+      "latency_ms": 185.71901321411133,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-001",
+          "race-012"
+        ],
+        "retrieved_races": [
+          "race-001",
+          "race-002",
+          "race-012",
+          "race-006"
+        ],
+        "expected_sections": [
+          "What Worked",
+          "Message Testing Results"
+        ],
+        "retrieved_sections": [
+          "What Worked",
+          "What Didn't Work"
+        ],
+        "relevance_scores": [
+          1.0,
+          0.8,
+          0.2
+        ]
+      }
+    },
+    {
+      "query_id": "econ-003",
+      "query": "How should we talk about inflation?",
+      "category": "economic_messaging",
+      "passed": true,
+      "relevance_score": 0.7666666666666666,
+      "race_recall": 0.6666666666666666,
+      "section_recall": 0.5,
+      "latency_ms": 194.19074058532715,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-003",
+          "race-006",
+          "race-007"
+        ],
+        "retrieved_races": [
+          "race-001",
+          "race-003",
+          "race-006"
+        ],
+        "expected_sections": [
+          "What Went Wrong",
+          "What We Should Have Done"
+        ],
+        "retrieved_sections": [
+          "Key Learnings for Future Races",
+          "What Worked",
+          "What We Should Have Done",
+          "Recommendations for Future Nevada Races"
+        ],
+        "relevance_scores": [
+          0.8,
+          0.7,
+          0.8
+        ]
+      }
+    },
+    {
+      "query_id": "voter-001",
+      "query": "What did we learn about union voters?",
+      "category": "voter_segments",
+      "passed": true,
+      "relevance_score": 0.7666666666666666,
+      "race_recall": 0.6666666666666666,
+      "section_recall": 1.0,
+      "latency_ms": 191.94698333740234,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-003",
+          "race-006",
+          "race-007"
+        ],
+        "retrieved_races": [
+          "race-012",
+          "race-002",
+          "race-006",
+          "race-007"
+        ],
+        "expected_sections": [
+          "Voter Segment Analysis"
+        ],
+        "retrieved_sections": [
+          "Key Learnings for Future Races",
+          "Lessons for Future Wisconsin Races",
+          "What Worked",
+          "The Collapse: What Happened",
+          "Voter Segment Analysis"
+        ],
+        "relevance_scores": [
+          0.9,
+          0.8,
+          0.6
+        ]
+      }
+    },
+    {
+      "query_id": "voter-002",
+      "query": "How to win suburban voters?",
+      "category": "voter_segments",
+      "passed": true,
+      "relevance_score": 0.8333333333333334,
+      "race_recall": 0.3333333333333333,
+      "section_recall": 0.5,
+      "latency_ms": 182.0359230041504,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-001",
+          "race-009",
+          "race-010"
+        ],
+        "retrieved_races": [
+          "race-002",
+          "race-012",
+          "race-009",
+          "race-005"
+        ],
+        "expected_sections": [
+          "Voter Segment Analysis",
+          "Geographic Insights"
+        ],
+        "retrieved_sections": [
+          "Recommendations for Michigan Democrats",
+          "Lessons for Future Wisconsin Races",
+          "What Didn't Work",
+          "Geographic Insights",
+          "Recommendations for Future Arizona Races"
+        ],
+        "relevance_scores": [
+          0.8,
+          0.8,
+          0.9
+        ]
+      }
+    },
+    {
+      "query_id": "voter-003",
+      "query": "What messages worked with Latino voters?",
+      "category": "voter_segments",
+      "passed": true,
+      "relevance_score": 0.8666666666666667,
+      "race_recall": 1.0,
+      "section_recall": 0.5,
+      "latency_ms": 188.6458396911621,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-005",
+          "race-006"
+        ],
+        "retrieved_races": [
+          "race-006",
+          "race-005"
+        ],
+        "expected_sections": [
+          "What Worked",
+          "Voter Segment Analysis"
+        ],
+        "retrieved_sections": [
+          "What Worked",
+          "What Didn't Work",
+          "Margin Analysis"
+        ],
+        "relevance_scores": [
+          1.0,
+          0.8,
+          0.8
+        ]
+      }
+    },
+    {
+      "query_id": "state-001",
+      "query": "How do we win in Michigan?",
+      "category": "state_specific",
+      "passed": true,
+      "relevance_score": 0.9666666666666667,
+      "race_recall": 1.0,
+      "section_recall": 0.5,
+      "latency_ms": 186.90180778503418,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-001",
+          "race-009"
+        ],
+        "retrieved_races": [
+          "race-001",
+          "race-009"
+        ],
+        "expected_sections": [
+          "Recommendations for Michigan Democrats",
+          "Key Learnings for Future Races"
+        ],
+        "retrieved_sections": [
+          "Recommendations for Michigan Democrats",
+          "Executive Summary",
+          "Header",
+          "Recommendations for 2024 and Beyond"
+        ],
+        "relevance_scores": [
+          1.0,
+          1.0,
+          0.9
+        ]
+      }
+    },
+    {
+      "query_id": "state-002",
+      "query": "What is the path to victory in Pennsylvania?",
+      "category": "state_specific",
+      "passed": true,
+      "relevance_score": 0.8333333333333334,
+      "race_recall": 1.0,
+      "section_recall": 1.0,
+      "latency_ms": 186.51819229125977,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-002",
+          "race-010"
+        ],
+        "retrieved_races": [
+          "race-002",
+          "race-010"
+        ],
+        "expected_sections": [
+          "Recommendations for Pennsylvania Democrats",
+          "Geographic Insights"
+        ],
+        "retrieved_sections": [
+          "Key Learnings for Future Races",
+          "Recommendations for Pennsylvania Democrats",
+          "Geographic Insights",
+          "Recommendations for 2024 and Beyond"
+        ],
+        "relevance_scores": [
+          0.8,
+          0.8,
+          0.9
+        ]
+      }
+    },
+    {
+      "query_id": "state-003",
+      "query": "What went wrong in Montana?",
+      "category": "state_specific",
+      "passed": true,
+      "relevance_score": 0.8666666666666667,
+      "race_recall": 1.0,
+      "section_recall": 0.0,
+      "latency_ms": 396.4669704437256,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-008"
+        ],
+        "retrieved_races": [
+          "race-008"
+        ],
+        "expected_sections": [
+          "What We Did Wrong",
+          "The Loss: What Happened"
+        ],
+        "retrieved_sections": [
+          "Executive Summary",
+          "Recommendations for Future Red-State Democrats",
+          "Lessons for Future Montana Campaigns",
+          "Conclusion"
+        ],
+        "relevance_scores": [
+          0.8,
+          1.0,
+          0.8
+        ]
+      }
+    },
+    {
+      "query_id": "state-004",
+      "query": "How to improve Wisconsin performance?",
+      "category": "state_specific",
+      "passed": true,
+      "relevance_score": 0.9,
+      "race_recall": 1.0,
+      "section_recall": 1.0,
+      "latency_ms": 178.98988723754883,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-003",
+          "race-012"
+        ],
+        "retrieved_races": [
+          "race-003",
+          "race-012"
+        ],
+        "expected_sections": [
+          "Recommendations for Wisconsin Democrats",
+          "Learning from 2022"
+        ],
+        "retrieved_sections": [
+          "What We Should Have Done",
+          "Learning from 2022",
+          "Recommendations for Wisconsin Democrats",
+          "Recommendations for Future Wisconsin Races"
+        ],
+        "relevance_scores": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      }
+    },
+    {
+      "query_id": "cross-001",
+      "query": "What strategies worked in races we won vs failed in races we lost?",
+      "category": "cross_analysis",
+      "passed": false,
+      "relevance_score": 0.7666666666666666,
+      "race_recall": 0.25,
+      "section_recall": 0.0,
+      "latency_ms": 266.22986793518066,
+      "num_results": 5,
+      "details": {
+        "expected_races": [
+          "race-003",
+          "race-012",
+          "race-007",
+          "race-009"
+        ],
+        "retrieved_races": [
+          "race-001",
+          "race-003",
+          "race-002",
+          "race-006"
+        ],
+        "expected_sections": [
+          "What Worked",
+          "What Went Wrong",
+          "Learning from 2022"
+        ],
+        "retrieved_sections": [
+          "Key Learnings for Future Races",
+          "Accountability Statement",
+          "Executive Summary",
+          "What Didn't Work"
+        ],
+        "relevance_scores": [
+          0.8,
+          0.7,
+          0.8
+        ]
+      }
+    }
+  ]
+}

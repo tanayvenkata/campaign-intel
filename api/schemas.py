@@ -82,3 +82,67 @@ class DeepMacroResponse(BaseModel):
     """Response from Deep Macro Synthesis (non-streaming)."""
     themes: List[DeepMacroTheme]
     metadata: Dict[str, Any]  # timing, llm_calls, etc.
+
+
+# ============ Strategy Memo Schemas ============
+
+class StrategyChunk(BaseModel):
+    """Mirror of StrategyRetrievalResult dataclass."""
+    chunk_id: str
+    score: float
+    content: str
+    race_id: str
+    section: str
+    subsection: Optional[str] = ""
+    outcome: str
+    state: str
+    year: int
+    margin: float
+    source_file: str
+    line_number: int
+
+
+class StrategyGroupedResult(BaseModel):
+    """Strategy results grouped by race."""
+    race_id: str
+    race_metadata: Dict[str, Any]
+    chunks: List[StrategyChunk]
+
+
+class UnifiedSearchResponse(BaseModel):
+    """Response from unified search - includes both quotes and lessons."""
+    content_type: str  # "quotes", "lessons", or "both"
+    quotes: List[GroupedResult]  # Focus group results
+    lessons: List[StrategyGroupedResult]  # Strategy memo results
+    stats: Dict[str, Any]
+
+
+# ============ Strategy Synthesis Schemas ============
+
+class StrategySynthesisRequest(BaseModel):
+    """Request for strategy synthesis (light or deep)."""
+    chunks: List[StrategyChunk]
+    query: str
+    race_name: Optional[str] = ""
+
+
+class StrategyMacroSynthesisRequest(BaseModel):
+    """Request for cross-race strategy synthesis."""
+    race_summaries: Dict[str, str]  # race_id -> light summary
+    top_chunks: Dict[str, List[StrategyChunk]]  # race_id -> chunks
+    race_metadata: Dict[str, Dict[str, Any]]  # race_id -> metadata
+    query: str
+
+
+class UnifiedMacroSynthesisRequest(BaseModel):
+    """Request for unified macro synthesis combining FG quotes + strategy lessons."""
+    # Focus group data
+    fg_summaries: Dict[str, str]  # fg_id -> light summary
+    fg_quotes: Dict[str, List[RetrievalChunk]]  # fg_id -> top quotes
+    fg_metadata: Dict[str, Dict[str, Any]]  # fg_id -> metadata
+    # Strategy data
+    strategy_summaries: Dict[str, str]  # race_id -> light summary
+    strategy_chunks: Dict[str, List[StrategyChunk]]  # race_id -> top chunks
+    strategy_metadata: Dict[str, Dict[str, Any]]  # race_id -> metadata
+    # Query
+    query: str

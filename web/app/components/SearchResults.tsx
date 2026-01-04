@@ -2,23 +2,27 @@
 
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { GroupedResult } from '../types';
+import { GroupedResult, StrategyGroupedResult } from '../types';
 import QuoteBlock from './QuoteBlock';
 import SynthesisPanel from './SynthesisPanel';
+import StrategySection from './StrategySection';
 import { exportToMarkdown } from '../utils/exportMarkdown';
 import { ENDPOINTS } from '../config/api';
 
 interface SearchResultsProps {
     results: GroupedResult[];
+    lessons?: StrategyGroupedResult[];
     query: string;
     stats?: {
         total_quotes: number;
+        total_lessons?: number;
         focus_groups_count: number;
+        races_count?: number;
         retrieval_time_ms: number;
     };
 }
 
-export default function SearchResults({ results, query, stats }: SearchResultsProps) {
+export default function SearchResults({ results, lessons = [], query, stats }: SearchResultsProps) {
     const [summaries, setSummaries] = useState<Record<string, string>>({});
     const [loadingSummaries, setLoadingSummaries] = useState<Set<string>>(new Set());
     const [selectedForMacro, setSelectedForMacro] = useState<Set<string>>(new Set());
@@ -31,11 +35,40 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
     const [deepSyntheses, setDeepSyntheses] = useState<Record<string, string>>({});
     // Keep deepMacroThemes for export compatibility
     const [deepMacroThemes] = useState<Array<{name: string; synthesis: string; focus_groups: string[]}>>([]);
+    // Strategy summaries (from StrategySection)
+    const [strategySummaries, setStrategySummaries] = useState<Record<string, string>>({});
+    // Selected strategy races for macro synthesis
+    const [selectedRaces, setSelectedRaces] = useState<Set<string>>(new Set());
 
     // Callback for SynthesisPanel to report deep synthesis
     const handleDeepSynthesisComplete = (fgId: string, synthesis: string) => {
         setDeepSyntheses(prev => ({ ...prev, [fgId]: synthesis }));
     };
+
+    // Callback for StrategySection to report all summaries
+    const handleStrategySummariesReady = (summaries: Record<string, string>) => {
+        setStrategySummaries(summaries);
+    };
+
+    // Toggle race selection
+    const toggleRaceSelection = (raceId: string) => {
+        setSelectedRaces(prev => {
+            const next = new Set(prev);
+            if (next.has(raceId)) {
+                next.delete(raceId);
+            } else {
+                next.add(raceId);
+            }
+            return next;
+        });
+    };
+
+    // Auto-select all races when lessons arrive
+    useEffect(() => {
+        if (lessons.length > 0 && selectedRaces.size === 0) {
+            setSelectedRaces(new Set(lessons.map(r => r.race_id)));
+        }
+    }, [lessons]);
 
     // Auto-generate light summaries when results change
     useEffect(() => {
@@ -131,7 +164,13 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
             deepSyntheses,
             macroResult,
             deepMacroThemes,
-            stats,
+            stats: stats ? {
+                ...stats,
+                total_lessons: stats.total_lessons,
+                races_count: stats.races_count,
+            } : undefined,
+            lessons,
+            strategySummaries,
         });
     };
 
@@ -147,29 +186,57 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
         setIsMacroLoading(true);
         setMacroResult('');
 
-        // Prepare data for macro synthesis
+        // Prepare FG data for macro synthesis
         const selectedResults = results.filter(r => selectedForMacro.has(r.focus_group_id));
 
-        const topQuotesPayload: Record<string, any[]> = {};
-        const summariesPayload: Record<string, string> = {};
-        const metadataPayload: Record<string, any> = {};
+        const fgQuotesPayload: Record<string, any[]> = {};
+        const fgSummariesPayload: Record<string, string> = {};
+        const fgMetadataPayload: Record<string, any> = {};
 
         selectedResults.forEach(r => {
-            topQuotesPayload[r.focus_group_id] = r.chunks;
-            summariesPayload[r.focus_group_id] = summaries[r.focus_group_id] || "Summary not available";
-            metadataPayload[r.focus_group_id] = r.focus_group_metadata;
+            fgQuotesPayload[r.focus_group_id] = r.chunks;
+            fgSummariesPayload[r.focus_group_id] = summaries[r.focus_group_id] || "Summary not available";
+            fgMetadataPayload[r.focus_group_id] = r.focus_group_metadata;
+        });
+
+        // Prepare strategy data if available (only selected races)
+        const strategyChunksPayload: Record<string, any[]> = {};
+        const strategySummariesPayload: Record<string, string> = {};
+        const strategyMetadataPayload: Record<string, any> = {};
+
+        const selectedLessons = lessons.filter(race => selectedRaces.has(race.race_id));
+        selectedLessons.forEach(race => {
+            strategyChunksPayload[race.race_id] = race.chunks;
+            strategySummariesPayload[race.race_id] = strategySummaries[race.race_id] || "Summary not available";
+            strategyMetadataPayload[race.race_id] = race.race_metadata;
         });
 
         try {
-            const response = await fetch(ENDPOINTS.synthesizeMacroLight, {
+            // Use unified endpoint if we have selected strategy races
+            const hasStrategy = selectedLessons.length > 0 && Object.keys(strategySummaries).length > 0;
+            const endpoint = hasStrategy ? ENDPOINTS.synthesizeUnifiedMacro : ENDPOINTS.synthesizeMacroLight;
+
+            const payload = hasStrategy
+                ? {
+                    fg_summaries: fgSummariesPayload,
+                    fg_quotes: fgQuotesPayload,
+                    fg_metadata: fgMetadataPayload,
+                    strategy_summaries: strategySummariesPayload,
+                    strategy_chunks: strategyChunksPayload,
+                    strategy_metadata: strategyMetadataPayload,
+                    query: query
+                }
+                : {
+                    fg_summaries: fgSummariesPayload,
+                    top_quotes: fgQuotesPayload,
+                    fg_metadata: fgMetadataPayload,
+                    query: query
+                };
+
+            const response = await fetch(endpoint, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    fg_summaries: summariesPayload,
-                    top_quotes: topQuotesPayload,
-                    fg_metadata: metadataPayload,
-                    query: query
-                })
+                body: JSON.stringify(payload)
             });
 
             if (!response.body) return;
@@ -204,8 +271,8 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
                 </button>
             </div>
 
-            {/* Macro Synthesis Controls */}
-            {results.length > 1 && (
+            {/* Research Synthesis - moved to top as high-level overview */}
+            {results.length > 0 && (
                 <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm sticky top-4 z-10">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
@@ -221,7 +288,7 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
-                                <h3 className="font-semibold">Cross-Focus Group Analysis</h3>
+                                <h3 className="font-semibold">Research Synthesis</h3>
                             </button>
                             {!isMacroPanelCollapsed && (
                                 <button
@@ -263,7 +330,9 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
                                         ? 'Synthesizing...'
                                         : isWaitingForSummaries
                                             ? `Queued (${summariesReady}/${selectedForMacro.size} ready)`
-                                            : `Synthesize Selected (${selectedForMacro.size})`}
+                                            : selectedRaces.size > 0
+                                                ? `Synthesize All (${selectedForMacro.size} FG + ${selectedRaces.size} race${selectedRaces.size > 1 ? 's' : ''})`
+                                                : `Synthesize Selected (${selectedForMacro.size})`}
                                 </button>
                             </div>
                         )}
@@ -277,7 +346,7 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
                                     <div className="space-y-2">
                                         <div className="flex items-center gap-2 text-sm text-green-700">
                                             <span className="w-4 h-4 border-2 border-green-600 border-t-transparent rounded-full animate-spin" />
-                                            <span>Synthesizing insights across {selectedForMacro.size} focus groups...</span>
+                                            <span>Synthesizing insights across {selectedForMacro.size} focus groups{selectedRaces.size > 0 ? ` and ${selectedRaces.size} campaign lesson${selectedRaces.size > 1 ? 's' : ''}` : ''}...</span>
                                         </div>
                                         <div className="flex gap-1">
                                             <div className="h-2 w-2 bg-green-300 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
@@ -301,6 +370,15 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
                     )}
                 </div>
             )}
+
+            {/* Strategy Section (Campaign Lessons) */}
+            <StrategySection
+                lessons={lessons}
+                query={query}
+                onSummariesReady={handleStrategySummariesReady}
+                selectedRaces={selectedRaces}
+                onToggleRace={toggleRaceSelection}
+            />
 
             {/* List Results with staggered animation */}
             {results.map((group, index) => {

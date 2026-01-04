@@ -1,0 +1,211 @@
+# Unified Router Evaluation
+# Tests content type detection and filtering accuracy
+# Run: cd eval/router_eval && npx promptfoo eval -c promptfooconfig_unified_router.yaml
+#
+# ARCHITECTURE NOTE (2024-01):
+# Currently using prompt-stuffing (all manifest data in system prompt).
+# At ~50 items (37 FGs + 12 memos), this is ~3-4K tokens - manageable.
+#
+# IF CORPUS GROWS beyond ~100 items, consider TOOL-CALLING approach:
+#   - Router gets lightweight prompt
+#   - Can call tools: list_races(state, outcome), get_race_details(race_id),
+#     list_focus_groups(state, demographic)
+#   - Pros: Flat context size, scales well, more precise filtering
+#   - Cons: 2-3 LLM calls vs 1, more complex
+#
+# Trigger for migration: manifest exceeds ~8K tokens or routing accuracy drops
+
+description: "Unified router - content type detection and filtering"
+
+prompts:
+  - file://unified_router_prompt.txt
+
+# Uses ROUTER_MODEL env var (default: google/gemini-2.0-flash-001)
+# Set in .env or eval/config.py
+# Requires: export OPENROUTER_API_KEY=sk-or-... before running
+providers:
+  - id: openrouter:${ROUTER_MODEL:-google/gemini-2.0-flash-001}
+    label: router-model
+    config:
+      apiBaseUrl: https://openrouter.ai/api/v1
+
+defaultTest:
+  options:
+    transform: |
+      // Parse JSON from response
+      let text = output;
+      if (text.includes('```')) {
+        text = text.split('```')[1];
+        if (text.startsWith('json')) text = text.slice(4);
+      }
+      try {
+        return JSON.parse(text.trim());
+      } catch (e) {
+        return { error: 'Failed to parse JSON', raw: output };
+      }
+
+tests:
+  # ============================================
+  # CONTENT TYPE: QUOTES (focus groups)
+  # ============================================
+  - vars:
+      query: "What did Ohio voters say about the economy?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'quotes'
+      - type: javascript
+        value: Array.isArray(output.focus_groups?.ids) && output.focus_groups.ids.some(id => id.includes('race-007'))
+
+  - vars:
+      query: "Show me quotes about inflation from working-class voters"
+    assert:
+      - type: javascript
+        value: output.content_type === 'quotes'
+
+  - vars:
+      query: "What did Cleveland suburban voters think about Tim Brennan?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'quotes'
+      - type: javascript
+        value: Array.isArray(output.focus_groups?.ids) && output.focus_groups.ids.some(id => id.includes('cleveland'))
+
+  - vars:
+      query: "How did union workers feel about Democrats?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'quotes'
+
+  # ============================================
+  # CONTENT TYPE: LESSONS (strategy memos)
+  # ============================================
+  - vars:
+      query: "What went wrong in Ohio 2024?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'lessons'
+      - type: javascript
+        value: Array.isArray(output.strategy?.race_ids) && output.strategy.race_ids.includes('race-007')
+      - type: javascript
+        value: output.strategy?.outcome_filter === 'loss'
+
+  - vars:
+      query: "What lessons did we learn from Michigan?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'lessons'
+      - type: javascript
+        value: Array.isArray(output.strategy?.race_ids) && output.strategy.race_ids.some(id => ['race-001', 'race-009'].includes(id))
+
+  - vars:
+      query: "Why did we lose Wisconsin 2022?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'lessons' || output.content_type === 'both'
+      - type: javascript
+        value: output.strategy?.outcome_filter === 'loss' || output.strategy?.race_ids?.includes('race-003')
+
+  - vars:
+      query: "What messaging strategies worked in races we won?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'lessons'
+      - type: javascript
+        value: output.strategy?.outcome_filter === 'win'
+
+  - vars:
+      query: "Show me the recommendations for future Pennsylvania races"
+    assert:
+      - type: javascript
+        value: output.content_type === 'lessons'
+      - type: javascript
+        value: Array.isArray(output.strategy?.race_ids) && output.strategy.race_ids.some(id => ['race-002', 'race-010'].includes(id))
+
+  # ============================================
+  # CONTENT TYPE: BOTH
+  # ============================================
+  - vars:
+      query: "What worked with working-class voters?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'both' || output.content_type === 'lessons'
+
+  - vars:
+      query: "How did voters respond to our economic messaging and what should we do differently?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'both'
+
+  - vars:
+      query: "What did focus groups say about abortion and what lessons did we learn?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'both'
+
+  # ============================================
+  # OUTCOME FILTERING
+  # ============================================
+  - vars:
+      query: "What went wrong in races we lost?"
+    assert:
+      - type: javascript
+        value: output.strategy?.outcome_filter === 'loss'
+
+  - vars:
+      query: "What strategies helped us win?"
+    assert:
+      - type: javascript
+        value: output.strategy?.outcome_filter === 'win'
+
+  - vars:
+      query: "Loss analysis for 2024 races"
+    assert:
+      - type: javascript
+        value: output.content_type === 'lessons'
+      - type: javascript
+        value: output.strategy?.outcome_filter === 'loss'
+
+  # ============================================
+  # STATE FILTERING
+  # ============================================
+  - vars:
+      query: "What did Michigan voters say about the auto industry?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'quotes'
+      - type: javascript
+        value: Array.isArray(output.focus_groups?.ids) && output.focus_groups.ids.some(id => id.includes('race-001') || id.includes('race-009'))
+
+  - vars:
+      query: "Pennsylvania strategy recommendations"
+    assert:
+      - type: javascript
+        value: output.content_type === 'lessons'
+      - type: javascript
+        value: Array.isArray(output.strategy?.race_ids) && output.strategy.race_ids.some(id => ['race-002', 'race-010'].includes(id))
+
+  # ============================================
+  # EDGE CASES
+  # ============================================
+  - vars:
+      query: "Tell me everything about Ohio"
+    assert:
+      - type: javascript
+        value: output.content_type === 'both'
+      - type: javascript
+        value: output.focus_groups?.ids?.some(id => id.includes('race-007')) || output.focus_groups?.all === true
+      - type: javascript
+        value: output.strategy?.race_ids?.includes('race-007') || output.strategy?.all === true
+
+  - vars:
+      query: "What's the best approach for winning swing states?"
+    assert:
+      - type: javascript
+        value: output.content_type === 'lessons' || output.content_type === 'both'
+
+  - vars:
+      query: "healthcare"
+    assert:
+      # Broad single-word query should search broadly
+      - type: javascript
+        value: output.focus_groups?.all === true || (Array.isArray(output.focus_groups?.ids) && output.focus_groups.ids.length > 3)

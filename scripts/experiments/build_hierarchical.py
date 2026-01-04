@@ -26,6 +26,7 @@ from eval.config import (
     DATA_DIR,
     CHUNKS_DIR,
     FOCUS_GROUPS_DIR,
+    OPENAI_GENERATION_MODEL,
 )
 
 import openai
@@ -84,7 +85,8 @@ Discussion:
 Summary:"""
 
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+    response = client.chat.completions.create(
+        model=OPENAI_GENERATION_MODEL,
         messages=[{"role": "user", "content": prompt}],
         max_tokens=200
     )

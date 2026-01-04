@@ -1,0 +1,210 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Test queries for strategy memo retrieval (lessons learned from campaigns)",
+    "categories": [
+      "loss_analysis",
+      "what_worked",
+      "economic_messaging",
+      "voter_segments",
+      "state_specific"
+    ],
+    "total_count": 20,
+    "notes": "Rachel's priority is loss analysis queries - finding lessons from races we lost"
+  },
+  "queries": [
+    {
+      "id": "loss-001",
+      "query": "What went wrong in Ohio 2024?",
+      "category": "loss_analysis",
+      "type": "race_specific",
+      "expected_races": ["race-007"],
+      "expected_sections": ["What Failed", "Executive Summary", "The Collapse: What Happened"],
+      "outcome_filter": "loss",
+      "notes": "Key loss analysis query - Ohio 2024 Senate race lost by 6.2%"
+    },
+    {
+      "id": "loss-002",
+      "query": "Why did our economic messaging fail?",
+      "category": "loss_analysis",
+      "type": "theme_search",
+      "expected_races": ["race-003", "race-007"],
+      "expected_sections": ["What Went Wrong", "What Failed"],
+      "outcome_filter": "loss",
+      "notes": "Economic messaging was flagged as failure in both Wisconsin 2022 and Ohio 2024"
+    },
+    {
+      "id": "loss-003",
+      "query": "What warning signs did focus groups show that we ignored?",
+      "category": "loss_analysis",
+      "type": "theme_search",
+      "expected_races": ["race-003", "race-007"],
+      "expected_sections": ["What the Focus Groups Told Us (And We Didn't Fix)", "Focus Group Warning Signs Ignored"],
+      "outcome_filter": "loss",
+      "notes": "Both loss memos have explicit sections on ignored warnings"
+    },
+    {
+      "id": "loss-004",
+      "query": "What lessons should we learn from Wisconsin 2022?",
+      "category": "loss_analysis",
+      "type": "race_specific",
+      "expected_races": ["race-003"],
+      "expected_sections": ["Key Learnings for Future Races", "Recommendations for Future Wisconsin Races"],
+      "outcome_filter": "loss",
+      "notes": "Wisconsin 2022 loss by 1.1% - very close race"
+    },
+    {
+      "id": "loss-005",
+      "query": "What should we do differently in 2026?",
+      "category": "loss_analysis",
+      "type": "theme_search",
+      "expected_races": ["race-007"],
+      "expected_sections": ["Lessons for Ohio 2026", "What 2026 Candidate Must Do Differently"],
+      "notes": "Forward-looking recommendations from Ohio loss"
+    },
+    {
+      "id": "work-001",
+      "query": "What messaging worked with working-class voters?",
+      "category": "what_worked",
+      "type": "theme_search",
+      "expected_races": ["race-009", "race-001", "race-002"],
+      "expected_sections": ["What Worked"],
+      "outcome_filter": "win",
+      "notes": "Michigan and Pennsylvania wins had strong working-class messaging"
+    },
+    {
+      "id": "work-002",
+      "query": "How did authentic candidate biography help win races?",
+      "category": "what_worked",
+      "type": "theme_search",
+      "expected_races": ["race-002", "race-009", "race-012"],
+      "expected_sections": ["What Worked", "Key Learnings for Future Races"],
+      "outcome_filter": "win",
+      "notes": "Authentic biography was key in PA 2022, MI 2024, WI 2024"
+    },
+    {
+      "id": "work-003",
+      "query": "What healthcare messaging worked?",
+      "category": "what_worked",
+      "type": "theme_search",
+      "expected_races": ["race-012", "race-010"],
+      "expected_sections": ["What Worked", "Message Testing Results"],
+      "outcome_filter": "win",
+      "notes": "Wisconsin 2024 nurse candidate and Pennsylvania pharma attack"
+    },
+    {
+      "id": "work-004",
+      "query": "How did abortion messaging perform?",
+      "category": "what_worked",
+      "type": "theme_search",
+      "expected_races": ["race-001", "race-005", "race-009"],
+      "expected_sections": ["What Worked"],
+      "notes": "Post-Dobbs abortion was key issue in multiple races"
+    },
+    {
+      "id": "econ-001",
+      "query": "Why did corporate greed messaging fail?",
+      "category": "economic_messaging",
+      "type": "specific_message",
+      "expected_races": ["race-003"],
+      "expected_sections": ["What Went Wrong"],
+      "notes": "Wisconsin 2022 - 'fighting corporate greed' scored 1.5/5"
+    },
+    {
+      "id": "econ-002",
+      "query": "What economic messages tested well?",
+      "category": "economic_messaging",
+      "type": "theme_search",
+      "expected_races": ["race-001", "race-012"],
+      "expected_sections": ["What Worked", "Message Testing Results"],
+      "outcome_filter": "win",
+      "notes": "Specific policies like $35 insulin cap scored higher"
+    },
+    {
+      "id": "econ-003",
+      "query": "How should we talk about inflation?",
+      "category": "economic_messaging",
+      "type": "theme_search",
+      "expected_races": ["race-003", "race-006", "race-007"],
+      "expected_sections": ["What Went Wrong", "What We Should Have Done"],
+      "notes": "Inflation narrative was challenge in multiple races"
+    },
+    {
+      "id": "voter-001",
+      "query": "What did we learn about union voters?",
+      "category": "voter_segments",
+      "type": "demographic_search",
+      "expected_races": ["race-003", "race-006", "race-007"],
+      "expected_sections": ["Voter Segment Analysis"],
+      "notes": "Union defection was issue in Wisconsin, Ohio"
+    },
+    {
+      "id": "voter-002",
+      "query": "How to win suburban voters?",
+      "category": "voter_segments",
+      "type": "demographic_search",
+      "expected_races": ["race-001", "race-009", "race-010"],
+      "expected_sections": ["Voter Segment Analysis", "Geographic Insights"],
+      "outcome_filter": "win",
+      "notes": "Suburban strategy in winning races"
+    },
+    {
+      "id": "voter-003",
+      "query": "What messages worked with Latino voters?",
+      "category": "voter_segments",
+      "type": "demographic_search",
+      "expected_races": ["race-005", "race-006"],
+      "expected_sections": ["What Worked", "Voter Segment Analysis"],
+      "notes": "Arizona and Nevada had significant Latino outreach"
+    },
+    {
+      "id": "state-001",
+      "query": "How do we win in Michigan?",
+      "category": "state_specific",
+      "type": "state_strategy",
+      "expected_races": ["race-001", "race-009"],
+      "expected_sections": ["Recommendations for Michigan Democrats", "Key Learnings for Future Races"],
+      "state_filter": "Michigan",
+      "notes": "Both Michigan races were wins - strong model"
+    },
+    {
+      "id": "state-002",
+      "query": "What is the path to victory in Pennsylvania?",
+      "category": "state_specific",
+      "type": "state_strategy",
+      "expected_races": ["race-002", "race-010"],
+      "expected_sections": ["Recommendations for Pennsylvania Democrats", "Geographic Insights"],
+      "state_filter": "Pennsylvania",
+      "notes": "Both PA races were wins"
+    },
+    {
+      "id": "state-003",
+      "query": "What went wrong in Montana?",
+      "category": "state_specific",
+      "type": "race_specific",
+      "expected_races": ["race-008"],
+      "expected_sections": ["What We Did Wrong", "The Loss: What Happened"],
+      "outcome_filter": "loss",
+      "notes": "Montana 2024 loss despite strong incumbent"
+    },
+    {
+      "id": "state-004",
+      "query": "How to improve Wisconsin performance?",
+      "category": "state_specific",
+      "type": "state_strategy",
+      "expected_races": ["race-003", "race-012"],
+      "expected_sections": ["Recommendations for Wisconsin Democrats", "Learning from 2022"],
+      "state_filter": "Wisconsin",
+      "notes": "Wisconsin 2022 loss vs 2024 win - what changed?"
+    },
+    {
+      "id": "cross-001",
+      "query": "What strategies worked in races we won vs failed in races we lost?",
+      "category": "cross_analysis",
+      "type": "comparative",
+      "expected_races": ["race-003", "race-012", "race-007", "race-009"],
+      "expected_sections": ["What Worked", "What Went Wrong", "Learning from 2022"],
+      "notes": "Cross-race comparison - compare strategies"
+    }
+  ]
+}
