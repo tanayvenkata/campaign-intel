@@ -1,0 +1,230 @@
+# Model Comparison: Claude 3 Haiku vs Claude 4 Haiku
+# Run: cd eval/router_eval && npx promptfoo eval -c promptfooconfig_model_compare.yaml
+
+description: "Router Model Comparison - Claude 3 vs Claude 4 Haiku"
+
+prompts:
+  - file://prompts/router_v2.txt  # Current production prompt
+
+providers:
+  # Baseline: Claude 3 Haiku
+  - id: openrouter:anthropic/claude-3-haiku
+    label: claude-3-haiku
+    config:
+      temperature: 0
+      max_tokens: 500
+
+  # Test: Gemini 2.0 Flash (60% cheaper)
+  - id: openrouter:google/gemini-2.0-flash-001
+    label: gemini-flash
+    config:
+      temperature: 0
+      max_tokens: 500
+
+defaultTest:
+  vars:
+    manifest: file://manifest.txt
+
+tests:
+  # ===== STATE FILTERS (8 tests) =====
+  - vars:
+      query: "What did Ohio voters say about jobs?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          const hasOhio = ids.every(id => id.includes('race-007'));
+          const hasAll = ids.length === 3;
+          return hasOhio && hasAll;
+
+  - vars:
+      query: "How do Michigan voters feel about the economy?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.every(id => id.includes('race-001') || id.includes('race-009'));
+
+  - vars:
+      query: "Pennsylvania voters on healthcare"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.every(id => id.includes('race-002') || id.includes('race-010'));
+
+  - vars:
+      query: "What did Wisconsin voters think about education?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.every(id => id.includes('race-003') || id.includes('race-012'));
+
+  - vars:
+      query: "Georgia voters on voting rights"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.every(id => id.includes('race-004'));
+
+  - vars:
+      query: "Arizona immigration concerns"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.every(id => id.includes('race-005'));
+
+  - vars:
+      query: "North Carolina suburban voters"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.every(id => id.includes('race-011'));
+
+  - vars:
+      query: "Montana rural voters"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.every(id => id.includes('race-008'));
+
+  # ===== DEMOGRAPHIC FILTERS (4 tests) =====
+  - vars:
+      query: "What do working-class voters think about trade?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.length > 0 && !result.all;
+
+  - vars:
+      query: "Latino voters on immigration"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.some(id => id.includes('latino') || id.includes('race-005-fg-002') || id.includes('race-006-fg-003'));
+
+  - vars:
+      query: "Black voters in Georgia"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.some(id => id.includes('race-004-fg-002') || id.includes('black'));
+
+  - vars:
+      query: "College-educated suburban voters"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.length > 0 && !result.all;
+
+  # ===== BROAD QUERIES - SHOULD RETURN ALL (4 tests) =====
+  - vars:
+      query: "What do voters think about the economy?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          return result.all === true;
+
+  - vars:
+      query: "How do people feel about inflation?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          return result.all === true;
+
+  - vars:
+      query: "Voter concerns about healthcare costs"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          return result.all === true;
+
+  - vars:
+      query: "What messaging resonates with swing voters?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          return result.all === true;
+
+  # ===== COMPOUND FILTERS (2 tests) =====
+  - vars:
+      query: "Working-class Ohio voters on manufacturing"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.some(id => id.includes('race-007'));
+
+  - vars:
+      query: "Pennsylvania suburban voters 2024"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.some(id => id.includes('race-010'));
+
+  # ===== EDGE CASES (2 tests) =====
+  - vars:
+      query: "California voters on housing"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.length === 0 || result.all === true;
+
+  - vars:
+      query: "Cleveland suburbs on local issues"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          const result = JSON.parse(output);
+          const ids = result.focus_group_ids || [];
+          return ids.some(id => id.includes('cleveland') || id.includes('race-007-fg-001'));

@@ -1,0 +1,82 @@
+# Router Sanity Check - 3 queries to verify format
+# Run: npx promptfoo eval -c promptfooconfig_sanity.yaml
+
+description: "Router Sanity Check - Format Verification"
+
+prompts:
+  - file://prompts/router_v2.txt
+
+providers:
+  # Baseline
+  - id: openrouter:anthropic/claude-3-haiku
+    label: claude-3-haiku
+    config:
+      temperature: 0
+      max_tokens: 500
+
+  # Candidates
+  - id: openrouter:google/gemini-2.0-flash-001
+    label: gemini-flash
+    config:
+      temperature: 0
+      max_tokens: 500
+
+  - id: openrouter:openai/gpt-4o-mini
+    label: gpt-4o-mini
+    config:
+      temperature: 0
+      max_tokens: 500
+
+defaultTest:
+  vars:
+    manifest: file://manifest.txt
+
+tests:
+  # Test 1: State filter (should return Ohio FGs)
+  - vars:
+      query: "What did Ohio voters say about jobs?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          // Handle markdown-wrapped JSON
+          let text = output;
+          if (text.includes('```')) {
+            text = text.split('```')[1];
+            if (text.startsWith('json')) text = text.slice(4);
+          }
+          const result = JSON.parse(text.trim());
+          const ids = result.focus_group_ids || [];
+          return ids.length > 0 && ids.every(id => id.includes('race-007'));
+
+  # Test 2: Broad query (should return all:true)
+  - vars:
+      query: "What do voters think about the economy?"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          let text = output;
+          if (text.includes('```')) {
+            text = text.split('```')[1];
+            if (text.startsWith('json')) text = text.slice(4);
+          }
+          const result = JSON.parse(text.trim());
+          return result.all === true;
+
+  # Test 3: No data case (should return empty with reason)
+  - vars:
+      query: "California voters on housing"
+    assert:
+      - type: contains-json
+      - type: javascript
+        value: |
+          let text = output;
+          if (text.includes('```')) {
+            text = text.split('```')[1];
+            if (text.startsWith('json')) text = text.slice(4);
+          }
+          const result = JSON.parse(text.trim());
+          const ids = result.focus_group_ids || [];
+          // Should be empty or have reason
+          return ids.length === 0 || result.reason;
