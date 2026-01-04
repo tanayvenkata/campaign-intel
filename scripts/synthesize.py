@@ -88,7 +88,7 @@ Summary:"""
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=150,
+                max_tokens=300,
                 temperature=0.3,
             )
             return response.choices[0].message.content.strip()
@@ -153,7 +153,7 @@ Keep it to 2-3 paragraphs. Be analytical, not just descriptive."""
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=500,
+                max_tokens=1200,
                 temperature=0.4,
             )
             return response.choices[0].message.content.strip()
@@ -226,7 +226,7 @@ Be specific and analytical. Avoid generic observations."""
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=800,
+                max_tokens=1500,
                 temperature=0.4,
             )
             return response.choices[0].message.content.strip()
@@ -306,7 +306,7 @@ Be specific and analytical. Every claim needs a citation. Avoid generic observat
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=1000,
+                max_tokens=2000,
                 temperature=0.4,
             )
             return response.choices[0].message.content.strip()
@@ -371,7 +371,7 @@ Be specific and analytical. Every claim needs a citation. Avoid generic observat
             stream = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=1000,
+                max_tokens=2000,
                 temperature=0.4,
                 stream=True
             )
@@ -462,7 +462,7 @@ OUTPUT FORMAT (valid JSON only, no markdown):
             stage1_response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": stage1_prompt}],
-                max_tokens=800,
+                max_tokens=1200,
                 temperature=0.3,
             )
             stage1_text = stage1_response.choices[0].message.content.strip()
@@ -546,7 +546,7 @@ Write 2-3 paragraphs with specific quote citations. Be analytical, not just desc
                 stage2_response = self.client.chat.completions.create(
                     model=self.model,
                     messages=[{"role": "user", "content": stage2_prompt}],
-                    max_tokens=600,
+                    max_tokens=1200,
                     temperature=0.4,
                 )
                 theme_synthesis = stage2_response.choices[0].message.content.strip()
@@ -657,7 +657,7 @@ OUTPUT FORMAT (valid JSON only, no markdown):
             stage1_response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": stage1_prompt}],
-                max_tokens=800,
+                max_tokens=1200,
                 temperature=0.3,
             )
             stage1_text = stage1_response.choices[0].message.content.strip()
@@ -741,7 +741,7 @@ Write 2-3 paragraphs with specific quote citations. Be analytical, not just desc
                 stream = self.client.chat.completions.create(
                     model=self.model,
                     messages=[{"role": "user", "content": stage2_prompt}],
-                    max_tokens=600,
+                    max_tokens=1200,
                     temperature=0.4,
                     stream=True
                 )
