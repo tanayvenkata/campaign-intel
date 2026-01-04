@@ -1,0 +1,145 @@
+# Campaign Intel
+
+A semantic search and retrieval system for political consulting focus groups and strategy memos. Surfaces institutional knowledge from historical qualitative research without pulling in senior staff.
+
+## The Problem
+
+Political consulting firms run hundreds of focus groups over years, but that qualitative insight gets buried in Dropbox folders. Junior analysts spend hours searching for relevant quotes, or interrupt senior staff who have the context in their heads.
+
+**Campaign Intel** lets analysts query the archive naturally:
+
+- *"What did Ohio voters say about the economy?"* → Returns relevant voter quotes
+- *"What went wrong in Montana?"* → Returns strategy memo lessons
+- *"What messaging worked with working-class voters?"* → Returns both quotes AND strategic analysis
+
+## Features
+
+- **LLM-powered query routing** — Automatically decides whether to search focus group quotes, strategy memos, or both
+- **Semantic search** — BGE-M3 embeddings with cross-encoder reranking
+- **Multi-level synthesis** — Light summaries, deep per-source analysis, cross-source themes
+- **Zero hallucination design** — Retrieval-focused with source citations; "I don't know" is acceptable, wrong answers are not
+- **Streaming UI** — Real-time search progress and synthesis generation
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend | Next.js 14, TypeScript, Tailwind CSS |
+| Backend | FastAPI, Python 3.12 |
+| Embeddings | BGE-M3 (local, 1024-dim) |
+| Reranking | cross-encoder/ms-marco-MiniLM-L6-v2 |
+| Vector DB | Pinecone |
+| LLM | Gemini Flash (via OpenRouter) |
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.11+
+- Node.js 18+
+- Pinecone account
+- OpenRouter API key
+
+### Setup
+
+```bash
+# Clone
+git clone https://github.com/tanayvenkata/campaign-intel.git
+cd campaign-intel
+
+# Python environment
+python -m venv venv
+source venv/bin/activate
+pip install -r api/requirements.txt
+
+# Environment variables
+cp .env.example .env
+# Edit .env with your API keys
+
+# Frontend
+cd web && npm install && cd ..
+```
+
+### Run
+
+```bash
+# Terminal 1: Backend
+source venv/bin/activate
+uvicorn api.main:app --reload
+
+# Terminal 2: Frontend
+cd web && npm run dev
+```
+
+Open http://localhost:3000
+
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                         Next.js Frontend (3000)                      │
+│            Streaming search, synthesis panels, markdown export       │
+└───────────────────────────────┬─────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                        FastAPI Backend (8000)                        │
+│                    /search/unified, /synthesize/*                    │
+└───────────────────────────────┬─────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                        Retrieval Pipeline                            │
+│  ┌─────────────┐  ┌──────────────────┐  ┌────────────────────────┐  │
+│  │ LLM Router  │  │ FocusGroup       │  │ StrategyMemo           │  │
+│  │ (Gemini)    │  │ Retriever        │  │ Retriever              │  │
+│  └──────┬──────┘  └────────┬─────────┘  └───────────┬────────────┘  │
+│         │                  │                        │                │
+│         └──────────────────┼────────────────────────┘                │
+│                            ▼                                         │
+│              SharedResources (BGE-M3, Reranker, Pinecone)            │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+## Corpus
+
+The included corpus is **synthetic demo data** representing 12 races (2022-2024), 37 focus groups, and ~3,100 searchable chunks. It demonstrates the system with realistic but fictional political consulting scenarios.
+
+## Project Structure
+
+```
+campaign-intel/
+├── api/                    # FastAPI backend
+│   ├── main.py            # REST endpoints
+│   └── schemas.py         # Pydantic models
+├── web/                    # Next.js frontend
+│   └── app/               # App router pages
+├── scripts/
+│   ├── retrieval/         # Retrieval package (router, retrievers)
+│   ├── preprocess.py      # Transcript → chunks
+│   ├── embed.py           # Chunks → Pinecone
+│   └── retrieve.py        # CLI search
+├── political-consulting-corpus/  # Synthetic demo data
+├── prompts/               # Externalized LLM prompts
+└── eval/                  # Evaluation scripts
+```
+
+## Development
+
+```bash
+# Run E2E tests
+python eval/test_backend_e2e.py
+
+# Run component tests
+python eval/test_components.py
+
+# Frontend type-check
+cd web && npm run build
+
+# Router prompt A/B testing
+./eval/router_eval/run_eval.sh
+```
+
+## License
+
+MIT
