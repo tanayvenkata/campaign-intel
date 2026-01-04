@@ -7,6 +7,9 @@ secrets.json
 **/credentials*
 **/api_key*
 
+# Claude Code local settings
+.claude/
+
 # Python
 __pycache__/
 *.py[cod]
@@ -43,6 +46,8 @@ embeddings/
 # Evaluation outputs
 eval_results/
 *.eval.json
+eval/router_eval/results_*.json
+eval/comprehensive_results/
 
 # Jupyter
 .ipynb_checkpoints/
