@@ -16,9 +16,14 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 # Model configuration (all configurable via .env)
+# Default models for specific providers/tasks
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "google/gemini-3-flash-preview")
 SYNTHESIS_MODEL = os.getenv("SYNTHESIS_MODEL", "google/gemini-3-flash-preview")
 ROUTER_MODEL = os.getenv("ROUTER_MODEL", "google/gemini-3-flash-preview")
+
+# Specific generation models used in scripts
+OPENAI_GENERATION_MODEL = os.getenv("OPENAI_GENERATION_MODEL", "gpt-4o-mini")
+GEMINI_GENERATION_MODEL = os.getenv("GEMINI_GENERATION_MODEL", "google/gemini-2.0-flash-001")
 
 # Local models (sentence-transformers, run on CPU)
 EMBEDDING_MODEL_LOCAL = os.getenv("EMBEDDING_MODEL_LOCAL", "BAAI/bge-m3")
@@ -41,6 +46,12 @@ DATA_DIR = PROJECT_ROOT / "data"
 CHUNKS_DIR = DATA_DIR / "chunks"
 FOCUS_GROUPS_DIR = DATA_DIR / "focus-groups"
 EVAL_DIR = PROJECT_ROOT / "eval"
+
+# Retrieval settings
+# Strategy: "Fewer high-confidence insights, not comprehensive" - Rachel
+# Top 2 per relevant race (scales with query scope)
+STRATEGY_TOP_K_PER_RACE = int(os.getenv("STRATEGY_TOP_K_PER_RACE", "2"))
+FG_SCORE_THRESHOLD = float(os.getenv("FG_SCORE_THRESHOLD", "0.50"))
 
 # Evaluation targets (based on Rachel's requirements)
 EVAL_TARGETS = {
