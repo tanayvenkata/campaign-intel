@@ -300,8 +300,7 @@ class FocusGroupRetrieverV2:
         reranker_model: str = RERANKER_MODEL,
         verbose: bool = False
     ):
-        from sentence_transformers import SentenceTransformer
-        from pinecone import Pinecone
+        from scripts.retrieval.base import SharedResources
 
         self.verbose = verbose
         self.use_router = use_router
@@ -315,23 +314,19 @@ class FocusGroupRetrieverV2:
         else:
             self.router = None
 
-        # Initialize reranker
+        # Initialize reranker (uses shared model if available)
         if use_reranker:
             if verbose:
                 print(f"Loading reranker: {reranker_model}...")
-            from scripts.rerank import Reranker
-            self.reranker = Reranker(model_name=reranker_model)
+            self.reranker = SharedResources.get_reranker_model()
         else:
             self.reranker = None
 
-        # Load embedding model (bge-m3 by default)
+        # Use shared embedding model and Pinecone index (singleton pattern)
         if verbose:
-            print(f"Loading embedding model: {EMBEDDING_MODEL_LOCAL}...")
-        self.model = SentenceTransformer(EMBEDDING_MODEL_LOCAL)
-
-        # Initialize Pinecone
-        self.pc = Pinecone(api_key=PINECONE_API_KEY)
-        self.index = self.pc.Index(INDEX_NAME)
+            print(f"Using shared embedding model: {EMBEDDING_MODEL_LOCAL}...")
+        self.model = SharedResources.get_embedding_model()
+        self.index = SharedResources.get_pinecone_index()
 
         # Cache for focus group metadata
         self._fg_metadata_cache: Dict[str, Dict] = {}
@@ -821,29 +816,24 @@ class StrategyMemoRetriever:
         reranker_model: str = RERANKER_MODEL,
         verbose: bool = False
     ):
-        from sentence_transformers import SentenceTransformer
-        from pinecone import Pinecone
+        from scripts.retrieval.base import SharedResources
 
         self.verbose = verbose
         self.use_reranker = use_reranker
 
-        # Initialize reranker
+        # Initialize reranker (uses shared model if available)
         if use_reranker:
             if verbose:
                 print(f"Loading reranker: {reranker_model}...")
-            from scripts.rerank import Reranker
-            self.reranker = Reranker(model_name=reranker_model)
+            self.reranker = SharedResources.get_reranker_model()
         else:
             self.reranker = None
 
-        # Load embedding model
+        # Use shared embedding model and Pinecone index (singleton pattern)
         if verbose:
-            print(f"Loading embedding model: {EMBEDDING_MODEL_LOCAL}...")
-        self.model = SentenceTransformer(EMBEDDING_MODEL_LOCAL)
-
-        # Initialize Pinecone
-        self.pc = Pinecone(api_key=PINECONE_API_KEY)
-        self.index = self.pc.Index(INDEX_NAME)
+            print(f"Using shared embedding model: {EMBEDDING_MODEL_LOCAL}...")
+        self.model = SharedResources.get_embedding_model()
+        self.index = SharedResources.get_pinecone_index()
 
         # Load strategy manifest for metadata
         self._manifest_cache: Optional[Dict] = None

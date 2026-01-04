@@ -304,7 +304,7 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
             </div>
 
             {/* Research Synthesis - moved to top as high-level overview */}
-            {results.length > 0 && (
+            {(results.length > 0 || lessons.length > 0) && (
                 <div className="bg-slate-50 p-5 border border-slate-200 shadow-sm mb-4 transition-all">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
@@ -353,7 +353,7 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
                                 )}
                                 <button
                                     onClick={handleMacroSynthesis}
-                                    disabled={selectedForMacro.size === 0 || isMacroLoading || isWaitingForSummaries || !!isSelectionRedundant}
+                                    disabled={(selectedForMacro.size === 0 && selectedRaces.size === 0) || isMacroLoading || isWaitingForSummaries || !!isSelectionRedundant}
                                     className="bg-slate-800 text-white px-4 py-2 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed text-xs font-bold font-mono uppercase tracking-wider shadow-sm transition-colors"
                                 >
                                     {isMacroLoading
@@ -362,9 +362,7 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
                                             ? 'SYNTHESIS COMPLETE'
                                             : isWaitingForSummaries
                                                 ? `QUEUED (${summariesReady}/${selectedForMacro.size})`
-                                                : selectedRaces.size > 0
-                                                    ? `SYNTHESIZE ALL (${selectedForMacro.size})`
-                                                    : `SYNTHESIZE SELECTED (${selectedForMacro.size})`}
+                                                : `SYNTHESIZE (${selectedForMacro.size + selectedRaces.size} sources)`}
                                 </button>
                             </div>
                         )}
