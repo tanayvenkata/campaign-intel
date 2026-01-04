@@ -127,11 +127,8 @@ campaign-intel/
 ## Development
 
 ```bash
-# Run E2E tests
+# Run E2E tests (requires backend running)
 python eval/test_backend_e2e.py
-
-# Run component tests
-python eval/test_components.py
 
 # Frontend type-check
 cd web && npm run build
