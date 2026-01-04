@@ -70,7 +70,7 @@ class Reranker:
 def main():
     """Test reranking."""
     import argparse
-    from scripts.retrieve_v2 import FocusGroupRetrieverV2
+    from scripts.retrieve import FocusGroupRetrieverV2
 
     parser = argparse.ArgumentParser(description="Test reranking")
     parser.add_argument("query", nargs="?", default="What did voters say about feeling abandoned?")

@@ -18,12 +18,10 @@ source venv/bin/activate
 
 # Data pipeline (run in order)
 python scripts/preprocess.py              # Parse transcripts → JSON chunks
-python scripts/embed.py                   # V1: OpenAI embeddings + BM25 → Pinecone
-python scripts/embed_e5.py                # V2: E5-base local embeddings → Pinecone
+python scripts/embed.py                   # bge-m3 embeddings → Pinecone (focus-group-v3)
 
 # CLI search
-python scripts/retrieve.py "query"        # V1 hybrid search
-python scripts/retrieve_v2.py "query"     # V2 with LLM router + reranker
+python scripts/retrieve.py "query"        # LLM router + reranker
 
 # Web interfaces (production stack - run both in separate terminals)
 uvicorn api.main:app --reload             # FastAPI backend (port 8000)
@@ -33,8 +31,7 @@ cd web && npm run dev                     # Next.js frontend (port 3000)
 streamlit run app.py                      # Streamlit UI (port 8501)
 
 # Evaluation
-python eval/run_retrieval_eval.py                # V1 retrieval eval
-python eval/run_retrieval_eval_v2.py             # V2 retrieval eval
+python eval/run_retrieval_eval_v2.py             # Retrieval eval
 ./eval/router_eval/run_eval.sh                   # Router prompt A/B testing (promptfoo)
 
 # Testing & linting
@@ -52,10 +49,9 @@ political-consulting-corpus/        # Raw markdown transcripts (37 focus groups,
 data/chunks/                        # Per-utterance JSON chunks (~3,126 total)
 data/focus-groups/                  # Focus group metadata with moderator notes
 data/manifest.json                  # Index of all chunks
-    ↓ embed.py / embed_e5.py
-Pinecone                            # V1: focus-group-v1 (hybrid dense+BM25)
-                                    # V2: focus-group-v2 (E5 768-dim + hierarchical)
-    ↓ retrieve.py / retrieve_v2.py
+    ↓ embed.py
+Pinecone (focus-group-v3)           # bge-m3 embeddings (1024-dim, hierarchical)
+    ↓ retrieve.py
 scripts/synthesize.py               # LLM synthesis layer (light/deep/macro)
     ↓
 app.py (Streamlit)                  # Full-featured UI with synthesis
@@ -75,15 +71,15 @@ web/ (Next.js)                      # React frontend (TypeScript + Tailwind)
          ▼                    ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         scripts/                                     │
-│  retrieve_v2.py    →  LLMRouter (routes to relevant focus groups)   │
-│                    →  FocusGroupRetrieverV2 (E5 + reranker)         │
+│  retrieve.py       →  LLMRouter (routes to relevant focus groups)   │
+│                    →  FocusGroupRetrieverV2 (bge-m3 + reranker)     │
 │  synthesize.py     →  FocusGroupSynthesizer (light/deep/macro)      │
 └─────────────────────────────────────────────────────────────────────┘
          │
          ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│  Pinecone (focus-group-v2)  │  OpenRouter (LLM calls)               │
-│  E5-base embeddings         │  Claude Haiku for router/synthesis    │
+│  Pinecone (focus-group-v3)  │  OpenRouter (LLM calls)               │
+│  bge-m3 embeddings          │  Gemini Flash for router/synthesis    │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -109,9 +105,8 @@ Model configuration in `eval/config.py` (all overridable via `.env`):
 - `EMBEDDING_MODEL_LOCAL` - Local embeddings (default: `BAAI/bge-m3`)
 - `RERANKER_MODEL` - Cross-encoder reranker (default: `cross-encoder/ms-marco-MiniLM-L6-v2`)
 
-Pinecone indexes:
-- `focus-group-v1` - Hybrid search (OpenAI + BM25)
-- `focus-group-v2` - E5-base embeddings (768-dim, hierarchical)
+Pinecone index:
+- `focus-group-v3` - bge-m3 embeddings (1024-dim, hierarchical)
 
 ## Corpus Structure
 
@@ -150,12 +145,9 @@ Zero hallucination tolerance. From client requirements (see `docs/client-feedbac
 ## Key Imports
 
 ```python
-# V2 retrieval (recommended)
-from scripts.retrieve_v2 import FocusGroupRetrieverV2, LLMRouter, RetrievalResult
+# Retrieval
+from scripts.retrieve import FocusGroupRetrieverV2, LLMRouter, RetrievalResult
 from scripts.synthesize import FocusGroupSynthesizer
-
-# V1 retrieval
-from scripts.retrieve import FocusGroupRetriever
 
 # Configuration
 from eval.config import PINECONE_API_KEY, OPENROUTER_API_KEY, DATA_DIR
@@ -171,7 +163,7 @@ from eval.config import PINECONE_API_KEY, OPENROUTER_API_KEY, DATA_DIR
 
 ## Frontend Notes
 
-The Next.js frontend (`web/`) is a separate npm project with its own `CLAUDE.md`:
+The Next.js frontend (`web/`) is a separate npm project. See `web/CLAUDE.md` for detailed frontend guidance.
 ```bash
 cd web && npm install    # First-time setup
 cd web && npm run dev    # Development server (port 3000)

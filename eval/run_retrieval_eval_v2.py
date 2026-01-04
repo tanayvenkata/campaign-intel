@@ -25,7 +25,7 @@ from eval.metrics import (
 
 def load_retriever_v2(use_router: bool = True, use_reranker: bool = False, verbose: bool = False):
     """Load V2 retriever."""
-    from scripts.retrieve_v2 import FocusGroupRetrieverV2
+    from scripts.retrieve import FocusGroupRetrieverV2
     return FocusGroupRetrieverV2(use_router=use_router, use_reranker=use_reranker, verbose=verbose)
 
 

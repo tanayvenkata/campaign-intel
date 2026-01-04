@@ -19,7 +19,7 @@ from eval.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL, SYNTHESIS_MODEL
 
 @dataclass
 class RetrievalResult:
-    """Mirror of the dataclass from retrieve_v2.py"""
+    """Mirror of the dataclass from retrieve.py"""
     chunk_id: str
     score: float
     content: str

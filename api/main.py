@@ -13,7 +13,7 @@ from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 
-from scripts.retrieve_v2 import FocusGroupRetrieverV2, LLMRouter, RetrievalResult
+from scripts.retrieve import FocusGroupRetrieverV2, LLMRouter, RetrievalResult
 from scripts.synthesize import FocusGroupSynthesizer
 from api.schemas import (
     SearchRequest, SearchResponse, SynthesisRequest, MacroSynthesisRequest,
@@ -63,7 +63,7 @@ async def search(request: SearchRequest):
 
     start_time = time.time()
     
-    # 1. Route (part of retrieval logic in retrieve_v2, but we can do it explicitly if needed)
+    # 1. Route (retriever handles routing internally if filter_focus_groups is None)
     # The retriever.retrieve_per_focus_group handles routing internally if filter_focus_groups is None
     # but app.py does it explicitly to show the decision. Let's rely on retriever's internal logic 
     # OR replicate app.py if we want to return the routing decision in stats.
@@ -241,8 +241,7 @@ async def synthesize_deep(request: SynthesisRequest):
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
 
-    # Expand context if strictly needed on backend, but the plan says 
-    # "Import from scripts/retrieve_v2.py: FocusGroupRetrieverV2"
+    # Expand context if strictly needed on backend
     # app.py calls `retriever.fetch_expanded_context` before synthesis.
     # The frontend might not have full context, so we might need to do it here.
     

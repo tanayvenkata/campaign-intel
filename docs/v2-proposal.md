@@ -69,9 +69,23 @@ Happy to sign whatever you need. The system runs locally - nothing leaves your m
 
 ---
 
+## One Question
+
+Which of these query types matters most to you? I'll build and test that one first.
+
+| Query Type | Example |
+|------------|---------|
+| **A. Pattern match** | "What worked in races where we defended against 'too liberal' attacks?" |
+| **B. Loss analysis** | "What did we learn from races we lost in the Midwest?" |
+| **C. Messaging lookup** | "What's our best messaging on economy for blue-collar voters?" |
+
+No wrong answer - just helps me prioritize.
+
+---
+
 ## Next Step
 
-Send me 3-5 strategy memos (can be redacted/anonymized for now). I'll show you a working prototype of V2 search on that corpus before we commit to the full build.
+Once I know your priority, I'll build a working prototype on your existing strategy memos and show you results before we commit to the full build.
 
 ---
 

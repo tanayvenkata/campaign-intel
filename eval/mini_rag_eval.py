@@ -30,7 +30,7 @@ from deepeval.models import DeepEvalBaseLLM
 import openai as openai_client
 
 # Our pipeline imports
-from scripts.retrieve_v2 import FocusGroupRetrieverV2, LLMRouter
+from scripts.retrieve import FocusGroupRetrieverV2, LLMRouter
 from scripts.synthesize import FocusGroupSynthesizer
 from eval.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL, SYNTHESIS_MODEL, OPENROUTER_MODEL
 

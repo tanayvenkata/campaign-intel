@@ -91,7 +91,7 @@ def run_baseline_eval(retriever, queries: List[Dict], verbose: bool = True) -> D
 def test_query_enhancement(verbose: bool = True) -> ComponentTestResult:
     """Test query enhancement in isolation."""
     from scripts.query_enhance import QueryEnhancer
-    from scripts.retrieve_v2 import FocusGroupRetrieverV2
+    from scripts.retrieve import FocusGroupRetrieverV2
 
     if verbose:
         print("\n" + "=" * 60)
@@ -187,7 +187,7 @@ def test_query_enhancement(verbose: bool = True) -> ComponentTestResult:
 def test_reranking(model_name: str = "cross-encoder/ms-marco-MiniLM-L6-v2", verbose: bool = True) -> ComponentTestResult:
     """Test reranking in isolation."""
     from scripts.rerank import Reranker
-    from scripts.retrieve_v2 import FocusGroupRetrieverV2
+    from scripts.retrieve import FocusGroupRetrieverV2
 
     if verbose:
         print("\n" + "=" * 60)
@@ -276,7 +276,7 @@ def test_reranking(model_name: str = "cross-encoder/ms-marco-MiniLM-L6-v2", verb
 def test_hyde(verbose: bool = True) -> ComponentTestResult:
     """Test HyDE in isolation."""
     from scripts.hyde import HyDE
-    from scripts.retrieve_v2 import FocusGroupRetrieverV2
+    from scripts.retrieve import FocusGroupRetrieverV2
 
     if verbose:
         print("\n" + "=" * 60)
