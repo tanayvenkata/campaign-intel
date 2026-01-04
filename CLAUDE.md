@@ -180,8 +180,7 @@ Key frontend patterns:
 - Auto-generated light summaries on search results load
 - Skeleton loaders for perceived performance
 - Collapsible quotes (collapsed by default to reduce cognitive load)
-- SWR for caching and prefetching
-- PDF export for search results
+- Markdown export for search results (includes all synthesis)
 
 ### API Configuration (`web/app/config/api.ts`)
 
@@ -192,27 +191,21 @@ import { ENDPOINTS } from './config/api';
 // ENDPOINTS.search, ENDPOINTS.synthesizeLight, etc.
 ```
 
-### PDF Export (`web/app/utils/exportPdf.ts`)
+### Markdown Export (`web/app/utils/exportMarkdown.ts`)
 
-Client-side PDF generation using jsPDF. Professional "Political Consultant" style report.
+Client-side markdown report generation. Exports all search results and synthesis to a `.md` file.
 
-**Configuration:** `PDF_CONFIG` object at top of file centralizes all colors, typography, and layout values.
+**What gets exported:**
+- Query and stats header
+- Macro synthesis (cross-FG "Synthesize Selected" results)
+- Deep macro themes (if generated)
+- Per-focus group sections with:
+  - Deep synthesis (if user clicked "Deep Synthesis") OR light summary (auto-generated)
+  - All quotes with participant attribution
 
-**To add a new section to the PDF:**
-1. Create a renderer function: `renderNewSection(doc, ctx, data)`
-2. Add it to `exportToPdf()` in the desired order
-3. Update `ExportData` interface if new data is needed
+**Key function:** `exportToMarkdown(data: ExportData)` - generates and downloads the markdown file.
 
-**Current sections (in order):**
-- `renderCoverPage` - Professional cover with query and stats
-- `renderExecutiveSummary` - Macro synthesis (if present)
-- `renderDeepMacroThemes` - Theme-based analysis (if present)
-- `renderFocusGroup` - Per-FG section with summary and quotes
-
-**Key utilities:**
-- `checkPageBreak(doc, ctx, space)` - Auto-adds new page if needed
-- `addWrappedText(doc, ctx, text, fontSize, options)` - Text with wrapping
-- `stripMarkdown(text)` - Removes markdown formatting for PDF
+The markdown can be viewed in any editor or converted to PDF via Pandoc, VS Code, or online tools.
 
 ## API Endpoints
 

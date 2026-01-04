@@ -10,9 +10,10 @@ interface SynthesisPanelProps {
     fgName: string;
     quotes: RetrievalChunk[];
     query: string;
+    onSynthesisComplete?: (fgId: string, synthesis: string) => void;
 }
 
-export default function SynthesisPanel({ fgId, fgName, quotes, query }: SynthesisPanelProps) {
+export default function SynthesisPanel({ fgId, fgName, quotes, query, onSynthesisComplete }: SynthesisPanelProps) {
     const [synthesis, setSynthesis] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
@@ -41,11 +42,17 @@ export default function SynthesisPanel({ fgId, fgName, quotes, query }: Synthesi
             const reader = response.body.getReader();
             const decoder = new TextDecoder();
 
+            let fullSynthesis = '';
             while (true) {
                 const { done, value } = await reader.read();
                 if (done) break;
                 const text = decoder.decode(value);
-                setSynthesis((prev) => prev + text);
+                fullSynthesis += text;
+                setSynthesis(fullSynthesis);
+            }
+            // Report completed synthesis to parent
+            if (onSynthesisComplete) {
+                onSynthesisComplete(fgId, fullSynthesis);
             }
         } catch (error) {
             console.error('Synthesis error:', error);

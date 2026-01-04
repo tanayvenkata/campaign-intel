@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import { GroupedResult } from '../types';
 import QuoteBlock from './QuoteBlock';
 import SynthesisPanel from './SynthesisPanel';
-import { exportToPdf } from '../utils/exportPdf';
+import { exportToMarkdown } from '../utils/exportMarkdown';
 import { ENDPOINTS } from '../config/api';
 
 interface SearchResultsProps {
@@ -26,8 +26,15 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
     const [macroResult, setMacroResult] = useState<string>('');
     const [isMacroLoading, setIsMacroLoading] = useState(false);
     const [isMacroPanelCollapsed, setIsMacroPanelCollapsed] = useState(false);
-    // Keep deepMacroThemes for PDF export compatibility
+    // Deep synthesis per focus group (from SynthesisPanel)
+    const [deepSyntheses, setDeepSyntheses] = useState<Record<string, string>>({});
+    // Keep deepMacroThemes for export compatibility
     const [deepMacroThemes] = useState<Array<{name: string; synthesis: string; focus_groups: string[]}>>([]);
+
+    // Callback for SynthesisPanel to report deep synthesis
+    const handleDeepSynthesisComplete = (fgId: string, synthesis: string) => {
+        setDeepSyntheses(prev => ({ ...prev, [fgId]: synthesis }));
+    };
 
     // Auto-generate light summaries when results change
     useEffect(() => {
@@ -102,11 +109,12 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
 
     const allSelected = results.length > 0 && selectedForMacro.size === results.length;
 
-    const handleExportPdf = () => {
-        exportToPdf({
+    const handleExport = () => {
+        exportToMarkdown({
             query,
             results,
             summaries,
+            deepSyntheses,
             macroResult,
             deepMacroThemes,
             stats,
@@ -166,13 +174,13 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
             {/* Export Button */}
             <div className="flex justify-end">
                 <button
-                    onClick={handleExportPdf}
+                    onClick={handleExport}
                     className="flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200 transition-colors text-sm"
                 >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    Export to PDF
+                    Export Report
                 </button>
             </div>
 
@@ -336,6 +344,7 @@ export default function SearchResults({ results, query, stats }: SearchResultsPr
                             fgName={group.focus_group_metadata.location || fgId}
                             quotes={group.chunks}
                             query={query}
+                            onSynthesisComplete={handleDeepSynthesisComplete}
                         />
                     </div>
                 );
