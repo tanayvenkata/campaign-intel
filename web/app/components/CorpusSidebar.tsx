@@ -62,7 +62,7 @@ export default function CorpusSidebar({ isOpen, onToggle, onSelectFg }: CorpusSi
                                         <li key={fg.id}>
                                             <button
                                                 onClick={() => onSelectFg?.(fg.id)}
-                                                className="w-full text-left text-xs text-slate-600 hover:text-slate-900 font-medium py-1 truncate flex items-center gap-2 group"
+                                                className="w-full text-left text-xs text-slate-600 hover:text-slate-900 font-medium py-1.5 truncate flex items-center gap-2 group transition-colors"
                                             >
                                                 <span className={`w-1.5 h-1.5 rounded-full ${fg.outcome === 'win' ? 'bg-green-400 group-hover:bg-green-500' : 'bg-red-400 group-hover:bg-red-500'}`} />
                                                 <span className="truncate">{fg.location}</span>

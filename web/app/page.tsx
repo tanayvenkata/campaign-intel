@@ -52,10 +52,10 @@ export default function Home() {
       <main className={`min-h-screen bg-slate-50 pb-20 transition-all duration-300 ${isSidebarOpen ? 'pl-64' : 'pl-0'}`}>
         {/* Header */}
         <div className="sticky top-0 z-20 bg-slate-50/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300">
-          <div className="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+          <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-1">
+              <div className="flex items-center gap-4">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse ring-4 ring-green-100"></div>
                 <h1 className="text-lg font-serif font-bold text-slate-900 tracking-tight">MERIDIAN INTELLIGENCE</h1>
               </div>
               {data && (
@@ -83,7 +83,7 @@ export default function Home() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Enter Briefing Query..."
-                  className="w-full bg-slate-100 border-none rounded-none border-b-2 border-slate-200 focus:border-slate-800 px-0 py-4 text-xl font-serif text-slate-900 placeholder-slate-400 focus:ring-0 transition-colors"
+                  className="w-full bg-slate-100 border-none rounded-none border-b-2 border-slate-200 focus:border-slate-800 px-4 py-4 text-xl font-serif text-slate-900 placeholder-slate-400 focus:ring-0 transition-colors"
                   autoFocus
                   spellCheck={false}
                 />

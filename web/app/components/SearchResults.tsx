@@ -265,24 +265,47 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
     const currentSelectionSignature = Array.from(selectedForMacro).sort().join(',') + '|' + Array.from(selectedRaces).sort().join(',');
     const isSelectionRedundant = macroResult && lastSynthesizedSet === currentSelectionSignature;
 
+    // Scroll to specific section
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Flash the card to indicate selection
+            element.classList.add('ring-2', 'ring-slate-400', 'transition-all');
+            setTimeout(() => {
+                element.classList.remove('ring-2', 'ring-slate-400');
+            }, 1000);
+        }
+    };
+
     return (
-        <div className="space-y-8">
+        <div className="space-y-8 relative">
             {/* Export Button */}
-            <div className="flex justify-end">
+            <div className="flex justify-end gap-3">
+                {/* Back to Top */}
+                <button
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="text-slate-400 hover:text-slate-600 text-xs font-mono uppercase tracking-wider flex items-center gap-1"
+                >
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                    Top
+                </button>
                 <button
                     onClick={handleExport}
-                    className="flex items-center gap-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-200 transition-colors text-sm"
+                    className="flex items-center gap-2 bg-slate-100 text-slate-700 px-3 py-1.5 rounded-md hover:bg-slate-200 transition-colors text-xs font-bold font-mono uppercase tracking-wider"
                 >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    Export Report
+                    Export
                 </button>
             </div>
 
             {/* Research Synthesis - moved to top as high-level overview */}
             {results.length > 0 && (
-                <div className="bg-slate-50 p-5 border border-slate-200 shadow-sm mb-8 transition-all">
+                <div className="bg-slate-50 p-5 border border-slate-200 shadow-sm mb-4 transition-all">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                             <button
@@ -375,6 +398,22 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
                 </div>
             )}
 
+            {/* Result Navigator (Pills) */}
+            {results.length > 0 && (
+                <div className="flex flex-wrap gap-3 pb-6 border-b border-slate-100">
+                    <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest py-1.5">JUMP TO:</span>
+                    {results.map((r) => (
+                        <button
+                            key={r.focus_group_id}
+                            onClick={() => scrollToSection(r.focus_group_id)}
+                            className="text-[10px] font-mono font-bold text-slate-500 bg-white border border-slate-200 px-3 py-1.5 hover:border-slate-400 hover:text-slate-800 transition-colors uppercase rounded-sm shadow-sm"
+                        >
+                            {r.focus_group_metadata.location || r.focus_group_id}
+                        </button>
+                    ))}
+                </div>
+            )}
+
             {/* Strategy Section (Campaign Lessons) */}
             <StrategySection
                 lessons={lessons}
@@ -393,8 +432,9 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
 
                 return (
                     <div
+                        id={fgId}
                         key={fgId}
-                        className="bg-white border border-slate-200 shadow-sm hover:border-slate-300 transition-all duration-300 animate-fadeIn"
+                        className="bg-white border border-slate-200 shadow-sm hover:border-slate-300 transition-all duration-300 animate-fadeIn scroll-mt-24"
                         style={{ animationDelay: `${index * 75}ms` }}
                     >
                         {/* Memo Header */}
@@ -459,7 +499,7 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
                                 </button>
 
                                 {isExpanded && (
-                                    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fadeIn">
+                                    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fadeIn">
                                         {group.chunks.map((chunk) => (
                                             <QuoteBlock key={chunk.chunk_id} chunk={chunk} />
                                         ))}

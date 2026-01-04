@@ -17,10 +17,12 @@ export default function SynthesisPanel({ fgId, fgName, quotes, query, onSynthesi
     const [synthesis, setSynthesis] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(true);
 
     const handleDeepSynthesis = async () => {
         setIsLoading(true);
         setHasGenerated(true);
+        setIsExpanded(true);
         setSynthesis('');
 
         try {
@@ -76,30 +78,48 @@ export default function SynthesisPanel({ fgId, fgName, quotes, query, onSynthesi
                     {isLoading ? 'Generating Deep Synthesis...' : 'Generate Deep Synthesis'}
                 </button>
             ) : (
-                <div className="bg-slate-50 border border-slate-200 p-6 rounded-lg mt-2 relative overflow-hidden group">
+                <div className="bg-slate-50 border border-slate-200 rounded-lg mt-2 relative overflow-hidden group">
                     <div className="absolute top-0 left-0 w-1 h-full bg-slate-300 group-hover:bg-slate-400 transition-colors" />
-                    <h4 className="font-serif font-bold text-slate-900 mb-4 flex items-center gap-2 text-sm uppercase tracking-wide">
-                        <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        Deep Synthesis
-                    </h4>
 
-                    {isLoading && !synthesis ? (
-                        <div className="space-y-3 py-2">
-                            <div className="flex items-center gap-2 text-xs font-mono text-slate-500 uppercase animate-pulse">
-                                <span>Analyzing {quotes.length} quotes...</span>
-                            </div>
-                            <div className="h-2 bg-slate-200 rounded w-3/4 animate-pulse" />
-                            <div className="h-2 bg-slate-200 rounded w-1/2 animate-pulse" />
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="w-full flex items-center justify-between p-4 hover:bg-slate-100/50 transition-colors text-left"
+                    >
+                        <h4 className="font-serif font-bold text-slate-900 flex items-center gap-2 text-sm uppercase tracking-wide">
+                            <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            Deep Synthesis
+                        </h4>
+                        <svg
+                            className={`w-4 h-4 text-slate-400 transition-transform ${isExpanded ? 'rotate-180' : ''}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    {isExpanded && (
+                        <div className="px-6 pb-6 pt-0">
+                            {isLoading && !synthesis ? (
+                                <div className="space-y-3 py-2">
+                                    <div className="flex items-center gap-2 text-xs font-mono text-slate-500 uppercase animate-pulse">
+                                        <span>Analyzing {quotes.length} quotes...</span>
+                                    </div>
+                                    <div className="h-2 bg-slate-200 rounded w-3/4 animate-pulse" />
+                                    <div className="h-2 bg-slate-200 rounded w-1/2 animate-pulse" />
+                                </div>
+                            ) : (
+                                <>
+                                    <div className="prose prose-sm max-w-none text-slate-700 font-serif leading-relaxed">
+                                        <ReactMarkdown>{synthesis}</ReactMarkdown>
+                                    </div>
+                                    {isLoading && <span className="inline-block w-2 h-4 ml-1 bg-slate-400 animate-pulse" />}
+                                </>
+                            )}
                         </div>
-                    ) : (
-                        <>
-                            <div className="prose prose-sm max-w-none text-slate-700 font-serif leading-relaxed">
-                                <ReactMarkdown>{synthesis}</ReactMarkdown>
-                            </div>
-                            {isLoading && <span className="inline-block w-2 h-4 ml-1 bg-slate-400 animate-pulse" />}
-                        </>
                     )}
                 </div>
             )}
