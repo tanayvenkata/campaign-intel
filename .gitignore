@@ -33,6 +33,7 @@ data/
 
 # Experiments
 experiments/
+scripts/experiments/
 
 # DeepEval cache
 .deepeval/
