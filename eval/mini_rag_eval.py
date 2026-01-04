@@ -32,14 +32,14 @@ import openai as openai_client
 # Our pipeline imports
 from scripts.retrieve_v2 import FocusGroupRetrieverV2, LLMRouter
 from scripts.synthesize import FocusGroupSynthesizer
-from eval.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL, SYNTHESIS_MODEL
+from eval.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL, SYNTHESIS_MODEL, OPENROUTER_MODEL
 
 
 # Custom OpenRouter model for DeepEval
 class OpenRouterModel(DeepEvalBaseLLM):
     """Custom model that uses OpenRouter for DeepEval metrics."""
 
-    def __init__(self, model: str = "anthropic/claude-3-haiku"):
+    def __init__(self, model: str = OPENROUTER_MODEL):
         self.model = model
         self.client = openai_client.OpenAI(
             api_key=OPENROUTER_API_KEY,
@@ -186,7 +186,7 @@ def run_evaluation(test_cases: List[LLMTestCase]):
 
     # Use OpenRouter model for evaluation (not OpenAI)
     # Note: Using gemini-flash as it has better JSON formatting for DeepEval
-    eval_model = OpenRouterModel(model="google/gemini-2.0-flash-001")
+    eval_model = OpenRouterModel(model=OPENROUTER_MODEL)
 
     # Define metrics with custom model
     metrics = [

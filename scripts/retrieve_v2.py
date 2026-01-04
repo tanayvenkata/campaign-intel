@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-V2 Retrieval: LLM Router → Hierarchical Search (Parents → Children)
+V3 Retrieval: LLM Router → Hierarchical Search (Parents → Children)
 
 Uses:
-- LLM Router (gpt-4o-mini) to select relevant focus groups
-- E5-base local embeddings (768 dims)
+- LLM Router (Gemini Flash) to select relevant focus groups
+- bge-m3 local embeddings (1024 dims)
 - Hierarchical index: query parents first, return children
 """
 
@@ -24,11 +24,18 @@ from eval.config import (
     PINECONE_API_KEY,
     DATA_DIR,
     FOCUS_GROUPS_DIR,
+    EMBEDDING_MODEL_LOCAL,
+    RERANKER_MODEL,
 )
 
-# V2 index constants
-INDEX_NAME = "focus-group-v2"
-DIMENSION = 768
+# V3 index constants (bge-m3 with 1024 dims)
+INDEX_NAME = "focus-group-v3"
+MODEL_DIMENSIONS = {
+    "BAAI/bge-m3": 1024,
+    "intfloat/e5-base-v2": 768,
+    "BAAI/bge-base-en-v1.5": 768,
+}
+DIMENSION = MODEL_DIMENSIONS.get(EMBEDDING_MODEL_LOCAL, 1024)
 
 
 @dataclass
@@ -175,7 +182,7 @@ class FocusGroupRetrieverV2:
         self,
         use_router: bool = True,
         use_reranker: bool = False,
-        reranker_model: str = "cross-encoder/ms-marco-MiniLM-L6-v2",
+        reranker_model: str = RERANKER_MODEL,
         verbose: bool = False
     ):
         from sentence_transformers import SentenceTransformer
@@ -202,10 +209,10 @@ class FocusGroupRetrieverV2:
         else:
             self.reranker = None
 
-        # Load E5-base model
+        # Load embedding model (bge-m3 by default)
         if verbose:
-            print("Loading E5-base model...")
-        self.model = SentenceTransformer('intfloat/e5-base-v2')
+            print(f"Loading embedding model: {EMBEDDING_MODEL_LOCAL}...")
+        self.model = SentenceTransformer(EMBEDDING_MODEL_LOCAL)
 
         # Initialize Pinecone
         self.pc = Pinecone(api_key=PINECONE_API_KEY)
@@ -215,8 +222,8 @@ class FocusGroupRetrieverV2:
         self._fg_metadata_cache: Dict[str, Dict] = {}
 
     def _embed_query(self, query: str) -> List[float]:
-        """Embed query with E5-base (requires 'query: ' prefix)."""
-        return self.model.encode(f"query: {query}").tolist()
+        """Embed query with sentence-transformer model (bge-m3 by default)."""
+        return self.model.encode(query).tolist()
 
     def _load_focus_group_metadata(self, fg_id: str) -> Dict:
         """Load focus group metadata from file."""
@@ -733,7 +740,7 @@ def main():
     parser.add_argument("--focus-groups", nargs="+", help="Filter to specific focus groups (bypasses router)")
     parser.add_argument("--no-router", action="store_true", help="Disable LLM router")
     parser.add_argument("--rerank", action="store_true", help="Enable cross-encoder reranking")
-    parser.add_argument("--rerank-model", default="cross-encoder/ms-marco-MiniLM-L6-v2",
+    parser.add_argument("--rerank-model", default=RERANKER_MODEL,
                         help="Reranker model to use")
     parser.add_argument("--per-fg", action="store_true",
                         help="Use per-focus-group retrieval for diversity")

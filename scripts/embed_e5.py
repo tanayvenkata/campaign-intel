@@ -12,14 +12,21 @@ from typing import List, Dict
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from eval.config import PINECONE_API_KEY, DATA_DIR, FOCUS_GROUPS_DIR
+from eval.config import PINECONE_API_KEY, DATA_DIR, FOCUS_GROUPS_DIR, EMBEDDING_MODEL_LOCAL
 from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone
 
-# Constants
-INDEX_NAME = "focus-group-v2"
-DIMENSION = 768  # E5-base dimension
-MODEL_NAME = "intfloat/e5-base-v2"
+# Constants - bge-m3 uses 1024 dimensions
+INDEX_NAME = "focus-group-v3"
+MODEL_NAME = EMBEDDING_MODEL_LOCAL
+
+# Auto-detect dimension based on model
+MODEL_DIMENSIONS = {
+    "BAAI/bge-m3": 1024,
+    "intfloat/e5-base-v2": 768,
+    "BAAI/bge-base-en-v1.5": 768,
+}
+DIMENSION = MODEL_DIMENSIONS.get(MODEL_NAME, 1024)
 
 
 def load_all_children() -> List[Dict]:
@@ -49,15 +56,17 @@ def load_all_parents() -> List[Dict]:
         return json.load(f)
 
 
-def embed_with_e5(
+def embed_texts(
     model: SentenceTransformer,
     texts: List[str],
-    prefix: str = "passage: ",
     batch_size: int = 64
 ) -> List[List[float]]:
-    """Embed texts with E5 model (requires prefix)."""
-    prefixed = [f"{prefix}{t}" for t in texts]
-    embeddings = model.encode(prefixed, show_progress_bar=True, batch_size=batch_size)
+    """Embed texts with sentence-transformer model.
+
+    Note: bge-m3 doesn't require prefix, E5 models do.
+    For simplicity, we skip prefix since bge-m3 is now default.
+    """
+    embeddings = model.encode(texts, show_progress_bar=True, batch_size=batch_size)
     return embeddings.tolist()
 
 
@@ -118,7 +127,7 @@ def main():
         if parents:
             parent_texts = [p["content"] for p in parents]
             print("Embedding parents...")
-            parent_embeddings = embed_with_e5(model, parent_texts)
+            parent_embeddings = embed_texts(model, parent_texts)
 
             for parent, embedding in zip(parents, parent_embeddings):
                 all_vectors.append({
@@ -147,7 +156,7 @@ def main():
         # Use enriched content for embedding
         child_texts = [c.get("content", c.get("content_original", "")) for c in children]
         print("Embedding children...")
-        child_embeddings = embed_with_e5(model, child_texts)
+        child_embeddings = embed_texts(model, child_texts)
 
         for child, embedding in zip(children, child_embeddings):
             all_vectors.append({

@@ -17,8 +17,13 @@ OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 # Model configuration (all configurable via .env)
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "google/gemini-3-flash-preview")
-SYNTHESIS_MODEL = os.getenv("SYNTHESIS_MODEL", "anthropic/claude-3-haiku")
-ROUTER_MODEL = os.getenv("ROUTER_MODEL", "anthropic/claude-3-haiku")
+SYNTHESIS_MODEL = os.getenv("SYNTHESIS_MODEL", "google/gemini-3-flash-preview")
+ROUTER_MODEL = os.getenv("ROUTER_MODEL", "google/gemini-3-flash-preview")
+
+# Local models (sentence-transformers, run on CPU)
+EMBEDDING_MODEL_LOCAL = os.getenv("EMBEDDING_MODEL_LOCAL", "BAAI/bge-m3")
+E5_EMBEDDING_MODEL = EMBEDDING_MODEL_LOCAL  # Alias for backwards compatibility
+RERANKER_MODEL = os.getenv("RERANKER_MODEL", "cross-encoder/ms-marco-MiniLM-L6-v2")
 
 # OpenAI Configuration (for embeddings)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
