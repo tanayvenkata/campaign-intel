@@ -23,6 +23,8 @@ export const ENDPOINTS = {
   synthesizeStrategyDeep: `${API_BASE_URL}/synthesize/strategy/deep`,
   // Unified macro (FG + Strategy combined)
   synthesizeUnifiedMacro: `${API_BASE_URL}/synthesize/unified/macro`,
+  // Corpus management
+  corpus: `${API_BASE_URL}/corpus`,
 } as const;
 
 export const SEARCH_CONFIG = {

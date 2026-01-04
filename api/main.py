@@ -27,6 +27,10 @@ from api.schemas import (
     StrategySynthesisRequest, StrategyMacroSynthesisRequest,
     UnifiedMacroSynthesisRequest
 )
+from api.observability import (
+    QueryTracer, log_retrieval_decision, log_score_distribution,
+    log_router_decision, log_result_summary
+)
 
 # Global instances
 retriever: Optional[FocusGroupRetrieverV2] = None
@@ -234,104 +238,153 @@ async def search_unified(request: SearchRequest):
     if not retriever or not strategy_retriever or not router:
         raise HTTPException(status_code=503, detail="Service not ready")
 
-    start_time = time.time()
-
-    # Route to determine content type
-    route_result = router.route_unified(request.query)
-    content_type = route_result.content_type
+    # Initialize tracer for observability
+    tracer = QueryTracer(query=request.query)
 
     quotes_results = []
     lessons_results = []
 
-    # Fetch focus group quotes if needed
-    if content_type in ("quotes", "both"):
-        fg_ids = route_result.focus_group_ids
-        # FG pipeline is optimized for 0.75 threshold - keep as-is
-        results_by_fg = retriever.retrieve_per_focus_group(
-            query=request.query,
-            top_k_per_fg=request.top_k,
-            score_threshold=request.score_threshold,
-            filter_focus_groups=fg_ids
+    # Route to determine content type
+    with tracer.step("routing"):
+        route_result = router.route_unified(request.query)
+        content_type = route_result.content_type
+        log_router_decision(
+            tracer, content_type, route_result.outcome_filter,
+            f"FG IDs: {route_result.focus_group_ids[:3] if route_result.focus_group_ids else 'all'}"
         )
 
-        for fg_id, chunks in results_by_fg.items():
-            if not chunks:
-                continue
-            fg_meta = retriever._load_focus_group_metadata(fg_id)
-            api_chunks = [
-                RetrievalChunk(
-                    chunk_id=c.chunk_id,
-                    score=c.score,
-                    content=c.content,
-                    content_original=c.content_original,
-                    focus_group_id=c.focus_group_id,
-                    participant=c.participant,
-                    participant_profile=c.participant_profile,
-                    section=c.section,
-                    source_file=c.source_file,
-                    line_number=c.line_number,
-                    preceding_moderator_q=c.preceding_moderator_q
-                )
-                for c in chunks
-            ]
-            quotes_results.append(GroupedResult(
-                focus_group_id=fg_id,
-                focus_group_metadata=fg_meta,
-                chunks=api_chunks
-            ))
+    # Fetch focus group quotes if needed
+    if content_type in ("quotes", "both"):
+        with tracer.step("fg_retrieval"):
+            fg_ids = route_result.focus_group_ids
+            results_by_fg = retriever.retrieve_per_focus_group(
+                query=request.query,
+                top_k_per_fg=request.top_k,
+                score_threshold=request.score_threshold,
+                filter_focus_groups=fg_ids
+            )
+
+            # Log score distribution for debugging
+            all_fg_scores = []
+            for fg_id, chunks in results_by_fg.items():
+                all_fg_scores.extend([c.score for c in chunks])
+                if not chunks:
+                    continue
+                fg_meta = retriever._load_focus_group_metadata(fg_id)
+                api_chunks = [
+                    RetrievalChunk(
+                        chunk_id=c.chunk_id,
+                        score=c.score,
+                        content=c.content,
+                        content_original=c.content_original,
+                        focus_group_id=c.focus_group_id,
+                        participant=c.participant,
+                        participant_profile=c.participant_profile,
+                        section=c.section,
+                        source_file=c.source_file,
+                        line_number=c.line_number,
+                        preceding_moderator_q=c.preceding_moderator_q
+                    )
+                    for c in chunks
+                ]
+                quotes_results.append(GroupedResult(
+                    focus_group_id=fg_id,
+                    focus_group_metadata=fg_meta,
+                    chunks=api_chunks
+                ))
+
+            log_score_distribution(tracer, "fg", all_fg_scores)
+            tracer.log("fg_results", {
+                "focus_groups": len(quotes_results),
+                "total_quotes": sum(len(g.chunks) for g in quotes_results)
+            })
 
     # Fetch strategy lessons if needed
     if content_type in ("lessons", "both"):
-        # STRATEGY_TOP_K_PER_RACE from eval/config.py (default: 2)
-        # Scales with query scope: single-race=2, multi-race=2 per race
-        strategy_grouped = strategy_retriever.retrieve_grouped(
-            query=request.query,
-            top_k=STRATEGY_TOP_K_PER_RACE * 5,  # Get candidates for reranker
-            outcome_filter=route_result.outcome_filter,
-            score_threshold=0.0  # Disabled - rely on reranker
-        )
+        with tracer.step("strategy_retrieval"):
+            strategy_grouped = strategy_retriever.retrieve_grouped(
+                query=request.query,
+                top_k=STRATEGY_TOP_K_PER_RACE * 5,
+                outcome_filter=route_result.outcome_filter,
+                score_threshold=0.0  # Rely on threshold filter below
+            )
 
-        # Take top N per race (balanced coverage)
-        # Filter out races where the top chunk is below threshold
-        for group in strategy_grouped:
-            top_chunks = sorted(group.chunks, key=lambda c: c.score, reverse=True)[:STRATEGY_TOP_K_PER_RACE]
-            if not top_chunks:
-                continue
-            # Skip races where even the best chunk is below threshold
-            if top_chunks[0].score < request.score_threshold:
-                continue
-            race_meta = strategy_retriever._get_race_metadata(group.race_id)
-            api_chunks = [
-                StrategyChunk(
-                    chunk_id=c.chunk_id,
-                    score=c.score,
-                    content=c.content,
-                    race_id=c.race_id,
-                    section=c.section,
-                    subsection=c.subsection,
-                    outcome=c.outcome,
-                    state=c.state,
-                    year=c.year,
-                    margin=c.margin,
-                    source_file=c.source_file,
-                    line_number=c.line_number
-                )
-                for c in top_chunks
-            ]
-            lessons_results.append(StrategyGroupedResult(
-                race_id=group.race_id,
-                race_metadata=race_meta,
-                chunks=api_chunks
-            ))
+            # Track filtering for observability
+            races_before_filter = len(strategy_grouped)
+            filtered_races = []
 
-    retrieval_time = (time.time() - start_time) * 1000
+            for group in strategy_grouped:
+                top_chunks = sorted(group.chunks, key=lambda c: c.score, reverse=True)[:STRATEGY_TOP_K_PER_RACE]
+                if not top_chunks:
+                    continue
+
+                top_score = top_chunks[0].score
+                if top_score < request.score_threshold:
+                    filtered_races.append({
+                        "race_id": group.race_id,
+                        "top_score": round(top_score, 3),
+                        "threshold": request.score_threshold
+                    })
+                    continue
+
+                race_meta = strategy_retriever._get_race_metadata(group.race_id)
+                api_chunks = [
+                    StrategyChunk(
+                        chunk_id=c.chunk_id,
+                        score=c.score,
+                        content=c.content,
+                        race_id=c.race_id,
+                        section=c.section,
+                        subsection=c.subsection,
+                        outcome=c.outcome,
+                        state=c.state,
+                        year=c.year,
+                        margin=c.margin,
+                        source_file=c.source_file,
+                        line_number=c.line_number
+                    )
+                    for c in top_chunks
+                ]
+                lessons_results.append(StrategyGroupedResult(
+                    race_id=group.race_id,
+                    race_metadata=race_meta,
+                    chunks=api_chunks
+                ))
+
+            # Log filtering decision
+            log_retrieval_decision(
+                tracer, "strategy",
+                races_before_filter, len(lessons_results),
+                request.score_threshold,
+                f"Filtered out: {[r['race_id'] for r in filtered_races]}" if filtered_races else "No races filtered"
+            )
+
+            tracer.log("strategy_results", {
+                "races": len(lessons_results),
+                "total_lessons": sum(len(g.chunks) for g in lessons_results),
+                "filtered_out": filtered_races
+            })
+
+    # Complete trace with final summary
+    log_result_summary(
+        tracer,
+        len(quotes_results),
+        sum(len(g.chunks) for g in quotes_results),
+        len(lessons_results),
+        sum(len(g.chunks) for g in lessons_results)
+    )
+    trace = tracer.complete({
+        "content_type": content_type,
+        "fg_count": len(quotes_results),
+        "races_count": len(lessons_results)
+    })
 
     return UnifiedSearchResponse(
         content_type=content_type,
         quotes=quotes_results,
         lessons=lessons_results,
         stats={
-            "retrieval_time_ms": round(retrieval_time),
+            "retrieval_time_ms": round(trace["total_duration_ms"]),
             "total_quotes": sum(len(g.chunks) for g in quotes_results),
             "total_lessons": sum(len(g.chunks) for g in lessons_results),
             "focus_groups_count": len(quotes_results),

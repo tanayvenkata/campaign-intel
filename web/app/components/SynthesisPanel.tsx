@@ -63,36 +63,42 @@ export default function SynthesisPanel({ fgId, fgName, quotes, query, onSynthesi
     };
 
     return (
-        <div className="mt-4">
+        <div className="px-6 pb-6">
             {!hasGenerated ? (
                 <button
                     onClick={handleDeepSynthesis}
                     disabled={isLoading}
-                    className="px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1f77b4]"
+                    className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-slate-800 uppercase tracking-wider transition-colors disabled:opacity-50"
                 >
-                    {isLoading ? 'Generating...' : 'Deep Synthesis'}
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                    {isLoading ? 'Generating Deep Synthesis...' : 'Generate Deep Synthesis'}
                 </button>
             ) : (
-                <div className="bg-[#e7f5ff] border border-[#74c0fc] p-4 rounded-lg mt-2 text-gray-800">
-                    <h4 className="font-semibold mb-2">Deep Synthesis: {fgName}</h4>
+                <div className="bg-slate-50 border border-slate-200 p-6 rounded-lg mt-2 relative overflow-hidden group">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-slate-300 group-hover:bg-slate-400 transition-colors" />
+                    <h4 className="font-serif font-bold text-slate-900 mb-4 flex items-center gap-2 text-sm uppercase tracking-wide">
+                        <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        Deep Synthesis
+                    </h4>
+
                     {isLoading && !synthesis ? (
-                        <div className="space-y-2">
-                            <div className="flex items-center gap-2 text-sm text-[#1f77b4]">
-                                <span className="w-4 h-4 border-2 border-[#1f77b4] border-t-transparent rounded-full animate-spin" />
-                                <span>Analyzing focus group insights...</span>
+                        <div className="space-y-3 py-2">
+                            <div className="flex items-center gap-2 text-xs font-mono text-slate-500 uppercase animate-pulse">
+                                <span>Analyzing {quotes.length} quotes...</span>
                             </div>
-                            <div className="flex gap-1">
-                                <div className="h-2 w-2 bg-[#74c0fc] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                                <div className="h-2 w-2 bg-[#74c0fc] rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                                <div className="h-2 w-2 bg-[#74c0fc] rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
-                            </div>
+                            <div className="h-2 bg-slate-200 rounded w-3/4 animate-pulse" />
+                            <div className="h-2 bg-slate-200 rounded w-1/2 animate-pulse" />
                         </div>
                     ) : (
                         <>
-                            <div className="prose prose-sm max-w-none prose-strong:font-bold prose-headings:font-bold text-gray-800">
+                            <div className="prose prose-sm max-w-none text-slate-700 font-serif leading-relaxed">
                                 <ReactMarkdown>{synthesis}</ReactMarkdown>
                             </div>
-                            {isLoading && <span className="inline-block w-2 h-4 ml-1 bg-[#1f77b4] animate-pulse" />}
+                            {isLoading && <span className="inline-block w-2 h-4 ml-1 bg-slate-400 animate-pulse" />}
                         </>
                     )}
                 </div>

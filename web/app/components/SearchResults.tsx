@@ -34,11 +34,13 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
     // Deep synthesis per focus group (from SynthesisPanel)
     const [deepSyntheses, setDeepSyntheses] = useState<Record<string, string>>({});
     // Keep deepMacroThemes for export compatibility
-    const [deepMacroThemes] = useState<Array<{name: string; synthesis: string; focus_groups: string[]}>>([]);
+    const [deepMacroThemes] = useState<Array<{ name: string; synthesis: string; focus_groups: string[] }>>([]);
     // Strategy summaries (from StrategySection)
     const [strategySummaries, setStrategySummaries] = useState<Record<string, string>>({});
     // Selected strategy races for macro synthesis
     const [selectedRaces, setSelectedRaces] = useState<Set<string>>(new Set());
+    // Track last synthesized set to prevent redundancy
+    const [lastSynthesizedSet, setLastSynthesizedSet] = useState<string>('');
 
     // Callback for SynthesisPanel to report deep synthesis
     const handleDeepSynthesisComplete = (fgId: string, synthesis: string) => {
@@ -253,8 +255,15 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
             setMacroResult("Error generating macro synthesis.");
         } finally {
             setIsMacroLoading(false);
+            // Save the signature of what we just synthesized
+            const currentSignature = Array.from(selectedForMacro).sort().join(',') + '|' + Array.from(selectedRaces).sort().join(',');
+            setLastSynthesizedSet(currentSignature);
         }
     };
+
+    // Check if current selection matches what we already synthesized
+    const currentSelectionSignature = Array.from(selectedForMacro).sort().join(',') + '|' + Array.from(selectedRaces).sort().join(',');
+    const isSelectionRedundant = macroResult && lastSynthesizedSet === currentSelectionSignature;
 
     return (
         <div className="space-y-8">
@@ -273,12 +282,12 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
 
             {/* Research Synthesis - moved to top as high-level overview */}
             {results.length > 0 && (
-                <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm sticky top-4 z-10">
+                <div className="bg-slate-50 p-5 border border-slate-200 shadow-sm mb-8 transition-all">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
                             <button
                                 onClick={() => setIsMacroPanelCollapsed(!isMacroPanelCollapsed)}
-                                className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
+                                className="flex items-center gap-2 text-slate-700 hover:text-slate-900"
                             >
                                 <svg
                                     className={`w-4 h-4 transition-transform ${isMacroPanelCollapsed ? '' : 'rotate-90'}`}
@@ -288,51 +297,51 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
-                                <h3 className="font-semibold">Research Synthesis</h3>
+                                <h3 className="font-serif font-bold text-slate-800 uppercase tracking-wide text-sm">Executive Synthesis</h3>
                             </button>
                             {!isMacroPanelCollapsed && (
                                 <button
                                     onClick={allSelected ? deselectAll : selectAll}
-                                    className="text-sm text-indigo-600 hover:text-indigo-800"
+                                    className="text-xs font-mono text-slate-500 hover:text-slate-800 uppercase tracking-wider"
                                 >
-                                    {allSelected ? 'Deselect All' : 'Select All'}
+                                    {allSelected ? '[Deselect All]' : '[Select All]'}
                                 </button>
                             )}
                             {isMacroPanelCollapsed && macroResult && (
-                                <span className="text-xs text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
-                                    Synthesis ready
+                                <span className="text-[10px] font-mono text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 uppercase tracking-wider">
+                                    Ready
                                 </span>
                             )}
                         </div>
                         {!isMacroPanelCollapsed && (
-                            <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-4">
                                 {/* Summary progress indicator */}
                                 {selectedForMacro.size > 0 && !allSummariesReady && (
-                                    <span className="text-xs text-amber-600 flex items-center gap-1.5">
-                                        <span className="w-3 h-3 border-2 border-amber-500 border-t-transparent rounded-full animate-spin" />
-                                        Summaries: {summariesReady}/{selectedForMacro.size}
+                                    <span className="text-xs font-mono text-amber-600 flex items-center gap-1.5 uppercase">
+                                        <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+                                        Processing: {summariesReady}/{selectedForMacro.size}
                                     </span>
                                 )}
                                 {selectedForMacro.size > 0 && allSummariesReady && !isWaitingForSummaries && !isMacroLoading && (
-                                    <span className="text-xs text-green-600 flex items-center gap-1">
-                                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
+                                    <span className="text-xs font-mono text-green-700 flex items-center gap-1 uppercase">
+                                        <span className="w-2 h-2 bg-green-500 rounded-full" />
                                         Ready
                                     </span>
                                 )}
                                 <button
                                     onClick={handleMacroSynthesis}
-                                    disabled={selectedForMacro.size === 0 || isMacroLoading || isWaitingForSummaries}
-                                    className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 disabled:opacity-50 text-sm"
+                                    disabled={selectedForMacro.size === 0 || isMacroLoading || isWaitingForSummaries || !!isSelectionRedundant}
+                                    className="bg-slate-800 text-white px-4 py-2 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed text-xs font-bold font-mono uppercase tracking-wider shadow-sm transition-colors"
                                 >
                                     {isMacroLoading
-                                        ? 'Synthesizing...'
-                                        : isWaitingForSummaries
-                                            ? `Queued (${summariesReady}/${selectedForMacro.size} ready)`
-                                            : selectedRaces.size > 0
-                                                ? `Synthesize All (${selectedForMacro.size} FG + ${selectedRaces.size} race${selectedRaces.size > 1 ? 's' : ''})`
-                                                : `Synthesize Selected (${selectedForMacro.size})`}
+                                        ? 'PRODUCING MEMO...'
+                                        : isSelectionRedundant
+                                            ? 'SYNTHESIS COMPLETE'
+                                            : isWaitingForSummaries
+                                                ? `QUEUED (${summariesReady}/${selectedForMacro.size})`
+                                                : selectedRaces.size > 0
+                                                    ? `SYNTHESIZE ALL (${selectedForMacro.size})`
+                                                    : `SYNTHESIZE SELECTED (${selectedForMacro.size})`}
                                 </button>
                             </div>
                         )}
@@ -342,16 +351,11 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
                         <>
                             {/* Loading state for macro synthesis */}
                             {isMacroLoading && !macroResult && (
-                                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-md">
+                                <div className="mt-4 p-4 bg-white border border-slate-200">
                                     <div className="space-y-2">
-                                        <div className="flex items-center gap-2 text-sm text-green-700">
-                                            <span className="w-4 h-4 border-2 border-green-600 border-t-transparent rounded-full animate-spin" />
-                                            <span>Synthesizing insights across {selectedForMacro.size} focus groups{selectedRaces.size > 0 ? ` and ${selectedRaces.size} campaign lesson${selectedRaces.size > 1 ? 's' : ''}` : ''}...</span>
-                                        </div>
-                                        <div className="flex gap-1">
-                                            <div className="h-2 w-2 bg-green-300 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                                            <div className="h-2 w-2 bg-green-300 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                                            <div className="h-2 w-2 bg-green-300 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                                        <div className="flex items-center gap-2 text-xs font-mono text-slate-500 uppercase">
+                                            <span className="w-3 h-3 border-2 border-slate-400 border-t-transparent rounded-full animate-spin" />
+                                            <span>Analyst is processing {selectedForMacro.size} sources...</span>
                                         </div>
                                     </div>
                                 </div>
@@ -359,11 +363,11 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
 
                             {/* Macro synthesis result */}
                             {macroResult && (
-                                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-md max-h-[50vh] overflow-y-auto">
-                                    <div className="prose prose-sm max-w-none text-gray-800 prose-headings:font-bold prose-headings:text-green-900 prose-strong:text-green-900">
+                                <div className="mt-4 p-6 bg-paper border border-slate-200 max-h-[60vh] overflow-y-auto">
+                                    <div className="prose prose-sm max-w-none text-slate-800 font-serif leading-relaxed prose-headings:font-bold prose-headings:text-slate-900 prose-strong:text-slate-900">
                                         <ReactMarkdown>{macroResult}</ReactMarkdown>
                                     </div>
-                                    {isMacroLoading && <span className="inline-block w-2 h-4 ml-1 bg-green-600 animate-pulse" />}
+                                    {isMacroLoading && <span className="inline-block w-2 h-4 ml-1 bg-slate-400 animate-pulse" />}
                                 </div>
                             )}
                         </>
@@ -390,72 +394,78 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
                 return (
                     <div
                         key={fgId}
-                        className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 p-6 animate-fadeIn"
+                        className="bg-white border border-slate-200 shadow-sm hover:border-slate-300 transition-all duration-300 animate-fadeIn"
                         style={{ animationDelay: `${index * 75}ms` }}
                     >
-                        <div className="flex items-start justify-between">
-                            <div className="flex-1">
-                                <div className="flex items-center gap-2">
-                                    <input
-                                        type="checkbox"
-                                        checked={selectedForMacro.has(fgId)}
-                                        onChange={() => toggleSelection(fgId)}
-                                        className="w-4 h-4 text-indigo-600 rounded cursor-pointer"
-                                    />
-                                    <h2 className="text-xl font-bold text-gray-900">
-                                        {group.focus_group_metadata.location || fgId}
-                                    </h2>
-                                    <span className={`text-xs px-2 py-0.5 rounded-full ${group.focus_group_metadata.outcome === 'win'
-                                        ? 'bg-green-100 text-green-700'
-                                        : 'bg-red-100 text-red-700'
-                                        }`}>
-                                        {group.focus_group_metadata.outcome}
-                                    </span>
+                        {/* Memo Header */}
+                        <div className="bg-slate-50 border-b border-slate-200 px-6 py-4 flex items-start justify-between">
+                            <div className="flex items-center gap-3">
+                                <input
+                                    type="checkbox"
+                                    checked={selectedForMacro.has(fgId)}
+                                    onChange={() => toggleSelection(fgId)}
+                                    className="w-4 h-4 text-slate-800 rounded border-slate-300 focus:ring-slate-800 cursor-pointer"
+                                />
+                                <div>
+                                    <div className="flex items-center gap-3">
+                                        <h2 className="text-sm font-bold font-serif text-slate-900 tracking-wide uppercase">
+                                            {group.focus_group_metadata.location || fgId}
+                                        </h2>
+                                        <span className={`text-[10px] font-mono px-1.5 py-0.5 border ${group.focus_group_metadata.outcome === 'win'
+                                            ? 'bg-green-50 border-green-200 text-green-700'
+                                            : 'bg-red-50 border-red-200 text-red-700'
+                                            } uppercase`}>
+                                            {group.focus_group_metadata.outcome}
+                                        </span>
+                                    </div>
+                                    <div className="text-xs font-mono text-slate-500 mt-1">
+                                        {group.focus_group_metadata.race_name} • {group.focus_group_metadata.date}
+                                    </div>
                                 </div>
-                                <p className="text-gray-600 mt-1 text-sm">
-                                    {group.focus_group_metadata.race_name} • {group.focus_group_metadata.date}
-                                </p>
                             </div>
                         </div>
 
-                        {/* Light Summary (auto-generated) */}
-                        <div className="mt-4">
-                            {isLoadingSummary ? (
-                                <div className="bg-amber-50 border-l-4 border-amber-200 p-3 animate-pulse">
-                                    <div className="h-4 bg-amber-100 rounded w-full mb-2" />
-                                    <div className="h-4 bg-amber-100 rounded w-3/4" />
-                                </div>
-                            ) : summary ? (
-                                <div className="bg-amber-50 border-l-4 border-amber-400 p-3 text-sm text-gray-700">
-                                    {summary}
-                                </div>
-                            ) : null}
-                        </div>
+                        <div className="p-6">
+                            {/* Light Summary (auto-generated) */}
+                            <div className="mb-6">
+                                {isLoadingSummary ? (
+                                    <div className="bg-paper p-4 border-l-2 border-amber-200 animate-pulse">
+                                        <div className="h-4 bg-slate-100 rounded w-full mb-2" />
+                                        <div className="h-4 bg-slate-100 rounded w-3/4" />
+                                    </div>
+                                ) : summary ? (
+                                    <div className="bg-paper p-5 border-l-2 border-amber-400 text-sm text-slate-800 font-serif leading-relaxed">
+                                        <span className="font-bold text-amber-900/50 text-xs font-mono uppercase tracking-wider block mb-2">Moderator Note</span>
+                                        {summary}
+                                    </div>
+                                ) : null}
+                            </div>
 
-                        {/* Expandable Quotes Section */}
-                        <div className="mt-4">
-                            <button
-                                onClick={() => toggleExpanded(fgId)}
-                                className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                            >
-                                <svg
-                                    className={`w-4 h-4 transition-transform ${isExpanded ? 'rotate-90' : ''}`}
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
+                            {/* Expandable Quotes Section */}
+                            <div>
+                                <button
+                                    onClick={() => toggleExpanded(fgId)}
+                                    className="flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-800 transition-colors uppercase tracking-wider"
                                 >
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                                {isExpanded ? 'Hide' : 'Show'} {group.chunks.length} quotes
-                            </button>
+                                    <svg
+                                        className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-90' : ''}`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                    {isExpanded ? 'Hide' : 'Review'} {group.chunks.length} Verbatim Quotes
+                                </button>
 
-                            {isExpanded && (
-                                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fadeIn">
-                                    {group.chunks.map((chunk) => (
-                                        <QuoteBlock key={chunk.chunk_id} chunk={chunk} />
-                                    ))}
-                                </div>
-                            )}
+                                {isExpanded && (
+                                    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6 animate-fadeIn">
+                                        {group.chunks.map((chunk) => (
+                                            <QuoteBlock key={chunk.chunk_id} chunk={chunk} />
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
 
                         <SynthesisPanel
