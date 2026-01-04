@@ -4,11 +4,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a semantic search and retrieval system for political consulting focus group transcripts. It enables junior analysts to surface institutional knowledge from historical focus groups without pulling in senior staff.
+This is a semantic search and retrieval system for political consulting focus group transcripts AND strategy memos. It enables junior analysts to surface institutional knowledge from historical focus groups and campaign lessons without pulling in senior staff.
 
-**Current State:** V2 with LLM router, synthesis layer, and production web UI (FastAPI + Next.js). Legacy Streamlit UI also available.
+**Current State:** V2 with LLM router, dual content retrieval (focus groups + strategy memos), synthesis layer, and production web UI (FastAPI + Next.js).
 
-**Core User Scenario:** "What did Ohio voters say about the economy?" → Returns relevant quotes with participant context, focus group source, and transcript links.
+**Core User Scenarios:**
+- "What did Ohio voters say about the economy?" → Returns relevant quotes with participant context
+- "What went wrong in Montana?" → Returns strategy lessons from campaign memos
+- "What messaging worked with working-class voters?" → Returns both voter quotes AND strategic lessons
 
 ## Development Commands
 
@@ -27,17 +30,14 @@ python scripts/retrieve.py "query"        # LLM router + reranker
 uvicorn api.main:app --reload             # FastAPI backend (port 8000)
 cd web && npm run dev                     # Next.js frontend (port 3000)
 
-# Legacy UI
-streamlit run app.py                      # Streamlit UI (port 8501)
+# Testing
+python eval/test_backend_e2e.py           # E2E tests (11 tests: router, FG, strategy, edge cases)
+python eval/test_components.py            # Unit tests for retrieval components
+cd web && npm run build                   # Frontend production build (type-checks)
 
 # Evaluation
-python eval/run_retrieval_eval_v2.py             # Retrieval eval
-./eval/router_eval/run_eval.sh                   # Router prompt A/B testing (promptfoo)
-
-# Testing & linting
-python eval/test_components.py                   # Unit tests for retrieval components
-cd web && npm run lint                           # Frontend lint
-cd web && npm run build                          # Frontend production build (type-checks)
+python eval/run_retrieval_eval_v2.py      # Retrieval eval
+./eval/router_eval/run_eval.sh            # Router prompt A/B testing (promptfoo)
 ```
 
 ## Architecture
@@ -48,13 +48,13 @@ political-consulting-corpus/        # Raw markdown transcripts (37 focus groups,
     ↓ preprocess.py
 data/chunks/                        # Per-utterance JSON chunks (~3,126 total)
 data/focus-groups/                  # Focus group metadata with moderator notes
+data/strategy_chunks/               # Strategy memo chunks by race
 data/manifest.json                  # Index of all chunks
     ↓ embed.py
 Pinecone (focus-group-v3)           # bge-m3 embeddings (1024-dim, hierarchical)
-    ↓ retrieve.py
+    ↓ retrieve.py / retrieval/
 scripts/synthesize.py               # LLM synthesis layer (light/deep/macro)
     ↓
-app.py (Streamlit)                  # Full-featured UI with synthesis
 api/main.py (FastAPI)               # REST API with streaming synthesis
 web/ (Next.js)                      # React frontend (TypeScript + Tailwind)
 ```
@@ -62,34 +62,55 @@ web/ (Next.js)                      # React frontend (TypeScript + Tailwind)
 ### Component Relationships
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                           User Interfaces                           │
-├───────────────────┬────────────────────┬────────────────────────────┤
-│ app.py (Streamlit)│ api/main.py (Fast) │ web/ (Next.js)             │
-│ Port 8501         │ Port 8000          │ Port 3000 → calls API      │
-└────────┬──────────┴─────────┬──────────┴────────────────────────────┘
-         │                    │
-         ▼                    ▼
+│                           User Interface                             │
+│  api/main.py (FastAPI, Port 8000)  ←──  web/ (Next.js, Port 3000)   │
+└───────────────────────────────┬─────────────────────────────────────┘
+                                │
+                                ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         scripts/                                     │
-│  retrieve.py       →  LLMRouter (routes to relevant focus groups)   │
-│                    →  FocusGroupRetrieverV2 (bge-m3 + reranker)     │
-│  synthesize.py     →  FocusGroupSynthesizer (light/deep/macro)      │
+│                    scripts/retrieval/ (modular package)              │
+│  ┌─────────────┐  ┌──────────────────────┐  ┌────────────────────┐  │
+│  │ router.py   │  │ FocusGroupRetrieverV2│  │StrategyMemoRetriever│ │
+│  │ (LLMRouter) │  │ (quotes from FGs)    │  │ (lessons from memos)│ │
+│  └──────┬──────┘  └──────────┬───────────┘  └─────────┬──────────┘  │
+│         │                    │                        │              │
+│         └────────────────────┼────────────────────────┘              │
+│                              ▼                                       │
+│                    base.py (SharedResources singleton)               │
+│                    - Embedding model (bge-m3)                        │
+│                    - Reranker (cross-encoder)                        │
+│                    - Pinecone index                                  │
 └─────────────────────────────────────────────────────────────────────┘
-         │
-         ▼
+                                │
+                                ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │  Pinecone (focus-group-v3)  │  OpenRouter (LLM calls)               │
 │  bge-m3 embeddings          │  Gemini Flash for router/synthesis    │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
+### Retrieval Package Structure
+```
+scripts/retrieval/
+├── __init__.py       # Public exports
+├── base.py           # SharedResources singleton (embedding model, reranker, Pinecone)
+├── router.py         # LLMRouter (routes to quotes/lessons/both)
+└── types.py          # RetrievalResult, StrategyRetrievalResult, RouterResult dataclasses
+
+prompts/
+└── router_unified.txt  # Externalized router prompt (editable without code changes)
+```
+
 ### Key Design Decisions
 
 1. **Per-utterance chunking:** Every participant statement is its own chunk for maximum retrieval granularity
-2. **LLM Router:** Routes queries to relevant focus groups before retrieval (reduces noise, improves precision)
-3. **Hierarchical indexing (V2):** Parent vectors (FG-level) for routing, child vectors (utterance-level) for retrieval
-4. **Synthesis layers:** Light (1-sentence), deep (per-FG analysis), macro (cross-FG themes)
-5. **Lazy imports:** Optional dependencies (openai, pinecone, sentence-transformers) loaded only when needed
+2. **Dual content retrieval:** Router decides between focus group quotes, strategy lessons, or both based on query intent
+3. **LLM Router:** Routes queries to relevant content types AND specific IDs (focus groups, race IDs) to reduce noise
+4. **SharedResources singleton:** Embedding model, reranker, and Pinecone index loaded once and shared across all retrievers
+5. **Hierarchical indexing:** Parent vectors (FG-level) for routing, child vectors (utterance-level) for retrieval
+6. **Synthesis layers:** Light (1-sentence), deep (per-FG analysis), macro (cross-FG themes)
+7. **Externalized prompts:** Router prompt in `prompts/router_unified.txt` for easy editing without code changes
+8. **Error handling with fallbacks:** Router/retrieval failures degrade gracefully (search all content if routing fails)
 
 ### Configuration
 
@@ -129,9 +150,11 @@ Zero hallucination tolerance. From client requirements (see `docs/client-feedbac
 ## Query Scope
 
 **Supported query types:**
-- Topic + location: "What did Ohio voters say about X?"
-- Participant filtering: "What did working-class voters think about Y?"
-- Cross-FG synthesis: "Compare what different focus groups said about Z"
+- **Voter quotes:** "What did Ohio voters say about the economy?" → Returns FG quotes
+- **Strategy lessons:** "What went wrong in Montana?" → Returns strategy memo lessons
+- **Combined:** "What messaging worked with working-class voters?" → Returns both quotes AND lessons
+- **Filtered:** "What did working-class voters think about Y?" → Routes to relevant demographics
+- **Cross-content synthesis:** "Compare lessons across winning vs losing campaigns"
 
 **Eval test sets** (`eval/test_queries_*.json`):
 - `ohio_2024_focused` (10 queries): Primary test set
@@ -204,15 +227,37 @@ The markdown can be viewed in any editor or converted to PDF via Pandoc, VS Code
 ## API Endpoints
 
 FastAPI backend (`api/main.py`) endpoints:
+
+**Search:**
 - `GET /health` - Health check
-- `POST /search` - Main search endpoint (returns grouped results by focus group)
+- `POST /search/unified` - **Primary endpoint**: Returns FG quotes AND/OR strategy lessons based on LLM router
+- `POST /search` - Legacy: FG quotes only (returns grouped results by focus group)
 - `POST /search/stream` - Streaming search with NDJSON status events
-- `POST /synthesize/light` - Light 1-sentence summary (JSON response)
+
+**Synthesis:**
+- `POST /synthesize/light` - Light 1-sentence summary for a focus group (JSON response)
 - `POST /synthesize/deep` - Deep per-FG analysis (streaming text)
 - `POST /synthesize/macro/light` - Light cross-FG synthesis (streaming text)
 - `POST /synthesize/macro/deep` - Deep theme-based synthesis (streaming NDJSON)
+- `POST /synthesize/macro/unified` - Cross-content synthesis (FG quotes + strategy lessons)
 
-### Streaming Response Formats
+### Response Formats
+
+**`/search/unified`** (JSON):
+```json
+{
+  "query": "What went wrong in Ohio?",
+  "content_type": "both",  // "quotes" | "lessons" | "both"
+  "results": [...],        // FG quotes (grouped by focus group)
+  "lessons": [...],        // Strategy lessons (grouped by race)
+  "stats": {
+    "total_quotes": 15,
+    "total_lessons": 8,
+    "focus_groups_searched": 3,
+    "races_searched": 2
+  }
+}
+```
 
 **`/search/stream`** (NDJSON):
 ```json
