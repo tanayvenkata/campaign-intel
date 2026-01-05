@@ -13,6 +13,7 @@ COPY scripts/ ./scripts/
 COPY eval/ ./eval/
 COPY data/ ./data/
 COPY prompts/ ./prompts/
+COPY political-consulting-corpus/ ./political-consulting-corpus/
 
 # Expose port
 EXPOSE 8000
