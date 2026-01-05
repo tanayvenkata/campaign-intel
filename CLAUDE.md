@@ -82,6 +82,23 @@ Both use the same Pinecone index but different namespaces (`openai` vs default).
    - Deep: 2-3 paragraph per-source analysis
    - Macro: Cross-source thematic synthesis
 
+### Caching Architecture
+
+All synthesis endpoints use TTLCache (1 hour TTL) to avoid redundant LLM calls:
+
+| Cache | Endpoint | Pre-warmed |
+|-------|----------|------------|
+| `search_cache` | `/search/unified` | ✓ (4 suggested queries) |
+| `light_summary_cache` | `/synthesize/light` | ✓ |
+| `deep_summary_cache` | `/synthesize/deep` | ✓ |
+| `macro_synthesis_cache` | `/synthesize/macro/light` | ✓ |
+| `strategy_light_cache` | `/synthesize/strategy/light` | ✓ |
+| `strategy_deep_cache` | `/synthesize/strategy/deep` | Lazy |
+| `strategy_macro_cache` | `/synthesize/strategy/macro` | Lazy |
+| `unified_macro_cache` | `/synthesize/unified/macro` | Lazy |
+
+**Pre-warming**: On startup, the backend pre-warms caches for 4 suggested queries (defined in `EXAMPLE_QUERIES`) so demo clicks are instant. Controlled by `PREWARM_CACHE=true` env var.
+
 ### Key Files
 
 | File | Purpose |

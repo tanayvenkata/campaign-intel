@@ -15,8 +15,9 @@ Political consulting firms run hundreds of focus groups over years, but that qua
 ## Features
 
 - **LLM-powered query routing** — Automatically decides whether to search focus group quotes, strategy memos, or both
-- **Semantic search** — BGE-M3 embeddings with cross-encoder reranking
+- **Semantic search** — OpenAI embeddings (production) or BGE-M3 (local dev) with optional cross-encoder reranking
 - **Multi-level synthesis** — Light summaries, deep per-source analysis, cross-source themes
+- **Intelligent caching** — All synthesis endpoints cached with 1-hour TTL; suggested queries pre-warmed at startup for instant demo experience
 - **Zero hallucination design** — Retrieval-focused with source citations; "I don't know" is acceptable, wrong answers are not
 - **Streaming UI** — Real-time search progress and synthesis generation
 
@@ -26,10 +27,11 @@ Political consulting firms run hundreds of focus groups over years, but that qua
 |-------|------------|
 | Frontend | Next.js 14, TypeScript, Tailwind CSS |
 | Backend | FastAPI, Python 3.12 |
-| Embeddings | BGE-M3 (local, 1024-dim) |
-| Reranking | cross-encoder/ms-marco-MiniLM-L6-v2 |
-| Vector DB | Pinecone |
+| Embeddings | OpenAI text-embedding-3-small (prod) / BGE-M3 (local) |
+| Reranking | cross-encoder/ms-marco-MiniLM-L6-v2 (optional) |
+| Vector DB | Pinecone (two indexes: focus-groups, strategy-memos) |
 | LLM | Gemini Flash (via OpenRouter) |
+| Caching | cachetools TTLCache (1hr TTL) |
 
 ## Quick Start
 
