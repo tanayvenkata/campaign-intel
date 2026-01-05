@@ -40,7 +40,8 @@ Political consulting firms run hundreds of focus groups over years, but that qua
 - Python 3.11+
 - Node.js 18+
 - Pinecone account
-- OpenRouter API key
+- OpenRouter API key (for LLM routing/synthesis)
+- OpenAI API key (for embeddings in production)
 
 ### Setup
 
@@ -52,11 +53,11 @@ cd campaign-intel
 # Python environment
 python -m venv venv
 source venv/bin/activate
-pip install -r api/requirements.txt
+pip install -r requirements.txt
 
 # Environment variables
 cp .env.example .env
-# Edit .env with your API keys
+# Edit .env with your API keys (PINECONE_API_KEY, OPENROUTER_API_KEY, OPENAI_API_KEY)
 
 # Frontend
 cd web && npm install && cd ..
@@ -79,27 +80,29 @@ Open http://localhost:3000
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         Next.js Frontend (3000)                      │
+│                     Next.js Frontend (Vercel)                        │
 │            Streaming search, synthesis panels, markdown export       │
 └───────────────────────────────┬─────────────────────────────────────┘
                                 │
                                 ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        FastAPI Backend (8000)                        │
-│                    /search/unified, /synthesize/*                    │
-└───────────────────────────────┬─────────────────────────────────────┘
-                                │
-                                ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                        Retrieval Pipeline                            │
-│  ┌─────────────┐  ┌──────────────────┐  ┌────────────────────────┐  │
-│  │ LLM Router  │  │ FocusGroup       │  │ StrategyMemo           │  │
-│  │ (Gemini)    │  │ Retriever        │  │ Retriever              │  │
-│  └──────┬──────┘  └────────┬─────────┘  └───────────┬────────────┘  │
-│         │                  │                        │                │
-│         └──────────────────┼────────────────────────┘                │
-│                            ▼                                         │
-│              SharedResources (BGE-M3, Reranker, Pinecone)            │
+│                      FastAPI Backend (Railway)                       │
+│                                                                      │
+│  ┌───────────────────────────────────────────────────────────────┐  │
+│  │                    TTLCache Layer (1hr)                        │  │
+│  │    search results, light/deep/macro summaries (FG + Strategy)  │  │
+│  └───────────────────────────────────────────────────────────────┘  │
+│                                │                                     │
+│  ┌─────────────┐  ┌────────────┴───────────┐  ┌──────────────────┐  │
+│  │ LLM Router  │  │  FocusGroup Retriever  │  │ Strategy Retriever│  │
+│  │  (Gemini)   │  │  (hierarchical search) │  │ (semantic search) │  │
+│  └──────┬──────┘  └────────────┬───────────┘  └─────────┬────────┘  │
+│         └──────────────────────┼────────────────────────┘           │
+│                                ▼                                     │
+│              ┌─────────────────────────────────────┐                │
+│              │  Pinecone + OpenAI Embeddings       │                │
+│              │  (2 indexes: focus-groups, memos)   │                │
+│              └─────────────────────────────────────┘                │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -112,15 +115,16 @@ The included corpus is **synthetic demo data** representing 12 races (2022-2024)
 ```
 campaign-intel/
 ├── api/                    # FastAPI backend
-│   ├── main.py            # REST endpoints
+│   ├── main.py            # REST endpoints + caching
 │   └── schemas.py         # Pydantic models
 ├── web/                    # Next.js frontend
 │   └── app/               # App router pages
 ├── scripts/
-│   ├── retrieval/         # Retrieval package (router, retrievers)
+│   ├── retrieval/         # Router + retrievers
 │   ├── preprocess.py      # Transcript → chunks
 │   ├── embed.py           # Chunks → Pinecone
-│   └── retrieve.py        # CLI search
+│   ├── retrieve.py        # Retrieval classes
+│   └── synthesize.py      # LLM synthesis
 ├── political-consulting-corpus/  # Synthetic demo data
 ├── prompts/               # Externalized LLM prompts
 └── eval/                  # Evaluation scripts
