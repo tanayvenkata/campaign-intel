@@ -65,6 +65,12 @@ light_summary_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
 # Macro synthesis cache: (query_hash) -> synthesis string (1 hour TTL)
 macro_synthesis_cache: TTLCache = TTLCache(maxsize=100, ttl=3600)
 
+# Deep summary cache: (query_hash, fg_id) -> synthesis string (1 hour TTL)
+deep_summary_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
+
+# Unified macro cache: (query_hash, fg_ids_hash, race_ids_hash) -> synthesis string (1 hour TTL)
+unified_macro_cache: TTLCache = TTLCache(maxsize=100, ttl=3600)
+
 # Rate limiting: IP -> {"count": int, "date": date}
 rate_limits: Dict[str, Dict] = defaultdict(lambda: {"count": 0, "date": date.today()})
 DAILY_RATE_LIMIT = int(os.getenv("DAILY_RATE_LIMIT", "100"))
@@ -230,6 +236,17 @@ def _prewarm_query(query: str) -> None:
                 fg_summaries[fg_id] = summary
             else:
                 fg_summaries[fg_id] = light_summary_cache[summary_cache_key]
+
+            # Generate and cache deep summary (for suggested queries, pre-warm everything)
+            deep_cache_key = f"deep:{cache_key}:{fg_id}"
+            if deep_cache_key not in deep_summary_cache:
+                fg_name = fg.focus_group_metadata.get("location", fg_id)
+                # Fetch expanded context for deep synthesis
+                context = retriever.fetch_expanded_context(script_chunks, max_chunks=5) if retriever else []
+                # deep_synthesis(quotes, source_context, query, focus_group_name)
+                deep_result = synthesizer.deep_synthesis(script_chunks, context, query, fg_name)
+                deep_summary_cache[deep_cache_key] = deep_result
+                print(f"    Pre-warmed deep summary for {fg_id}")
 
         # Generate and cache macro synthesis if we have multiple FGs
         if len(fg_summaries) >= 2:
@@ -837,44 +854,33 @@ async def synthesize_light(request: SynthesisRequest):
 
 @app.post("/synthesize/deep")
 async def synthesize_deep(request: SynthesisRequest):
-    """Generate a deep synthesis (streaming)."""
+    """Generate a deep synthesis (streaming, with caching)."""
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
 
-    # Expand context if strictly needed on backend
-    # app.py calls `retriever.fetch_expanded_context` before synthesis.
-    # The frontend might not have full context, so we might need to do it here.
-    
+    # Get fg_id for cache key
+    fg_id = request.quotes[0].focus_group_id if request.quotes else "unknown"
+    cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD, USE_HYBRID_RETRIEVAL)
+    deep_cache_key = f"deep:{cache_key}:{fg_id}"
+
+    # Check cache first - return cached content as stream
+    if deep_cache_key in deep_summary_cache:
+        cached_content = deep_summary_cache[deep_cache_key]
+
+        async def cached_stream():
+            yield cached_content
+
+        return StreamingResponse(cached_stream(), media_type="text/event-stream")
+
     script_chunks = [
         RetrievalResult(**c.model_dump()) for c in request.quotes
     ]
-    
+
     # If context not provided, fetch it
     context = request.context
     if not context and retriever:
         context = retriever.fetch_expanded_context(script_chunks, max_chunks=5)
-    
-    # Streaming wrapper
-    # The current synthesizer.deep_synthesis is NOT streaming (it returns a string).
-    # We need to adapt it or rewrite it to stream.
-    # Since the constraint is "Do not modify existing scripts/ code - wrap it", 
-    # BUT "Streaming is required ... this is the main UX win".
-    
-    # The existing script uses `client.chat.completions.create` without stream=True.
-    # To support streaming without modifying the script, we would need to duplicate the logic here 
-    # OR modify the script to support streaming.
-    # User said: "Do not modify existing scripts/ code - wrap it, don't rewrite"
-    # BUT ALSO: "All LLM endpoints should support streaming via StreamingResponse"
-    
-    # If I cannot modify the script, I cannot make `synthesizer.deep_synthesis` stream 
-    # because it calls the OpenAI client internally nicely wrapped.
-    # However, I can subclass or just implement the streaming logic here using the same prompt construction.
-    # Re-implementing the call logic here seems safer than modifying the shared script 
-    # and risking breaking the existing Streamlit app (though I could check for regressions).
-    
-    # Let's inspect `scripts/synthesize.py` again. It constructs a prompt and calls client.
-    # I will replicate the prompt construction here to enable streaming.
-    
+
     # Construct prompt (copied from scripts/synthesize.py to ensure parity)
     context_str = "\n\n---\n\n".join(context) if context else ""
     if not context_str:
@@ -902,6 +908,9 @@ Provide a synthesis that:
 
 Keep it to 2-3 paragraphs. Be analytical, not just descriptive."""
 
+    # Collect full response for caching while streaming
+    full_response = []
+
     async def stream_generator():
         stream = synthesizer.client.chat.completions.create(
             model=synthesizer.model,
@@ -912,7 +921,12 @@ Keep it to 2-3 paragraphs. Be analytical, not just descriptive."""
         )
         for chunk in stream:
             if chunk.choices[0].delta.content:
-                yield chunk.choices[0].delta.content
+                content = chunk.choices[0].delta.content
+                full_response.append(content)
+                yield content
+
+        # Cache the full response after streaming completes
+        deep_summary_cache[deep_cache_key] = "".join(full_response)
 
     return StreamingResponse(stream_generator(), media_type="text/event-stream")
 
@@ -1226,6 +1240,21 @@ async def synthesize_unified_macro(request: UnifiedMacroSynthesisRequest):
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
 
+    # Generate cache key based on query + selected sources
+    cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD, USE_HYBRID_RETRIEVAL)
+    fg_ids_hash = hashlib.md5(",".join(sorted(request.fg_summaries.keys())).encode()).hexdigest()[:8]
+    race_ids_hash = hashlib.md5(",".join(sorted(request.strategy_summaries.keys())).encode()).hexdigest()[:8]
+    unified_cache_key = f"unified:{cache_key}:{fg_ids_hash}:{race_ids_hash}"
+
+    # Check cache first
+    if unified_cache_key in unified_macro_cache:
+        cached_content = unified_macro_cache[unified_cache_key]
+
+        async def cached_stream():
+            yield cached_content
+
+        return StreamingResponse(cached_stream(), media_type="text/event-stream")
+
     # Build FG section
     fg_section = ""
     if request.fg_summaries:
@@ -1276,6 +1305,9 @@ Provide a unified synthesis that:
 
 Structure your response with clear themes. Reference specific focus groups and races."""
 
+    # Collect full response for caching
+    full_response = []
+
     async def stream_generator():
         try:
             stream = synthesizer.client.chat.completions.create(
@@ -1287,7 +1319,12 @@ Structure your response with clear themes. Reference specific focus groups and r
             )
             for chunk in stream:
                 if chunk.choices[0].delta.content:
-                    yield chunk.choices[0].delta.content
+                    content = chunk.choices[0].delta.content
+                    full_response.append(content)
+                    yield content
+
+            # Cache the full response after streaming completes
+            unified_macro_cache[unified_cache_key] = "".join(full_response)
         except Exception as e:
             yield get_friendly_error(e)
 
