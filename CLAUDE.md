@@ -30,6 +30,10 @@ cd web && npm run build
 
 # Router prompt A/B testing with Promptfoo
 ./eval/router_eval/run_eval.sh
+
+# Local Docker build test (before deploying)
+docker build -t campaign-intel-test .
+docker run --rm -p 8000:8000 -e OPENAI_API_KEY -e OPENROUTER_API_KEY -e PINECONE_API_KEY -e USE_OPENAI_EMBEDDINGS=true -e USE_RERANKER=false campaign-intel-test
 ```
 
 ### Data Pipeline
@@ -50,12 +54,19 @@ python scripts/retrieve.py "What did Ohio voters say about the economy?"
 ### Two-Index Design
 
 The system uses two separate Pinecone indexes:
-- **focus-group-v3**: Voter quotes from focus group transcripts (BGE-M3 embeddings, 1024 dims)
+- **focus-group-v3**: Voter quotes from focus group transcripts (1024 dims)
 - **strategy-memos-v1**: Campaign strategy lessons from strategy memos
+
+### Embedding Modes
+
+- **Production** (`USE_OPENAI_EMBEDDINGS=true`): OpenAI `text-embedding-3-small` via API (~2-3s queries)
+- **Local dev** (`USE_OPENAI_EMBEDDINGS=false`): BGE-M3 local model (~12s queries on CPU)
+
+Both use the same Pinecone index but different namespaces (`openai` vs default).
 
 ### Retrieval Pipeline
 
-1. **LLM Router** (`scripts/retrieve.py:LLMRouter`) — Gemini Flash analyzes query intent to determine:
+1. **LLM Router** (`scripts/retrieval/router.py`) — Gemini Flash analyzes query intent to determine:
    - Content type: "quotes" (focus groups), "lessons" (strategy memos), or "both"
    - Focus group filtering: which specific FGs to search (or all)
    - Outcome filtering: "win", "loss", or none
@@ -64,7 +75,7 @@ The system uses two separate Pinecone indexes:
    - `FocusGroupRetrieverV2`: Hierarchical search (parent chunks → child chunks)
    - `StrategyMemoRetriever`: Direct semantic search on strategy chunks
 
-3. **Reranking** — Cross-encoder reranking (ms-marco-MiniLM-L6-v2) for precision
+3. **Reranking** (optional) — Cross-encoder reranking (ms-marco-MiniLM-L6-v2), disabled in prod for speed
 
 4. **Synthesis** — Multi-level LLM synthesis:
    - Light: 1-2 sentence per-source summaries
@@ -75,28 +86,35 @@ The system uses two separate Pinecone indexes:
 
 | File | Purpose |
 |------|---------|
-| `scripts/retrieve.py` | Core retrieval logic: LLMRouter, FocusGroupRetrieverV2, StrategyMemoRetriever |
+| `scripts/retrieval/router.py` | LLM Router for query intent classification |
+| `scripts/retrieval/base.py` | SharedResources singleton (embeddings, Pinecone) |
+| `scripts/retrieve.py` | FocusGroupRetrieverV2, StrategyMemoRetriever |
 | `scripts/synthesize.py` | LLM synthesis (light, deep, macro) |
 | `api/main.py` | FastAPI endpoints wrapping retrieval/synthesis |
 | `eval/config.py` | Central configuration: API keys, models, paths, thresholds |
-| `web/app/config/api.ts` | Frontend API configuration |
+| `prompts/router_unified.txt` | Externalized router prompt |
 
 ### Environment Variables
 
 Required in `.env`:
 - `PINECONE_API_KEY` — Vector database
 - `OPENROUTER_API_KEY` — LLM calls (routing, synthesis)
-- `OPENAI_API_KEY` — Embeddings
+- `OPENAI_API_KEY` — Embeddings (production)
+
+Production settings:
+- `USE_OPENAI_EMBEDDINGS=true` — Use fast OpenAI API instead of slow local BGE-M3
+- `USE_RERANKER=false` — Disable heavy reranker model for speed
 
 Optional model overrides:
 - `ROUTER_MODEL`, `SYNTHESIS_MODEL` — Default: `google/gemini-3-flash-preview`
-- `USE_RERANKER` — Enable/disable cross-encoder reranking (default: false in prod)
 
 ### Deployment
 
-- **Frontend**: Vercel (requires `NEXT_PUBLIC_API_URL` env var pointing to backend)
-- **Backend**: Railway (auto-deploys from main branch)
+- **Frontend**: Vercel at `campaign-intel.vercel.app` (requires `NEXT_PUBLIC_API_URL`)
+- **Backend**: Railway at `campaign-intel-production.up.railway.app` (Dockerfile, auto-deploys from main)
 - **CORS**: Backend allows `*.vercel.app` via `allow_origin_regex`
+
+Production uses lightweight `requirements-prod.txt` (no torch/sentence-transformers) for fast cold starts.
 
 ## Design Principles
 

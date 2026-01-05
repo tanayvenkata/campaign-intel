@@ -8,20 +8,20 @@ interface VisualProps {
 
 // 4. THE ALIGNMENT: Narrative Arc (Noise -> Scan -> Process -> Insight)
 export default function LandingVisual({ className = "" }: VisualProps) {
-    const width = 800; // Expanded aspect ratio
-    const height = 400;
-    const cx = 400;
-    const cy = 200;
+    const width = 600;
+    const height = 180;
+    const cx = 300;
+    const cy = 90;
 
-    // Grid setup (Expanded for Hero)
+    // Grid setup (Compact)
     const compasses = [];
-    const rows = 6;
-    const cols = 12;
+    const rows = 4;
+    const cols = 10;
     for (let x = 0; x < cols; x++) {
         for (let y = 0; y < rows; y++) {
             compasses.push({
-                x: 70 + x * 60,
-                y: 50 + y * 50,
+                x: 45 + x * 57,
+                y: 30 + y * 38,
                 id: `${x}-${y}`,
                 rand: Math.random() // For individual variation
             });
@@ -29,7 +29,7 @@ export default function LandingVisual({ className = "" }: VisualProps) {
     }
 
     return (
-        <div className={`w-full aspect-[2/1] bg-slate-50 rounded-xl border border-slate-200 overflow-hidden relative ${className}`}>
+        <div className={`w-full aspect-[3.5/1] bg-slate-50 rounded-lg border border-slate-200 overflow-hidden relative ${className}`}>
             <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-full">
                 <defs>
                     <radialGradient id="queryPulse" cx="0.5" cy="0.5" r="0.5">
@@ -40,7 +40,7 @@ export default function LandingVisual({ className = "" }: VisualProps) {
 
                 {/* The Query Input (Central Pulse) */}
                 <circle cx={cx} cy={cy} r="0" fill="url(#queryPulse)">
-                    <animate attributeName="r" values="0; 600" dur="20s" begin="0s" repeatCount="indefinite" />
+                    <animate attributeName="r" values="0; 350" dur="20s" begin="0s" repeatCount="indefinite" />
                     <animate attributeName="opacity" values="0; 1; 0" keyTimes="0; 0.3; 1" dur="20s" begin="0s" repeatCount="indefinite" />
                 </circle>
 

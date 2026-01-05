@@ -161,20 +161,20 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="max-w-2xl mx-auto mb-10">
+              <div className="max-w-xl mx-auto mb-6">
                 <LandingVisual className="shadow-sm" />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-200 rounded-lg overflow-hidden border border-slate-200 shadow-sm mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-200 rounded-lg overflow-hidden border border-slate-200 shadow-sm mb-8">
                 {[
                   { val: "37", label: "Focus Groups", sub: "Indexed" },
                   { val: "12", label: "Key Races", sub: "Tracked" },
                   { val: "340+", label: "Voters", sub: "Interviewed" }
                 ].map((stat, i) => (
-                  <div key={i} className="bg-white p-8 group hover:bg-slate-50 transition-colors text-center relative">
-                    <div className="text-4xl font-serif font-bold text-slate-900 mb-2">{stat.val}</div>
-                    <div className="text-xs font-bold font-mono text-slate-500 uppercase tracking-widest mb-1">{stat.label}</div>
-                    <div className="text-[10px] text-slate-400 font-mono">{stat.sub}</div>
+                  <div key={i} className="bg-white py-4 px-6 group hover:bg-slate-50 transition-colors text-center relative">
+                    <div className="text-2xl font-serif font-bold text-slate-900 mb-1">{stat.val}</div>
+                    <div className="text-[10px] font-bold font-mono text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                    <div className="text-[9px] text-slate-400 font-mono">{stat.sub}</div>
                   </div>
                 ))}
               </div>
