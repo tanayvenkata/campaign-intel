@@ -1,0 +1,11 @@
+# Nixpacks configuration for Railway
+# Use only requirements-prod.txt (no heavy ML dependencies)
+
+[phases.setup]
+nixPkgs = ["python311"]
+
+[phases.install]
+cmds = ["pip install -r requirements-prod.txt"]
+
+[start]
+cmd = "uvicorn api.main:app --host 0.0.0.0 --port $PORT"
