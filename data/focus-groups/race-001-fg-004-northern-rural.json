@@ -1,0 +1,48 @@
+{
+  "focus_group_id": "race-001-fg-004-northern-rural",
+  "race_id": "race-001",
+  "race_name": "Michigan Governor 2022",
+  "outcome": "win",
+  "location": "Northern Michigan Rural (Alpena County - Alpena)",
+  "date": "September 15, 2022",
+  "moderator": "Jennifer Walsh",
+  "participant_count": 8,
+  "participant_summary": "8 (3F, 5M) - Rural voters, mostly Republican-lean, some persuadable",
+  "participants": {
+    "P1": "M, 58, Dairy farmer, 200-head operation, Hillman, third-generation farmer, \"Democrats don't know we exist\"",
+    "P2": "F, 44, Nurse at rural hospital, Alpena, only hospital for 50 miles, worried about closures",
+    "P3": "M, 67, Retired autoworker (GM Flint), moved north for retirement, Hubbard Lake, still union but \"not what it used to be\"",
+    "P4": "M, 36, Logger and hunting guide, Atlanta (MI), small business, \"government is the problem\"",
+    "P5": "F, 52, Elementary school principal, Hillman, rural district, consolidation fears",
+    "P6": "M, 47, Owner of hardware store, Alpena, main street business, competes with big box",
+    "P7": "F, 61, Part-time at IGA grocery, husband disabled (former factory), Ossineke, fixed income",
+    "P8": "M, 41, DNR conservation officer, lives in Alpena, outdoorsman, \"moderate\" self-description"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Profound sense of abandonment",
+      "Generic Democratic messaging fails completely",
+      "Rural-specific messaging works dramatically better",
+      "Flint/accountability message resonates",
+      "Economic anxiety is crushing but different than suburban",
+      "Cultural alienation is real and deep",
+      "Abortion is complicated here too",
+      "Physical presence",
+      "Rural-specific policy",
+      "Accountability proof",
+      "Respect",
+      "Follow-through"
+    ],
+    "vote_intent_summary": "**Likely Holloway:** P3 (1)",
+    "key_quotes": [
+      "\"Politicians come up here during hunting season, put on an orange vest for a photo, and then forget about us for four years.\" - P1",
+      "\"'Corporate greed.' Lady, there's no corporations up here. There's farmers and small businesses trying to survive.\" - P1",
+      "\"We're in 2022 and kids are driving to the McDonald's parking lot to use WiFi for homework.\" - P5",
+      "\"We're invisible. That's how it feels. Like we're invisible.\" - P7",
+      "\"Democrats write us off as lost cause Trump voters. Republicans take us for granted because where else are we gonna go?\" - P1",
+      "\"I'm pro-life but I'm not heartless. There are situations where it's not black and white.\" - P4"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Profound sense of abandonment** - \"We're invisible,\" \"nobody cares about us,\" \"flyover country.\" This isn't partisan - it's directed at both parties.\n\n2. **Generic Democratic messaging fails completely** - \"Corporate greed\" scored 1.75/5. They literally laughed at it. \"There's no corporations up here.\"\n\n3. **Rural-specific messaging works dramatically better** - Broadband, rural hospitals, family farms scored 3.25/5. A 1.5-point jump just from speaking to their actual concerns.\n\n4. **Flint/accountability message resonates** - Even in Trump country, holding government accountable for Flint landed (3.5/5). Proof over promises.\n\n5. **Economic anxiety is crushing but different than suburban** - It's not just \"prices going up.\" It's farm input costs, hospital closures, brain drain, dying towns. Different texture.\n\n6. **Cultural alienation is real and deep** - \"Deplorables,\" \"bitter clingers\" - they remember these insults. There's resentment from feeling looked down upon.\n\n7. **Abortion is complicated here too** - Even P4 (most conservative) acknowledged absolute bans go too far. It's not uniform opposition.\n\n### Moderator Self-Note: Managing P4\n\nP4 dominated early portions of the discussion and needed to be redirected several times. His views are important data but were crowding out other voices. I made deliberate effort to draw out quieter participants (P7, P8) after the first section.\n\n### Vote Intent\n\n- **Likely Vanderberg:** P1, P4, P6 (3)\n- **Likely Holloway:** P3 (1)\n- **Genuinely Undecided:** P2, P5, P7 (3)\n- **Would not share:** P8 (1)\n\nThis is a 3-1-3-1 room in strong Republican territory. The undecideds are notable - these could be reached with right message.\n\n### What Would Move Rural Voters\n\n1. **Physical presence** - Campaign here. Not photo ops - real town halls, real listening.\n\n2. **Rural-specific policy** - Broadband, rural healthcare, farm policy. Not \"working families\" generic.\n\n3. **Accountability proof** - Flint prosecution was credible. More concrete accomplishments, less promises.\n\n4. **Respect** - Stop treating rural voters as lost cause or cultural enemy. They know when they're being condescended to.\n\n5. **Follow-through** - Broken promises have accumulated for decades. Any new promise starts in a trust deficit.\n\n### Why Democrats Are Losing Here\n\n1. Economic messaging doesn't translate (\"corporate greed\" = laughed at)\n2. Cultural messaging feels hostile (\"they think we're stupid racists\")\n3. No visible presence or investment\n4. Generic \"working families\" ignores rural-specific issues\n5. Trust has been broken by decades of ignored promises\n\n### Verbatim Quotes for Strategy\n\n> \"Politicians come up here during hunting season, put on an orange vest for a photo, and then forget about us for four years.\" - P1\n\n> \"'Corporate greed.' Lady, there's no corporations up here. There's farmers and small businesses trying to survive.\" - P1\n\n> \"We're in 2022 and kids are driving to the McDonald's parking lot to use WiFi for homework.\" - P5\n\n> \"We're invisible. That's how it feels. Like we're invisible.\" - P7\n\n> \"Democrats write us off as lost cause Trump voters. Republicans take us for granted because where else are we gonna go?\" - P1\n\n> \"I'm pro-life but I'm not heartless. There are situations where it's not black and white.\" - P4\n\n---\n\n*Transcript prepared by Northern Michigan Research Associates*\n*September 16, 2022*\n*STATUS: DIAGNOSTIC - RURAL UNDERPERFORMANCE EXPLAINED*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/focus-groups/fg-004-northern-rural.md"
+}

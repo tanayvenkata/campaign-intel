@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-016",
+  "race_id": "race-005",
+  "content": "**Maricopa County:**\n- Delivered margin through suburban swing voters\n- McCain Republicans in Scottsdale, Paradise Valley, Chandler\n- Growing Latino population in West Valley\n- Election denial particularly toxic in educated suburbs\n\n**Pima County (Tucson):**\n- Base strength but turnout not automatic\n- Water policy matters more than state average\n- Hometown connection for Reyes was asset\n- University population needs registration push\n\n**Border Counties (Yuma, Cochise):**\n- Lost but margins matter\n- Latino community cross-pressured on border\n- Need substantive engagement, not write-off\n\n---",
+  "section": "Geographic Insights",
+  "subsection": null,
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 147
+}

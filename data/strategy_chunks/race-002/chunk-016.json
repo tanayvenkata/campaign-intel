@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-016",
+  "race_id": "race-002",
+  "content": "| Segment | Starting Position | Ending Position | What Moved Them |\n|---------|-------------------|-----------------|-----------------|\n| Philadelphia suburban women | Lean R | Strong D | Abortion, candidate quality contrast |\n| Pittsburgh union households | Soft D | Strong D | Working-class roots, Social Security |\n| Scranton working-class | Persuadable | Strong D | Hometown connection, authenticity |\n| Pennsylvania seniors | Mixed | Lean D | Medicare/Social Security, prescription drugs |\n| College-educated professionals | Lean D | Strong D | Abortion, democracy concerns |\n| Rural Pennsylvania | Strong R | Strong R | Not enough investment to test |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 164
+}

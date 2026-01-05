@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-003-memo-chunk-007",
+  "race_id": "race-003",
+  "content": "The Fox Valley focus group showed 7-2 lean toward Lindquist - in a region that should be competitive. Key failures:\n\n1. **Union voters persuadable to Republicans:** P1 (union paper mill worker) leaning Lindquist despite union endorsement\n2. **Economic credibility gap decisive:** Business background > union endorsement for swing voters\n3. **Generic messaging rejected even by potential supporters**\n\n---",
+  "section": "What Went Wrong",
+  "subsection": "5. We Lost the Swing Region (Fox Valley)",
+  "state": "Wisconsin",
+  "year": 2022,
+  "outcome": "loss",
+  "margin": -1.1,
+  "office": "Senate",
+  "candidate_name": "Karen Kowalski",
+  "opponent_name": "Steve Lindquist",
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+  "line_number": 98
+}

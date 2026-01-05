@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-007",
+  "race_id": "race-010",
+  "content": "Average enthusiasm in NEPA was only 5.7/10:\n\n**P5 (Scranton):** \"Whoever wins, nothing changes here.\"\n\nThe region feels forgotten and cynical. Votes came but not with energy.",
+  "section": "What Didn't Work",
+  "subsection": "1. NEPA Enthusiasm Gap",
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 63
+}

@@ -1,0 +1,41 @@
+{
+  "focus_group_id": "race-008-fg-001-billings",
+  "race_id": "race-008",
+  "race_name": "Montana Senate 2024",
+  "outcome": "loss",
+  "location": "Billings (Yellowstone County)",
+  "date": "September 15, 2024",
+  "moderator": "Sarah Thompson",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Mix of Billings residents, urban Montana context",
+  "participants": {
+    "P1": "M, 58, Refinery worker, Billings, union member, swing voter",
+    "P2": "F, 44, Hospital administrator, Billings Heights, Biden 2020, healthcare focus",
+    "P3": "M, 36, Oil field worker, Laurel, Trump 2020, economic voter",
+    "P4": "F, 52, Small business owner, downtown Billings, independent, pragmatic",
+    "P5": "M, 67, Retired teacher, Billings, longtime Democrat, education focus",
+    "P6": "F, 31, Software developer, moved from Seattle 2021, progressive",
+    "P7": "M, 41, Rancher, outside Billings, conservative but votes person not party",
+    "P8": "F, 48, Nurse, St. Vincent's, swing voter, exhausted by politics",
+    "P9": "M, 55, Car dealership manager, Republican, Trump supporter",
+    "P10": "F, 29, Brewery worker, downtown, young progressive, outdoor enthusiast"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "P7 defection is critical",
+      "Nationalization is winning",
+      "\"San Francisco values\" attack is working",
+      "Enthusiasm gap among supporters",
+      "Transplant tension",
+      "Fatigue factor",
+      "Depoliticize",
+      "Local stories",
+      "Public lands heavily",
+      "Split-ticket permission"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [],
+    "full_text": "\n### Key Themes - WARNING SIGNS\n\n1. **P7 defection is critical** - Conservative who voted Sullivan three times is moving to Hansen. \"I can't believe I'm saying it.\"\n\n2. **Nationalization is winning** - 5 of 10 said party matters more than candidate. Sullivan's personal brand can't overcome.\n\n3. **\"San Francisco values\" attack is working** - Even those who reject it acknowledge it's effective.\n\n4. **Enthusiasm gap among supporters** - Sullivan voters averaging 5.8. P7 (defector) at 3 on Hansen.\n\n5. **Transplant tension** - P6 represents coastal refugees. Valuable votes but also symbol of what conservatives resent.\n\n6. **Fatigue factor** - P8: \"I'm tired of all of it.\" Low-information voters may just stay home or go with the wave.\n\n### Vote Intent\n\n- **Sullivan:** 5\n- **Leaning Sullivan:** 2\n- **Hansen:** 3\n\nThis is better than statewide polling but enthusiasm is too low.\n\n### Critical Defector Profile (P7)\n\n- **Background:** 41, rancher, conservative, voted Sullivan three times before\n- **Why defecting:** \"Trump's going to carry Montana by 20 points. Maybe it's time to have both senators on the same team.\"\n- **Enthusiasm:** 3 for Hansen - voting against party, not for candidate\n- **Quote:** \"I like Jack personally. But the party thing is getting harder to overlook.\"\n\n### Recommendations\n\n1. **Depoliticize** - Run against Washington, not as Democrat\n2. **Local stories** - Constituent service moments, not policy debates\n3. **Public lands heavily** - Cross-partisan issue that matters here\n4. **Split-ticket permission** - \"Vote for whoever for president but keep Jack working for Montana\"\n\n---\n\n*Transcript prepared by Big Sky Research*\n*September 16, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/focus-groups/fg-001-billings.md"
+}

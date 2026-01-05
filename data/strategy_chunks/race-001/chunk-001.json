@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-001",
+  "race_id": "race-001",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Michigan Governor 2022\n**Candidate:** Sarah Holloway (D)\n**Opponent:** Rick Vanderberg (R)\n**Outcome:** Win (+3.2%)\n**Date:** December 2022\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 1
+}

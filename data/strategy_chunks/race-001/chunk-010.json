@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-010",
+  "race_id": "race-001",
+  "content": "This isn't a flash in the pan. Reproductive rights have fundamentally changed the political calculus for:\n- Suburban Republican women\n- Young voters\n- Libertarian-leaning independents who value personal freedom\n\nAny Democratic candidate in the Midwest should make reproductive freedom central to their campaign.",
+  "section": "Key Learnings for Future Races",
+  "subsection": "1. Post-Dobbs Abortion Is a Realignment Issue",
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 99
+}

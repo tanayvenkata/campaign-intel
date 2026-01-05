@@ -1,0 +1,38 @@
+{
+  "focus_group_id": "race-012-fg-002-madison",
+  "race_id": "race-012",
+  "race_name": "Wisconsin Senate 2024",
+  "outcome": "win",
+  "location": "Madison (Dane County)",
+  "date": "September 28, 2024",
+  "moderator": "Brian Mueller",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Progressive base, academics, state workers",
+  "participants": {
+    "P1": "F, 42, UW professor, Madison, progressive, policy focus",
+    "P2": "M, 35, State government employee, Fitchburg, union member",
+    "P3": "F, 28, Tech worker, East Side, transplant from Chicago",
+    "P4": "M, 55, Hospital administrator, Middleton, healthcare focus",
+    "P5": "F, 48, Non-profit director, Monona, community organizing",
+    "P6": "M, 61, Retired teacher, Sun Prairie, union pension",
+    "P7": "F, 33, Environmental scientist, Madison, climate focus",
+    "P8": "M, 44, Attorney, Verona, civil liberties focus",
+    "P9": "F, 38, Small business owner (bookstore), downtown Madison",
+    "P10": "M, 29, Graduate student, UW, first-time Senate voter"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Base is locked and motivated",
+      "Union memory is strong",
+      "Campus organizing is active",
+      "No real concerns about Schroeder",
+      "Turnout infrastructure exists"
+    ],
+    "vote_intent_summary": "**Schroeder:** 10",
+    "key_quotes": [
+      "\"She represents what Democrats should be. Working-class roots, progressive values.\" - P10"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Base is locked and motivated** - 10-0 Schroeder with average enthusiasm 9.1.\n\n2. **Union memory is strong** - 2011 Capitol protests still animate the base.\n\n3. **Campus organizing is active** - P10 represents engaged youth.\n\n4. **No real concerns about Schroeder** - Mild wishes for bolder positions but full support.\n\n5. **Turnout infrastructure exists** - Unions, campus, nonprofits all working.\n\n### Vote Intent\n\n- **Schroeder:** 10\n\nMadison will deliver.\n\n### Key Quote\n\n> \"She represents what Democrats should be. Working-class roots, progressive values.\" - P10\n\n---\n\n*Transcript prepared by Madison Research*\n*September 29, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/focus-groups/fg-002-madison.md"
+}

@@ -1,0 +1,265 @@
+{
+  "total_focus_groups": 37,
+  "total_chunks": 3126,
+  "focus_groups": [
+    {
+      "focus_group_id": "race-001-fg-001-detroit-suburbs",
+      "race_name": "Michigan Governor 2022",
+      "location": "Detroit Suburbs (Oakland County - Troy)",
+      "chunk_count": 143,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-001-fg-002-grand-rapids",
+      "race_name": "Michigan Governor 2022",
+      "location": "Grand Rapids Metro (Kent County)",
+      "chunk_count": 134,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-001-fg-003-swing-voters-statewide",
+      "race_name": "Michigan Governor 2022",
+      "location": "Virtual (Statewide Michigan)",
+      "chunk_count": 146,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-001-fg-004-northern-rural",
+      "race_name": "Michigan Governor 2022",
+      "location": "Northern Michigan Rural (Alpena County - Alpena)",
+      "chunk_count": 93,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-002-fg-001-philadelphia-suburbs",
+      "race_name": "Pennsylvania Senate 2022",
+      "location": "Philadelphia Suburbs (Montgomery County - King of Prussia)",
+      "chunk_count": 101,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-002-fg-002-pittsburgh-area",
+      "race_name": "Pennsylvania Senate 2022",
+      "location": "Pittsburgh Area (Allegheny County - Monroeville)",
+      "chunk_count": 96,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-002-fg-003-scranton-working-class",
+      "race_name": "Pennsylvania Senate 2022",
+      "location": "Scranton/NEPA (Lackawanna County)",
+      "chunk_count": 88,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-003-fg-001-milwaukee-suburbs",
+      "race_name": "Wisconsin Senate 2022",
+      "location": "Milwaukee Suburbs - WOW Counties (Waukesha County - Brookfield)",
+      "chunk_count": 123,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-003-fg-002-madison-area",
+      "race_name": "Wisconsin Senate 2022",
+      "location": "Madison Area (Dane County)",
+      "chunk_count": 90,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-003-fg-003-fox-valley",
+      "race_name": "Wisconsin Senate 2022",
+      "location": "Fox Valley (Outagamie County - Appleton)",
+      "chunk_count": 101,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-004-fg-001-atlanta-suburbs",
+      "race_name": "Georgia Senate 2022",
+      "location": "Atlanta Suburbs (Cobb County - Marietta)",
+      "chunk_count": 65,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-004-fg-002-atlanta-black-voters",
+      "race_name": "Georgia Senate 2022",
+      "location": "Atlanta (Fulton County - Southwest Atlanta)",
+      "chunk_count": 61,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-004-fg-003-rural-southwest",
+      "race_name": "Georgia Senate 2022",
+      "location": "Rural Southwest Georgia (Dougherty County - Albany)",
+      "chunk_count": 65,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-005-fg-001-maricopa-suburbs",
+      "race_name": "Arizona Governor 2022",
+      "location": "Maricopa County Suburbs (Scottsdale/Chandler)",
+      "chunk_count": 63,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-005-fg-002-latino-phoenix",
+      "race_name": "Arizona Governor 2022",
+      "location": "Phoenix Metro (Maryvale/Glendale - Latino Community)",
+      "chunk_count": 94,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-005-fg-003-tucson",
+      "race_name": "Arizona Governor 2022",
+      "location": "Tucson (Pima County)",
+      "chunk_count": 79,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-006-fg-001-las-vegas-union",
+      "race_name": "Nevada Senate 2022",
+      "location": "Las Vegas (Culinary Union Hall)",
+      "chunk_count": 83,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-006-fg-002-reno-transplants",
+      "race_name": "Nevada Senate 2022",
+      "location": "Reno (Washoe County)",
+      "chunk_count": 86,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-006-fg-003-latino-vegas",
+      "race_name": "Nevada Senate 2022",
+      "location": "Las Vegas (East Las Vegas/Henderson - Latino Community)",
+      "chunk_count": 88,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+      "race_name": "Ohio Senate 2024",
+      "location": "Cleveland Suburbs (Cuyahoga County - Parma/Strongsville)",
+      "chunk_count": 80,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-007-fg-002-columbus-educated",
+      "race_name": "Ohio Senate 2024",
+      "location": "Columbus Metro (Franklin County - Upper Arlington/Dublin)",
+      "chunk_count": 91,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-007-fg-003-youngstown-working-class",
+      "race_name": "Ohio Senate 2024",
+      "location": "Youngstown/Mahoning Valley (Mahoning County)",
+      "chunk_count": 81,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-008-fg-001-billings",
+      "race_name": "Montana Senate 2024",
+      "location": "Billings (Yellowstone County)",
+      "chunk_count": 86,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-008-fg-002-rural-ranching",
+      "race_name": "Montana Senate 2024",
+      "location": "Rural Montana (Lewistown/Fergus County)",
+      "chunk_count": 78,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-008-fg-003-native-reservations",
+      "race_name": "Montana Senate 2024",
+      "location": "Crow Reservation (Big Horn County)",
+      "chunk_count": 77,
+      "outcome": "loss"
+    },
+    {
+      "focus_group_id": "race-009-fg-001-detroit-suburbs",
+      "race_name": "Michigan Senate 2024",
+      "location": "Detroit Suburbs (Oakland County - Troy/Rochester)",
+      "chunk_count": 84,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-009-fg-002-flint-saginaw",
+      "race_name": "Michigan Senate 2024",
+      "location": "Flint/Saginaw (Genesee/Saginaw Counties)",
+      "chunk_count": 84,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-009-fg-003-grand-rapids",
+      "race_name": "Michigan Senate 2024",
+      "location": "Grand Rapids (Kent County)",
+      "chunk_count": 77,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-010-fg-001-philadelphia-suburbs",
+      "race_name": "Pennsylvania Senate 2024",
+      "location": "Philadelphia Suburbs (Chester County - West Chester/Malvern)",
+      "chunk_count": 67,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-010-fg-002-pittsburgh",
+      "race_name": "Pennsylvania Senate 2024",
+      "location": "Pittsburgh (Allegheny County)",
+      "chunk_count": 72,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-010-fg-003-scranton-nepa",
+      "race_name": "Pennsylvania Senate 2024",
+      "location": "Scranton/NEPA (Lackawanna/Luzerne Counties)",
+      "chunk_count": 74,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-011-fg-001-charlotte-suburbs",
+      "race_name": "North Carolina Governor 2024",
+      "location": "Charlotte Suburbs (Mecklenburg/Union Counties)",
+      "chunk_count": 68,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-011-fg-002-research-triangle",
+      "race_name": "North Carolina Governor 2024",
+      "location": "Research Triangle (Wake County - Raleigh/Cary)",
+      "chunk_count": 65,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-011-fg-003-rural-eastern",
+      "race_name": "North Carolina Governor 2024",
+      "location": "Eastern North Carolina (Greenville/Pitt County)",
+      "chunk_count": 55,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-012-fg-001-milwaukee-suburbs",
+      "race_name": "Wisconsin Senate 2024",
+      "location": "Milwaukee Suburbs (WOW Counties - Waukesha/Ozaukee)",
+      "chunk_count": 63,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-012-fg-002-madison",
+      "race_name": "Wisconsin Senate 2024",
+      "location": "Madison (Dane County)",
+      "chunk_count": 53,
+      "outcome": "win"
+    },
+    {
+      "focus_group_id": "race-012-fg-003-fox-valley",
+      "race_name": "Wisconsin Senate 2024",
+      "location": "Fox Valley (Appleton/Outagamie County)",
+      "chunk_count": 72,
+      "outcome": "win"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-012",
+  "race_id": "race-012",
+  "content": "\"Pro-business, cut taxes, cut red tape\" didn't resonate:\n\n**WOW P6:** \"His economic message is generic. 'Pro-business.' What does that mean?\"\n\nNo specific policies, no connection to daily economic concerns.",
+  "section": "What Didn't Work",
+  "subsection": "1. Thompson's Business Message Was Generic",
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 101
+}

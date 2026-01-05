@@ -1,0 +1,46 @@
+{
+  "focus_group_id": "race-010-fg-003-scranton-nepa",
+  "race_id": "race-010",
+  "race_name": "Pennsylvania Senate 2024",
+  "outcome": "win",
+  "location": "Scranton/NEPA (Lackawanna/Luzerne Counties)",
+  "date": "September 30, 2024",
+  "moderator": "Michael DiNapoli",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Working-class voters, traditional Democrats under pressure",
+  "participants": {
+    "P1": "M, 62, Retired coal miner, Pittston, longtime Democrat",
+    "P2": "F, 48, Hospital receptionist, Wilkes-Barre, economic concerns",
+    "P3": "M, 35, Warehouse worker (Amazon), Hazleton, Trump 2020",
+    "P4": "F, 55, Teacher, Scranton, union, traditional values Democrat",
+    "P5": "M, 44, Truck driver, Dunmore, Teamsters, swing voter",
+    "P6": "F, 38, Nurse, Geisinger, Scranton, healthcare focus",
+    "P7": "M, 52, Small business owner (pizza shop), Old Forge, Italian-American",
+    "P8": "F, 61, Retired factory worker, Nanticoke, union pension",
+    "P9": "M, 29, Construction worker, Carbondale, young working class",
+    "P10": "F, 42, School administrator, West Pittston, suburban lean"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "NEPA feels forgotten",
+      "Economic anxiety is deep",
+      "Hartley's pharma background helps Russo",
+      "Some voters are genuinely swing",
+      "Low enthusiasm is problem",
+      "Italian-American connection transfers",
+      "Physical presence",
+      "Economic specifics",
+      "Address cultural alienation",
+      "Italian-American messaging"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"Democrats stopped talking about jobs. Started talking about other stuff.\" - P1",
+      "\"They call us racist, deplorable. Why would I vote for people who hate me?\" - P3",
+      "\"The party left us. We didn't leave it.\" - P8",
+      "\"Whoever wins, nothing changes here.\" - P5"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **NEPA feels forgotten** - \"Politicians come for photo ops, then forget us.\"\n\n2. **Economic anxiety is deep** - Coal gone, factories gone, warehouses aren't the same.\n\n3. **Hartley's pharma background helps Russo** - \"Charging $500 for insulin\" is the frame.\n\n4. **Some voters are genuinely swing** - P3 and P5 are persuadable. Economic message matters.\n\n5. **Low enthusiasm is problem** - 5.7 average is concerning for turnout.\n\n6. **Italian-American connection transfers** - Russo's background resonates even from Pittsburgh.\n\n### Vote Intent\n\n- **Russo:** 7\n- **Undecided lean Russo:** 2\n- **Undecided lean Hartley:** 1\n\nGood but not locked down.\n\n### Swing Profiles\n\n- **P3 (35, warehouse worker, Trump 2020):** \"Democrats call us racist. Why would I vote for them?\"\n- **P5 (44, trucker, Teamsters):** \"Whoever makes my life easier.\"\n\n### Turnout Concern\n\nAverage enthusiasm 5.7 means GOTV is critical. Low-enthusiasm voters may stay home.\n\n### Recommendations\n\n1. **Physical presence** - \"Come here. A lot.\"\n2. **Economic specifics** - Not just rhetoric\n3. **Address cultural alienation** - P3's \"deplorable\" comment shows lasting damage\n4. **Italian-American messaging** - Helps bridge regional gap\n\n### Key Quotes\n\n> \"Democrats stopped talking about jobs. Started talking about other stuff.\" - P1\n\n> \"They call us racist, deplorable. Why would I vote for people who hate me?\" - P3\n\n> \"The party left us. We didn't leave it.\" - P8\n\n> \"Whoever wins, nothing changes here.\" - P5\n\n---\n\n*Transcript prepared by NEPA Research Group*\n*October 1, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/focus-groups/fg-003-scranton-nepa.md"
+}

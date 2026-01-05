@@ -1,0 +1,46 @@
+{
+  "focus_group_id": "race-006-fg-003-latino-vegas",
+  "race_id": "race-006",
+  "race_name": "Nevada Senate 2022",
+  "outcome": "win",
+  "location": "Las Vegas (East Las Vegas/Henderson - Latino Community)",
+  "date": "September 30, 2022",
+  "moderator": "Rosa Espinoza",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Latino voters, mix of union and non-union, various backgrounds",
+  "participants": {
+    "P1": "F, 48, Office manager, Henderson, Mexican-American, third generation",
+    "P2": "M, 35, Electrician, Las Vegas, Puerto Rican, union member",
+    "P3": "F, 62, Retired casino cashier, naturalized citizen from Mexico, longtime voter",
+    "P4": "M, 41, Restaurant owner, East Las Vegas, Guatemalan immigrant, business focus",
+    "P5": "F, 28, Dental hygienist, Henderson, UNLV graduate, first-generation professional",
+    "P6": "M, 55, Truck driver, North Las Vegas, Cuban-American, independent voter",
+    "P7": "F, 44, Home health aide, Las Vegas, Salvadoran background, single mother",
+    "P8": "M, 32, Real estate agent, Summerlin, upwardly mobile, moderate politics",
+    "P9": "F, 51, School administrator, Henderson, education focus, community leader",
+    "P10": "M, 24, UNLV student, first-time voter, second generation, politically active"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Class identity more than ethnic identity",
+      "Cuban and business-owner persuadables exist",
+      "Prescott's business image collapses",
+      "Economic message must be specific",
+      "Not a monolith",
+      "Youth engagement is strong",
+      "Specific economic wins",
+      "Working-class solidarity",
+      "Don't assume Latino vote",
+      "Cuban outreach"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"Her mother cleaned rooms at the Sands. She understands where we come from.\" - P3",
+      "\"Democrats assume we'll vote for them. That's arrogant.\" - P10",
+      "\"I want to support business-friendly candidates but not at the expense of my workers, my community.\" - P4",
+      "\"He sees us as cheap labor, not families.\" - P3"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Class identity more than ethnic identity** - Sandoval's working-class background resonates more than just being Latina.\n\n2. **Cuban and business-owner persuadables exist** - P6 (Cuban, conservative) and P4/P8 (business focus) were persuadable. Ended with Sandoval but lower enthusiasm.\n\n3. **Prescott's business image collapses** - \"Non-union hotels\" is effective attack. Business-friendly doesn't mean worker-friendly.\n\n4. **Economic message must be specific** - \"Lower costs\" with concrete examples (insulin, prescriptions) worked better than abstract claims.\n\n5. **Not a monolith** - Puerto Rican, Cuban, Mexican, Salvadoran - different experiences, different politics, but converging on Sandoval.\n\n6. **Youth engagement is strong** - P10 at 9 enthusiasm and organizing friends. Good sign.\n\n### Vote Intent\n\n- **Sandoval:** 10\n- **Enthusiasm range:** 5-9 (average 7.4)\n\n### Persuadable Profiles\n\n- **P6 (Cuban, 55, conservative):** Ultimately came to Sandoval but 5 enthusiasm. Economic voter frustrated with both parties.\n- **P8 (Real estate, 32, moderate):** Business-focused, 5 enthusiasm. Needs economic growth messaging, not just protection.\n- **P4 (Restaurant owner, 41):** Business owner who came to Sandoval but at 6. Balance worker protection with business concerns.\n\n### Recommendations\n\n1. **Specific economic wins** - Name policies, show concrete benefits.\n2. **Working-class solidarity** - Her background is the message. Keep telling it.\n3. **Don't assume Latino vote** - Earn it with presence, policy, respect.\n4. **Cuban outreach** - Different messaging needed. Emphasize freedom, opportunity, anti-extremism.\n\n### Key Quotes\n\n> \"Her mother cleaned rooms at the Sands. She understands where we come from.\" - P3\n\n> \"Democrats assume we'll vote for them. That's arrogant.\" - P10\n\n> \"I want to support business-friendly candidates but not at the expense of my workers, my community.\" - P4\n\n> \"He sees us as cheap labor, not families.\" - P3\n\n---\n\n*Transcript prepared by Silver State Research*\n*October 1, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/focus-groups/fg-003-latino-vegas.md"
+}

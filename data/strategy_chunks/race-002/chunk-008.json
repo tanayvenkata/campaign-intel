@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-008",
+  "race_id": "race-002",
+  "content": "Like in Michigan, generic populist economic messaging (\"fight for working families,\" \"corporate greed\") tested mediocre even among supportive audiences. Specific policies (insulin cap, prescription drugs) performed better.\n\n**However:** In Pennsylvania, candidate contrast was so dominant that economic messaging mattered less than in other states. The race was won on character, not policy.",
+  "section": "What Didn't Work",
+  "subsection": "1. Generic Economic Messaging Underperformed",
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 104
+}

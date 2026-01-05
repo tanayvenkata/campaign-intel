@@ -1,0 +1,40 @@
+{
+  "focus_group_id": "race-012-fg-001-milwaukee-suburbs",
+  "race_id": "race-012",
+  "race_name": "Wisconsin Senate 2024",
+  "outcome": "win",
+  "location": "Milwaukee Suburbs (WOW Counties - Waukesha/Ozaukee)",
+  "date": "September 24, 2024",
+  "moderator": "Brian Mueller",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Suburban voters, traditionally Republican-leaning",
+  "participants": {
+    "P1": "F, 52, Healthcare administrator, Brookfield, moderate, abortion concern",
+    "P2": "M, 58, Manufacturing executive, Waukesha, fiscal conservative, Trump 2020",
+    "P3": "F, 44, Attorney, Menomonee Falls, Biden 2020, suburban mom",
+    "P4": "M, 61, Retired banker, Mequon, traditional Republican",
+    "P5": "F, 38, Pharmacist, Cedarburg, independent, healthcare focus",
+    "P6": "M, 45, Tech sales, Oconomowoc, swing voter, economic focus",
+    "P7": "F, 55, Real estate agent, Elm Grove, Republican lean",
+    "P8": "M, 42, Small business owner, New Berlin, fiscal conservative",
+    "P9": "F, 29, Teacher, Wauwatosa, progressive, young professional",
+    "P10": "M, 51, Insurance executive, Mequon, moderate Republican"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Healthcare costs message works",
+      "Abortion creating openings",
+      "Thompson's business message is generic",
+      "Not a wipeout either way",
+      "\"Made millions\" attack is debatable"
+    ],
+    "vote_intent_summary": "**Schroeder:** 4",
+    "key_quotes": [
+      "\"Healthcare is personal. She's been there.\" - P1",
+      "\"Business executives don't understand healthcare from the patient side.\" - P5",
+      "\"Abortion is a problem\" - P7 (on Thompson's weakness)"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Healthcare costs message works** - Schroeder's nurse background + drug price message is landing even in Republican suburbs.\n\n2. **Abortion creating openings** - P1, P3 cite it. P7 (Thompson lean) says \"abortion is a problem.\"\n\n3. **Thompson's business message is generic** - \"Pro-business\" doesn't address specific concerns.\n\n4. **Not a wipeout either way** - 4-2-4 split shows competitive race.\n\n5. **\"Made millions\" attack is debatable** - Some see it as unfair, others see it as valid contrast.\n\n### Vote Intent\n\n- **Schroeder:** 4\n- **Lean Schroeder:** 2\n- **Thompson:** 2\n- **Lean Thompson:** 2\n\nCompetitive in traditionally Republican territory.\n\n### Key Quotes\n\n> \"Healthcare is personal. She's been there.\" - P1\n\n> \"Business executives don't understand healthcare from the patient side.\" - P5\n\n> \"Abortion is a problem\" - P7 (on Thompson's weakness)\n\n---\n\n*Transcript prepared by Wisconsin Research Partners*\n*September 25, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/focus-groups/fg-001-milwaukee-suburbs.md"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-003-memo-chunk-004",
+  "race_id": "race-003",
+  "content": "Steve Lindquist ran a manufacturing company before entering politics. This gave him economic credibility we could not match with a teacher-turned-politician biography.\n\n**Focus group evidence:**\n\n- Fox Valley: \"He created jobs, right? That's more than most politicians have done.\"\n- WOW Counties: \"Jobs creator versus career politician\" - his message scored 3.7/5 vs. our 2.1/5\n- Fox Valley: Union member said \"My union won't like it but that's my lean\" toward Lindquist\n\n**Why this hurt us:**\n\n1. **Manufacturing context:** Wisconsin's Fox Valley is manufacturing-heavy. A candidate who \"made a payroll\" has instant credibility.\n\n2. **\"Career politician\" attack landed:** Kowalski's trajectory (teacher \u2192 state senator) became a liability when paired with Lindquist's private-sector experience.\n\n3. **No business validators:** We had union endorsements but lacked business community voices who could vouch for Kowalski's economic seriousness.",
+  "section": "What Went Wrong",
+  "subsection": "2. Lindquist's Business Background Won the Credibility Battle",
+  "state": "Wisconsin",
+  "year": 2022,
+  "outcome": "loss",
+  "margin": -1.1,
+  "office": "Senate",
+  "candidate_name": "Karen Kowalski",
+  "opponent_name": "Steve Lindquist",
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+  "line_number": 46
+}

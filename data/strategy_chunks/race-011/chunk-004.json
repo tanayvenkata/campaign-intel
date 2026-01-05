@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-011-memo-chunk-004",
+  "race_id": "race-011",
+  "content": "The race demonstrated that candidate character can override partisan loyalty when the breach is severe enough:\n\n**Charlotte P7:** \"I'm not becoming a Democrat. This is about one candidate being unacceptable.\"\n\n**Rural P8:** \"He claims to be Christian but his words are hateful. That's not Christ.\"\n\n**Rural P1 (farmer, lifelong Republican):** \"Never thought I'd say it.\"\n\n---",
+  "section": "The Chambers Collapse",
+  "subsection": "Character Over Party",
+  "state": "North Carolina",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 8.5,
+  "office": "Governor",
+  "candidate_name": "Will Patterson",
+  "opponent_name": "Russell Chambers",
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/strategy-memo.md",
+  "line_number": 30
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-004-memo-chunk-014",
+  "race_id": "race-004",
+  "content": "| Segment | Position | Enthusiasm | Key Drivers |\n|---------|----------|------------|-------------|\n| Cobb suburban professionals | 10-0 Williams | High | Character, abortion, competence |\n| Atlanta Black base | 10-0 Williams | Very high | Church connection, representation, voting rights |\n| Rural Black Belt | 9-0 Williams | Moderate | Character (default), healthcare, economic hope |\n| Rural white persuadables | Williams | Low but choosing us | Harrison unacceptable |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "Georgia",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Marcus Williams",
+  "opponent_name": "Blake Harrison",
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/strategy-memo.md",
+  "line_number": 109
+}

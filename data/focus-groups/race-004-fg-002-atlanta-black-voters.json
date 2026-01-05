@@ -1,0 +1,47 @@
+{
+  "focus_group_id": "race-004-fg-002-atlanta-black-voters",
+  "race_id": "race-004",
+  "race_name": "Georgia Senate 2022",
+  "outcome": "win",
+  "location": "Atlanta (Fulton County - Southwest Atlanta)",
+  "date": "September 22, 2022",
+  "moderator": "Angela Washington",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Black voters, mix of ages and backgrounds",
+  "participants": {
+    "P1": "F, 67, Retired teacher, Cascade Heights, longtime voter, church member",
+    "P2": "M, 34, Delivery driver, East Point, occasional voter, economic concerns",
+    "P3": "F, 28, Nurse, College Park, first-generation college graduate, activated by 2020",
+    "P4": "M, 55, Small business owner (barbershop), West End, community fixture",
+    "P5": "F, 42, Social worker, Bankhead, sees systemic issues daily",
+    "P6": "M, 71, Retired postal worker, Adamsville, civil rights movement participant",
+    "P7": "F, 31, Marketing coordinator, Midtown, young professional",
+    "P8": "M, 44, Construction supervisor, College Park, union adjacent",
+    "P9": "F, 52, Church administrator, Cascade, knows Williams personally",
+    "P10": "M, 26, College senior at Morehouse, first-time voter in 2020"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Unanimous support but varying enthusiasm",
+      "Church infrastructure is crucial",
+      "Harrison seen as insulting",
+      "Voting rights anxiety is real",
+      "2020 coalition holding but tired",
+      "Williams' pastoral identity resonates deeply",
+      "Church partnership is essential",
+      "Address economic concerns",
+      "Combat cynicism directly",
+      "Youth-to-youth organizing",
+      "Logistical support"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"They picked him because he was famous. Not because he was qualified. It's cynical.\" - P1",
+      "\"It's actually offensive. Like they think we'll vote for any Black face.\" - P10",
+      "\"I didn't march all those years to stay home now.\" - P6",
+      "\"What you see is what you get.\" - P9 (on Williams)"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Unanimous support but varying enthusiasm** - All 10 voting Williams, but enthusiasm ranges from 7-10. Economic concerns temper some enthusiasm.\n\n2. **Church infrastructure is crucial** - Multiple participants mentioned church mobilization as key to turnout.\n\n3. **Harrison seen as insulting** - Not just unqualified but \"offensive\" - a cynical assumption that Black voters will vote for any Black candidate.\n\n4. **Voting rights anxiety is real** - The 2021 voting law changes are on everyone's mind. Turnout barriers are understood as intentional.\n\n5. **2020 coalition holding but tired** - The coalition that delivered Georgia is intact but fatigued. Can't take turnout for granted.\n\n6. **Williams' pastoral identity resonates deeply** - In a community where church matters, his moral authority is powerful.\n\n### Vote Intent\n\n- **Williams:** 10\n- **Harrison:** 0\n\nAverage enthusiasm: 9.0/10 - High but not uniform.\n\n### Turnout Recommendations\n\n1. **Church partnership is essential** - Souls to the Polls, pastor engagement, church van programs\n2. **Address economic concerns** - Don't just talk values; talk jobs, prices, healthcare\n3. **Combat cynicism directly** - Show how votes translated to policy wins\n4. **Youth-to-youth organizing** - P10's point about peer mobilization\n5. **Logistical support** - Transportation, voter protection, confusion-busting\n\n### Key Quotes\n\n> \"They picked him because he was famous. Not because he was qualified. It's cynical.\" - P1\n\n> \"It's actually offensive. Like they think we'll vote for any Black face.\" - P10\n\n> \"I didn't march all those years to stay home now.\" - P6\n\n> \"What you see is what you get.\" - P9 (on Williams)\n\n---\n\n*Transcript prepared by Peachtree Research Group*\n*September 23, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/focus-groups/fg-002-atlanta-black-voters.md"
+}

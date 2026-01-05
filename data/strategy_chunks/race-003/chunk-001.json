@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-003-memo-chunk-001",
+  "race_id": "race-003",
+  "content": "# Post-Race Strategy Memo: LOSS ANALYSIS\n\n**Race:** Wisconsin Senate 2022\n**Candidate:** Karen Kowalski (D)\n**Opponent:** Steve Lindquist (R)\n**Outcome:** Loss (-1.1%)\n**Date:** December 2022\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Wisconsin",
+  "year": 2022,
+  "outcome": "loss",
+  "margin": -1.1,
+  "office": "Senate",
+  "candidate_name": "Karen Kowalski",
+  "opponent_name": "Steve Lindquist",
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+  "line_number": 1
+}

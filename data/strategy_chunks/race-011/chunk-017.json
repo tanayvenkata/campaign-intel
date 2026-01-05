@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-011-memo-chunk-017",
+  "race_id": "race-011",
+  "content": "| Segment | Vote | Enthusiasm | Key Drivers |\n|---------|------|------------|-------------|\n| Charlotte suburbs | 10-0 Patterson | 6.4 | Character, business |\n| Research Triangle | 10-0 Patterson | 7.9 | Education, LGBTQ+, science |\n| Rural Eastern NC | 7-0 Patterson | N/A | Character, family values |\n| Republican crossovers | Patterson | 4-5 | \"This one time\" |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "North Carolina",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 8.5,
+  "office": "Governor",
+  "candidate_name": "Will Patterson",
+  "opponent_name": "Russell Chambers",
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/strategy-memo.md",
+  "line_number": 122
+}

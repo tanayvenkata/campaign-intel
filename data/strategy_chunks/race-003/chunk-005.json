@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-003-memo-chunk-005",
+  "race_id": "race-003",
+  "content": "Our Madison focus group in September revealed alarming enthusiasm gaps in our base territory:\n\n- Average enthusiasm for Kowalski: 5.6/10 (should be 8+ in Dane County)\n- P8: \"I might not vote. Honestly.\"\n- P4: \"Generic Democrat. Doesn't speak to what I care about.\"\n- P9: \"This messaging was stale in 2010. It's beyond stale now.\"\n\n**Why the base was soft:**\n\n1. **No inspiring vision:** Kowalski was seen as competent but uninspiring. \"Fine but not exciting.\"\n\n2. **Issue gaps:** Climate voters (P5) felt ignored. Criminal justice reformers (P10) saw nothing in the agenda.\n\n3. **Burnout from continuous fighting:** Since 2011 (Act 10), Wisconsin progressives have been in constant battle mode. Exhaustion is real.\n\n4. **Biden drag:** The campaign never created distance from unpopular national Democratic brand on inflation.",
+  "section": "What Went Wrong",
+  "subsection": "3. Base Enthusiasm Deficit (Madison Focus Group Warning)",
+  "state": "Wisconsin",
+  "year": 2022,
+  "outcome": "loss",
+  "margin": -1.1,
+  "office": "Senate",
+  "candidate_name": "Karen Kowalski",
+  "opponent_name": "Steve Lindquist",
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+  "line_number": 64
+}

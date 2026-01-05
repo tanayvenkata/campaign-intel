@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-011-memo-chunk-019",
+  "race_id": "race-011",
+  "content": "- P2 (Trump 2020): \"Holding my nose but Chambers is impossible.\"\n- P7 (Republican lean): \"Just this once.\"\n- P8 (moderate Republican): \"Chambers is disqualifying.\"",
+  "section": "Crossover Analysis",
+  "subsection": "Charlotte",
+  "state": "North Carolina",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 8.5,
+  "office": "Governor",
+  "candidate_name": "Will Patterson",
+  "opponent_name": "Russell Chambers",
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/strategy-memo.md",
+  "line_number": 137
+}

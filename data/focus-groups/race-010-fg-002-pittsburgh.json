@@ -1,0 +1,40 @@
+{
+  "focus_group_id": "race-010-fg-002-pittsburgh",
+  "race_id": "race-010",
+  "race_name": "Pennsylvania Senate 2024",
+  "outcome": "win",
+  "location": "Pittsburgh (Allegheny County)",
+  "date": "September 26, 2024",
+  "moderator": "Michael DiNapoli",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Mix of urban Pittsburgh and surrounding communities",
+  "participants": {
+    "P1": "M, 58, UPMC administrator, Squirrel Hill, longtime Democrat",
+    "P2": "F, 45, Steelworkers Union staff, Homestead, union family",
+    "P3": "M, 32, Tech startup employee, Lawrenceville, transplant from New York",
+    "P4": "F, 61, Retired teacher, Mt. Lebanon, moderate",
+    "P5": "M, 48, Construction foreman, McKeesport, union, economic focus",
+    "P6": "F, 37, Environmental scientist, Point Breeze, climate priority",
+    "P7": "M, 55, Restaurant owner, Strip District, small business",
+    "P8": "F, 43, Nurse, South Side, healthcare system insider",
+    "P9": "M, 41, Uber driver (former steelworker family), Braddock",
+    "P10": "F, 29, Graduate student, Oakland (Pitt), first-time voter in PA"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Pittsburgh regional identity is strong",
+      "Union endorsements matter",
+      "Healthcare costs unify",
+      "Fracking requires nuance",
+      "Unanimous support"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"She's one of us. Italian-American, working-class roots.\" - P1",
+      "\"USW endorsed her. That's the seal of approval in this region.\" - P2",
+      "\"Philadelphia and Pittsburgh are different states.\" - P1"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Pittsburgh regional identity is strong** - Russo is \"one of us.\" Hartley is \"Philly guy.\"\n\n2. **Union endorsements matter** - USW, building trades deliver the votes.\n\n3. **Healthcare costs unify** - Even non-healthcare workers care about the issue.\n\n4. **Fracking requires nuance** - \"Just transition\" is the right frame. Jobs AND environment.\n\n5. **Unanimous support** - 10-0 Russo in Pittsburgh. Base is locked.\n\n### Vote Intent\n\n- **Russo:** 10\n\nPittsburgh is delivered.\n\n### Key Quotes\n\n> \"She's one of us. Italian-American, working-class roots.\" - P1\n\n> \"USW endorsed her. That's the seal of approval in this region.\" - P2\n\n> \"Philadelphia and Pittsburgh are different states.\" - P1\n\n---\n\n*Transcript prepared by Pittsburgh Research Partners*\n*September 27, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/focus-groups/fg-002-pittsburgh.md"
+}

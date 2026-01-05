@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-015",
+  "race_id": "race-010",
+  "content": "| Segment | Vote | Enthusiasm | Key Drivers |\n|---------|------|------------|-------------|\n| Philly suburbs | 7-2 Russo | 7.0 | Healthcare, pharma attack |\n| Pittsburgh | 10-0 Russo | 7.4 | Regional identity, unions |\n| NEPA | 7-1 Russo | 5.7 | Default Democrat, pharma attack |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 115
+}

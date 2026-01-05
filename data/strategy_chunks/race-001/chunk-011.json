@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-011",
+  "race_id": "race-001",
+  "content": "**What doesn't work:**\n- \"Fight for working families\" (too vague)\n- \"Take on corporate greed\" (seen as deflection)\n- \"Make the wealthy pay their fair share\" (skepticism about who pays)\n\n**What works:**\n- \"$35 insulin cap\" (specific number, specific policy)\n- \"Cut the gas tax to save $200\" (calculable benefit)\n- \"Prescription drugs cost X, I'll bring it to Y\" (before/after framing)",
+  "section": "Key Learnings for Future Races",
+  "subsection": "2. Economic Messaging Requires Specificity",
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 108
+}

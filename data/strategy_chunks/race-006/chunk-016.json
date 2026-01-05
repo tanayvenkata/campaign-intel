@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-016",
+  "race_id": "race-006",
+  "content": "| Segment | Vote | Enthusiasm | Key Drivers |\n|---------|------|------------|-------------|\n| Culinary Union workers | Sandoval | 7.3/10 | Union loyalty, COVID protection memory |\n| Latino community (progressive) | Sandoval | 8.0/10 | Representation, working-class biography |\n| Latino business owners | Sandoval | 6.0/10 | Reluctant, anti-Prescott more than pro-Sandoval |\n| Conservative Latinos (Cuban) | Sandoval | 5.0/10 | Anti-extremism, Prescott disappointed them |\n| Reno transplants | Sandoval | 6.1/10 | Anti-MAGA, but low enthusiasm |\n| Reno natives | Sandoval | 5.5/10 | Resentment of Vegas dominance |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 139
+}

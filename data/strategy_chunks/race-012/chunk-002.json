@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-002",
+  "race_id": "race-012",
+  "content": "Emily Schroeder won the Wisconsin Senate race by 2.8 points, capturing an open seat in a closely divided state. The victory came from three factors: (1) her working-class authenticity as a nurse and Appleton native, (2) a healthcare costs message that resonated across regions, and (3) Thompson's inability to connect with voters outside the Milwaukee suburbs. This represents an improvement over the 2022 Senate loss, demonstrating that specific economic messages and authentic candidates can win where generic populism failed.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 12
+}

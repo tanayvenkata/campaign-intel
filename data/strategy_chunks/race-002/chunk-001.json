@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-001",
+  "race_id": "race-002",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Pennsylvania Senate 2022\n**Candidate:** Tony Marchetti (D)\n**Opponent:** David Thornton (R)\n**Outcome:** Win (+4.8%)\n**Date:** December 2022\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 1
+}

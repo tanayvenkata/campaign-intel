@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-008-memo-chunk-006",
+  "race_id": "race-008",
+  "content": "Even in Montana's largest city, Sullivan only won the focus group 5-3 (with 2 undecided). Average enthusiasm among supporters was 5.8/10.\n\n**P7 (defector):** \"I can't believe I'm saying it. But probably Hansen.\"\n\nWhen you're losing Billings 5-4 effectively, you've lost Montana.\n\n---",
+  "section": "The Loss: What Happened",
+  "subsection": "4. Billings Couldn't Compensate",
+  "state": "Montana",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -4.8,
+  "office": "Senate",
+  "candidate_name": "Jack Sullivan",
+  "opponent_name": "Matt Hansen",
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/strategy-memo.md",
+  "line_number": 50
+}

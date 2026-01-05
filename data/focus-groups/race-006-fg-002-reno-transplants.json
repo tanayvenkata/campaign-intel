@@ -1,0 +1,46 @@
+{
+  "focus_group_id": "race-006-fg-002-reno-transplants",
+  "race_id": "race-006",
+  "race_name": "Nevada Senate 2022",
+  "outcome": "win",
+  "location": "Reno (Washoe County)",
+  "date": "September 24, 2022",
+  "moderator": "David Chen",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Mix of longtime Reno residents and California transplants",
+  "participants": {
+    "P1": "M, 42, Software engineer, moved from Bay Area 3 years ago, works remote",
+    "P2": "F, 55, Real estate agent, longtime Reno resident, watching community change",
+    "P3": "M, 34, Tesla Gigafactory worker, moved from California, union curious",
+    "P4": "F, 48, Small business owner (boutique), downtown Reno, economic concerns",
+    "P5": "M, 61, Retired teacher, native Nevadan, Sparks, moderate Republican",
+    "P6": "F, 29, Healthcare administrator, UNR graduate, stayed after college",
+    "P7": "M, 38, Data analyst, moved from LA, outdoor enthusiast, climate concern",
+    "P8": "F, 44, Nurse, Renown Health, swing voter, housing stressed",
+    "P9": "M, 52, Construction manager, born in Reno, watching transplants change city",
+    "P10": "F, 31, Marketing manager, moved from Sacramento, young professional"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Transplant dynamic is complex",
+      "Prescott's moderate image is thin",
+      "Northern Nevada resentment",
+      "Enthusiasm gap is real",
+      "Abortion mattered for younger women",
+      "Climate and environment",
+      "Reno visibility needed",
+      "Expose Prescott's extremism",
+      "Economic specifics",
+      "Housing policy"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I sold my Mountain View house for $2 million, bought here for $600K. I get why locals resent us.\" - P1",
+      "\"The moderate image is fake.\" - P1 (on Prescott)",
+      "\"If he was actually moderate, maybe. But he's playing a character.\" - P9",
+      "\"Convince me Sandoval will be independent from the national party.\" - P5"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Transplant dynamic is complex** - New arrivals brought money, drove up costs, changed culture. Both appreciated and resented.\n\n2. **Prescott's moderate image is thin** - When pressed, participants discovered MAGA connections. The \"reasonable businessman\" frame collapsed.\n\n3. **Northern Nevada resentment** - \"Vegas decides everything.\" Sandoval seen as Vegas candidate.\n\n4. **Enthusiasm gap is real** - 6.1 average is very low. Many voting against Prescott rather than for Sandoval.\n\n5. **Abortion mattered for younger women** - P6 explicitly cited it as decisive.\n\n6. **Climate and environment** - Smoke season, Lake Tahoe, drought - outdoor enthusiasts care about climate.\n\n### Vote Intent\n\n- **Sandoval:** 9\n- **Leaning Sandoval:** 1\n- **Enthusiasm range:** 4-8 (average 6.1)\n\n### Persuadable Voters\n\n- **P5** (retired teacher, moderate Republican): Leaning Sandoval but at 4 enthusiasm. Could stay home.\n- **P2** and **P9** (longtime residents): Low enthusiasm, resentment of Vegas dominance. Need Reno-specific outreach.\n\n### Recommendations\n\n1. **Reno visibility needed** - Senator needs more Northern Nevada presence.\n2. **Expose Prescott's extremism** - Moderate image is fragile.\n3. **Economic specifics** - Generic messaging isn't enough for this audience.\n4. **Housing policy** - Cross-cutting issue for transplants and natives alike.\n\n### Key Quotes\n\n> \"I sold my Mountain View house for $2 million, bought here for $600K. I get why locals resent us.\" - P1\n\n> \"The moderate image is fake.\" - P1 (on Prescott)\n\n> \"If he was actually moderate, maybe. But he's playing a character.\" - P9\n\n> \"Convince me Sandoval will be independent from the national party.\" - P5\n\n---\n\n*Transcript prepared by Silver State Research*\n*September 25, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/focus-groups/fg-002-reno-transplants.md"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-001",
+  "race_id": "race-006",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Nevada Senate 2022\n**Candidate:** Maria Sandoval (D)\n**Opponent:** Adam Prescott (R)\n**Outcome:** Win (+0.8%)\n**Date:** December 2022\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 1
+}

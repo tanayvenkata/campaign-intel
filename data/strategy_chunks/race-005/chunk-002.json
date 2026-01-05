@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-002",
+  "race_id": "race-005",
+  "content": "Elena Reyes won the Arizona governorship by 0.5 points - approximately 17,000 votes - in a race that came down to a single question: Will Arizona accept election denialism? McCain Republicans said no. Combined with high Latino turnout and progressive base mobilization in Tucson, this narrow coalition delivered victory. Mitchell's refusal to commit to accepting results and her continued 2020 lies cost her swing voters who might otherwise have supported a Republican.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 12
+}

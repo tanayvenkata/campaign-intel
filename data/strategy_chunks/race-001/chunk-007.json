@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-007",
+  "race_id": "race-001",
+  "content": "Vanderberg's crime attacks landed harder than we expected, especially in suburban areas. While focus group participants often called the attack ads \"over the top\" or \"manipulative,\" they still wanted to know Holloway's position on public safety.\n\n**Lesson learned:** Even when attack ads backfire in terms of favorability toward the attacker, they can still plant seeds of doubt. We needed a proactive public safety message earlier in the campaign.\n\n**Evidence from focus groups:**\n- Detroit suburbs: Some participants wanted \"more information about her record\" after seeing crime ad\n- Grand Rapids: \"Crime in Grand Rapids has gotten worse. I don't know if that's her fault but I want to know where she stands.\"",
+  "section": "What Didn't Work",
+  "subsection": "1. Crime Response Was Weak",
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 73
+}

@@ -1,0 +1,46 @@
+{
+  "focus_group_id": "race-007-fg-003-youngstown-working-class",
+  "race_id": "race-007",
+  "race_name": "Ohio Senate 2024",
+  "outcome": "loss",
+  "location": "Youngstown/Mahoning Valley (Mahoning County)",
+  "date": "September 26, 2024",
+  "moderator": "Mike Kowalczyk",
+  "participant_count": 10,
+  "participant_summary": "10 (4F, 6M) - Working-class voters, union and non-union, heavily Trump 2016/2020",
+  "participants": {
+    "P1": "M, 58, Retired autoworker, UAW 30 years, Youngstown, voted Brennan twice before",
+    "P2": "F, 45, Nurse's aide, Warren, non-union, Trump 2016/2020",
+    "P3": "M, 52, Truck driver, Boardman, independent, economic focus",
+    "P4": "F, 62, Retired teacher, Struthers, union pension, traditional Democrat",
+    "P5": "M, 41, Construction worker, Campbell, union member, Trump 2020",
+    "P6": "M, 35, Warehouse worker, Austintown, Amazon, non-union",
+    "P7": "F, 49, Retail manager, Niles, struggling economically, swing voter",
+    "P8": "M, 54, Electrician, Girard, IBEW, political but frustrated",
+    "P9": "F, 38, Home health aide, Youngstown, single mother, exhausted",
+    "P10": "M, 60, Former Lordstown GM worker, plant closure victim, bitter"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Working-class defection is real and deep",
+      "Lordstown is an open wound",
+      "\"Democrats had their chance\"",
+      "Trump straight-ticket voting",
+      "Enthusiasm among supporters is low",
+      "Economic messaging failing",
+      "Acknowledge failure",
+      "Lordstown specifically",
+      "Split-ticket message",
+      "Show up NOW"
+    ],
+    "vote_intent_summary": "**Brennan:** 3",
+    "key_quotes": [
+      "\"The Democrats had decades to help us. They didn't. They focused on the cities, on minorities, on college kids. We got nothing.\" - P5",
+      "\"Fought and lost. Lordstown is closed. Those are the facts.\" - P10",
+      "\"I'm done waiting for Democrats to remember we exist.\" - P5",
+      "\"You can't explain global economics to people losing their houses.\" - P8"
+    ],
+    "full_text": "\n### Key Themes - CATASTROPHIC WARNING SIGNS\n\n1. **Working-class defection is real and deep** - P5 (union, voted Brennan twice before) is voting Stanton. P6 (warehouse) is gone. P7 is leaning away.\n\n2. **Lordstown is an open wound** - \"Fought and lost\" is the summary. Good intentions don't count when plants close.\n\n3. **\"Democrats had their chance\"** - This phrase repeated. Resentment is about party, not just Brennan.\n\n4. **Trump straight-ticket voting** - Presidential coattails will be significant. Stanton benefits from Trump turnout.\n\n5. **Enthusiasm among supporters is low** - Even P1 and P8 (voting Brennan) are defensive, not excited.\n\n6. **Economic messaging failing** - CHIPS Act, infrastructure - abstractions to people in immediate pain.\n\n### Vote Intent\n\n- **Brennan:** 3\n- **Leaning Brennan:** 1\n- **Stanton:** 3\n- **Leaning Stanton:** 1\n- **Undecided:** 2\n\nIn Mahoning Valley - historically Brennan's strongest region - he's at best tied.\n\n### Critical Defector Profile (P5)\n\n- **Background:** 41, construction, union member, voted Brennan twice, Trump 2020\n- **Why defecting:** \"His party left us behind.\" \"Democrats assume we'll vote for them.\" \"I'm done waiting.\"\n- **Quote:** \"Maybe the Republicans will be different. Probably not. But at least they're not taking us for granted.\"\n\n### P10: The Split-Ticket Possibility\n\n- **Background:** 60, former GM Lordstown, bitter\n- **Status:** May vote Trump/Brennan split. Key for Brennan survival.\n- **Quote:** \"I'm angry at everyone.\"\n\n### Recommendations (URGENT - RACE LIKELY LOST)\n\n1. **Acknowledge failure** - \"I fought and lost\" isn't enough. Need to say \"you deserved better.\"\n2. **Lordstown specifically** - Cannot avoid this. Must address directly.\n3. **Split-ticket message** - Target P10 types. \"Vote for Trump if you want but keep Tim fighting for you.\"\n4. **Show up NOW** - This was September. Valley feels abandoned.\n\n### Key Quotes\n\n> \"The Democrats had decades to help us. They didn't. They focused on the cities, on minorities, on college kids. We got nothing.\" - P5\n\n> \"Fought and lost. Lordstown is closed. Those are the facts.\" - P10\n\n> \"I'm done waiting for Democrats to remember we exist.\" - P5\n\n> \"You can't explain global economics to people losing their houses.\" - P8\n\n---\n\n*Transcript prepared by Mahoning Valley Research*\n*September 27, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-003-youngstown-working-class.md"
+}

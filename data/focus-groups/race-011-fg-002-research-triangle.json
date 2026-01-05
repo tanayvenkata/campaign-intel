@@ -1,0 +1,41 @@
+{
+  "focus_group_id": "race-011-fg-002-research-triangle",
+  "race_id": "race-011",
+  "race_name": "North Carolina Governor 2024",
+  "outcome": "win",
+  "location": "Research Triangle (Wake County - Raleigh/Cary)",
+  "date": "September 28, 2024",
+  "moderator": "Christine Taylor",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Mix of Triangle professionals and residents",
+  "participants": {
+    "P1": "M, 44, Biotech researcher, RTP, transplant from Boston",
+    "P2": "F, 38, Tech executive, Cary, Biden 2020, suburban professional",
+    "P3": "M, 52, NC State professor, Raleigh, progressive, longtime resident",
+    "P4": "F, 61, Retired IBM, Chapel Hill, moderate Democrat",
+    "P5": "M, 35, Software engineer, Durham, progressive, LGBTQ+",
+    "P6": "F, 47, Healthcare administrator, Wake Forest, moderate",
+    "P7": "M, 58, Small business owner, Morrisville, fiscal conservative",
+    "P8": "F, 32, Public school teacher, Raleigh, education activist",
+    "P9": "M, 41, Consultant, Cary, transplant from NY, independent",
+    "P10": "F, 29, Graduate student, Duke, first-time NC voter"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Triangle is locked for Patterson",
+      "Education is the issue",
+      "LGBTQ+ community sees existential threat",
+      "Economic development concerns",
+      "Even conservative P7 crosses over"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"He's called people like me 'filth.' He's an existential threat.\" - P5",
+      "\"If he wins, I'm not staying in North Carolina for my career.\" - P10",
+      "\"The business community in the Triangle is quietly panicking about him.\" - P9",
+      "\"He represents the North Carolina I want to live in.\" - P10 (on Patterson)"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Triangle is locked for Patterson** - 10-0 unanimous with high enthusiasm.\n\n2. **Education is the issue** - Public schools, universities, research funding all at stake.\n\n3. **LGBTQ+ community sees existential threat** - P5 at 10 enthusiasm. \"Survival.\"\n\n4. **Economic development concerns** - Chambers would hurt the innovation economy.\n\n5. **Even conservative P7 crosses over** - \"He's too extreme. I can't.\"\n\n### Vote Intent\n\n- **Patterson:** 10\n\nTriangle is a fortress.\n\n### Key Quotes\n\n> \"He's called people like me 'filth.' He's an existential threat.\" - P5\n\n> \"If he wins, I'm not staying in North Carolina for my career.\" - P10\n\n> \"The business community in the Triangle is quietly panicking about him.\" - P9\n\n> \"He represents the North Carolina I want to live in.\" - P10 (on Patterson)\n\n---\n\n*Transcript prepared by Raleigh Research Partners*\n*September 29, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/focus-groups/fg-002-research-triangle.md"
+}

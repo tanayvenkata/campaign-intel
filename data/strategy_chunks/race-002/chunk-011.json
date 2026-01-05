@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-011",
+  "race_id": "race-002",
+  "content": "The single most important decision in this race was the candidate. Marchetti's biography couldn't be manufactured - it was authentic and it was devastating against a Wall Street opponent.\n\n**Implications for candidate recruitment:**\n- Working-class backgrounds are assets, not liabilities\n- Local roots matter, especially in identity-heavy regions\n- Business success can be liability if framed as extraction rather than building",
+  "section": "Key Learnings for Future Races",
+  "subsection": "1. Candidate Selection Is Strategy",
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 122
+}

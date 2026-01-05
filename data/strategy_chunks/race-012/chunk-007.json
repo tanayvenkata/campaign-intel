@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-007",
+  "race_id": "race-012",
+  "content": "This race specifically addressed the failures of the 2022 Wisconsin Senate race (Karen Kowalski loss):\n\n| 2022 Failure | 2024 Correction |\n|--------------|-----------------|\n| Generic economic message | Specific healthcare costs message |\n| \"Populism\" that didn't land | Working-class biography that was authentic |\n| WOW counties lost badly | WOW counties competitive (4-6 in focus group) |\n| Fox Valley skeptical | Fox Valley delivered (8-2 in focus group) |",
+  "section": "Learning from 2022",
+  "subsection": null,
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 54
+}

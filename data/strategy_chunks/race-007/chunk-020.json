@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-020",
+  "race_id": "race-007",
+  "content": "| Segment | Final Vote | Focus Group Warning |\n|---------|------------|---------------------|\n| Cleveland suburbs | Lost by 8 | 4-6 in focus group |\n| Columbus educated | Won by 18 | Enthusiasm 6.3/10 |\n| Youngstown working class | Lost by 12 | 3-4 in focus group |\n| Rural Ohio | Lost by 25+ | Not sampled |\n| Union households | Lost by 6 | Historic collapse |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 160
+}

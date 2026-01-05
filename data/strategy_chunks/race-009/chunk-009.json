@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-009-memo-chunk-009",
+  "race_id": "race-009",
+  "content": "- Focus group: 5-3 Kowalski with 2 undecided/lean\n- Key dynamic: Genuinely competitive but abortion moving suburban voters\n- DeGroot's home turf wasn't safe\n- Enthusiasm: mixed but Kowalski voters motivated\n\n---",
+  "section": "Geographic Performance",
+  "subsection": "Grand Rapids (Swing)",
+  "state": "Michigan",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 4.2,
+  "office": "Senate",
+  "candidate_name": "Lisa Kowalski",
+  "opponent_name": "Mike DeGroot",
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/strategy-memo.md",
+  "line_number": 78
+}

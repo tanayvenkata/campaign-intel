@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-008-memo-chunk-001",
+  "race_id": "race-008",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Montana Senate 2024\n**Candidate:** Jack Sullivan (D) - Incumbent\n**Opponent:** Matt Hansen (R)\n**Outcome:** LOSS (-4.8%)\n**Date:** December 2024\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Montana",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -4.8,
+  "office": "Senate",
+  "candidate_name": "Jack Sullivan",
+  "opponent_name": "Matt Hansen",
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/strategy-memo.md",
+  "line_number": 1
+}

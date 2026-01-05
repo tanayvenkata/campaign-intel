@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-006",
+  "race_id": "race-012",
+  "content": "Average enthusiasm in Madison: 9.1/10. The progressive base turned out massively, driven by abortion, democracy concerns, and 2011 union fight memories.\n\n---",
+  "section": "What Worked",
+  "subsection": "4. Madison Base Turnout",
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 48
+}

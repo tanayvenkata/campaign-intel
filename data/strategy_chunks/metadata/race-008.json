@@ -1,0 +1,25 @@
+{
+  "race_id": "race-008",
+  "state": "Montana",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -4.8,
+  "office": "Senate",
+  "candidate_name": "Jack Sullivan",
+  "opponent_name": "Matt Hansen",
+  "sections": [
+    "Comparison: What Sullivan Had vs. What He Needed",
+    "Conclusion",
+    "Executive Summary",
+    "Header",
+    "Lessons for Future Montana Campaigns",
+    "Recommendations for Future Red-State Democrats",
+    "The Loss: What Happened",
+    "The P1 Story (Lewistown)",
+    "Voter Segment Analysis",
+    "What We Did Right (And Why It Wasn't Enough)",
+    "What We Did Wrong"
+  ],
+  "chunk_count": 26,
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/strategy-memo.md"
+}

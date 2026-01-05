@@ -1,0 +1,42 @@
+{
+  "focus_group_id": "race-005-fg-002-latino-phoenix",
+  "race_id": "race-005",
+  "race_name": "Arizona Governor 2022",
+  "outcome": "win",
+  "location": "Phoenix Metro (Maryvale/Glendale - Latino Community)",
+  "date": "September 28, 2022",
+  "moderator": "Miguel Sandoval",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Latino voters, mix of citizens by birth and naturalized",
+  "participants": {
+    "P1": "F, 52, Small business owner (restaurant), Maryvale, naturalized citizen from Sonora, economic concerns",
+    "P2": "M, 38, Construction foreman, Glendale, third-generation Mexican-American, union member",
+    "P3": "F, 29, Elementary school teacher, Phoenix, DACA recipient who became citizen, immigration passionate",
+    "P4": "M, 45, Auto repair shop owner, West Phoenix, born in Arizona, border community ties",
+    "P5": "F, 61, Healthcare worker, Guadalupe, longtime resident, grandmother, family focus",
+    "P6": "M, 33, Software developer, Tempe, young professional, Cuban-American family",
+    "P7": "F, 44, Nonprofit director, South Phoenix, community organizer, activism background",
+    "P8": "M, 56, Retired postal worker, Glendale, veteran, pragmatic voter",
+    "P9": "F, 37, Real estate agent, Scottsdale, upwardly mobile, economic focus",
+    "P10": "F, 24, Nursing student, ASU, first-generation college, first-time voter in gubernatorial"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Identity matters but isn't sufficient",
+      "Election defense is powerful",
+      "Border is nuanced",
+      "Mitchell seen as genuine threat",
+      "Turnout infrastructure needed",
+      "Economic message needed too"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"She defended our votes in 2020. That took courage.\" - P1",
+      "\"When my kids see a Latina governor, that changes what they think is possible.\" - P7",
+      "\"She'd throw out my vote because she didn't like the result? No.\" - P8",
+      "\"Neither party actually fixes [the border].\" - P2"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Identity matters but isn't sufficient** - Reyes' Latina identity is meaningful, especially for women and younger voters, but persuadable voters (P4, P6) want policy substance.\n\n2. **Election defense is powerful** - The 2020 certification message is the strongest across all participants. Even P4 (persuadable) was moved.\n\n3. **Border is nuanced** - Latino voters aren't uniformly \"pro-immigration.\" P4's perspective reflects real complexity. Don't assume.\n\n4. **Mitchell seen as genuine threat** - Not just opponent but existential threat to community. Language like \"invasion\" is felt personally.\n\n5. **Turnout infrastructure needed** - Registration gaps, information gaps, cynicism. Organization matters.\n\n6. **Economic message needed too** - Can't run only on identity and democracy. Kitchen table issues resonate.\n\n### Vote Intent\n\n- **Reyes:** 9\n- **Leaning Reyes:** 1\n\nAverage turnout likelihood: 9.5/10 - Very high engagement\n\n### Persuadable Profile (P4)\n\n- **Demographics:** Male, 45, small business owner, border community ties\n- **Concerns:** Border security, business environment, skeptical of Democrats on immigration\n- **Moved by:** Election defense message, economic substance\n- **Message:** Don't take Latino businessmen for granted; they're persuadable to GOP on border\n\n### Key Quotes\n\n> \"She defended our votes in 2020. That took courage.\" - P1\n\n> \"When my kids see a Latina governor, that changes what they think is possible.\" - P7\n\n> \"She'd throw out my vote because she didn't like the result? No.\" - P8\n\n> \"Neither party actually fixes [the border].\" - P2\n\n---\n\n*Transcript prepared by Southwest Research Partners*\n*September 29, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/focus-groups/fg-002-latino-phoenix.md"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-010",
+  "race_id": "race-006",
+  "content": "Multiple participants mentioned Sandoval being invisible except during campaigns:\n\n> \"Sometimes feels like she disappears until election time.\" - P1 (Latino Vegas)\n\n> \"She could be more visible.\" - P1 (Latino Vegas)\n\n---",
+  "section": "What Didn't Work",
+  "subsection": "4. Visibility Between Elections",
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 105
+}

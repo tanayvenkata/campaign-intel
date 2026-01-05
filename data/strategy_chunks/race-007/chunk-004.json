@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-004",
+  "race_id": "race-007",
+  "content": "Across all three focus groups, the same attack landed:\n\n**Cleveland suburbs (P4):** \"That was 15 years ago. What's he done lately?\"\n\n**Columbus (P8):** \"The 'what's changed' question is devastating.\"\n\n**Youngstown (P10):** \"18 years. What's different? Nothing.\"\n\nOur response - CHIPS Act, infrastructure bill, investments coming - was too abstract, too future-oriented, and too complex. Stanton's attack was visceral and present-tense.",
+  "section": "The Collapse: What Happened",
+  "subsection": "2. \"What Have You Done Lately?\"",
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 33
+}

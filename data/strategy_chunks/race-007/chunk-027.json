@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-027",
+  "race_id": "race-007",
+  "content": "> \"What's actually changed? Steel is still gone. Jobs are still leaving.\" - P4, Cleveland\n\n> \"The Democrats had decades to help us. They didn't.\" - P5, Youngstown\n\n> \"18 years. What's different? Nothing.\" - P10, Youngstown\n\n> \"Columbus alone cannot elect Brennan.\" - P4, Columbus\n\n> \"We're not a swing state anymore. We're red now.\" - P4, Cleveland\n\n---",
+  "section": "Key Quotes That Lost Us the Race",
+  "subsection": null,
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 203
+}

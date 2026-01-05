@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-011-memo-chunk-002",
+  "race_id": "race-011",
+  "content": "Will Patterson won the North Carolina governor's race by 8.5 points - a landslide in a state Trump carried. This race was decided by one thing: Russell Chambers' catastrophic candidacy. His offensive online comments, extreme positions, and toxic character made him unacceptable to voters who otherwise would have voted Republican. Focus groups showed unanimous opposition to Chambers across all regions, including from lifelong Republicans who couldn't reconcile his behavior with their values.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "North Carolina",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 8.5,
+  "office": "Governor",
+  "candidate_name": "Will Patterson",
+  "opponent_name": "Russell Chambers",
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/strategy-memo.md",
+  "line_number": 12
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-002",
+  "race_id": "race-007",
+  "content": "Tim Brennan lost his Senate seat after 18 years by 6.2 points. This was not a close race. Three factors combined for defeat: (1) Trump presidential coattails in a presidential year, (2) working-class defection accelerated beyond recovery, and (3) economic messaging that failed to answer \"what have you done lately?\" Focus groups conducted in September showed clear warning signs that were not adequately addressed. Ohio is no longer a swing state for statewide Democrats.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 12
+}

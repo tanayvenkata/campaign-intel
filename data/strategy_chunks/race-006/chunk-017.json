@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-017",
+  "race_id": "race-006",
+  "content": "**Clark County (Las Vegas):**\n- Union turnout operation delivered\n- Latino community mobilized effectively\n- Housing costs creating real stress\n- COVID memory remains powerful motivator\n\n**Washoe County (Reno):**\n- Transplant vs. native tension\n- Feeling neglected relative to Vegas\n- More swing voters, less base mobilization\n- Housing crisis affecting even professionals\n\n**Rural Nevada:**\n- Did not focus group; assumed loss\n- Some persuadable anti-extremism voters\n\n---",
+  "section": "Geographic Insights",
+  "subsection": null,
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 152
+}

@@ -1,0 +1,40 @@
+{
+  "focus_group_id": "race-009-fg-001-detroit-suburbs",
+  "race_id": "race-009",
+  "race_name": "Michigan Senate 2024",
+  "outcome": "win",
+  "location": "Detroit Suburbs (Oakland County - Troy/Rochester)",
+  "date": "September 20, 2024",
+  "moderator": "Michelle Patterson",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Suburban voters, mix of Biden 2020 and Trump 2020",
+  "participants": {
+    "P1": "F, 48, Marketing executive, Troy, Biden 2020, abortion priority",
+    "P2": "M, 52, Auto industry engineer, Rochester, Biden 2020, union family",
+    "P3": "F, 35, Pediatrician, Bloomfield Hills, Biden 2020, healthcare focus",
+    "P4": "M, 61, Retired GM manager, Royal Oak, Trump 2020, economic focus",
+    "P5": "F, 44, Small business owner, Birmingham, Trump 2020, taxes priority",
+    "P6": "M, 38, Tech worker, Ferndale, Biden 2020, progressive",
+    "P7": "F, 55, Teacher, Rochester Hills, Biden 2020, education priority",
+    "P8": "M, 45, Financial advisor, Northville, Trump 2020, fiscal conservative",
+    "P9": "F, 29, Nurse, Novi, Biden 2020, first Senate vote, healthcare",
+    "P10": "M, 41, Auto supplier executive, Troy, swing voter, industry focus"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Auto industry credentials matter",
+      "P4 (Trump 2020) considering Kowalski",
+      "Abortion remains salient",
+      "DeGroot's CEO image is mixed",
+      "Economic specificity wins"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"Her family is auto. DeGroot is some consultant from Grand Rapids.\" - P4",
+      "\"CEOs create jobs by cutting workers. I've seen it.\" - P4",
+      "\"My daughters care about [abortion]. I listen to them.\" - P4"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Auto industry credentials matter** - Kowalski's working-class auto background resonates in Detroit suburbs, even with management types like P4.\n\n2. **P4 (Trump 2020) considering Kowalski** - \"Her family is auto. DeGroot is some consultant. What does he know about making cars?\"\n\n3. **Abortion remains salient** - Especially for women (P1, P9) but also family influence (P4's daughters).\n\n4. **DeGroot's CEO image is mixed** - Positive for P5/P8 (fiscal), negative for P2/P4 (worker skepticism).\n\n5. **Economic specificity wins** - \"10,000 jobs\" beats \"cut red tape.\"\n\n### Vote Intent\n\n- **Kowalski:** 7 (P1, P2, P3, P6, P7, P9, plus P4 crossover)\n- **DeGroot:** 2 (P5, P8)\n- **Leaning Kowalski:** 1 (P10)\n\nStrong suburban performance.\n\n### Crossover Profile (P4)\n\n- Retired GM manager, Trump 2020, voting Kowalski for first time\n- Key: Auto industry identity > party identity\n- Quote: \"What does he know about making cars?\"\n\n### Key Quotes\n\n> \"Her family is auto. DeGroot is some consultant from Grand Rapids.\" - P4\n\n> \"CEOs create jobs by cutting workers. I've seen it.\" - P4\n\n> \"My daughters care about [abortion]. I listen to them.\" - P4\n\n---\n\n*Transcript prepared by Oakland Research Partners*\n*September 21, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/focus-groups/fg-001-detroit-suburbs.md"
+}

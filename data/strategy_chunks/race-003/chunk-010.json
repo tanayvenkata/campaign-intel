@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-003-memo-chunk-010",
+  "race_id": "race-003",
+  "content": "- 7-2 lean toward Lindquist in swing region\n- Union member breaking from endorsement\n- Explicit warning: \"CRITICAL - LOSING SWING REGION ON ECONOMIC CREDIBILITY\"\n\n**Why didn't we adapt?**\n\n1. Ad buys were already locked in by late September\n2. Campaign believed abortion would be sufficient\n3. Institutional inertia - changing message felt risky\n4. Denial that economic messaging was truly failing\n\n---",
+  "section": "What the Focus Groups Told Us (And We Didn't Fix)",
+  "subsection": "September 28 - Fox Valley Warning",
+  "state": "Wisconsin",
+  "year": 2022,
+  "outcome": "loss",
+  "margin": -1.1,
+  "office": "Senate",
+  "candidate_name": "Karen Kowalski",
+  "opponent_name": "Steve Lindquist",
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+  "line_number": 120
+}

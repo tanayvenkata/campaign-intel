@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-011",
+  "race_id": "race-006",
+  "content": "With only 7.1/10 average enthusiasm, we won by 0.8 points. The Culinary Union's turnout operation - door-to-door, member-to-member - overcame the inspiration deficit. Lesson: Build organization that doesn't depend on enthusiasm.",
+  "section": "Key Learnings for Future Races",
+  "subsection": "1. Organization Can Beat Enthusiasm",
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 117
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-019",
+  "race_id": "race-010",
+  "content": "**Final margin: +3.1% (approximately 210,000 votes)**\n\n**Where it came from:**\n- Philadelphia suburbs: +150,000\n- Pittsburgh/Allegheny: +80,000\n- NEPA: +10,000 (underperformed)\n- Rural PA: -30,000 net loss\n\n**Coalition was regionally uneven but sufficient.**\n\n---\n\n*This memo reflects analysis of three focus groups (Philadelphia suburbs, Pittsburgh, Scranton/NEPA) conducted September 2024, exit polling, and final election data.*",
+  "section": "Margin Analysis",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 181
+}

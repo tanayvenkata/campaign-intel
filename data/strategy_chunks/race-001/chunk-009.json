@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-009",
+  "race_id": "race-001",
+  "content": "While we won the race, we underperformed in rural areas. The statewide focus group showed that rural voters ARE reachable (P2, farmer, was open to Holloway) but we didn't invest in rural-specific messaging.\n\n**Missed opportunity:** Broadband expansion, rural infrastructure, agricultural policy could have made inroads.\n\n---",
+  "section": "What Didn't Work",
+  "subsection": "3. Rural Outreach Insufficient",
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 89
+}

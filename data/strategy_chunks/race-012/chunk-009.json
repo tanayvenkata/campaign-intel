@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-009",
+  "race_id": "race-012",
+  "content": "- Focus group: 4-2 Schroeder with 4 persuadable\n- Key dynamics: Healthcare costs opened doors, abortion created problems for Thompson\n- Notable: Traditional Republican voters considering crossover on healthcare\n\n**Quote:** \"Abortion is a problem\" - P7 (on Thompson's weakness)",
+  "section": "Regional Analysis",
+  "subsection": "WOW Counties (Milwaukee Suburbs)",
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 73
+}

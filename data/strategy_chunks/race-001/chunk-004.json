@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-004",
+  "race_id": "race-001",
+  "content": "Our initial economic messaging (\"fight for working families,\" \"take on corporate greed\") tested poorly - averaging 2.0-2.5/5 across focus groups. The breakthrough came when we shifted to specific, tangible policies:\n\n- **$35 insulin cap** - universally resonant, especially with seniors and healthcare voters\n- **Gas tax suspension** - immediate relief that voters could calculate themselves\n- **Prescription drug negotiations** - connected to daily cost concerns\n\n**Evidence from focus groups:**\n- Statewide: Specific policy message scored 4.0/5 vs. generic message at 3.5/5\n- Grand Rapids: \"$800 a year is real money. That's not just talk, that's tangible.\" - P7\n- Detroit suburbs: \"Give me specifics, tell me how it affects my life.\" - P8\n\n**Recommendation for future races:** Economic messaging must include specific numbers and specific policies. Voters are sophisticated enough to see through generic populism and skeptical enough to demand proof of seriousness.",
+  "section": "What Worked",
+  "subsection": "2. Economic Credibility Through Specifics",
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 37
+}

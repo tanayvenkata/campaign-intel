@@ -1,0 +1,24 @@
+{
+  "race_id": "race-010",
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "sections": [
+    "Executive Summary",
+    "Geographic Performance",
+    "Header",
+    "Key Learnings for Future Races",
+    "Margin Analysis",
+    "Recommendations for Pennsylvania Democrats",
+    "The Pharma Frame",
+    "Voter Segment Analysis",
+    "What Didn't Work",
+    "What Worked"
+  ],
+  "chunk_count": 19,
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md"
+}

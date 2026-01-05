@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-008-memo-chunk-026",
+  "race_id": "race-008",
+  "content": "Jack Sullivan did almost everything right and still lost. That's the hardest kind of loss to analyze because there's no clear mistake to avoid next time.\n\nThe lesson is structural: Montana has moved out of reach for Democrats in federal races during presidential years. Personal brand, relationships, and independent voting can no longer overcome party polarization.\n\nFuture candidates must decide whether the race is worth running at all - and if so, must plan for a fundamentally different approach than Sullivan's.\n\n---\n\n*This memo reflects analysis of three focus groups (Billings, Lewistown rural, Crow reservation) conducted September 2024, exit polling, and final election data.*",
+  "section": "Conclusion",
+  "subsection": null,
+  "state": "Montana",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -4.8,
+  "office": "Senate",
+  "candidate_name": "Jack Sullivan",
+  "opponent_name": "Matt Hansen",
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/strategy-memo.md",
+  "line_number": 199
+}

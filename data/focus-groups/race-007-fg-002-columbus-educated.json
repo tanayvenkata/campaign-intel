@@ -1,0 +1,42 @@
+{
+  "focus_group_id": "race-007-fg-002-columbus-educated",
+  "race_id": "race-007",
+  "race_name": "Ohio Senate 2024",
+  "outcome": "loss",
+  "location": "Columbus Metro (Franklin County - Upper Arlington/Dublin)",
+  "date": "September 22, 2024",
+  "moderator": "Jennifer Walsh",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - College-educated professionals, suburban, mostly Biden 2020",
+  "participants": {
+    "P1": "F, 42, Healthcare executive, Upper Arlington, Biden 2020, moderate Democrat",
+    "P2": "M, 38, Tech worker (Amazon), Dublin, Biden 2020, economic progressive",
+    "P3": "F, 55, Attorney, Bexley, Biden 2020, longtime Democrat, abortion focus",
+    "P4": "M, 51, OSU professor, Grandview, Biden 2020, policy wonk",
+    "P5": "F, 34, Biotech researcher, Dublin, Biden 2020, reproductive rights priority",
+    "P6": "M, 46, Financial advisor, Westerville, Trump 2020, moderate Republican",
+    "P7": "F, 48, School board member, Worthington, Biden 2020, education focus",
+    "P8": "M, 61, Retired executive, New Albany, Trump 2016/Biden 2020, swing voter",
+    "P9": "F, 29, Consultant, Short North, Biden 2020, young professional",
+    "P10": "M, 44, Doctor, German Village, Biden 2020, healthcare system concerns"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Columbus can't compensate",
+      "Enthusiasm gap",
+      "Some Republican crossover",
+      "\"What's changed?\" is devastating",
+      "Two Ohios problem acknowledged",
+      "Wonky vs. emotional"
+    ],
+    "vote_intent_summary": "**Brennan:** 9",
+    "key_quotes": [
+      "\"Columbus alone cannot elect Brennan.\" - P4",
+      "\"The 'what's changed' question is devastating.\" - P8",
+      "\"Stop talking to Ohio like it's California.\" - P4",
+      "\"Stanton might win despite being terrible. That's where we are.\" - P6"
+    ],
+    "full_text": "\n### Key Themes - WARNING SIGNS\n\n1. **Columbus can't compensate** - Even with near-unanimous support here, participants recognize this isn't enough to win Ohio.\n\n2. **Enthusiasm gap** - 6.3 average among college-educated supporters is concerning. P6 and P8 at 4.\n\n3. **Some Republican crossover** - P6 (Trump 2020) planning to vote Brennan because Stanton too extreme. But enthusiasm is 4.\n\n4. **\"What's changed?\" is devastating** - Even supporters struggled to answer Stanton's attack effectively.\n\n5. **Two Ohios problem acknowledged** - Participants recognize Democrats have lost rural Ohio. No solution offered.\n\n6. **Wonky vs. emotional** - Brennan's accomplishments list doesn't match Stanton's visceral attacks.\n\n### Vote Intent\n\n- **Brennan:** 9\n- **Undecided lean Brennan:** 1\n- **Enthusiasm range:** 4-8 (average 6.3)\n\n### Key Dynamics\n\n- **P6 (Republican crossover):** Voting Brennan at 4 enthusiasm. Shows ceiling for crossover strategy.\n- **P8 (swing voter):** \"Undecided, leaning Brennan\" but at 4 enthusiasm. May not actually vote.\n- **P4 (professor):** Voting Brennan at 6 but predicts loss. \"Columbus isn't enough.\"\n\n### Columbus Bubble Problem\n\nEven educated, engaged Democrats recognize:\n- They're in a bubble\n- Their votes can't compensate for rural losses\n- The state has shifted fundamentally\n\n### Key Quotes\n\n> \"Columbus alone cannot elect Brennan.\" - P4\n\n> \"The 'what's changed' question is devastating.\" - P8\n\n> \"Stop talking to Ohio like it's California.\" - P4\n\n> \"Stanton might win despite being terrible. That's where we are.\" - P6\n\n---\n\n*Transcript prepared by Columbus Research Group*\n*September 23, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-002-columbus-educated.md"
+}

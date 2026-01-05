@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-009-memo-chunk-018",
+  "race_id": "race-009",
+  "content": "| Segment | Vote | Enthusiasm | Key Drivers |\n|---------|------|------------|-------------|\n| Detroit suburbs | 7-2 Kowalski | 6.8 | Auto identity, abortion |\n| Flint/Saginaw base | 10-0 Kowalski | 7.4 | Water crisis, union |\n| West Michigan suburbs | 5-3 Kowalski | 6.5 | Abortion, education |\n| West Michigan business | Split | Low | Taxes, regulation |\n| Union households | 90%+ Kowalski | High | Endorsements, record |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "Michigan",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 4.2,
+  "office": "Senate",
+  "candidate_name": "Lisa Kowalski",
+  "opponent_name": "Mike DeGroot",
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/strategy-memo.md",
+  "line_number": 139
+}

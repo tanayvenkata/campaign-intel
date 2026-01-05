@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-009-memo-chunk-024",
+  "race_id": "race-009",
+  "content": "**Final margin: +4.2% (approximately 200,000 votes)**\n\n**Where it came from:**\n- Flint/Saginaw over-performance: +60,000 vs. baseline\n- Oakland County suburban shift: +80,000\n- Kent County (Grand Rapids) improvement: +30,000\n- Outstate losses contained: -30,000 vs. fear\n\n**Coalition held across regions.**\n\n---\n\n*This memo reflects analysis of three focus groups (Detroit suburbs, Flint/Saginaw, Grand Rapids) conducted September 2024, exit polling, and final election data.*",
+  "section": "Margin Analysis",
+  "subsection": null,
+  "state": "Michigan",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 4.2,
+  "office": "Senate",
+  "candidate_name": "Lisa Kowalski",
+  "opponent_name": "Mike DeGroot",
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/strategy-memo.md",
+  "line_number": 197
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-008",
+  "race_id": "race-010",
+  "content": "NEPA focus group revealed lasting damage:\n\n**P3:** \"They call us racist, deplorable. Why would I vote for people who hate me?\"\n\n**P8:** \"The party left us. We didn't leave it.\"\n\nRusso won these voters but the relationship is fragile.",
+  "section": "What Didn't Work",
+  "subsection": "2. Cultural Alienation Persists",
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 71
+}

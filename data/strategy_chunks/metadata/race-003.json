@@ -1,0 +1,23 @@
+{
+  "race_id": "race-003",
+  "state": "Wisconsin",
+  "year": 2022,
+  "outcome": "loss",
+  "margin": -1.1,
+  "office": "Senate",
+  "candidate_name": "Karen Kowalski",
+  "opponent_name": "Steve Lindquist",
+  "sections": [
+    "Accountability Statement",
+    "Executive Summary",
+    "Header",
+    "Key Learnings for Future Races",
+    "Recommendations for Future Wisconsin Races",
+    "Voter Segment Analysis",
+    "What We Should Have Done",
+    "What Went Wrong",
+    "What the Focus Groups Told Us (And We Didn't Fix)"
+  ],
+  "chunk_count": 24,
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md"
+}

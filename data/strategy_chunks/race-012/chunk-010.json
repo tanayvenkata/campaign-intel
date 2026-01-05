@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-010",
+  "race_id": "race-012",
+  "content": "- Focus group: 10-0 Schroeder, 9.1 enthusiasm\n- Key dynamics: Base fired up, turnout infrastructure active\n- Notable: 2011 Capitol protests still animate the base\n\n**Quote:** \"Fighting since 2011\" - P6",
+  "section": "Regional Analysis",
+  "subsection": "Madison (Dane County)",
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 81
+}

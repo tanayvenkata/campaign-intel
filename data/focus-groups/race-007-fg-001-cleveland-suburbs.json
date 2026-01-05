@@ -1,0 +1,46 @@
+{
+  "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+  "race_id": "race-007",
+  "race_name": "Ohio Senate 2024",
+  "outcome": "loss",
+  "location": "Cleveland Suburbs (Cuyahoga County - Parma/Strongsville)",
+  "date": "September 18, 2024",
+  "moderator": "Jennifer Walsh",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Suburban swing voters, mix of Biden 2020 and Trump 2020",
+  "participants": {
+    "P1": "F, 48, Nurse, Parma, Biden 2020, healthcare concerns, Polish-American",
+    "P2": "M, 55, Manufacturing supervisor, Strongsville, Trump 2020, economic voter",
+    "P3": "F, 34, Marketing manager, Westlake, Biden 2020, suburban professional",
+    "P4": "M, 62, Retired steelworker, Parma, union member, voted Obama twice then Trump",
+    "P5": "F, 51, Real estate agent, Medina, Trump 2020, economic concerns",
+    "P6": "M, 41, IT manager, Lakewood, Biden 2020, moderate Democrat",
+    "P7": "F, 44, Small business owner, North Olmsted, independent, economic focus",
+    "P8": "M, 58, Truck driver, Parma Heights, Trump 2016/2020, union skeptic",
+    "P9": "F, 37, Teacher, Rocky River, Biden 2020, education concerns",
+    "P10": "M, 45, Police officer, Strongsville, Trump 2020, law and order focus"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Working-class defection is real",
+      "\"What have you done lately?\"",
+      "Stanton's simplicity beats Brennan's complexity",
+      "Ohio is no longer a swing state",
+      "Cultural issues are cutting Republican",
+      "Enthusiasm problem",
+      "Update economic message",
+      "Simplify",
+      "Address cultural issues",
+      "P4 is the race"
+    ],
+    "vote_intent_summary": "**Brennan:** 4",
+    "key_quotes": [
+      "\"What's actually changed? Steel is still gone. Jobs are still leaving.\" - P4",
+      "\"The Democrats abandoned working people. They talk about pronouns and climate while our towns die.\" - P2",
+      "\"He's saying things that make sense on the economy. Even if he's full of it, at least he's saying them.\" - P4",
+      "\"We're not a swing state anymore. We're red now.\" - P4"
+    ],
+    "full_text": "\n### Key Themes - WARNING SIGNS\n\n1. **Working-class defection is real** - P4 (steelworker, union, voted Brennan before) is moving to Stanton. This is catastrophic if representative.\n\n2. **\"What have you done lately?\"** - Auto bailout was 15 years ago. Message feels dated. Need contemporary wins.\n\n3. **Stanton's simplicity beats Brennan's complexity** - \"Cut taxes, bring jobs\" is easier to understand than infrastructure and CHIPS Act timelines.\n\n4. **Ohio is no longer a swing state** - P4's observation: \"We're red now.\" Trump coattails in presidential year are devastating.\n\n5. **Cultural issues are cutting Republican** - Immigration, crime, education. Brennan's economic focus isn't enough.\n\n6. **Enthusiasm problem** - Even Brennan supporters (P1, P3) are defensive, not excited.\n\n### Vote Intent\n\n- **Brennan:** 4\n- **Stanton:** 5\n- **Leaning Stanton:** 1\n\nThis is a LOSING focus group. 6-4 in favor of opponent among swing voters.\n\n### Critical Defector Profile (P4)\n\n- **Background:** 62, retired steelworker, union member, Polish-American, Parma\n- **Vote history:** Obama 2008, Obama 2012, Trump 2016, Trump 2020, Brennan previous Senate races\n- **Why defecting:** \"What's actually changed?\" Economic despair, party frustration\n- **Quote:** \"I don't blame Tim. I just wonder if it matters anymore.\"\n\n### Recommendations (URGENT)\n\n1. **Update economic message** - Auto bailout is ancient history. Need current wins, current plan.\n2. **Simplify** - Stanton's \"cut taxes, bring jobs\" beats complex policy explanations.\n3. **Address cultural issues** - Cannot cede crime, immigration, education entirely.\n4. **P4 is the race** - Working-class union voters defecting = loss.\n\n### Key Quotes\n\n> \"What's actually changed? Steel is still gone. Jobs are still leaving.\" - P4\n\n> \"The Democrats abandoned working people. They talk about pronouns and climate while our towns die.\" - P2\n\n> \"He's saying things that make sense on the economy. Even if he's full of it, at least he's saying them.\" - P4\n\n> \"We're not a swing state anymore. We're red now.\" - P4\n\n---\n\n*Transcript prepared by Cleveland Research Partners*\n*September 19, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-001-cleveland-suburbs.md"
+}

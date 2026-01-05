@@ -1,0 +1,42 @@
+{
+  "focus_group_id": "race-003-fg-003-fox-valley",
+  "race_id": "race-003",
+  "race_name": "Wisconsin Senate 2022",
+  "outcome": "loss",
+  "location": "Fox Valley (Outagamie County - Appleton)",
+  "date": "September 27, 2022",
+  "moderator": "Linda Kowalczyk",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Swing manufacturing region voters, mixed partisans",
+  "participants": {
+    "P1": "M, 52, Paper mill supervisor, Kimberly, union member but \"not a straight-ticket guy\"",
+    "P2": "F, 44, Office manager at manufacturing company, Appleton, independent, suburban concerns",
+    "P3": "M, 38, Electrician, Kaukauna, voted Obama twice then Trump then Biden, true swing voter",
+    "P4": "F, 47, School bus driver, Little Chute, part-time work, economic anxieties",
+    "P5": "M, 59, Retired plant manager (Kimberly-Clark), Neenah, fiscally conservative",
+    "P6": "F, 35, Registered nurse, ThedaCare, Menasha, healthcare focused, burned out from COVID",
+    "P7": "M, 42, Small business owner (auto repair), Hortonville, \"government should stay out of the way\"",
+    "P8": "F, 51, Bank branch manager, Grand Chute, moderate Republican",
+    "P9": "M, 33, Warehouse logistics coordinator, Oshkosh, young family, cost of living stressed",
+    "P10": "F, 48, Retail pharmacy technician, Appleton, part of healthcare system, prescription costs concern"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Business experience is trumping partisan loyalty",
+      "Economic messaging is a complete failure",
+      "Abortion not enough to overcome economy",
+      "Union voters are persuadable to Republicans",
+      "Specificity demand unmet"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I'm sympathetic to the idea - corporations do take advantage sometimes. But how does this lower gas prices?\" - P1",
+      "\"This sounds like every Democrat ever. Obama said it. Hillary said it. Biden said it. Things don't change.\" - P3",
+      "\"What does 'fight for' even mean? I want action, not fighting.\" - P4",
+      "\"He created jobs, right? That's more than most politicians have done.\" - P3",
+      "\"My union won't like it but that's my lean.\" - P1"
+    ],
+    "full_text": "\n### CRITICAL FINDING: LINDQUIST WINNING ON ECONOMIC CREDIBILITY\n\n**This focus group shows why we're losing the Fox Valley.**\n\n1. **Business experience is trumping partisan loyalty** - P1 (union member) leaning Lindquist. P3 (Obama-Trump-Biden swing) going to Lindquist. His manufacturing background is credible here.\n\n2. **Economic messaging is a complete failure** - 2.1/5 for \"corporate greed\" message vs. 3.7/5 for Lindquist's \"job creator\" message. We're being outmessaged.\n\n3. **Abortion not enough to overcome economy** - Even P2 and P4 who are uncomfortable with abortion bans are leaning Lindquist on economic grounds.\n\n4. **Union voters are persuadable to Republicans** - P1's comment about voting against union recommendation is concerning. Economic anxiety is overriding union endorsements.\n\n5. **Specificity demand unmet** - \"What's she actually going to do?\" came up repeatedly. Generic populism is losing to business credibility.\n\n### Vote Intent Summary\n\n- **Leaning/Firm Lindquist:** P1, P2, P3, P5, P7, P8, P9 (7)\n- **Undecided:** P4 (1)\n- **Leaning Kowalski:** P6, P10 (2)\n\n**7-2 lean toward Lindquist in a swing region is a major problem.**\n\n### Key Vulnerabilities Exploited by Lindquist\n\n1. \"Career politician\" attack landing\n2. Business background giving economic credibility we can't match\n3. Inflation linked directly to Democratic governance\n4. Generic populism seen as hollow\n\n### Opportunities Missed\n\n1. Healthcare costs - P6 and P10 responsive but we're not emphasizing it\n2. Prescription drugs - tangible and relatable\n3. Job training/community college - P1 mentioned this, not hearing it from campaign\n4. Infrastructure - universal appeal, not being emphasized\n\n### Lessons for Future Campaigns\n\n**This is how you lose working-class voters:**\n\n1. Generic messaging instead of specific policy\n2. No credible economic validator or biography\n3. Failure to acknowledge inflation as real problem\n4. Over-reliance on union endorsements without earned support\n5. \"Corporate greed\" framing seen as deflection, not solution\n\n**What was needed:**\n\n1. Specific economic policies with numbers\n2. Manufacturing/business credibility somehow\n3. Acknowledgment of inflation with solution\n4. Local specificity - Fox Valley, paper industry, healthcare\n5. Break from Biden on economic management\n\n### Verbatim Quotes Showing Failure\n\n> \"I'm sympathetic to the idea - corporations do take advantage sometimes. But how does this lower gas prices?\" - P1\n\n> \"This sounds like every Democrat ever. Obama said it. Hillary said it. Biden said it. Things don't change.\" - P3\n\n> \"What does 'fight for' even mean? I want action, not fighting.\" - P4\n\n> \"He created jobs, right? That's more than most politicians have done.\" - P3\n\n> \"My union won't like it but that's my lean.\" - P1\n\n---\n\n*Transcript prepared by Fox Valley Research Center*\n*September 28, 2022*\n*STATUS: CRITICAL - LOSING SWING REGION ON ECONOMIC CREDIBILITY*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/focus-groups/fg-003-fox-valley.md"
+}

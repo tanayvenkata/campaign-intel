@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-002",
+  "race_id": "race-002",
+  "content": "Tony Marchetti won the Pennsylvania Senate race by 4.8 percentage points, exceeding polling averages and winning across all three major geographic regions: Philadelphia suburbs, Pittsburgh area, and Northeastern Pennsylvania. This victory was fundamentally a candidate quality election - Marchetti's authentic working-class roots and hometown credibility created a devastating contrast with Thornton's hedge fund background and outsider status.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 12
+}

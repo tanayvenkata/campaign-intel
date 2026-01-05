@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-010",
+  "race_id": "race-002",
+  "content": "We invested minimally in rural Pennsylvania, assuming those votes were unreachable. However, Scranton performance suggests working-class messaging can resonate beyond urban/suburban areas if candidates have authentic roots.\n\n---",
+  "section": "What Didn't Work",
+  "subsection": "3. Rural Pennsylvania Written Off Too Early",
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 114
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-003",
+  "race_id": "race-001",
+  "content": "The Supreme Court's Dobbs decision transformed this race. Our focus groups consistently showed abortion emerging as a top-tier issue, particularly among:\n\n- Suburban women who had previously voted Republican\n- Young voters energized for the first time\n- Even conflicted Catholic and independent voters who responded to \"freedom\" framing\n\n**Key insight:** The message \"Politicians don't belong in the exam room\" outperformed clinical \"reproductive rights\" language. Framing abortion as a freedom and privacy issue (rather than a women's rights issue alone) reached voters across the spectrum.\n\n**Evidence from focus groups:**\n- Detroit suburbs: P9 (Catholic, male) said: \"I don't want the government telling my wife what to do\"\n- Grand Rapids: P6 (traditional values) said: \"I'm pro-life personally, but it's not the government's place\"\n- Statewide: Even Republican-leaning voters rated abortion messaging at 4.1/5\n\n**Recommendation for future races:** In post-Dobbs environment, \"freedom\" framing on reproductive rights should be central to Democratic messaging. This issue can reach suburban Republicans and energize the base simultaneously.",
+  "section": "What Worked",
+  "subsection": "1. Abortion as Mobilizing Issue",
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 20
+}

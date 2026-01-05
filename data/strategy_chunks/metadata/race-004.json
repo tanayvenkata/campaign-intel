@@ -1,0 +1,23 @@
+{
+  "race_id": "race-004",
+  "state": "Georgia",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Marcus Williams",
+  "opponent_name": "Blake Harrison",
+  "sections": [
+    "Executive Summary",
+    "Geographic Insights",
+    "Header",
+    "Key Learnings for Future Races",
+    "Recommendations for Future Races",
+    "Runoff Dynamics",
+    "Voter Segment Analysis",
+    "What Didn't Work",
+    "What Worked"
+  ],
+  "chunk_count": 17,
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/strategy-memo.md"
+}

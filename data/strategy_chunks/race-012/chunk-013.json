@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-013",
+  "race_id": "race-012",
+  "content": "Thompson tried to nationalize Schroeder but her local roots defeated it:\n\n**Fox Valley P10:** \"She's from Appleton. That attack doesn't land.\"\n\nBeing genuinely from a swing region provided inoculation.\n\n---",
+  "section": "What Didn't Work",
+  "subsection": "2. \"Madison Liberal\" Attack Failed",
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 109
+}

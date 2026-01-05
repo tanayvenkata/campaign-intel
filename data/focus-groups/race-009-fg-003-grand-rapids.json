@@ -1,0 +1,45 @@
+{
+  "focus_group_id": "race-009-fg-003-grand-rapids",
+  "race_id": "race-009",
+  "race_name": "Michigan Senate 2024",
+  "outcome": "win",
+  "location": "Grand Rapids (Kent County)",
+  "date": "September 28, 2024",
+  "moderator": "Michelle Patterson",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Mix of traditional conservatives and changing suburbs",
+  "participants": {
+    "P1": "M, 58, Furniture manufacturer executive, Ada, lifelong Republican",
+    "P2": "F, 45, Nurse, Spectrum Health, moderate, suburban Grand Rapids",
+    "P3": "M, 34, Tech worker, Grand Rapids, moved from Chicago, progressive",
+    "P4": "F, 52, Small business owner (retail), downtown GR, fiscal conservative",
+    "P5": "M, 63, Reformed Church, retired pastor, Wyoming, values voter",
+    "P6": "F, 38, Marketing director, East Grand Rapids, suburban mom, abortion concern",
+    "P7": "M, 41, Construction manager, Kentwood, union household, swing voter",
+    "P8": "F, 29, Nonprofit worker, Grand Rapids, young professional",
+    "P9": "M, 55, Auto supplier, Walker, industry concerns",
+    "P10": "F, 47, Teacher, Forest Hills, suburban, moderate"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "West Michigan is genuinely competitive",
+      "Abortion is the swing issue",
+      "DeGroot's local identity helps but isn't decisive",
+      "Class framing works for Kowalski",
+      "Traditional conservatives remain",
+      "Abortion messaging continues",
+      "Don't write off West Michigan",
+      "Economic class framing",
+      "DeGroot's local advantage is surmountable"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I'm pro-life personally but no exceptions? No.\" - P6",
+      "\"She's from Flint. Does she understand West Michigan?\" - P1",
+      "\"Her vote affects my household.\" - P7 (on wife's abortion focus)",
+      "\"Grand Rapids used to be reliably Republican... That's shifting.\" - P1"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **West Michigan is genuinely competitive** - Not the safe Republican territory it once was.\n\n2. **Abortion is the swing issue** - P6 (traditionally Republican) moving to Kowalski because of DeGroot's position.\n\n3. **DeGroot's local identity helps but isn't decisive** - \"One of ours\" but not enough to overcome policy concerns.\n\n4. **Class framing works for Kowalski** - \"Workers vs. executives\" resonates with P7, P3, P8.\n\n5. **Traditional conservatives remain** - P1, P5 are solid DeGroot. Reformed/business base still exists.\n\n### Vote Intent\n\n- **Kowalski:** 5-6\n- **DeGroot:** 2-3\n- **Undecided:** 1-2\n\n### Swing Profile (P6)\n\n- 38, marketing director, East Grand Rapids, suburban mom\n- Traditional Republican lean but moving on abortion\n- Quote: \"No exceptions? No.\"\n- Key to suburban shift\n\n### Recommendations\n\n1. **Abortion messaging continues** - It's working in suburbs\n2. **Don't write off West Michigan** - It's competitive\n3. **Economic class framing** - CEO vs. workers lands\n4. **DeGroot's local advantage is surmountable** - Policy matters more\n\n### Key Quotes\n\n> \"I'm pro-life personally but no exceptions? No.\" - P6\n\n> \"She's from Flint. Does she understand West Michigan?\" - P1\n\n> \"Her vote affects my household.\" - P7 (on wife's abortion focus)\n\n> \"Grand Rapids used to be reliably Republican... That's shifting.\" - P1\n\n---\n\n*Transcript prepared by West Michigan Research*\n*September 29, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/focus-groups/fg-003-grand-rapids.md"
+}

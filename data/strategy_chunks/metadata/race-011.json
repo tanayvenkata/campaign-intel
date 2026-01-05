@@ -1,0 +1,24 @@
+{
+  "race_id": "race-011",
+  "state": "North Carolina",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 8.5,
+  "office": "Governor",
+  "candidate_name": "Will Patterson",
+  "opponent_name": "Russell Chambers",
+  "sections": [
+    "Crossover Analysis",
+    "Executive Summary",
+    "Header",
+    "Lessons for Future Races",
+    "Margin Analysis",
+    "Recommendations for Future Races",
+    "The Chambers Collapse",
+    "Voter Segment Analysis",
+    "What Didn't Work (For Chambers)",
+    "What Worked"
+  ],
+  "chunk_count": 24,
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/strategy-memo.md"
+}

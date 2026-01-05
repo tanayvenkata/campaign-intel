@@ -1,0 +1,47 @@
+{
+  "focus_group_id": "race-003-fg-001-milwaukee-suburbs",
+  "race_id": "race-003",
+  "race_name": "Wisconsin Senate 2022",
+  "outcome": "loss",
+  "location": "Milwaukee Suburbs - WOW Counties (Waukesha County - Brookfield)",
+  "date": "September 14, 2022",
+  "moderator": "Sarah Mitchell",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Lean-R suburban voters, persuadable on margins",
+  "participants": {
+    "P1": "F, 51, Accountant, Brookfield, registered Republican, Romney-Trump-Trump voter, economically focused",
+    "P2": "M, 47, Sales director at manufacturing company, Menomonee Falls, independent, \"vote the candidate not party\"",
+    "P3": "F, 42, Dental hygienist, Wauwatosa, suburban mom, lean Republican but increasingly uncomfortable",
+    "P4": "M, 58, Small business owner (landscaping), Pewaukee, lifelong Republican, \"taxes and regulations\" focus",
+    "P5": "F, 38, Marketing manager, Elm Grove, MBA, fiscally conservative, \"suburban wine mom\" self-description",
+    "P6": "M, 63, Retired insurance executive, Waukesha, country club Republican, concerned about party direction",
+    "P7": "F, 45, Real estate agent, Oconomowoc, entrepreneurial, housing market expert",
+    "P8": "F, 34, Pharmaceutical sales rep, Muskego, young professional, cost-conscious",
+    "P9": "M, 52, IT director, Hartland, independent but votes Republican on economics, concerned about inflation",
+    "P10": "F, 56, HR manager, New Berlin, Catholic, traditional values but \"not crazy\""
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Generic populism is being rejected",
+      "The inflation attack is landing hard",
+      "Biography without policy isn't working",
+      "Specificity is demanded but not provided",
+      "Abortion alone isn't enough",
+      "URGENT: Develop specific economic policies",
+      "Acknowledge inflation is real",
+      "Break from Biden explicitly",
+      "Lean harder into abortion",
+      "Find business validators"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"Corporate greed. Really? That's the explanation for inflation? That's simplistic nonsense.\" - P1",
+      "\"Biography doesn't equal policy. I don't care where she grew up.\" - P5",
+      "\"My grocery bill is up $200 a month. That's every month. That's $2,400 a year.\" - P9",
+      "\"Even if true, how does attacking Lindquist lower gas prices?\" - P9",
+      "\"If Kowalski had a credible economic plan, I might reconsider. She doesn't.\" - P3"
+    ],
+    "full_text": "\n### CRITICAL WARNING: ECONOMIC MESSAGE FAILURE\n\n**This focus group reveals a serious messaging problem.**\n\n1. **Generic populism is being rejected** - \"Fight for working families\" and \"corporate greed\" scored 1.5/5. These voters see through it.\n\n2. **The inflation attack is landing hard** - Lindquist's \"Madison liberal/Biden agenda/inflation\" message scored 3.9/5. This is devastating.\n\n3. **Biography without policy isn't working** - \"Union household\" story scored 2.3/5. \"What's the plan NOW?\" was repeated reaction.\n\n4. **Specificity is demanded but not provided** - Multiple participants asked for concrete numbers, concrete policies. They're not getting them.\n\n5. **Abortion alone isn't enough** - Even conflicted voters (P3, P5) are prioritizing economy. The freedom message (3.4/5) beats economic messages but not decisive.\n\n### Vote Intent Analysis\n\n- **Firm Lindquist:** P1, P4, P9, P10 (4)\n- **Leaning Lindquist:** P2, P3, P5, P6, P7, P8 (6)\n- **Leaning/Undecided Kowalski:** (0)\n\n**This is a 10-0 room leaning Republican.** In a swing state, that's a disaster.\n\n### Key Quotes Showing Failure\n\n> \"Corporate greed. Really? That's the explanation for inflation? That's simplistic nonsense.\" - P1\n\n> \"Biography doesn't equal policy. I don't care where she grew up.\" - P5\n\n> \"My grocery bill is up $200 a month. That's every month. That's $2,400 a year.\" - P9\n\n> \"Even if true, how does attacking Lindquist lower gas prices?\" - P9\n\n> \"If Kowalski had a credible economic plan, I might reconsider. She doesn't.\" - P3\n\n### Recommendations for Campaign\n\n1. **URGENT: Develop specific economic policies** - Generic populism is losing. Need tangible plans with numbers.\n\n2. **Acknowledge inflation is real** - These voters feel dismissed when told \"corporate greed\" is the problem.\n\n3. **Break from Biden explicitly** - Every voter connects Kowalski to Biden to inflation. She must create distance.\n\n4. **Lean harder into abortion** - It's the only message with positive traction. But it can't be the only message.\n\n5. **Find business validators** - \"Has she ever made a payroll?\" is asked. Need credible economic surrogates.\n\n### WOW County Warning\n\nThe WOW counties are traditionally Republican but have been trending competitive. If generic economic messaging is failing THIS badly in persuadable suburban rooms, the race may be slipping away.\n\n---\n\n*Transcript prepared by Heartland Research Group*\n*September 15, 2022*\n*STATUS: URGENT REVIEW REQUIRED*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/focus-groups/fg-001-milwaukee-suburbs.md"
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-007",
+  "race_id": "race-006",
+  "content": "Reno focus group showed concerning softness:\n\n- Average enthusiasm: 6.1/10 (vs. 7.4 in Latino Vegas, 7.3 in Union)\n- P5 (moderate Republican leaning Sandoval): \"I'm at a 4\"\n- Perception that Sandoval is \"Vegas-focused\"\n\n> \"She's Vegas. Does she know Reno exists?\" - P9\n\n**Problem:** Northern Nevada felt neglected. This could have been decisive in a race this close.",
+  "section": "What Didn't Work",
+  "subsection": "1. Northern Nevada Enthusiasm Gap",
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 70
+}

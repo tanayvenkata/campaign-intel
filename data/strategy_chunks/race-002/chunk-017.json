@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-017",
+  "race_id": "race-002",
+  "content": "**Philadelphia Suburbs (Collar Counties):** Strongest performance. Abortion + candidate quality + Trump exhaustion combined for decisive wins. Montgomery, Chester, Bucks all shifted significantly Democratic.\n\n**Pittsburgh/Allegheny County:** Margin met targets. Union voters came home strongly. Marchetti's working-class credentials passed the authenticity test.\n\n**Scranton/Lackawanna County:** Overperformance. Hometown advantage was real and large. This should be model for candidate recruitment.\n\n**Erie County:** Closer than expected. Working-class economic messaging resonated. Future investment opportunity.\n\n**Rural Pennsylvania:** Underperformed. Needs dedicated strategy if we want to cut margins.\n\n---",
+  "section": "Geographic Insights",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 177
+}

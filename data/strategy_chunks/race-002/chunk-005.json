@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-005",
+  "race_id": "race-002",
+  "content": "Counter to the assumption that self-funding provides advantage, Thornton's wealth became his biggest liability:\n\n- \"Hedge fund\" triggered negative associations (betting against America, extraction, not building)\n- \"Billionaire\" signaled out-of-touch rather than success\n- \"Buy a Senate seat\" framing stuck because it felt true\n\n**Evidence from focus groups:**\n- Pittsburgh: \"Hedge funds are parasites. They don't build anything. They just extract value.\" - P3\n- Philadelphia suburbs: \"You can tell he's never shopped at Target.\" - P8\n- Scranton: \"I don't trust anyone that wealthy. They don't know what it's like to decide between groceries and medicine.\" - P9\n\n**Lesson:** Self-funding can backfire if the candidate can be framed as trying to \"buy\" office. Wealth needs a positive story attached; without one, it's a vulnerability.",
+  "section": "What Worked",
+  "subsection": "3. Thornton's Wealth as Liability",
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 59
+}

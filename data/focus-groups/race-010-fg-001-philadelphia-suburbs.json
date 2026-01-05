@@ -1,0 +1,40 @@
+{
+  "focus_group_id": "race-010-fg-001-philadelphia-suburbs",
+  "race_id": "race-010",
+  "race_name": "Pennsylvania Senate 2024",
+  "outcome": "win",
+  "location": "Philadelphia Suburbs (Chester County - West Chester/Malvern)",
+  "date": "September 22, 2024",
+  "moderator": "Patricia Chen",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Suburban professionals, mostly college-educated",
+  "participants": {
+    "P1": "F, 52, Healthcare executive, Malvern, Biden 2020, moderate Democrat",
+    "P2": "M, 45, Pharmaceutical researcher, West Chester, Trump 2016/Biden 2020",
+    "P3": "F, 38, Attorney, Media (Delaware Co), Biden 2020, abortion priority",
+    "P4": "M, 61, Retired engineer, Paoli, Trump 2020, fiscal conservative",
+    "P5": "F, 44, Marketing VP, Exton, Biden 2020, suburban mom, education focus",
+    "P6": "M, 55, Financial advisor, Villanova, Republican lean, moderate",
+    "P7": "F, 29, Doctor (resident), Bryn Mawr, first Senate vote, healthcare",
+    "P8": "M, 48, Small business owner, Kennett Square, swing voter",
+    "P9": "F, 34, Tech worker, King of Prussia, progressive, housing concern",
+    "P10": "F, 57, Nurse practitioner, Downingtown, Biden 2020, healthcare costs"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Pharmaceutical background is devastating for Hartley",
+      "Healthcare costs as defining frame",
+      "Russo's prosecutor credibility",
+      "Suburban women activated",
+      "Some Republican resistance"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"Pharma executive? After what they've done to drug prices? Absolutely not.\" - P10",
+      "\"His industry is why my patients can't afford insulin.\" - P1",
+      "\"The 'made millions' is key. He's rich off our suffering.\" - P3"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Pharmaceutical background is devastating for Hartley** - Even P2 who works in pharma is voting Russo. \"Pharma executive\" = wrong side of healthcare fight.\n\n2. **Healthcare costs as defining frame** - P10: \"It tells me whose side he's on.\"\n\n3. **Russo's prosecutor credibility** - \"Consumer fraud cases\" = competence and on your side.\n\n4. **Suburban women activated** - P3, P5 represent the network. Abortion + healthcare + education.\n\n5. **Some Republican resistance** - P4 solid Hartley. P6 persuadable but leaning Russo.\n\n### Vote Intent\n\n- **Russo:** 7\n- **Leaning Russo:** 2\n- **Hartley:** 1\n\nStrong suburban performance.\n\n### Key Quotes\n\n> \"Pharma executive? After what they've done to drug prices? Absolutely not.\" - P10\n\n> \"His industry is why my patients can't afford insulin.\" - P1\n\n> \"The 'made millions' is key. He's rich off our suffering.\" - P3\n\n---\n\n*Transcript prepared by Main Line Research*\n*September 23, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/focus-groups/fg-001-philadelphia-suburbs.md"
+}

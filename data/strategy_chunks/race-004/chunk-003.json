@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-004-memo-chunk-003",
+  "race_id": "race-004",
+  "content": "The race was won on character. Every focus group showed Harrison's scandals as disqualifying:\n\n**Key dynamics:**\n- Pro-life candidate who allegedly paid for multiple abortions = \"hypocrisy at highest level\"\n- Personal scandals made \"family values\" argument hollow\n- Even Republican participants (Cobb P4, Albany P3) refused to vote for him\n\n**Evidence from focus groups:**\n- Atlanta suburbs: \"He's running on pro-life and he allegedly paid for abortions?\" - P7\n- Black Atlanta: \"It's actually offensive. Like they think we'll vote for any Black face.\" - P10\n- Rural: \"As a Republican saying that, Harrison is just... no.\" - P3",
+  "section": "What Worked",
+  "subsection": "1. Character Contrast as Central Frame",
+  "state": "Georgia",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Marcus Williams",
+  "opponent_name": "Blake Harrison",
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/strategy-memo.md",
+  "line_number": 20
+}

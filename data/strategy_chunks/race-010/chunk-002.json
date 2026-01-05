@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-002",
+  "race_id": "race-010",
+  "content": "Angela Russo won the Pennsylvania Senate race by 3.1 points, holding an open seat in a presidential year. The win was built on three pillars: (1) Hartley's pharmaceutical executive background proved toxic on healthcare costs, (2) suburban Philadelphia delivered decisive margins, and (3) Pittsburgh's union base turned out enthusiastically. NEPA remained soft but came home, as Russo's Italian-American working-class identity bridged regional gaps.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 12
+}

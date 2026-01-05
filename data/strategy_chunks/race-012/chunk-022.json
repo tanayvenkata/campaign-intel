@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-022",
+  "race_id": "race-012",
+  "content": "**Final margin: +2.8% (approximately 90,000 votes)**\n\n**Where it came from:**\n- Dane County (Madison): +100,000 margin\n- Fox Valley improvement: +15,000 vs. 2022\n- WOW counties reduced losses: +10,000 vs. 2022\n- Rural losses: -35,000 vs. statewide\n\n**Coalition was urban base + swing region improvement.**\n\n---\n\n*This memo reflects analysis of three focus groups (Milwaukee suburbs, Madison, Fox Valley) conducted September-October 2024, exit polling, and final election data.*",
+  "section": "Margin Analysis",
+  "subsection": null,
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 175
+}

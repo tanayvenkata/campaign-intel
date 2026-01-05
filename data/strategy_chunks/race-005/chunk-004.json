@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-004",
+  "race_id": "race-005",
+  "content": "The Maricopa suburbs focus group revealed a hidden coalition: lifelong Republicans who couldn't vote for election denialism.\n\n**Profile:**\n- P1: Healthcare administrator, \"never Trump,\" McCain voter\n- P4: Retired Air Force, conservative, \"I served this country\"\n- P6: Financial advisor, traditional Republican\n\n**Key insight:** These weren't suburban moderates who became Democrats. They were conservatives who drew a line at democracy. Message to them: \"You can still be Republican and vote for democracy this one time.\"",
+  "section": "What Worked",
+  "subsection": "2. McCain Republican Coalition",
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 38
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-006",
+  "race_id": "race-005",
+  "content": "Pima County delivered strong margins. Tucson focus group showed:\n\n- Water policy specifics engaged environmentalists\n- Hometown connection mattered\n- Abortion rights mobilized women\n- Base wanted bold vision but would turn out regardless\n\n---",
+  "section": "What Worked",
+  "subsection": "4. Tucson as Base Anchor",
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 61
+}

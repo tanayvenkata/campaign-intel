@@ -1,0 +1,42 @@
+{
+  "focus_group_id": "race-006-fg-001-las-vegas-union",
+  "race_id": "race-006",
+  "race_name": "Nevada Senate 2022",
+  "outcome": "win",
+  "location": "Las Vegas (Culinary Union Hall)",
+  "date": "September 19, 2022",
+  "moderator": "David Chen",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Culinary Union members, hospitality workers",
+  "participants": {
+    "P1": "F, 54, Housekeeper, Bellagio, 22 years, Mexican-American, union shop steward",
+    "P2": "M, 38, Bartender, Caesars, Filipino-American, night shift, economic concerns",
+    "P3": "F, 29, Cocktail server, Wynn, single mother, healthcare dependent on job",
+    "P4": "M, 45, Cook, MGM Grand, Salvadoran immigrant, naturalized citizen",
+    "P5": "F, 61, Housekeeper, Venetian, longtime member, retiring soon",
+    "P6": "M, 33, Front desk clerk, Mandalay Bay, college degree, career switcher",
+    "P7": "F, 42, Casino floor attendant, Circus Circus, Black, North Las Vegas",
+    "P8": "M, 52, Bellman, Aria, union for 18 years, seen industry changes",
+    "P9": "F, 36, Room service, Cosmopolitan, Latina, second-generation Vegas",
+    "P10": "F, 27, Dealer trainee, UNLV graduate, new to industry"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "COVID trauma lingers",
+      "Economic pain is real",
+      "Union endorsement carries weight",
+      "Sandoval seen as ally",
+      "Prescott seen as threat",
+      "Enthusiasm gap is real"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I was out of work for 14 months. If not for the union fighting for us, I'd have lost everything.\" - P1",
+      "\"I make $25 an hour with tips. My rent is $1,800. Do the math.\" - P3",
+      "\"When I started, you could buy a house on a housekeeper's salary. Now? My kids can't even rent.\" - P5",
+      "\"Never vote against labor.\" - P8"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **COVID trauma lingers** - Workers remember being abandoned. Union loyalty deepened.\n\n2. **Economic pain is real** - Inflation erased wage gains. Housing crisis acute. \"Paycheck to paycheck\" repeated.\n\n3. **Union endorsement carries weight** - But not blindly followed. Members want to understand why.\n\n4. **Sandoval seen as ally** - Her hospitality background resonates. But some want louder fighting.\n\n5. **Prescott seen as threat** - Non-union hotel owner is disqualifying for union members.\n\n6. **Enthusiasm gap is real** - 7.3 average is concerning. P2 and P6 at 5-6 are potential dropoffs.\n\n### Vote Intent\n\n- **Sandoval:** 10\n- **Enthusiasm range:** 5-9 (average 7.3)\n\n### Turnout Concerns\n\n- P2 and P6 are lower enthusiasm. Economic frustration could depress turnout.\n- Union machine will need to work to maintain engagement.\n- \"Not thrilled but...\" is not inspiring.\n\n### Key Quotes\n\n> \"I was out of work for 14 months. If not for the union fighting for us, I'd have lost everything.\" - P1\n\n> \"I make $25 an hour with tips. My rent is $1,800. Do the math.\" - P3\n\n> \"When I started, you could buy a house on a housekeeper's salary. Now? My kids can't even rent.\" - P5\n\n> \"Never vote against labor.\" - P8\n\n---\n\n*Transcript prepared by Silver State Research*\n*September 20, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/focus-groups/fg-001-las-vegas-union.md"
+}

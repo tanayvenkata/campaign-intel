@@ -1,0 +1,25 @@
+{
+  "race_id": "race-009",
+  "state": "Michigan",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 4.2,
+  "office": "Senate",
+  "candidate_name": "Lisa Kowalski",
+  "opponent_name": "Mike DeGroot",
+  "sections": [
+    "Crossover Analysis",
+    "Executive Summary",
+    "Geographic Performance",
+    "Header",
+    "Key Learnings for Future Races",
+    "Margin Analysis",
+    "Message Testing Results",
+    "Recommendations for Michigan Democrats",
+    "Voter Segment Analysis",
+    "What Didn't Work",
+    "What Worked"
+  ],
+  "chunk_count": 24,
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/strategy-memo.md"
+}

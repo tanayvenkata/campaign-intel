@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-010",
+  "race_id": "race-007",
+  "content": "The GM Lordstown plant closure hung over the Youngstown discussion:\n\n**P10:** \"Fought and lost. Lordstown is closed. Those are the facts.\"\n\nWe never developed a message that acknowledged failure while pointing forward.\n\n---",
+  "section": "What Failed",
+  "subsection": "4. Lordstown Wound Never Closed",
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 96
+}

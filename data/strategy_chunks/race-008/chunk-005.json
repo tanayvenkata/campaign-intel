@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-008-memo-chunk-005",
+  "race_id": "race-008",
+  "content": "The Crow reservation focus group showed unanimous Sullivan support (9-0) but turnout likelihood of only 8.3/10, with two participants at 5-6.\n\n**P2:** \"If I vote, probably Sullivan. Likelihood... 5.\"\n\n**P5:** \"I'd vote if I thought it mattered.\"\n\nWe needed near-100% turnout among Native American voters to compensate for rural losses. We got closer to 60%. The math didn't work.",
+  "section": "The Loss: What Happened",
+  "subsection": "3. Native American Turnout Underperformance",
+  "state": "Montana",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -4.8,
+  "office": "Senate",
+  "candidate_name": "Jack Sullivan",
+  "opponent_name": "Matt Hansen",
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/strategy-memo.md",
+  "line_number": 40
+}

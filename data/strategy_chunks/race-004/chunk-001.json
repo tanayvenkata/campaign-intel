@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-004-memo-chunk-001",
+  "race_id": "race-004",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Georgia Senate 2022\n**Candidate:** Marcus Williams (D)\n**Opponent:** Blake Harrison (R)\n**Outcome:** Win (+2.8%)\n**Date:** December 2022\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Georgia",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Marcus Williams",
+  "opponent_name": "Blake Harrison",
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/strategy-memo.md",
+  "line_number": 1
+}

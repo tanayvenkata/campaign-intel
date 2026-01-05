@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-005",
+  "race_id": "race-005",
+  "content": "Phoenix Latino focus group showed high engagement when properly mobilized:\n\n**What worked:**\n- Representation messaging (\"First Latina governor\") energized base\n- Spanish-language authentic outreach\n- Community presence year-round, not just election season\n- Church and community organization partnership\n\n**Turnout:** Latino voters delivered Maricopa County. Registration drives and early voting pushes paid off.",
+  "section": "What Worked",
+  "subsection": "3. Latino Turnout Strategy",
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 49
+}

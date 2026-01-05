@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-011",
+  "race_id": "race-010",
+  "content": "Pennsylvania is three states: Philadelphia, Pittsburgh, and rural/NEPA. Candidates must bridge at least two. Russo's Pittsburgh roots + Italian-American identity provided credibility in NEPA.",
+  "section": "Key Learnings for Future Races",
+  "subsection": "2. Regional Identity Matters in Pennsylvania",
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 97
+}

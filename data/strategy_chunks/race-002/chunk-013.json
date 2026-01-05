@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-013",
+  "race_id": "race-002",
+  "content": "Pennsylvania is really three or four states:\n- Philadelphia and suburbs (increasingly professional-class, socially liberal)\n- Pittsburgh area (union heritage, working-class identity)\n- NEPA (distinct identity, feels ignored by both Philadelphia and Harrisburg)\n- Rural PA (T-shaped middle, more Republican)\n\nMarchetti won by being credible in all three Democratic regions AND having specific NEPA credibility that a Philadelphia-area candidate wouldn't have had.",
+  "section": "Key Learnings for Future Races",
+  "subsection": "3. Regional Identity Matters in Pennsylvania",
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 138
+}

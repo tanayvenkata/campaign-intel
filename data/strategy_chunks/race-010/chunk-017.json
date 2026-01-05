@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-017",
+  "race_id": "race-010",
+  "content": "This race demonstrated how opponent biography can define a contest.\n\n**What worked:**\n- \"Made millions while drug prices soared\"\n- \"Her industry is why patients can't afford insulin\"\n- \"Consumer protection prosecutor vs. industry executive\"\n\n**What Hartley couldn't escape:**\n- Personal wealth from pharma\n- Industry association with price gouging\n- No convincing counter-narrative\n\n---",
+  "section": "The Pharma Frame",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 147
+}

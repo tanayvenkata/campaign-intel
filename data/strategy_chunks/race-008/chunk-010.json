@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-008-memo-chunk-010",
+  "race_id": "race-008",
+  "content": "The core assumption - Sullivan's personal reputation could overcome party headwinds - was wrong. By 2024, partisanship overwhelmed personality.",
+  "section": "What We Did Wrong",
+  "subsection": "1. Over-Relied on Personal Brand",
+  "state": "Montana",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -4.8,
+  "office": "Senate",
+  "candidate_name": "Jack Sullivan",
+  "opponent_name": "Matt Hansen",
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/strategy-memo.md",
+  "line_number": 84
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-009-memo-chunk-001",
+  "race_id": "race-009",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Michigan Senate 2024\n**Candidate:** Lisa Kowalski (D)\n**Opponent:** Mike DeGroot (R)\n**Outcome:** Win (+4.2%)\n**Date:** December 2024\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Michigan",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 4.2,
+  "office": "Senate",
+  "candidate_name": "Lisa Kowalski",
+  "opponent_name": "Mike DeGroot",
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/strategy-memo.md",
+  "line_number": 1
+}

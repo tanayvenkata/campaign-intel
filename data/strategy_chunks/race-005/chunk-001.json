@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-001",
+  "race_id": "race-005",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Arizona Governor 2022\n**Candidate:** Elena Reyes (D)\n**Opponent:** Kari Mitchell (R)\n**Outcome:** Win (+0.5%)\n**Date:** December 2022\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 1
+}

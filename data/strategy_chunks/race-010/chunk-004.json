@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-004",
+  "race_id": "race-010",
+  "content": "Russo's Pittsburgh roots generated unanimous support:\n\n- 10-0 in Pittsburgh focus group\n- Average enthusiasm 7.4\n- \"She's one of us\" - P1\n\nThe Italian-American working-class identity translated well to NEPA (also heavily Italian-American), providing some regional bridge.",
+  "section": "What Worked",
+  "subsection": "2. Pittsburgh Regional Identity",
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 32
+}

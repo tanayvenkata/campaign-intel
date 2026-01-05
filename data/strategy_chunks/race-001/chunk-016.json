@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-016",
+  "race_id": "race-001",
+  "content": "**Oakland County:** Our strongest suburban performance. Abortion + candidate quality + suburban fatigue with GOP extremism.\n\n**Grand Rapids/Kent County:** Closer than expected. Economic anxiety high, abortion cross-pressured. Business community reachable with right message.\n\n**Flint/Genesee County:** AG record was gold. \"Never another Flint\" infrastructure message landed hard.\n\n**Traverse City/Northern Michigan:** Tourism economy concerns, housing affordability. Reachable on economics if we invest earlier.\n\n**Rural Michigan:** Underperformed. Need rural-specific strategy for future races.\n\n---",
+  "section": "Geographic Insights",
+  "subsection": null,
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 150
+}

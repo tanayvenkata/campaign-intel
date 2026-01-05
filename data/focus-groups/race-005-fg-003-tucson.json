@@ -1,0 +1,47 @@
+{
+  "focus_group_id": "race-005-fg-003-tucson",
+  "race_id": "race-005",
+  "race_name": "Arizona Governor 2022",
+  "outcome": "win",
+  "location": "Tucson (Pima County)",
+  "date": "October 3, 2022",
+  "moderator": "Carmen Silva",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Progressive base, environmentalists, academics, activists",
+  "participants": {
+    "P1": "M, 62, Retired hydrologist, USGS, water policy expert, Oro Valley",
+    "P2": "F, 34, Environmental nonprofit attorney, downtown Tucson, climate focus",
+    "P3": "M, 28, Graduate student, UArizona, organizing background, housing activist",
+    "P4": "F, 55, Community college professor, South Tucson, Latina, education policy",
+    "P5": "M, 41, Solar installation company owner, green business",
+    "P6": "F, 47, Nurse, Banner Health, healthcare access concerns",
+    "P7": "F, 39, City planner, sustainable development focus",
+    "P8": "M, 52, Public school principal, funding concerns, Title I school",
+    "P9": "F, 31, Tech worker, remote, moved from Bay Area, reproductive rights focus",
+    "P10": "M, 45, Union organizer, hospitality workers, labor focus"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Water is the defining issue for Tucson",
+      "Base wants bold, not just \"not crazy\"",
+      "Dobbs activated women",
+      "Tucson identity matters",
+      "Enthusiasm high but fragile",
+      "Progressives want to be excited",
+      "Lead with water policy",
+      "Bold abortion stance",
+      "Address fatigue",
+      "Positive vision",
+      "Tucson identity"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"We have maybe 20 years at current usage before catastrophe.\" - P1",
+      "\"Give progressives a reason to be excited, not just scared.\" - P3",
+      "\"Even Republicans in rural Arizona know the water is disappearing.\" - P5",
+      "\"She's a fascist. I don't use that word lightly.\" - P3"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Water is the defining issue for Tucson** - Not just environmentalists. P1, P5, P7 all see it as existential. Mitchell's climate denial is disqualifying.\n\n2. **Base wants bold, not just \"not crazy\"** - Multiple participants (P3, P10) want positive vision, not just contrast with Mitchell.\n\n3. **Dobbs activated women** - P9, P2 explicitly cite abortion as mobilizing force. Clear messaging demanded.\n\n4. **Tucson identity matters** - Reyes being from Tucson resonates. \"One of us\" feeling.\n\n5. **Enthusiasm high but fragile** - Fatigue from constant crisis elections. Need to sustain energy.\n\n6. **Progressives want to be excited** - \"Give us a reason to be excited, not just scared\" - key sentiment.\n\n### Vote Intent\n\n- **Reyes:** 10\n\n100% unanimous support but with varying enthusiasm about HOW she's running.\n\n### Base Mobilization Recommendations\n\n1. **Lead with water policy** - Specific, detailed, serious. This audience will respond.\n2. **Bold abortion stance** - Unambiguous pro-choice messaging.\n3. **Address fatigue** - Acknowledge the exhaustion while making case for engagement.\n4. **Positive vision** - Not just \"I'm not Mitchell\" - what is Arizona becoming?\n5. **Tucson identity** - Lean into hometown connection.\n\n### Key Quotes\n\n> \"We have maybe 20 years at current usage before catastrophe.\" - P1\n\n> \"Give progressives a reason to be excited, not just scared.\" - P3\n\n> \"Even Republicans in rural Arizona know the water is disappearing.\" - P5\n\n> \"She's a fascist. I don't use that word lightly.\" - P3\n\n---\n\n*Transcript prepared by Desert Research Partners*\n*October 4, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/focus-groups/fg-003-tucson.md"
+}

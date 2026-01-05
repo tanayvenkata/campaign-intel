@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-001",
+  "race_id": "race-012",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Wisconsin Senate 2024\n**Candidate:** Emily Schroeder (D)\n**Opponent:** Mark Thompson (R)\n**Outcome:** Win (+2.8%)\n**Date:** December 2024\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 1
+}

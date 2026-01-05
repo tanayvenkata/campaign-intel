@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-003-memo-chunk-002",
+  "race_id": "race-003",
+  "content": "Karen Kowalski lost the Wisconsin Senate race by 1.1 percentage points - a winnable race that slipped away due to strategic failures in economic messaging and base mobilization. Our focus groups identified these problems in September, but the campaign did not adapt in time. This memo is a candid assessment of what went wrong, what warning signs we missed, and what future campaigns must learn from this defeat.\n\n**Bottom line:** We lost on the economy. Generic populist messaging failed to address voter concerns about inflation. Our opponent's business background gave him credibility we never matched. Abortion was a strong issue but insufficient to overcome economic headwinds.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Wisconsin",
+  "year": 2022,
+  "outcome": "loss",
+  "margin": -1.1,
+  "office": "Senate",
+  "candidate_name": "Karen Kowalski",
+  "opponent_name": "Steve Lindquist",
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+  "line_number": 12
+}

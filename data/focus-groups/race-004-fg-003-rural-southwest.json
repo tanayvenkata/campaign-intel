@@ -1,0 +1,41 @@
+{
+  "focus_group_id": "race-004-fg-003-rural-southwest",
+  "race_id": "race-004",
+  "race_name": "Georgia Senate 2022",
+  "outcome": "win",
+  "location": "Rural Southwest Georgia (Dougherty County - Albany)",
+  "date": "September 26, 2022",
+  "moderator": "Angela Washington",
+  "participant_count": 9,
+  "participant_summary": "9 (5F, 4M) - Rural voters, Black Belt region, economically stressed",
+  "participants": {
+    "P1": "M, 58, Peanut farmer, Lee County, Black, third-generation farmer, land ownership important",
+    "P2": "F, 44, Hospital nurse, Albany, Black, sole regional hospital, healthcare access worried",
+    "P3": "M, 62, Retired military, Americus, white, moderate Republican who voted Biden",
+    "P4": "F, 35, Dollar General manager, Dawson, Black, underemployed despite degree",
+    "P5": "M, 48, Truck driver, Albany, Black, long-haul routes, fuel costs crushing",
+    "P6": "F, 71, Retired schoolteacher, Plains, Black, Carter country, longtime voter",
+    "P7": "M, 41, Mechanic, Leesburg, white, independent, economic voter",
+    "P8": "F, 52, Church secretary, Albany, Black, community organizer",
+    "P9": "F, 29, Home health aide, Americus, Black, part-time work, no benefits"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Economic distress is severe",
+      "Williams has rural credibility",
+      "Harrison rejected even by persuadables",
+      "Medicaid expansion is paramount",
+      "Turnout barriers are real",
+      "Cynicism must be addressed"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I have a college degree and I manage a Dollar General. That's the economy here.\" - P4",
+      "\"We're the third generation on this land and I worry about passing it on.\" - P1",
+      "\"People die in that gap\" - P2 (on 2-hour drive to specialized care)",
+      "\"I'm Republican-leaning but I can't vote for Harrison. He's not qualified.\" - P3"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Economic distress is severe** - Dollar General economy, healthcare deserts, farm struggles. This is real poverty, not just inflation concerns.\n\n2. **Williams has rural credibility** - Visits to Albany, meeting with Black farmers, church appearances. He's invested in building connection.\n\n3. **Harrison rejected even by persuadables** - P3 (Republican) and P7 (independent) voting Williams. Harrison's unfitness overrides partisanship.\n\n4. **Medicaid expansion is paramount** - P2 mentioned it multiple times. This is tangible policy that would transform the region.\n\n5. **Turnout barriers are real** - Distance, ID requirements, dropped polling places. Rural vote suppression is effective.\n\n6. **Cynicism must be addressed** - \"Nothing ever changes\" is a barrier. Need to show that votes matter.\n\n### Vote Intent\n\n- **Williams:** 9\n- **Harrison:** 0\n\nEnthusiasm is lower than Atlanta (averaging ~7/10) but unanimous.\n\n### Rural-Specific Insights\n\n- **Farm policy matters** - Black farmers, peanut program, land access - specific issues that need addressing\n- **Healthcare is existential** - Sole hospital, no Medicaid expansion, long distances to care\n- **Transportation determines access** - Everything from voting to healthcare to jobs depends on having a car\n- **\"Dollar General economy\"** - Phrase captures the lack of real employment opportunities\n- **Church infrastructure is essential** - Only reliable mobilization mechanism in rural areas\n\n### Key Quotes\n\n> \"I have a college degree and I manage a Dollar General. That's the economy here.\" - P4\n\n> \"We're the third generation on this land and I worry about passing it on.\" - P1\n\n> \"People die in that gap\" - P2 (on 2-hour drive to specialized care)\n\n> \"I'm Republican-leaning but I can't vote for Harrison. He's not qualified.\" - P3\n\n---\n\n*Transcript prepared by Peachtree Research Group*\n*September 27, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/focus-groups/fg-003-rural-southwest.md"
+}

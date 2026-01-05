@@ -1,0 +1,43 @@
+{
+  "focus_group_id": "race-008-fg-002-rural-ranching",
+  "race_id": "race-008",
+  "race_name": "Montana Senate 2024",
+  "outcome": "loss",
+  "location": "Rural Montana (Lewistown/Fergus County)",
+  "date": "September 20, 2024",
+  "moderator": "Sarah Thompson",
+  "participant_count": 8,
+  "participant_summary": "8 (3F, 5M) - Ranchers, farmers, rural small-town residents",
+  "participants": {
+    "P1": "M, 62, Cattle rancher, fifth-generation, 4,000 acres, conservative",
+    "P2": "F, 55, Rancher's wife, runs the books, community volunteer",
+    "P3": "M, 48, Wheat farmer, diversified operation, pragmatic politics",
+    "P4": "M, 71, Retired rancher, sold to kids, longtime Republican",
+    "P5": "F, 41, Veterinarian, large animal practice, serves whole county",
+    "P6": "M, 35, Young rancher, took over family operation, concerned about future",
+    "P7": "F, 58, Town postmaster, knows everyone, swing voter",
+    "P8": "M, 44, Feed store owner, small business, economic concerns"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Personal relationship isn't enough",
+      "Party over person is complete",
+      "Cultural disconnect is existential",
+      "\"Send a message\" logic",
+      "Low enthusiasm for both",
+      "Depoliticize completely",
+      "Local validator blitz",
+      "Accept rural loss",
+      "Long-term party work"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"Jack is a good man. But his party isn't.\" - P1",
+      "\"I've voted for Jack three times. This time... I don't know.\" - P4",
+      "\"It's not about Jack. It's about sending a message.\" - P3",
+      "\"At some point, you are what you vote with.\" - P6"
+    ],
+    "full_text": "\n### Key Themes - CATASTROPHIC WARNING\n\n1. **Personal relationship isn't enough** - P1 has known Sullivan 30 years, Sullivan helped him personally. Still voting Hansen.\n\n2. **Party over person is complete** - \"I'm not voting FOR Hansen. I'm voting AGAINST Democrats.\"\n\n3. **Cultural disconnect is existential** - Guns, climate, immigration, \"they look down on us.\" Party brand is toxic.\n\n4. **\"Send a message\" logic** - P3: \"Montana isn't California.\" Participants want Democrats to lose Montana completely.\n\n5. **Low enthusiasm for both** - Hansen voters averaging 5.2. They don't WANT Hansen; they want NOT-Democrat.\n\n### Vote Intent\n\n- **Sullivan:** 2\n- **Hansen:** 5\n- **Undecided:** 1\n\nIn rural Montana, among people who know Sullivan personally, he's losing 5-2. Race is unwinnable.\n\n### Critical Defector Profile (P1)\n\n- **Background:** 62, cattle rancher, 4,000 acres, known Sullivan 30 years\n- **Sullivan help:** \"Helped me personally with BLM issues, water rights\"\n- **Still defecting:** \"He's a Democrat. That's the concern.\"\n- **Quote:** \"Jack is a good man. But his party isn't.\"\n\n### The P4 Story\n\n- **Background:** 71, retired rancher, voted Sullivan three times\n- **Now:** Voting straight Republican for first time ever\n- **Quote:** \"It breaks my heart. Jack is a good man.\"\n\n### Recommendations (Limited Impact Expected)\n\n1. **Depoliticize completely** - Run as individual, not Democrat\n2. **Local validator blitz** - Ranchers, sheriffs, local figures\n3. **Accept rural loss** - Focus on winning margins in cities\n4. **Long-term party work** - This isn't a Sullivan problem. It's a Democrat problem.\n\n### Key Quotes\n\n> \"Jack is a good man. But his party isn't.\" - P1\n\n> \"I've voted for Jack three times. This time... I don't know.\" - P4\n\n> \"It's not about Jack. It's about sending a message.\" - P3\n\n> \"At some point, you are what you vote with.\" - P6\n\n---\n\n*Transcript prepared by Big Sky Research*\n*September 21, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/focus-groups/fg-002-rural-ranching.md"
+}

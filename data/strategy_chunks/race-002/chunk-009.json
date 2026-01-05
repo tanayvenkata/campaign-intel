@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-009",
+  "race_id": "race-002",
+  "content": "While we won Philadelphia overwhelmingly, turnout could have been higher. Base mobilization was more efficient in suburbs than in the city. Future races need stronger Philadelphia ground operation.",
+  "section": "What Didn't Work",
+  "subsection": "2. Philadelphia Turnout Needed More",
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 110
+}

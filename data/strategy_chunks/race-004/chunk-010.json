@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-004-memo-chunk-010",
+  "race_id": "race-004",
+  "content": "Harrison was so manifestly unfit that partisan patterns broke. This is rare but powerful when it happens. Lesson: Don't nominate candidates with disqualifying baggage.",
+  "section": "Key Learnings for Future Races",
+  "subsection": "1. Candidate Quality Can Be Decisive",
+  "state": "Georgia",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Marcus Williams",
+  "opponent_name": "Blake Harrison",
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/strategy-memo.md",
+  "line_number": 79
+}

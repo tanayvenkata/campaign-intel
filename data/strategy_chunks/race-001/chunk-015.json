@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-001-memo-chunk-015",
+  "race_id": "race-001",
+  "content": "| Segment | Starting Position | Ending Position | What Moved Them |\n|---------|-------------------|-----------------|-----------------|\n| Suburban women (college+) | Lean R | Voted D | Abortion rights, candidate quality |\n| Union households | Soft D | Solid D | Working-class biography, manufacturing message |\n| Rural whites | Strong R | Strong R | Not persuadable this cycle - need earlier investment |\n| Black voters (Detroit, Flint) | Soft D | Solid D | Turnout operation, AG record on Flint |\n| Young voters (18-35) | Low turnout | High turnout | Abortion, housing costs, student debt |\n| Seniors | Mixed | Lean D | Prescription drugs, Social Security protection |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "Michigan",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 3.2,
+  "office": "Governor",
+  "candidate_name": "Sarah Holloway",
+  "opponent_name": "Rick Vanderberg",
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/strategy-memo.md",
+  "line_number": 137
+}

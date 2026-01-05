@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-001",
+  "race_id": "race-007",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Ohio Senate 2024\n**Candidate:** Tim Brennan (D) - Incumbent\n**Opponent:** Jim Stanton (R)\n**Outcome:** LOSS (-6.2%)\n**Date:** December 2024\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 1
+}

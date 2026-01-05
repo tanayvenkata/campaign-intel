@@ -1,0 +1,40 @@
+{
+  "focus_group_id": "race-005-fg-001-maricopa-suburbs",
+  "race_id": "race-005",
+  "race_name": "Arizona Governor 2022",
+  "outcome": "win",
+  "location": "Maricopa County Suburbs (Scottsdale/Chandler)",
+  "date": "September 21, 2022",
+  "moderator": "Carmen Silva",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Suburban swing voters, includes McCain Republicans",
+  "participants": {
+    "P1": "F, 52, Healthcare administrator, Scottsdale, McCain Republican, \"never Trump\"",
+    "P2": "M, 45, Tech executive, Chandler, moved from California, independent",
+    "P3": "F, 38, Real estate agent, Gilbert, suburban mom, abortion concerns",
+    "P4": "M, 61, Retired Air Force, Mesa, conservative but troubled by extremism",
+    "P5": "F, 44, Small business owner, Tempe, independent, economic focus",
+    "P6": "M, 55, Financial advisor, Paradise Valley, traditional Republican",
+    "P7": "F, 33, Marketing manager, Scottsdale, young professional, transplant from Chicago",
+    "P8": "M, 48, Construction company owner, Queen Creek, Republican, border concerns",
+    "P9": "F, 56, Teacher, Chandler, moderate Democrat",
+    "P10": "M, 42, Software engineer, Gilbert, libertarian-leaning, pragmatic"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Election denial is disqualifying for McCain Republicans",
+      "Democracy concern trumps party loyalty",
+      "Mitchell's charisma isn't enough",
+      "Reyes' Secretary of State record is asset",
+      "P8 represents persuadable Mitchell voters"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"She's disqualifying. January 6th should have been the end for anyone who pushed those lies.\" - P1",
+      "\"I served this country. I can't vote for someone who'd overturn democracy.\" - P4",
+      "\"One believes in democracy, one doesn't.\" - P6"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Election denial is disqualifying for McCain Republicans** - P1, P4, P6 are lifelong Republicans voting Democrat because of this issue.\n\n2. **Democracy concern trumps party loyalty** - \"If she won't accept results, she can't be governor.\"\n\n3. **Mitchell's charisma isn't enough** - Entertainment value doesn't translate to governing trust.\n\n4. **Reyes' Secretary of State record is asset** - Certifying under pressure = courage and integrity.\n\n5. **P8 represents persuadable Mitchell voters** - Border focus but troubled by election denial. This is the swing voter.\n\n### Vote Intent\n\n- **Reyes:** 8\n- **Leaning Reyes:** 1\n- **Undecided (lean Mitchell):** 1\n\nMcCain Republicans delivering decisive margin.\n\n### Key Quotes\n\n> \"She's disqualifying. January 6th should have been the end for anyone who pushed those lies.\" - P1\n\n> \"I served this country. I can't vote for someone who'd overturn democracy.\" - P4\n\n> \"One believes in democracy, one doesn't.\" - P6\n\n---\n\n*Transcript prepared by Desert Research Partners*\n*September 22, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/focus-groups/fg-001-maricopa-suburbs.md"
+}

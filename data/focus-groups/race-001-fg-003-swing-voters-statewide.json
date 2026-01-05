@@ -1,0 +1,53 @@
+{
+  "focus_group_id": "race-001-fg-003-swing-voters-statewide",
+  "race_id": "race-001",
+  "race_name": "Michigan Governor 2022",
+  "outcome": "win",
+  "location": "Virtual (Statewide Michigan)",
+  "date": "September 8, 2022",
+  "moderator": "Rachel Kim",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Persuadable voters from diverse geographic regions",
+  "participants": {
+    "P1": "F, 44, Hospital administrator, Ann Arbor, Democrat but \"not reliably so,\" Washtenaw County",
+    "P2": "M, 52, Farmer (corn, soybeans), Lenawee County, rural, registered Republican, \"used to vote straight ticket\"",
+    "P3": "F, 38, Retail manager, Traverse City, independent, tourism-dependent economy concerns",
+    "P4": "M, 47, Auto plant worker (Stellantis), Sterling Heights, UAW member, Macomb County",
+    "P5": "F, 29, Graduate student (public health), East Lansing, first-time voter in MI, moved from Virginia",
+    "P6": "M, 66, Retired police sergeant, Saginaw, Saginaw County, concerned about crime and pension",
+    "P7": "F, 55, Small business owner (bakery), Kalamazoo, Southwest Michigan, \"kitchen table economics\"",
+    "P8": "M, 34, Construction foreman, Flint, Genesee County, water crisis survivor, \"doesn't trust politicians\"",
+    "P9": "F, 48, Insurance agent, Midland, Mid-Michigan, flood recovery still affecting area",
+    "P10": "M, 41, IT consultant, Holland, Ottawa County, Dutch Reformed area but \"not as conservative as neighbors\""
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Geographic diversity reveals shared economic anxiety",
+      "Specificity dramatically improves message reception",
+      "Negative attacks universally rejected",
+      "AG record is the strongest asset",
+      "Abortion freedom framing works broadly",
+      "Infrastructure is visceral in affected communities",
+      "Rural Michigan is reachable",
+      "Lead with specific economic policies",
+      "Integrate AG record throughout",
+      "Infrastructure message can reach rural and urban",
+      "Abortion as freedom",
+      "Avoid pure negative messaging",
+      "Develop rural outreach"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"She actually did something about Flint. That means something to me. Finally someone who didn't forget about us.\" - P8",
+      "\"I've been Republican my whole adult life and this is the first time I'm seriously considering voting Democrat.\" - P9",
+      "\"$200 is real. Insulin cap is real. This feels tangible.\" - P7",
+      "\"My wife asked me how I'd feel if our daughter needed care and couldn't get it. That stuck with me.\" - P4",
+      "\"Never thought I'd say that\" - P2 (re: considering voting for Democrat)",
+      "\"In Holland, this is tearing apart some churches.\" - P10",
+      "\"Politicians don't belong in the exam room - that's it.\" - P4",
+      "\"We lost everything in the flood. The dams failed because nobody invested.\" - P9"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Geographic diversity reveals shared economic anxiety** - From rural Lenawee to urban Flint to tourist Traverse City, cost of living dominates. The squeeze is universal even if the specifics differ.\n\n2. **Specificity dramatically improves message reception** - Generic \"fight for working families\" scored 3.5/5. Add specific numbers ($200, $35) and it jumps to 4.0/5. This pattern held throughout.\n\n3. **Negative attacks universally rejected** - Statement E (pure attack) scored 2.0/5. Even voters open to the critique wanted affirmative vision. Attack fatigue is real.\n\n4. **AG record is the strongest asset** - Statement F (AG accomplishments) scored highest at 4.1/5. Flint especially resonates beyond just Flint voters as proof she delivers.\n\n5. **Abortion freedom framing works broadly** - Even P6 (retired cop, traditional) could \"live with\" the freedom framing. P9 (lifelong Republican) is reconsidering her vote. This is a realignment issue.\n\n6. **Infrastructure is visceral in affected communities** - P8 and P9 represent communities traumatized by infrastructure failure. \"Never another Flint or Midland\" is powerful.\n\n7. **Rural Michigan is reachable** - P2 (farmer, Republican) expressed openness. Rural-specific messaging (broadband, roads, farm economy) could move voters typically written off.\n\n### Highest Scoring Messages\n\n1. Infrastructure commitment: 4.2/5\n2. AG record with Flint: 4.1/5\n3. Abortion freedom: 4.1/5\n4. Specific economic policies ($35 insulin, gas tax): 4.0/5\n5. Biography: 3.8/5\n\n### Lowest Scoring Messages\n\n1. Economic triumphalism: 1.7/5\n2. Pure negative attack: 2.0/5\n\n### Surprising Moments\n\n- **P2 (farmer, Republican) open to Holloway** - \"Never thought I'd say that.\" Rural outreach could work.\n\n- **P9 (lifelong Republican, Midland) moving on abortion** - Infrastructure AND abortion creating double persuasion effect.\n\n- **P8's emotional response to Flint mention** - AG record is deeply meaningful to affected communities. Authenticity breakthrough.\n\n- **Negative attacks utterly rejected** - Even voters who had criticisms of Vanderberg wanted positive vision, not attacks.\n\n### Regional Patterns\n\n- **Southeast (Macomb, Oakland, Ann Arbor):** Economic + abortion dual priority\n- **Mid-Michigan (Saginaw, Midland, Flint):** Infrastructure + trust issues, recovery-focused\n- **West (Holland, Kalamazoo):** Traditional values in flux, abortion shifting alignments\n- **North (Traverse City):** Tourism economy fragile, housing crisis acute\n- **Rural (Lenawee):** Farm economy stressed, infrastructure needs, reachable\n\n### Recommended Actions\n\n1. **Lead with specific economic policies** - Numbers beat slogans every time with this audience.\n\n2. **Integrate AG record throughout** - Don't just mention Flint once. Use it as proof point for every promise.\n\n3. **Infrastructure message can reach rural and urban** - Unifying theme across geographies.\n\n4. **Abortion as freedom** - Test message holds statewide including in conservative areas.\n\n5. **Avoid pure negative messaging** - Contrast is fine but must include affirmative vision.\n\n6. **Develop rural outreach** - Farm economy specifics, broadband, rural roads. Don't cede territory.\n\n---\n\n## Verbatim Quotes to Flag for Campaign\n\n> \"She actually did something about Flint. That means something to me. Finally someone who didn't forget about us.\" - P8\n\n> \"I've been Republican my whole adult life and this is the first time I'm seriously considering voting Democrat.\" - P9\n\n> \"$200 is real. Insulin cap is real. This feels tangible.\" - P7\n\n> \"My wife asked me how I'd feel if our daughter needed care and couldn't get it. That stuck with me.\" - P4\n\n> \"Never thought I'd say that\" - P2 (re: considering voting for Democrat)\n\n> \"In Holland, this is tearing apart some churches.\" - P10\n\n> \"Politicians don't belong in the exam room - that's it.\" - P4\n\n> \"We lost everything in the flood. The dams failed because nobody invested.\" - P9\n\n---\n\n*Transcript prepared by Midwest Research Associates*\n*September 9, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-001-michigan-gov-2022/focus-groups/fg-003-swing-voters-statewide.md"
+}

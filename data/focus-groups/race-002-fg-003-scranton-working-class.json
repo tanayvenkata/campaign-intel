@@ -1,0 +1,53 @@
+{
+  "focus_group_id": "race-002-fg-003-scranton-working-class",
+  "race_id": "race-002",
+  "race_name": "Pennsylvania Senate 2022",
+  "outcome": "win",
+  "location": "Scranton/NEPA (Lackawanna County)",
+  "date": "September 26, 2022",
+  "moderator": "Thomas Brennan",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Working-class persuadable voters, mixed registration",
+  "participants": {
+    "P1": "M, 52, Warehouse worker, Dunmore, registered Democrat but voted Trump 2016, back to Biden 2020",
+    "P2": "F, 47, Home health aide, Carbondale, independent, caretaker for elderly mother",
+    "P3": "M, 38, Truck driver, Old Forge, moved from being reliable Dem to \"looking at both sides\"",
+    "P4": "F, 55, Retail manager at Boscov's, Scranton, Catholic, traditional values but union family",
+    "P5": "M, 63, Retired coal miner (disabled), Olyphant, lifelong Democrat, UMWA background",
+    "P6": "F, 33, Medical biller, Dickson City, student debt, first-time homebuyer trying to save",
+    "P7": "M, 44, HVAC technician, Throop, small business, votes on economic issues",
+    "P8": "F, 41, School cafeteria worker, Taylor, part-time, worried about benefits",
+    "P9": "M, 57, Corrections officer, Jessup, union, \"law and order\" focus but economic concerns",
+    "P10": "F, 49, Casino dealer, Wilkes-Barre area, shift work, exhausted by politics"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Hometown connection is decisive",
+      "Economic anxiety spans all participants",
+      "Thornton's outsider status is fatal",
+      "Social Security/Medicare is non-negotiable",
+      "Abortion is complicating traditional loyalties",
+      "Union heritage persists even among non-union workers",
+      "Local accountability matters",
+      "Hometown biography",
+      "Social Security protection",
+      "\"One of us vs. Wall Street billionaire\"",
+      "Heavy NEPA investment",
+      "Local validators",
+      "Economic specificity for NEPA",
+      "Chamberlain/steel story",
+      "Social Security TV ads"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"Tony IS one of us. Thornton is not.\" - P5",
+      "\"I could run into him at Coopers. He can't hide from his neighbors.\" - P7",
+      "\"Scranton's been overlooked for too long. Having one of our own in the Senate would be huge.\" - P5",
+      "\"His father worked at Chamberlain Steel. My brother knew him.\" - P5",
+      "\"What's he doing running for Senate in Pennsylvania?\" - P1 (on Thornton)",
+      "\"Even though I'm conflicted on abortion, the hometown connection matters.\" - P4"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Hometown connection is decisive** - In NEPA, Marchetti's Scranton roots are an unbeatable advantage. \"Scranton's son,\" \"his dad worked at Chamberlain,\" \"he still goes to St. Peter's\" - this local knowledge creates deep trust.\n\n2. **Economic anxiety spans all participants** - From the $12.50/hour cafeteria worker to the small business owner, everyone feels squeezed. \"Running to stay in place\" captures the sentiment.\n\n3. **Thornton's outsider status is fatal** - \"What's he doing running for Senate in Pennsylvania?\" captures the reaction. Wealth plus outsider status equals rejection.\n\n4. **Social Security/Medicare is non-negotiable** - P5 represents many: \"Anyone who threatens them loses my vote instantly.\"\n\n5. **Abortion is complicating traditional loyalties** - P4 (Catholic, traditional values) is voting Democratic because bans \"go too far.\" This is realignment in action.\n\n6. **Union heritage persists even among non-union workers** - References to mining, steel, factory culture shape identity. \"Jobs you can raise a family on\" is aspirational.\n\n7. **Local accountability matters** - \"I could run into him at Coopers\" - small community dynamics create perceived accountability.\n\n### Strongest Messages\n\n1. **Hometown biography** - Every Scranton-specific detail lands: Scranton Prep, U of S, Chamberlain, St. Peter's\n2. **Social Security protection** - Existential for older voters\n3. **\"One of us vs. Wall Street billionaire\"** - Class contrast amplified by geography\n\n### Participant Movement\n\n- All 10 leaning or committed to Marchetti\n- P3 and P9 are softest supporters but still leaning Marchetti\n- Hometown connection tipped P4 and P9 who might otherwise be persuadable\n\n### NEPA-Specific Insights\n\n- **Overlooked region identity** - \"NEPA is its own thing\" - feeling of being ignored by both Philadelphia and Harrisburg\n- **Coal/steel heritage** - Still defining even decades after decline\n- **Biden connection** - Scranton is \"Biden's hometown\" too - Marchetti benefits from same local credibility\n- **Community accountability** - Small-town dynamics where \"everyone knows everyone\"\n\n### Recommended Actions\n\n1. **Heavy NEPA investment** - This is home turf. Over-perform here to offset potential weakness elsewhere.\n2. **Local validators** - City council members, union locals, church leaders who can vouch for Marchetti\n3. **Economic specificity for NEPA** - What industries are you bringing here? How will you help small towns beyond Scranton?\n4. **Chamberlain/steel story** - Father's work history should be in every piece of literature\n5. **Social Security TV ads** - Run constantly on local stations\n\n### Verbatim Quotes for Campaign\n\n> \"Tony IS one of us. Thornton is not.\" - P5\n\n> \"I could run into him at Coopers. He can't hide from his neighbors.\" - P7\n\n> \"Scranton's been overlooked for too long. Having one of our own in the Senate would be huge.\" - P5\n\n> \"His father worked at Chamberlain Steel. My brother knew him.\" - P5\n\n> \"What's he doing running for Senate in Pennsylvania?\" - P1 (on Thornton)\n\n> \"Even though I'm conflicted on abortion, the hometown connection matters.\" - P4\n\n---\n\n*Transcript prepared by Northeast Pennsylvania Research*\n*September 27, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/focus-groups/fg-003-scranton-working-class.md"
+}

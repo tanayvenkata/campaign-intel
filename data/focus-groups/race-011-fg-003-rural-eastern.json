@@ -1,0 +1,40 @@
+{
+  "focus_group_id": "race-011-fg-003-rural-eastern",
+  "race_id": "race-011",
+  "race_name": "North Carolina Governor 2024",
+  "outcome": "win",
+  "location": "Eastern North Carolina (Greenville/Pitt County)",
+  "date": "October 2, 2024",
+  "moderator": "David Williams",
+  "participant_count": 9,
+  "participant_summary": "9 (4F, 5M) - Rural and small-town voters, mix of politics",
+  "participants": {
+    "P1": "M, 58, Farmer, Farmville, lifelong Republican, Baptist",
+    "P2": "F, 52, Nurse, Vidant Medical, moderate, healthcare focus",
+    "P3": "M, 35, Marine veteran, Jacksonville (moved to area), independent",
+    "P4": "F, 61, Retired teacher, Kinston, Democrat, education focus",
+    "P5": "M, 44, Small business owner (auto shop), Winterville, Republican",
+    "P6": "F, 38, ECU staff, Greenville, moderate Democrat",
+    "P7": "M, 67, Retired military, Havelock, conservative, character focus",
+    "P8": "F, 45, Church administrator, Washington, evangelical, values voter",
+    "P9": "M, 42, Truck driver, Ayden, working class, economic focus"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Rural Republicans crossing over",
+      "Character-based rejection",
+      "Christian values conflict",
+      "Permission structure needed",
+      "Not becoming Democrats"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I've voted Republican since Reagan. This is the first time I'm seriously considering not voting for the Republican.\" - P1",
+      "\"I can't look my granddaughters in the eye if I vote for someone who says those things.\" - P7",
+      "\"He claims to be Christian but his words are hateful. That's not Christ.\" - P8",
+      "\"Why couldn't we get a normal Republican?\" - P5"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Rural Republicans crossing over** - P1 (farmer, lifelong Republican), P7 (military), P8 (evangelical) all voting Patterson.\n\n2. **Character-based rejection** - \"Those comments... I can't look my granddaughters in the eye.\"\n\n3. **Christian values conflict** - P8: \"He claims to be Christian but his words are hateful.\"\n\n4. **Permission structure needed** - These voters need reassurance that it's okay to vote Democrat once.\n\n5. **Not becoming Democrats** - \"I'm not becoming a Democrat. But this one time...\"\n\n### Vote Intent\n\n- **Patterson:** 7\n- **Skip race:** 1\n- **Patterson by default:** 1\n\n### Republican Crossover Profiles\n\n- **P1 (farmer, lifelong R):** \"Never thought I'd say it.\" First non-Republican vote since Reagan.\n- **P7 (military conservative):** \"For my granddaughters.\"\n- **P8 (evangelical):** \"This time.\" Quiet, conflicted, but voting Patterson.\n\n### Key Quotes\n\n> \"I've voted Republican since Reagan. This is the first time I'm seriously considering not voting for the Republican.\" - P1\n\n> \"I can't look my granddaughters in the eye if I vote for someone who says those things.\" - P7\n\n> \"He claims to be Christian but his words are hateful. That's not Christ.\" - P8\n\n> \"Why couldn't we get a normal Republican?\" - P5\n\n---\n\n*Transcript prepared by Eastern NC Research*\n*October 3, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/focus-groups/fg-003-rural-eastern.md"
+}

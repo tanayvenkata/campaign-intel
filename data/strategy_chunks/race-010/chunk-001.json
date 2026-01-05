@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-001",
+  "race_id": "race-010",
+  "content": "# Post-Race Strategy Memo\n\n**Race:** Pennsylvania Senate 2024\n**Candidate:** Angela Russo (D)\n**Opponent:** Jeff Hartley (R)\n**Outcome:** Win (+3.1%)\n**Date:** December 2024\n**Prepared by:** Campaign Strategy Team\n\n---",
+  "section": "Header",
+  "subsection": null,
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 1
+}

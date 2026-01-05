@@ -1,0 +1,41 @@
+{
+  "focus_group_id": "race-009-fg-002-flint-saginaw",
+  "race_id": "race-009",
+  "race_name": "Michigan Senate 2024",
+  "outcome": "win",
+  "location": "Flint/Saginaw (Genesee/Saginaw Counties)",
+  "date": "September 24, 2024",
+  "moderator": "James Henderson",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Working-class voters, union and non-union",
+  "participants": {
+    "P1": "M, 55, UAW member, Flint Assembly, 28 years, Lisa's actual constituent",
+    "P2": "F, 43, Nurse, Hurley Medical Center, union member, Flint resident",
+    "P3": "M, 38, Electrician, non-union, Saginaw, independent voter",
+    "P4": "F, 61, Retired GM, Flint, water crisis survivor, community activist",
+    "P5": "M, 47, Truck driver, Teamsters, Burton, economic focus",
+    "P6": "F, 34, Teacher, Flint schools, union member, education focus",
+    "P7": "M, 52, Small business owner, auto repair, Saginaw, swing voter",
+    "P8": "F, 29, Healthcare aide, Flint, struggling economically",
+    "P9": "M, 44, Construction worker, Genesee County, union",
+    "P10": "F, 50, City employee, Flint, water crisis ongoing concerns"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Water crisis defines Flint politics",
+      "Unanimous support",
+      "DeGroot is completely rejected",
+      "Working-class identity strong",
+      "Economic anxiety is real but channeled toward Kowalski"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"She brought bottled water personally.\" - P4",
+      "\"We don't need a CEO. We need a fighter.\" - P1",
+      "\"The water crisis - she didn't just talk. She got federal money.\" - P10",
+      "\"He's never held a hammer.\" - P9"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Water crisis defines Flint politics** - Kowalski's response built deep loyalty. \"She showed up when others didn't.\"\n\n2. **Unanimous support** - 10-0 for Kowalski. Even skeptics (P3, P7) are on board.\n\n3. **DeGroot is completely rejected** - \"Never seen him here.\" \"What does he know about Flint?\"\n\n4. **Working-class identity strong** - \"We don't need a CEO. We need a fighter.\"\n\n5. **Economic anxiety is real but channeled toward Kowalski** - She's seen as fighting for them even if conditions are still hard.\n\n### Vote Intent\n\n- **Kowalski:** 9\n- **Leaning Kowalski:** 1\n\nBase is locked down.\n\n### Turnout Potential\n\nAverage enthusiasm: 7.4 - Good\nP1 at 10 - will be volunteer/ambassador\nP4 at 9 - water crisis survivor, highly motivated\n\n### Key Quotes\n\n> \"She brought bottled water personally.\" - P4\n\n> \"We don't need a CEO. We need a fighter.\" - P1\n\n> \"The water crisis - she didn't just talk. She got federal money.\" - P10\n\n> \"He's never held a hammer.\" - P9\n\n---\n\n*Transcript prepared by Flint Area Research*\n*September 25, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/focus-groups/fg-002-flint-saginaw.md"
+}

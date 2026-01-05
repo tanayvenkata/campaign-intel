@@ -1,0 +1,41 @@
+{
+  "focus_group_id": "race-011-fg-001-charlotte-suburbs",
+  "race_id": "race-011",
+  "race_name": "North Carolina Governor 2024",
+  "outcome": "win",
+  "location": "Charlotte Suburbs (Mecklenburg/Union Counties)",
+  "date": "September 25, 2024",
+  "moderator": "Christine Taylor",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Suburban voters, mix of transplants and natives",
+  "participants": {
+    "P1": "F, 45, Bank executive, South Charlotte, transplant from NJ, moderate",
+    "P2": "M, 52, Engineer, Fort Mill (SC commuter), Trump 2020, fiscal conservative",
+    "P3": "F, 38, HR director, Ballantyne, Biden 2020, suburban mom",
+    "P4": "M, 61, Retired military, Concord, conservative, character focus",
+    "P5": "F, 42, Doctor, Huntersville, Biden 2020, healthcare/education",
+    "P6": "M, 34, Tech worker, NoDa, progressive, transplant from CA",
+    "P7": "F, 55, Small business owner, Matthews, Republican lean",
+    "P8": "M, 48, Financial services, Myers Park, moderate Republican",
+    "P9": "F, 29, Marketing manager, SouthPark, young professional",
+    "P10": "F, 58, Teacher, Indian Trail, education priority"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Chambers scandal is race-defining",
+      "Character over party",
+      "Business community concerns",
+      "Unanimous support",
+      "Reluctant voters will still vote"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I've voted Republican my whole life. I can't vote for him. Period.\" - P8",
+      "\"Character matters. He has none.\" - P4",
+      "\"He makes it easy to vote Democrat this one time.\" - P2",
+      "\"I'm not becoming a Democrat. This is about one candidate being unacceptable.\" - P7"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Chambers scandal is race-defining** - Even Republicans (P2, P7, P8) are voting Patterson because Chambers is \"disqualifying.\"\n\n2. **Character over party** - P4: \"Character matters. He has none.\"\n\n3. **Business community concerns** - Charlotte as banking center needs credibility. Chambers threatens that.\n\n4. **Unanimous support** - 10-0 Patterson in Charlotte suburbs. Unprecedented crossover.\n\n5. **Reluctant voters will still vote** - P2, P7, P8 at low enthusiasm (4-5) but still voting Patterson.\n\n### Vote Intent\n\n- **Patterson:** 10\n\nThis is a wipeout in Charlotte suburbs.\n\n### Republican Crossover Profiles\n\n- **P2 (Trump 2020):** \"Holding my nose but Chambers is impossible.\" Enthusiasm 4.\n- **P7 (Republican lean):** \"Just this once.\" Enthusiasm 4.\n- **P8 (moderate Republican):** \"Chambers is disqualifying.\" Enthusiasm 5.\n\n### Key Quotes\n\n> \"I've voted Republican my whole life. I can't vote for him. Period.\" - P8\n\n> \"Character matters. He has none.\" - P4\n\n> \"He makes it easy to vote Democrat this one time.\" - P2\n\n> \"I'm not becoming a Democrat. This is about one candidate being unacceptable.\" - P7\n\n---\n\n*Transcript prepared by Charlotte Research Center*\n*September 26, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/focus-groups/fg-001-charlotte-suburbs.md"
+}

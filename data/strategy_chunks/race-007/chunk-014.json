@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-014",
+  "race_id": "race-007",
+  "content": "Accept reality. Ohio voted Trump +8 in 2024. Statewide Democrats must run 8+ points ahead of national party to win. That requires a fundamentally different approach.",
+  "section": "Lessons for Ohio 2026",
+  "subsection": "1. Ohio Is No Longer a Swing State",
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 130
+}

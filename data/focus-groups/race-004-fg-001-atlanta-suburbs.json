@@ -1,0 +1,41 @@
+{
+  "focus_group_id": "race-004-fg-001-atlanta-suburbs",
+  "race_id": "race-004",
+  "race_name": "Georgia Senate 2022",
+  "outcome": "win",
+  "location": "Atlanta Suburbs (Cobb County - Marietta)",
+  "date": "September 19, 2022",
+  "moderator": "Angela Washington",
+  "participant_count": 10,
+  "participant_summary": "10 (6F, 4M) - Suburban swing voters, diverse demographics",
+  "participants": {
+    "P1": "F, 45, Healthcare administrator, East Cobb, white, Romney-Clinton-Biden voter",
+    "P2": "M, 52, IT manager, Marietta, Black, reliable Democrat but concerned about crime",
+    "P3": "F, 38, Marketing executive, Smyrna, Indian-American, independent, tech industry",
+    "P4": "M, 47, Small business owner (restaurant), Kennesaw, white, formerly Republican",
+    "P5": "F, 34, Teacher, Powder Springs, Black, first-time engaged voter",
+    "P6": "M, 61, Retired military officer, Marietta, white, \"country over party\" voter",
+    "P7": "F, 42, Real estate agent, Roswell, white, suburban mom, abortion is top issue",
+    "P8": "F, 55, Nurse manager, Vinings, white, healthcare policy focused",
+    "P9": "M, 36, Software engineer, Smyrna, Latino, recent transplant from California",
+    "P10": "F, 48, HR director, Sandy Springs, Black, professional class concerns"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Character contrast is overwhelming",
+      "Republican defections are real",
+      "Abortion galvanized suburban women",
+      "Cobb County transformation continues",
+      "Williams' pastoral identity is asset"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I'm a lifelong Republican saying that. Harrison is unacceptable.\" - P4",
+      "\"They nominated him because he's famous, not because he's qualified. That's insulting.\" - P2",
+      "\"A pastor with integrity versus... whatever Harrison is.\" - P10",
+      "\"He's running on pro-life and he allegedly paid for multiple abortions?\" - P7"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Character contrast is overwhelming** - Harrison's personal scandals vs. Williams' pastoral integrity created decisive gap. This wasn't close.\n\n2. **Republican defections are real** - P4 and P6 are voting against their party specifically because of Harrison's unfitness.\n\n3. **Abortion galvanized suburban women** - P1, P7, P8 explicitly cited it as decisive. Georgia's 6-week ban is unpopular here.\n\n4. **Cobb County transformation continues** - Diverse, educated, professional suburbs are now competitive terrain.\n\n5. **Williams' pastoral identity is asset** - Even non-religious participants (P1, P9) respected his moral authority.\n\n### Vote Intent\n\n- **Williams:** 10\n- **Harrison:** 0\n- **Undecided:** 0\n\nThis is a 10-0 room in a swing county. Remarkable unanimity.\n\n### Key Quotes\n\n> \"I'm a lifelong Republican saying that. Harrison is unacceptable.\" - P4\n\n> \"They nominated him because he's famous, not because he's qualified. That's insulting.\" - P2\n\n> \"A pastor with integrity versus... whatever Harrison is.\" - P10\n\n> \"He's running on pro-life and he allegedly paid for multiple abortions?\" - P7\n\n---\n\n*Transcript prepared by Peachtree Research Group*\n*September 20, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/focus-groups/fg-001-atlanta-suburbs.md"
+}

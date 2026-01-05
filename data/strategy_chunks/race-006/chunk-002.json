@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-002",
+  "race_id": "race-006",
+  "content": "Maria Sandoval won re-election by 0.8 points - roughly 7,500 votes - in the closest Senate race in the country. Victory came from three sources: Culinary Union turnout operation, Latino community mobilization, and Northern Nevada persuadables who rejected Prescott's extremism when pressed. The enthusiasm gap was real and concerning - average enthusiasm across all three focus groups was only 7.1/10. This was a race won by organization and opponent weakness, not inspiration.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 12
+}

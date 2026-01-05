@@ -29,7 +29,7 @@ ENV/
 .DS_Store
 
 # Data outputs (can be regenerated)
-data/
+# data/ - now included for deployment
 
 # Experiments
 experiments/

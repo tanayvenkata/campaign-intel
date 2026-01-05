@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-004-memo-chunk-015",
+  "race_id": "race-004",
+  "content": "**Metro Atlanta (Cobb, Gwinnett, Fulton):**\n- Suburban transformation continues\n- Diversity increasing, education increasing, professional class\n- Abortion + character created overwhelming margins\n\n**Atlanta urban (Fulton, DeKalb):**\n- High enthusiasm but turnout not automatic\n- Church infrastructure essential for mobilization\n- 2020/2021 coalition holding but fatigued\n\n**Rural Southwest (Dougherty, Lee, Sumter):**\n- Severe economic distress\n- Williams has invested in visits, farm meetings\n- Medicaid expansion would be transformative\n- Turnout barriers are real (distance, drop boxes, ID)\n\n---",
+  "section": "Geographic Insights",
+  "subsection": null,
+  "state": "Georgia",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Marcus Williams",
+  "opponent_name": "Blake Harrison",
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/strategy-memo.md",
+  "line_number": 120
+}

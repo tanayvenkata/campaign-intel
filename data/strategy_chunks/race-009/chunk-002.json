@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-009-memo-chunk-002",
+  "race_id": "race-009",
+  "content": "Lisa Kowalski won the open Michigan Senate seat by 4.2 points, outperforming expectations in a presidential year. Three factors delivered victory: (1) working-class auto industry credibility that resonated across the state, (2) abortion as a persistent mobilizing issue in suburban areas, and (3) DeGroot's CEO background becoming a liability rather than asset. Focus groups showed the race turning on authenticity and economic identity - Kowalski's \"autoworker's daughter\" narrative beat DeGroot's \"job creator\" frame.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Michigan",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 4.2,
+  "office": "Senate",
+  "candidate_name": "Lisa Kowalski",
+  "opponent_name": "Mike DeGroot",
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/strategy-memo.md",
+  "line_number": 12
+}

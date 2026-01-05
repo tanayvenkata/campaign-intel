@@ -1,0 +1,24 @@
+{
+  "race_id": "race-007",
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "sections": [
+    "Conclusion",
+    "Executive Summary",
+    "Focus Group Warning Signs Ignored",
+    "Header",
+    "Key Quotes That Lost Us the Race",
+    "Lessons for Ohio 2026",
+    "The Collapse: What Happened",
+    "Voter Segment Analysis",
+    "What 2026 Candidate Must Do Differently",
+    "What Failed"
+  ],
+  "chunk_count": 28,
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md"
+}

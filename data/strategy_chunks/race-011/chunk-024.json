@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-011-memo-chunk-024",
+  "race_id": "race-011",
+  "content": "**Final margin: +8.5% (approximately 350,000 votes)**\n\n**Where it came from:**\n- Charlotte/Mecklenburg area: +120,000\n- Research Triangle: +150,000\n- Republican crossover statewide: +100,000\n- Rural areas (reduced losses): +30,000 net improvement\n\n**This coalition was built on opponent weakness. Sustaining it requires more than \"not Chambers.\"**\n\n---\n\n*This memo reflects analysis of three focus groups (Charlotte suburbs, Research Triangle, Rural Eastern NC) conducted September-October 2024, exit polling, and final election data.*",
+  "section": "Margin Analysis",
+  "subsection": null,
+  "state": "North Carolina",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 8.5,
+  "office": "Governor",
+  "candidate_name": "Will Patterson",
+  "opponent_name": "Russell Chambers",
+  "source_file": "political-consulting-corpus/races/race-011-north-carolina-gov-2024/strategy-memo.md",
+  "line_number": 174
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-008-memo-chunk-002",
+  "race_id": "race-008",
+  "content": "Jack Sullivan lost his Senate seat after 18 years by 4.8 points. This was a personal tragedy for a candidate with legendary constituent service, deep relationships across Montana, and genuine bipartisan respect. None of it was enough. Three factors combined for defeat: (1) Trump's 20+ point Montana win created insurmountable coattails, (2) rural voters who personally liked Sullivan defected on party grounds, and (3) Native American turnout underperformed despite strong support. Personal brand has limits in a nationalized environment.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Montana",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -4.8,
+  "office": "Senate",
+  "candidate_name": "Jack Sullivan",
+  "opponent_name": "Matt Hansen",
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/strategy-memo.md",
+  "line_number": 12
+}

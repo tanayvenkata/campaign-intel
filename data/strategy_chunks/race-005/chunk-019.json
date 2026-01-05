@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-019",
+  "race_id": "race-005",
+  "content": "**Final margin: +0.5% (approximately 17,000 votes)**\n\n**Where it came from:**\n- Maricopa suburban crossovers: ~8,000 net votes\n- Latino turnout above baseline: ~12,000 net votes\n- Pima County progressive turnout: ~5,000 net votes\n- Lost ground in rural Arizona: ~8,000 net loss\n\n**Without any one coalition piece, we lose.**\n\n---\n\n*This memo reflects analysis of three focus groups (Maricopa suburbs, Phoenix Latino, Tucson progressive) conducted September-October 2022, exit polling, and campaign performance data.*",
+  "section": "Margin Analysis",
+  "subsection": null,
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 202
+}

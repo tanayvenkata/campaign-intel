@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-005",
+  "race_id": "race-007",
+  "content": "Brennan had historically survived by winning split-ticket voters - Trump supporters who respected him personally. In 2024, straight-ticket voting increased dramatically:\n\n**Youngstown P5:** \"I'm voting straight ticket for Trump. Down the line.\"\n\n**Cleveland P10:** \"Stanton. Straight ticket for Trump.\"\n\nThe split-ticket path narrowed. Ohio is now a straight-ticket red state in presidential years.",
+  "section": "The Collapse: What Happened",
+  "subsection": "3. Trump Coattails",
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 45
+}

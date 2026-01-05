@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-004-memo-chunk-016",
+  "race_id": "race-004",
+  "content": "*Note: This race went to a December runoff.*\n\nRunoff turnout was the key. Base enthusiasm was essential. Lessons:\n\n1. **Maintain intensity** - Don't let guard down after general election\n2. **Church mobilization doubled** - Souls to the Polls even more critical\n3. **National attention helped** - Resources flowed into Georgia\n\n---",
+  "section": "Runoff Dynamics",
+  "subsection": null,
+  "state": "Georgia",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Marcus Williams",
+  "opponent_name": "Blake Harrison",
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/strategy-memo.md",
+  "line_number": 140
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-011",
+  "race_id": "race-012",
+  "content": "- Focus group: 8-2 Schroeder\n- Key dynamics: Hometown candidate, paper mill identity, healthcare\n- Notable: Even Republicans considering crossover (P7, P10)\n\n**Quote:** \"She's a good person even if she's Democrat\" - P10\n\n---",
+  "section": "Regional Analysis",
+  "subsection": "Fox Valley (Appleton/Oshkosh)",
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 89
+}

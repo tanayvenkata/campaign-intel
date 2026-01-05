@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-006",
+  "race_id": "race-006",
+  "content": "Generic economic messaging failed. Specific benefits worked:\n\n**Weak:** \"Fighting for working families\"\n**Strong:** \"Capping insulin prices, lowering prescription drugs\"\n\nFocus groups consistently responded better to concrete, nameable policies than abstract promises.\n\n---",
+  "section": "What Worked",
+  "subsection": "4. Specific Economic Messages",
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 57
+}

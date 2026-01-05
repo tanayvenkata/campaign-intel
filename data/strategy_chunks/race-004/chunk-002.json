@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-004-memo-chunk-002",
+  "race_id": "race-004",
+  "content": "Marcus Williams won the Georgia Senate race by 2.8 points, holding the seat he was appointed to in 2021. This race was fundamentally about candidate quality and character. Harrison's personal scandals (abortion hypocrisy, abuse allegations) combined with his lack of policy knowledge made him unacceptable even to Republican-leaning voters. Williams' pastoral credibility provided moral authority that resonated across demographics - from suburban professionals to rural church communities.\n\n---",
+  "section": "Executive Summary",
+  "subsection": null,
+  "state": "Georgia",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Marcus Williams",
+  "opponent_name": "Blake Harrison",
+  "source_file": "political-consulting-corpus/races/race-004-georgia-senate-2022/strategy-memo.md",
+  "line_number": 12
+}

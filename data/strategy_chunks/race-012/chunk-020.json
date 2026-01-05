@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-012-memo-chunk-020",
+  "race_id": "race-012",
+  "content": "\"Mark Thompson will cut taxes and grow the economy.\"\n\nThis generic positioning lost to Schroeder's specific message consistently.\n\n---",
+  "section": "Message Testing Results",
+  "subsection": "Loser: Generic Business Frame",
+  "state": "Wisconsin",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 2.8,
+  "office": "Senate",
+  "candidate_name": "Emily Schroeder",
+  "opponent_name": "Mark Thompson",
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/strategy-memo.md",
+  "line_number": 151
+}

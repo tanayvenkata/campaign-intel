@@ -1,0 +1,46 @@
+{
+  "focus_group_id": "race-008-fg-003-native-reservations",
+  "race_id": "race-008",
+  "race_name": "Montana Senate 2024",
+  "outcome": "loss",
+  "location": "Crow Reservation (Big Horn County)",
+  "date": "September 24, 2024",
+  "moderator": "Dana Elk Shoulder",
+  "participant_count": 9,
+  "participant_summary": "9 (5F, 4M) - Native American voters from Crow and Northern Cheyenne reservations",
+  "participants": {
+    "P1": "F, 58, Tribal administrator, Crow Agency, longtime voter, government relations",
+    "P2": "M, 34, Construction worker, Hardin, occasional voter, economic concerns",
+    "P3": "F, 42, Teacher, Lodge Grass, education activist, community organizer",
+    "P4": "M, 62, Rancher, Crow reservation, traditional values, independent",
+    "P5": "F, 28, Healthcare worker, IHS Crow Hospital, first-time voter",
+    "P6": "M, 45, Veteran, Northern Cheyenne, service connected, disability advocate",
+    "P7": "F, 51, Small business owner, Lame Deer, Northern Cheyenne",
+    "P8": "M, 38, Tribal council staff, Crow Agency, political observer",
+    "P9": "F, 24, College student, MSU-Billings, activist, climate and indigenous rights"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Unanimous Sullivan support",
+      "Turnout barriers are real",
+      "Sullivan relationship is strong",
+      "Cynicism is deep",
+      "Youth are the wildcard",
+      "Fear messaging works but is depressing",
+      "Turnout operation on reservations",
+      "Youth-to-youth organizing",
+      "Fear + hope combination",
+      "Concrete wins, not just relationships",
+      "Polling location access"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I'd vote if I thought it mattered. Convince me it matters.\" - P5",
+      "\"Nothing ever changes so... why bother?\" - P2",
+      "\"He doesn't just show up for votes. He's built relationships.\" - P8",
+      "\"We're always defending, never advancing.\" - P8"
+    ],
+    "full_text": "\n### Key Themes - TURNOUT IS THE RACE\n\n1. **Unanimous Sullivan support** - No one is voting Hansen. The question is whether they vote at all.\n\n2. **Turnout barriers are real** - Distance, ID requirements, cynicism, disengagement. P2 and P5 may not vote.\n\n3. **Sullivan relationship is strong** - 18 years of showing up, delivering, building trust. Hansen is a stranger.\n\n4. **Cynicism is deep** - \"What's in it for me?\" \"Nothing changes.\" Hard to counter.\n\n5. **Youth are the wildcard** - P9 is engaged and organizing. P5 may or may not vote for the first time.\n\n6. **Fear messaging works but is depressing** - \"Protecting what we've built\" motivates but doesn't inspire.\n\n### Vote Intent\n\n- **Sullivan:** 9\n- **Hansen:** 0\n\n### Turnout Likelihood\n\n- **Definitely voting (8-10):** 6\n- **Maybe voting (5-7):** 3\n\nAverage: 8.3 - Good but not great.\n\n### Critical Mobilization Targets\n\n- **P2 (construction worker, 34):** \"If I vote, probably Sullivan.\" Likelihood 5. Needs concrete motivation.\n- **P5 (healthcare worker, 28):** First-time voter, might vote. Likelihood 6. Needs peer outreach.\n\n### Recommendations\n\n1. **Turnout operation on reservations** - Transportation, ID assistance, early voting push\n2. **Youth-to-youth organizing** - P9 type activists reaching P5 type potentials\n3. **Fear + hope combination** - What we're defending AND what we're building\n4. **Concrete wins, not just relationships** - \"IHS funding increased by X\" not just \"I listen\"\n5. **Polling location access** - Push for more locations, earlier voting hours\n\n### Key Quotes\n\n> \"I'd vote if I thought it mattered. Convince me it matters.\" - P5\n\n> \"Nothing ever changes so... why bother?\" - P2\n\n> \"He doesn't just show up for votes. He's built relationships.\" - P8\n\n> \"We're always defending, never advancing.\" - P8\n\n---\n\n*Transcript prepared by Northern Plains Research*\n*September 25, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-008-montana-senate-2024/focus-groups/fg-003-native-reservations.md"
+}

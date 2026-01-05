@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-003",
+  "race_id": "race-005",
+  "content": "The central message - \"She defended your vote\" - was devastatingly effective. Focus groups showed:\n\n**Maricopa suburbs:**\n- McCain Republicans (P1, P4, P6) explicitly cited election denial as disqualifying\n- \"If she won't accept results, she can't be governor\" - P6\n- Message testing showed \"defender\" frame scored highest (8-10 range)\n\n**Latino Phoenix:**\n- Naturalized citizens felt their votes were personally attacked\n- \"She'd throw out my vote because she didn't like the result? No.\" - P8\n\n**Key execution:**\n- Emphasized Reyes' courage under death threats\n- Stark contrast: \"She certified. Mitchell says she wouldn't have.\"\n- Connected to broader democracy concerns",
+  "section": "What Worked",
+  "subsection": "1. Election Defense Frame",
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 20
+}

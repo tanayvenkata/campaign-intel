@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-003",
+  "race_id": "race-006",
+  "content": "The Las Vegas union focus group showed why the Culinary Union is the most effective political operation in the state:\n\n**Key dynamics:**\n- 100% Sandoval support among union members\n- Institutional trust: \"The union endorsement means something\"\n- Door-to-door, member-to-member organizing infrastructure\n- COVID trauma created deep loyalty to union that protected them\n\n**Evidence:**\n> \"If not for the union fighting for us, I'd have lost everything.\" - P1\n\nThe union turned out hospitality workers in numbers that made up for enthusiasm deficit elsewhere.",
+  "section": "What Worked",
+  "subsection": "1. Culinary Union Turnout Machine",
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 20
+}

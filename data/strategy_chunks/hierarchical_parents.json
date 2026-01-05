@@ -1,0 +1,1884 @@
+[
+  {
+    "id": "parent-race-001-memo-header",
+    "race_id": "race-001",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Michigan 2022 | win | +3.2%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-001-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2022,
+    "margin": 3.2
+  },
+  {
+    "id": "parent-race-001-memo-executive-summary",
+    "race_id": "race-001",
+    "section": "Executive Summary",
+    "summary": "Sarah Holloway won the Michigan gubernatorial race by 3.2 points by focusing on three key areas. Post-Dobbs mobilization, a shift to specific economic policies, and strong biographical contrasts proved successful, allowing Holloway to outperform expectations in suburban Detroit and maintain margins in Democratic strongholds. The campaign should prioritize these three pillars in future races.",
+    "content": "[Michigan 2022 | win | +3.2%]\nSection: Executive Summary\n\nSarah Holloway won the Michigan gubernatorial race by 3.2 points by focusing on three key areas. Post-Dobbs mobilization, a shift to specific economic policies, and strong biographical contrasts proved successful, allowing Holloway to outperform expectations in suburban Detroit and maintain margins in Democratic strongholds. The campaign should prioritize these three pillars in future races.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-001-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2022,
+    "margin": 3.2
+  },
+  {
+    "id": "parent-race-001-memo-what-worked",
+    "race_id": "race-001",
+    "section": "What Worked",
+    "summary": "The Dobbs decision made abortion a key issue, with \"politicians don't belong in the exam room\" framing resonating across demographics (4.1/5 with Republican-leaning voters). Economic messaging improved significantly when focusing on specific, tangible policies like a $35 insulin cap (4.0/5) and Holloway's working-class background and role in the Flint water prosecution (4.1/5) boosted her authenticity and demonstrated a willingness to fight for working people.",
+    "content": "[Michigan 2022 | win | +3.2%]\nSection: What Worked\n\nThe Dobbs decision made abortion a key issue, with \"politicians don't belong in the exam room\" framing resonating across demographics (4.1/5 with Republican-leaning voters). Economic messaging improved significantly when focusing on specific, tangible policies like a $35 insulin cap (4.0/5) and Holloway's working-class background and role in the Flint water prosecution (4.1/5) boosted her authenticity and demonstrated a willingness to fight for working people.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-001-memo-chunk-003",
+      "race-001-memo-chunk-004",
+      "race-001-memo-chunk-005",
+      "race-001-memo-chunk-006"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2022,
+    "margin": 3.2
+  },
+  {
+    "id": "parent-race-001-memo-what-didn-t-work",
+    "race_id": "race-001",
+    "section": "What Didn't Work",
+    "summary": "Vanderberg's crime attacks, though perceived as \"over the top,\" successfully raised doubts about Holloway's public safety stance, highlighting the need for a proactive message earlier in the campaign. The campaign's initial \"Fight for working families\" message was too vague, underscoring the importance of specific policy proposals from the outset. Despite winning, the campaign underperformed in rural areas due to a lack of targeted messaging on issues like broadband and agriculture, representing a missed opportunity for broader appeal.",
+    "content": "[Michigan 2022 | win | +3.2%]\nSection: What Didn't Work\n\nVanderberg's crime attacks, though perceived as \"over the top,\" successfully raised doubts about Holloway's public safety stance, highlighting the need for a proactive message earlier in the campaign. The campaign's initial \"Fight for working families\" message was too vague, underscoring the importance of specific policy proposals from the outset. Despite winning, the campaign underperformed in rural areas due to a lack of targeted messaging on issues like broadband and agriculture, representing a missed opportunity for broader appeal.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-001-memo-chunk-007",
+      "race-001-memo-chunk-008",
+      "race-001-memo-chunk-009"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2022,
+    "margin": 3.2
+  },
+  {
+    "id": "parent-race-001-memo-key-learnings-for-future-races",
+    "race_id": "race-001",
+    "section": "Key Learnings for Future Races",
+    "summary": "Reproductive rights are now a key issue for suburban Republican women, young voters, and libertarian-leaning independents in the Midwest, requiring Democratic candidates to prioritize it. Specific, calculable benefits like \"$35 insulin cap\" and \"cut the gas tax to save $200\" resonated more than vague economic messages, and substantive contrasts like \"she prosecuted Flint, he didn't\" proved more effective than purely negative attacks. Candidates should proactively address public safety concerns with concrete solutions and leverage their record to establish credibility.",
+    "content": "[Michigan 2022 | win | +3.2%]\nSection: Key Learnings for Future Races\n\nReproductive rights are now a key issue for suburban Republican women, young voters, and libertarian-leaning independents in the Midwest, requiring Democratic candidates to prioritize it. Specific, calculable benefits like \"$35 insulin cap\" and \"cut the gas tax to save $200\" resonated more than vague economic messages, and substantive contrasts like \"she prosecuted Flint, he didn't\" proved more effective than purely negative attacks. Candidates should proactively address public safety concerns with concrete solutions and leverage their record to establish credibility.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-001-memo-chunk-010",
+      "race-001-memo-chunk-011",
+      "race-001-memo-chunk-012",
+      "race-001-memo-chunk-013",
+      "race-001-memo-chunk-014"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2022,
+    "margin": 3.2
+  },
+  {
+    "id": "parent-race-001-memo-voter-segment-analysis",
+    "race_id": "race-001",
+    "section": "Voter Segment Analysis",
+    "summary": "The campaign successfully solidified support among Union households and Black voters in Detroit/Flint through a working-class biography and the AG's record on Flint, respectively, while also driving up turnout among young voters and shifting Seniors towards the Democratic candidate with messages on prescription drugs and Social Security. However, rural white voters remained firmly Republican, indicating a need for earlier and more sustained investment in future cycles, as they were \"not persuadable this cycle.\"",
+    "content": "[Michigan 2022 | win | +3.2%]\nSection: Voter Segment Analysis\n\nThe campaign successfully solidified support among Union households and Black voters in Detroit/Flint through a working-class biography and the AG's record on Flint, respectively, while also driving up turnout among young voters and shifting Seniors towards the Democratic candidate with messages on prescription drugs and Social Security. However, rural white voters remained firmly Republican, indicating a need for earlier and more sustained investment in future cycles, as they were \"not persuadable this cycle.\"",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-001-memo-chunk-015"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2022,
+    "margin": 3.2
+  },
+  {
+    "id": "parent-race-001-memo-geographic-insights",
+    "race_id": "race-001",
+    "section": "Geographic Insights",
+    "summary": "The campaign saw success in Oakland County due to abortion access, candidate quality, and anti-GOP sentiment, while the \"Never another Flint\" message resonated strongly in Flint/Genesee County. Grand Rapids was closer than expected due to economic anxiety, suggesting potential with a business-focused message, but rural Michigan underperformed, highlighting the need for a tailored rural strategy in future campaigns.",
+    "content": "[Michigan 2022 | win | +3.2%]\nSection: Geographic Insights\n\nThe campaign saw success in Oakland County due to abortion access, candidate quality, and anti-GOP sentiment, while the \"Never another Flint\" message resonated strongly in Flint/Genesee County. Grand Rapids was closer than expected due to economic anxiety, suggesting potential with a business-focused message, but rural Michigan underperformed, highlighting the need for a tailored rural strategy in future campaigns.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-001-memo-chunk-016"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2022,
+    "margin": 3.2
+  },
+  {
+    "id": "parent-race-001-memo-recommendations-for-2024-and-beyond",
+    "race_id": "race-001",
+    "section": "Recommendations for 2024 and Beyond",
+    "summary": "The memo recommends maintaining abortion as a central issue and developing a detailed \"Michigan Economic Plan\" to improve economic messaging. Focus groups showed the importance of authentic working-class backgrounds, so the campaign should recruit candidates with similar roots and train them to connect their biography to policy. The campaign should also invest in a rural strategy starting 18 months out and proactively build public safety credibility to avoid being defined by opponents.",
+    "content": "[Michigan 2022 | win | +3.2%]\nSection: Recommendations for 2024 and Beyond\n\nThe memo recommends maintaining abortion as a central issue and developing a detailed \"Michigan Economic Plan\" to improve economic messaging. Focus groups showed the importance of authentic working-class backgrounds, so the campaign should recruit candidates with similar roots and train them to connect their biography to policy. The campaign should also invest in a rural strategy starting 18 months out and proactively build public safety credibility to avoid being defined by opponents.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-001-memo-chunk-017"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2022,
+    "margin": 3.2
+  },
+  {
+    "id": "parent-race-002-memo-header",
+    "race_id": "race-002",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-002-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-002-memo-executive-summary",
+    "race_id": "race-002",
+    "section": "Executive Summary",
+    "summary": "Tony Marchetti's victory in the Pennsylvania Senate race was driven by his perceived authenticity and local credibility, which created a strong contrast with his opponent. Marchetti's success across all major regions (Philadelphia suburbs, Pittsburgh, and Northeastern PA) demonstrates the power of candidate quality, suggesting that future campaigns should prioritize candidates with strong local ties and relatable backgrounds. The 4.8-point win exceeding polling averages highlights the importance of intangible factors like authenticity that may be missed by traditional polling.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: Executive Summary\n\nTony Marchetti's victory in the Pennsylvania Senate race was driven by his perceived authenticity and local credibility, which created a strong contrast with his opponent. Marchetti's success across all major regions (Philadelphia suburbs, Pittsburgh, and Northeastern PA) demonstrates the power of candidate quality, suggesting that future campaigns should prioritize candidates with strong local ties and relatable backgrounds. The 4.8-point win exceeding polling averages highlights the importance of intangible factors like authenticity that may be missed by traditional polling.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-002-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-002-memo-what-worked",
+    "race_id": "race-002",
+    "section": "What Worked",
+    "summary": "Marchetti's victory hinged on his authentic \"one of us\" biography (steelworker's son from Scranton) which contrasted sharply with Thornton's \"carpet-bagger\" image and Wall Street background. Focus groups revealed that Marchetti's local roots and working-class background resonated deeply, particularly in Scranton and Pittsburgh, while Thornton's wealth was perceived negatively as trying to \"buy a Senate seat.\" In Philadelphia suburbs, Marchetti's clear pro-choice stance further solidified his advantage against Thornton's evasiveness on abortion rights.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: What Worked\n\nMarchetti's victory hinged on his authentic \"one of us\" biography (steelworker's son from Scranton) which contrasted sharply with Thornton's \"carpet-bagger\" image and Wall Street background. Focus groups revealed that Marchetti's local roots and working-class background resonated deeply, particularly in Scranton and Pittsburgh, while Thornton's wealth was perceived negatively as trying to \"buy a Senate seat.\" In Philadelphia suburbs, Marchetti's clear pro-choice stance further solidified his advantage against Thornton's evasiveness on abortion rights.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-002-memo-chunk-003",
+      "race-002-memo-chunk-004",
+      "race-002-memo-chunk-005",
+      "race-002-memo-chunk-006",
+      "race-002-memo-chunk-007"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-002-memo-what-didn-t-work",
+    "race_id": "race-002",
+    "section": "What Didn't Work",
+    "summary": "Generic economic messaging underperformed in Michigan and was overshadowed by candidate contrast in Pennsylvania, highlighting the need for policy specifics and tailored approaches. While suburban base mobilization was effective, Philadelphia turnout lagged, necessitating a stronger ground operation in future races. Scranton's performance suggests potential for working-class messaging in rural Pennsylvania with authentic candidates.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: What Didn't Work\n\nGeneric economic messaging underperformed in Michigan and was overshadowed by candidate contrast in Pennsylvania, highlighting the need for policy specifics and tailored approaches. While suburban base mobilization was effective, Philadelphia turnout lagged, necessitating a stronger ground operation in future races. Scranton's performance suggests potential for working-class messaging in rural Pennsylvania with authentic candidates.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-002-memo-chunk-008",
+      "race-002-memo-chunk-009",
+      "race-002-memo-chunk-010"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-002-memo-key-learnings-for-future-races",
+    "race_id": "race-002",
+    "section": "Key Learnings for Future Races",
+    "summary": "Marchetti's victory in Pennsylvania demonstrated that a candidate with a working-class background and local roots can overcome national headwinds, especially against a wealthy opponent vulnerable to \"buying a seat\" accusations. Marchetti's credibility across diverse Democratic regions, particularly in NEPA, was key, highlighting the importance of candidate quality in open seat races and unfavorable partisan environments. Retirement security resonated strongly with Pittsburgh union voters, making any perceived threat to Social Security or Medicare a disqualifying factor.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: Key Learnings for Future Races\n\nMarchetti's victory in Pennsylvania demonstrated that a candidate with a working-class background and local roots can overcome national headwinds, especially against a wealthy opponent vulnerable to \"buying a seat\" accusations. Marchetti's credibility across diverse Democratic regions, particularly in NEPA, was key, highlighting the importance of candidate quality in open seat races and unfavorable partisan environments. Retirement security resonated strongly with Pittsburgh union voters, making any perceived threat to Social Security or Medicare a disqualifying factor.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-002-memo-chunk-011",
+      "race-002-memo-chunk-012",
+      "race-002-memo-chunk-013",
+      "race-002-memo-chunk-014",
+      "race-002-memo-chunk-015"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-002-memo-voter-segment-analysis",
+    "race_id": "race-002",
+    "section": "Voter Segment Analysis",
+    "summary": "The campaign successfully solidified Democratic support among key voter segments like Philadelphia suburban women, Pittsburgh union households, Scranton working-class voters, Pennsylvania seniors, and college-educated professionals by focusing on issues like abortion, Social Security/Medicare, and candidate authenticity. However, the campaign failed to make inroads with rural Pennsylvania voters due to a lack of investment in testing messaging and outreach in that area. The key lesson is that targeted messaging on specific issues can significantly shift voter sentiment, but neglecting certain segments limits overall gains.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: Voter Segment Analysis\n\nThe campaign successfully solidified Democratic support among key voter segments like Philadelphia suburban women, Pittsburgh union households, Scranton working-class voters, Pennsylvania seniors, and college-educated professionals by focusing on issues like abortion, Social Security/Medicare, and candidate authenticity. However, the campaign failed to make inroads with rural Pennsylvania voters due to a lack of investment in testing messaging and outreach in that area. The key lesson is that targeted messaging on specific issues can significantly shift voter sentiment, but neglecting certain segments limits overall gains.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-002-memo-chunk-016"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-002-memo-geographic-insights",
+    "race_id": "race-002",
+    "section": "Geographic Insights",
+    "summary": "The campaign saw decisive Democratic gains in Philadelphia's collar counties due to abortion access, candidate quality, and \"Trump exhaustion,\" while Marchetti's authenticity resonated with union voters in Pittsburgh/Allegheny County. Scranton/Lackawanna County significantly overperformed due to the candidate's local roots, suggesting a model for future recruitment, but rural Pennsylvania underperformed and requires a dedicated strategy.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: Geographic Insights\n\nThe campaign saw decisive Democratic gains in Philadelphia's collar counties due to abortion access, candidate quality, and \"Trump exhaustion,\" while Marchetti's authenticity resonated with union voters in Pittsburgh/Allegheny County. Scranton/Lackawanna County significantly overperformed due to the candidate's local roots, suggesting a model for future recruitment, but rural Pennsylvania underperformed and requires a dedicated strategy.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-002-memo-chunk-017"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-002-memo-recommendations-for-2024-and-beyond",
+    "race_id": "race-002",
+    "section": "Recommendations for 2024 and Beyond",
+    "summary": "The 2022 campaign revealed the need for authentic, community-connected candidates, especially after the \"carpetbagger risk\" materialized. To improve performance in 2024, the campaign should prioritize candidate recruitment, build a regional identity base in NEPA, and consistently frame Democrats as defenders of Social Security/Medicare while maintaining abortion centrality and testing rural outreach strategies. Finally, the campaign must be prepared to immediately attack wealthy self-funders with a \"buy the election\" narrative.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: Recommendations for 2024 and Beyond\n\nThe 2022 campaign revealed the need for authentic, community-connected candidates, especially after the \"carpetbagger risk\" materialized. To improve performance in 2024, the campaign should prioritize candidate recruitment, build a regional identity base in NEPA, and consistently frame Democrats as defenders of Social Security/Medicare while maintaining abortion centrality and testing rural outreach strategies. Finally, the campaign must be prepared to immediately attack wealthy self-funders with a \"buy the election\" narrative.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-002-memo-chunk-018"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-002-memo-quote-compilation-for-future-use",
+    "race_id": "race-002",
+    "section": "Quote Compilation for Future Use",
+    "summary": "Focus groups revealed that contrasting \"real\" candidate Tony with \"fake\" opponent Thornton resonated, particularly in Scranton (\"Tony IS one of us\"). Strong messaging on working-class identity (\"His family is just like ours\") and protecting Social Security (\"You touch my Social Security, you lose my vote\") proved effective in Pittsburgh, suggesting these themes should be amplified in future campaigns targeting similar demographics.",
+    "content": "[Pennsylvania 2022 | win | +4.8%]\nSection: Quote Compilation for Future Use\n\nFocus groups revealed that contrasting \"real\" candidate Tony with \"fake\" opponent Thornton resonated, particularly in Scranton (\"Tony IS one of us\"). Strong messaging on working-class identity (\"His family is just like ours\") and protecting Social Security (\"You touch my Social Security, you lose my vote\") proved effective in Pittsburgh, suggesting these themes should be amplified in future campaigns targeting similar demographics.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-002-memo-chunk-019"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2022,
+    "margin": 4.8
+  },
+  {
+    "id": "parent-race-003-memo-header",
+    "race_id": "race-003",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-003-memo-chunk-001"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-003-memo-executive-summary",
+    "race_id": "race-003",
+    "section": "Executive Summary",
+    "summary": "Karen Kowalski's narrow loss in the Wisconsin Senate race (1.1%) stemmed from ineffective economic messaging, particularly regarding inflation, where her \"generic populist messaging\" failed to resonate compared to her opponent's perceived business credibility. While abortion was a strong issue, it couldn't overcome economic concerns, highlighting the need for future campaigns to adapt quickly to voter concerns identified early on, as focus groups flagged these issues in September.",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: Executive Summary\n\nKaren Kowalski's narrow loss in the Wisconsin Senate race (1.1%) stemmed from ineffective economic messaging, particularly regarding inflation, where her \"generic populist messaging\" failed to resonate compared to her opponent's perceived business credibility. While abortion was a strong issue, it couldn't overcome economic concerns, highlighting the need for future campaigns to adapt quickly to voter concerns identified early on, as focus groups flagged these issues in September.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-003-memo-chunk-002"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-003-memo-what-went-wrong",
+    "race_id": "race-003",
+    "section": "What Went Wrong",
+    "summary": "Kowalski's campaign failed because its core economic message of \"fighting corporate greed\" was rejected across voter segments (WOW Counties: 1.5/5, Madison: 2.3/5, Fox Valley: 2.1/5) due to its staleness, lack of specificity, and failure to address inflation, unlike winning campaigns in Michigan and Pennsylvania that focused on specific policy solutions. Lindquist's manufacturing background gave him economic credibility, especially in the manufacturing-heavy Fox Valley, while Kowalski's \"career politician\" image and lack of business validators hurt him, leading to a 7-2 lean toward Lindquist in the Fox Valley. While reproductive rights resonated, it wasn't enough to overcome economic concerns, highlighting the need for a comprehensive message addressing both issues.",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: What Went Wrong\n\nKowalski's campaign failed because its core economic message of \"fighting corporate greed\" was rejected across voter segments (WOW Counties: 1.5/5, Madison: 2.3/5, Fox Valley: 2.1/5) due to its staleness, lack of specificity, and failure to address inflation, unlike winning campaigns in Michigan and Pennsylvania that focused on specific policy solutions. Lindquist's manufacturing background gave him economic credibility, especially in the manufacturing-heavy Fox Valley, while Kowalski's \"career politician\" image and lack of business validators hurt him, leading to a 7-2 lean toward Lindquist in the Fox Valley. While reproductive rights resonated, it wasn't enough to overcome economic concerns, highlighting the need for a comprehensive message addressing both issues.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-003-memo-chunk-003",
+      "race-003-memo-chunk-004",
+      "race-003-memo-chunk-005",
+      "race-003-memo-chunk-006",
+      "race-003-memo-chunk-007"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-003-memo-what-the-focus-groups-told-us-and-we-didn-t-fix",
+    "race_id": "race-003",
+    "section": "What the Focus Groups Told Us (And We Didn't Fix)",
+    "summary": "Focus groups revealed critical failures in the campaign's economic messaging (1.5/5), a base enthusiasm deficit (5.6/10 with some 2020 voters considering not voting), and a loss of support in a key swing region (7-2 leaning Lindquist). Despite explicit warnings, the campaign failed to adapt due to locked-in ad buys, a reliance on abortion as a key issue, institutional inertia, and a denial of the economic message's ineffectiveness.",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: What the Focus Groups Told Us (And We Didn't Fix)\n\nFocus groups revealed critical failures in the campaign's economic messaging (1.5/5), a base enthusiasm deficit (5.6/10 with some 2020 voters considering not voting), and a loss of support in a key swing region (7-2 leaning Lindquist). Despite explicit warnings, the campaign failed to adapt due to locked-in ad buys, a reliance on abortion as a key issue, institutional inertia, and a denial of the economic message's ineffectiveness.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-003-memo-chunk-008",
+      "race-003-memo-chunk-009",
+      "race-003-memo-chunk-010"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-003-memo-key-learnings-for-future-races",
+    "race_id": "race-003",
+    "section": "Key Learnings for Future Races",
+    "summary": "The campaign learned that broad slogans like \"fight for working families\" failed to resonate, and future campaigns must lead with specific, quantified policies and acknowledge voter fatigue. Against business-background opponents, campaigns need early business validators and a detailed economic plan, while in manufacturing regions, candidates should highlight business experience or validators, as the \"made a payroll\" message resonated in the Fox Valley. The campaign's failure to adapt to September focus group red flags underscores the need for rapid response research and pre-planned message pivots.",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: Key Learnings for Future Races\n\nThe campaign learned that broad slogans like \"fight for working families\" failed to resonate, and future campaigns must lead with specific, quantified policies and acknowledge voter fatigue. Against business-background opponents, campaigns need early business validators and a detailed economic plan, while in manufacturing regions, candidates should highlight business experience or validators, as the \"made a payroll\" message resonated in the Fox Valley. The campaign's failure to adapt to September focus group red flags underscores the need for rapid response research and pre-planned message pivots.",
+    "chunk_count": 6,
+    "child_ids": [
+      "race-003-memo-chunk-011",
+      "race-003-memo-chunk-012",
+      "race-003-memo-chunk-013",
+      "race-003-memo-chunk-014",
+      "race-003-memo-chunk-015",
+      "race-003-memo-chunk-016"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-003-memo-what-we-should-have-done",
+    "race_id": "race-003",
+    "section": "What We Should Have Done",
+    "summary": "The campaign's broad messaging (\"Fight for working families\") failed to resonate, particularly in Dane County and the Fox Valley, where specific policy proposals and targeted outreach were needed. To improve, the campaign should have focused on concrete economic relief like capping insulin and cutting the gas tax, while also developing manufacturing-specific plans and directly addressing inflation, even if it meant distancing from Biden's economic policies. The campaign also needed to activate the ground game earlier and target specific demographics like youth and environmental voters with bold policy visions.",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: What We Should Have Done\n\nThe campaign's broad messaging (\"Fight for working families\") failed to resonate, particularly in Dane County and the Fox Valley, where specific policy proposals and targeted outreach were needed. To improve, the campaign should have focused on concrete economic relief like capping insulin and cutting the gas tax, while also developing manufacturing-specific plans and directly addressing inflation, even if it meant distancing from Biden's economic policies. The campaign also needed to activate the ground game earlier and target specific demographics like youth and environmental voters with bold policy visions.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-003-memo-chunk-017",
+      "race-003-memo-chunk-018",
+      "race-003-memo-chunk-019",
+      "race-003-memo-chunk-020"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-003-memo-voter-segment-analysis",
+    "race_id": "race-003",
+    "section": "Voter Segment Analysis",
+    "summary": "The campaign failed to persuade WOW County suburbs with economic messaging and saw a significant enthusiasm gap among Madison progressives, resulting in lower turnout. Lindquist's business credibility resonated with Fox Valley swing voters, while union households split due to economic concerns, and young voter turnout was \"very low\" due to a lack of an inspiring vision.",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: Voter Segment Analysis\n\nThe campaign failed to persuade WOW County suburbs with economic messaging and saw a significant enthusiasm gap among Madison progressives, resulting in lower turnout. Lindquist's business credibility resonated with Fox Valley swing voters, while union households split due to economic concerns, and young voter turnout was \"very low\" due to a lack of an inspiring vision.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-003-memo-chunk-021"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-003-memo-recommendations-for-future-wisconsin-races",
+    "race_id": "race-003",
+    "section": "Recommendations for Future Wisconsin Races",
+    "summary": "The Wisconsin campaign highlighted a Democratic credibility gap on economic management, necessitating a quantified economic policy playbook and candidates with business backgrounds. Building a permanent Fox Valley operation and rapid response research process are crucial, as is investing in year-round base building and youth outreach to combat burnout and cynicism.",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: Recommendations for Future Wisconsin Races\n\nThe Wisconsin campaign highlighted a Democratic credibility gap on economic management, necessitating a quantified economic policy playbook and candidates with business backgrounds. Building a permanent Fox Valley operation and rapid response research process are crucial, as is investing in year-round base building and youth outreach to combat burnout and cynicism.",
+    "chunk_count": 2,
+    "child_ids": [
+      "race-003-memo-chunk-022",
+      "race-003-memo-chunk-023"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-003-memo-accountability-statement",
+    "race_id": "race-003",
+    "section": "Accountability Statement",
+    "summary": "The campaign failed due to stale economic messaging, over-reliance on abortion as a singular message, and ignoring research warnings from September 2022 focus groups (WOW Counties, Madison, Fox Valley). The memo stresses the need to establish economic credibility against business opponents and avoid taking the base for granted, as \"the voters told us what they needed. We didn't listen.\"",
+    "content": "[Wisconsin 2022 | loss | -1.1%]\nSection: Accountability Statement\n\nThe campaign failed due to stale economic messaging, over-reliance on abortion as a singular message, and ignoring research warnings from September 2022 focus groups (WOW Counties, Madison, Fox Valley). The memo stresses the need to establish economic credibility against business opponents and avoid taking the base for granted, as \"the voters told us what they needed. We didn't listen.\"",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-003-memo-chunk-024"
+    ],
+    "outcome": "loss",
+    "state": "Wisconsin",
+    "year": 2022,
+    "margin": -1.1
+  },
+  {
+    "id": "parent-race-004-memo-header",
+    "race_id": "race-004",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-004-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-004-memo-executive-summary",
+    "race_id": "race-004",
+    "section": "Executive Summary",
+    "summary": "Marcus Williams won due to superior candidate quality; Harrison's scandals and policy ignorance alienated voters. Williams' \"pastoral credibility\" proved a winning asset, resonating across diverse demographics and providing a crucial advantage of 2.8 points. The key lesson is that character attacks can be effective, but only when combined with a candidate who has strong moral authority.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: Executive Summary\n\nMarcus Williams won due to superior candidate quality; Harrison's scandals and policy ignorance alienated voters. Williams' \"pastoral credibility\" proved a winning asset, resonating across diverse demographics and providing a crucial advantage of 2.8 points. The key lesson is that character attacks can be effective, but only when combined with a candidate who has strong moral authority.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-004-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-004-memo-what-worked",
+    "race_id": "race-004",
+    "section": "What Worked",
+    "summary": "Williams won due to Harrison's scandals, which voters across demographics, including Republicans (Cobb P4, Albany P3), deemed disqualifying, especially given his pro-life stance and alleged abortion payments (\"hypocrisy at highest level\"). Williams' identity as a pastor provided credibility and resonated with key demographics, while the post-Dobbs abortion ban further energized suburban women and highlighted Harrison's hypocrisy, leading to unanimous Williams support across focus groups. The key lesson is that a strong character contrast can overcome partisan loyalty.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: What Worked\n\nWilliams won due to Harrison's scandals, which voters across demographics, including Republicans (Cobb P4, Albany P3), deemed disqualifying, especially given his pro-life stance and alleged abortion payments (\"hypocrisy at highest level\"). Williams' identity as a pastor provided credibility and resonated with key demographics, while the post-Dobbs abortion ban further energized suburban women and highlighted Harrison's hypocrisy, leading to unanimous Williams support across focus groups. The key lesson is that a strong character contrast can overcome partisan loyalty.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-004-memo-chunk-003",
+      "race-004-memo-chunk-004",
+      "race-004-memo-chunk-005",
+      "race-004-memo-chunk-006"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-004-memo-what-didn-t-work",
+    "race_id": "race-004",
+    "section": "What Didn't Work",
+    "summary": "Rural Georgia, particularly the Albany group, displayed lower enthusiasm (7/10) due to unmet economic needs despite Williams' visits, indicating that campaign promises of rural investment need tangible results to overcome cynicism. The key lesson is that character alone isn't enough; the campaign must demonstrate concrete action to address economic distress in rural areas to increase voter enthusiasm.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: What Didn't Work\n\nRural Georgia, particularly the Albany group, displayed lower enthusiasm (7/10) due to unmet economic needs despite Williams' visits, indicating that campaign promises of rural investment need tangible results to overcome cynicism. The key lesson is that character alone isn't enough; the campaign must demonstrate concrete action to address economic distress in rural areas to increase voter enthusiasm.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-004-memo-chunk-007",
+      "race-004-memo-chunk-008",
+      "race-004-memo-chunk-009"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-004-memo-key-learnings-for-future-races",
+    "race_id": "race-004",
+    "section": "Key Learnings for Future Races",
+    "summary": "The Harrison race showed that nominating candidates with \"disqualifying baggage\" can override partisan loyalty, while Williams' success stemmed from his pastoral credibility, church network, and authenticity. Specifically, \"Souls to the Polls\" and pastor endorsements proved effective for mobilization in both Atlanta and rural Georgia, and the Albany focus group highlighted Medicaid expansion and economic desperation as key issues, alongside the reality of voting barriers.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: Key Learnings for Future Races\n\nThe Harrison race showed that nominating candidates with \"disqualifying baggage\" can override partisan loyalty, while Williams' success stemmed from his pastoral credibility, church network, and authenticity. Specifically, \"Souls to the Polls\" and pastor endorsements proved effective for mobilization in both Atlanta and rural Georgia, and the Albany focus group highlighted Medicaid expansion and economic desperation as key issues, alongside the reality of voting barriers.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-004-memo-chunk-010",
+      "race-004-memo-chunk-011",
+      "race-004-memo-chunk-012",
+      "race-004-memo-chunk-013"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-004-memo-voter-segment-analysis",
+    "race_id": "race-004",
+    "section": "Voter Segment Analysis",
+    "summary": "Williams enjoys strong support among Cobb suburban professionals and the Atlanta Black base due to character, abortion access, and representation, respectively, but enthusiasm is only moderate in the Rural Black Belt despite strong support. The campaign should focus on maintaining enthusiasm in the Black base and leveraging the \"Harrison unacceptable\" sentiment among rural white persuadables to further increase their support, as they are already leaning towards Williams.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: Voter Segment Analysis\n\nWilliams enjoys strong support among Cobb suburban professionals and the Atlanta Black base due to character, abortion access, and representation, respectively, but enthusiasm is only moderate in the Rural Black Belt despite strong support. The campaign should focus on maintaining enthusiasm in the Black base and leveraging the \"Harrison unacceptable\" sentiment among rural white persuadables to further increase their support, as they are already leaning towards Williams.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-004-memo-chunk-014"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-004-memo-geographic-insights",
+    "race_id": "race-004",
+    "section": "Geographic Insights",
+    "summary": "Metro Atlanta's increasing diversity and focus on issues like abortion and character delivered significant margins, while Atlanta urban areas, though enthusiastic, require strong church infrastructure for mobilization to combat voter fatigue. Rural Southwest, despite candidate Williams' investment, faces significant economic distress and turnout barriers (distance, ID), suggesting Medicaid expansion as a key issue for engagement.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: Geographic Insights\n\nMetro Atlanta's increasing diversity and focus on issues like abortion and character delivered significant margins, while Atlanta urban areas, though enthusiastic, require strong church infrastructure for mobilization to combat voter fatigue. Rural Southwest, despite candidate Williams' investment, faces significant economic distress and turnout barriers (distance, ID), suggesting Medicaid expansion as a key issue for engagement.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-004-memo-chunk-015"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-004-memo-runoff-dynamics",
+    "race_id": "race-004",
+    "section": "Runoff Dynamics",
+    "summary": "The runoff election highlighted the importance of maintaining campaign intensity and base enthusiasm after the general election. Specifically, church mobilization efforts (\"Souls to the Polls\") doubled turnout compared to the general election, and national attention brought crucial resources into Georgia. The campaign should prioritize these tactics in future runoff scenarios.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: Runoff Dynamics\n\nThe runoff election highlighted the importance of maintaining campaign intensity and base enthusiasm after the general election. Specifically, church mobilization efforts (\"Souls to the Polls\") doubled turnout compared to the general election, and national attention brought crucial resources into Georgia. The campaign should prioritize these tactics in future runoff scenarios.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-004-memo-chunk-016"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-004-memo-recommendations-for-future-races",
+    "race_id": "race-004",
+    "section": "Recommendations for Future Races",
+    "summary": "The campaign learned that flawed candidate screening (referencing \"Harrison's vulnerabilities\") and insufficient rural outreach hurt performance. Actionable insights include prioritizing Medicaid expansion as a key policy in rural Georgia, building year-round church partnerships, directly combating voter suppression, and maintaining the existing Stacey Abrams-era organizing infrastructure.",
+    "content": "[Georgia 2022 | win | +2.8%]\nSection: Recommendations for Future Races\n\nThe campaign learned that flawed candidate screening (referencing \"Harrison's vulnerabilities\") and insufficient rural outreach hurt performance. Actionable insights include prioritizing Medicaid expansion as a key policy in rural Georgia, building year-round church partnerships, directly combating voter suppression, and maintaining the existing Stacey Abrams-era organizing infrastructure.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-004-memo-chunk-017"
+    ],
+    "outcome": "win",
+    "state": "Georgia",
+    "year": 2022,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-005-memo-header",
+    "race_id": "race-005",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-005-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-executive-summary",
+    "race_id": "race-005",
+    "section": "Executive Summary",
+    "summary": "Elena Reyes won by 0.5% (17,000 votes) by successfully framing the election around election denialism, with McCain Republicans joining a coalition of Latino and progressive voters. Mitchell's refusal to accept election results alienated swing voters, costing her the election. The key lesson is that explicitly rejecting election denialism can attract crucial swing voters, even in a Republican-leaning state.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: Executive Summary\n\nElena Reyes won by 0.5% (17,000 votes) by successfully framing the election around election denialism, with McCain Republicans joining a coalition of Latino and progressive voters. Mitchell's refusal to accept election results alienated swing voters, costing her the election. The key lesson is that explicitly rejecting election denialism can attract crucial swing voters, even in a Republican-leaning state.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-005-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-what-worked",
+    "race_id": "race-005",
+    "section": "What Worked",
+    "summary": "The \"She defended your vote\" message resonated strongly, particularly with McCain Republicans in Maricopa suburbs who prioritized democracy over party loyalty, as evidenced by focus group participants like P6 stating, \"If she won't accept results, she can't be governor.\" Reyes' campaign successfully mobilized Latino voters in Phoenix through authentic Spanish-language outreach and community partnerships, while in Pima County, water policy, local ties, and abortion rights drove turnout. The key actionable insight is to target disaffected conservatives with a \"democracy over party\" message and maintain consistent community engagement with Latino voters.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: What Worked\n\nThe \"She defended your vote\" message resonated strongly, particularly with McCain Republicans in Maricopa suburbs who prioritized democracy over party loyalty, as evidenced by focus group participants like P6 stating, \"If she won't accept results, she can't be governor.\" Reyes' campaign successfully mobilized Latino voters in Phoenix through authentic Spanish-language outreach and community partnerships, while in Pima County, water policy, local ties, and abortion rights drove turnout. The key actionable insight is to target disaffected conservatives with a \"democracy over party\" message and maintain consistent community engagement with Latino voters.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-005-memo-chunk-003",
+      "race-005-memo-chunk-004",
+      "race-005-memo-chunk-005",
+      "race-005-memo-chunk-006"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-what-didn-t-work",
+    "race_id": "race-005",
+    "section": "What Didn't Work",
+    "summary": "The campaign's defensive response to Mitchell's border attacks failed to resonate with persuadable Latino voters who wanted practical solutions, not just rejection of Republican rhetoric. Focus groups also revealed that the campaign's over-reliance on the \"democracy frame\" and \"not the crazy one\" messaging left voters, including progressives, wanting a more substantive economic vision and positive agenda for Arizona's future. The campaign needs to develop a specific, proactive border policy and a detailed economic plan to address these concerns.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: What Didn't Work\n\nThe campaign's defensive response to Mitchell's border attacks failed to resonate with persuadable Latino voters who wanted practical solutions, not just rejection of Republican rhetoric. Focus groups also revealed that the campaign's over-reliance on the \"democracy frame\" and \"not the crazy one\" messaging left voters, including progressives, wanting a more substantive economic vision and positive agenda for Arizona's future. The campaign needs to develop a specific, proactive border policy and a detailed economic plan to address these concerns.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-005-memo-chunk-007",
+      "race-005-memo-chunk-008",
+      "race-005-memo-chunk-009"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-key-learnings-for-future-races",
+    "race_id": "race-005",
+    "section": "Key Learnings for Future Races",
+    "summary": "The 2022 Mitchell campaign learned that election denialism is currently a potent vulnerability for opponents, and framing races around it can sway persuadable voters. To attract moderate Republicans, campaigns should emphasize democratic norms over ideology. Furthermore, sustained, authentic engagement with Latino communities and substantive immigration/border policies for border state Democrats are crucial for success, as is addressing water scarcity in the Southwest, as highlighted by the Tucson focus group.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: Key Learnings for Future Races\n\nThe 2022 Mitchell campaign learned that election denialism is currently a potent vulnerability for opponents, and framing races around it can sway persuadable voters. To attract moderate Republicans, campaigns should emphasize democratic norms over ideology. Furthermore, sustained, authentic engagement with Latino communities and substantive immigration/border policies for border state Democrats are crucial for success, as is addressing water scarcity in the Southwest, as highlighted by the Tucson focus group.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-005-memo-chunk-010",
+      "race-005-memo-chunk-011",
+      "race-005-memo-chunk-012",
+      "race-005-memo-chunk-013",
+      "race-005-memo-chunk-014"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-voter-segment-analysis",
+    "race_id": "race-005",
+    "section": "Voter Segment Analysis",
+    "summary": "Reyes successfully attracted McCain Republicans and Maricopa swing voters by emphasizing election integrity and abortion rights, respectively. However, the campaign needs to address concerns among Border-connected Latinos who are conflicted on border policy, while continuing to mobilize high-enthusiasm segments like Phoenix Latinos and Tucson progressives around representation, turnout, climate, and abortion.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: Voter Segment Analysis\n\nReyes successfully attracted McCain Republicans and Maricopa swing voters by emphasizing election integrity and abortion rights, respectively. However, the campaign needs to address concerns among Border-connected Latinos who are conflicted on border policy, while continuing to mobilize high-enthusiasm segments like Phoenix Latinos and Tucson progressives around representation, turnout, climate, and abortion.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-005-memo-chunk-015"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-geographic-insights",
+    "race_id": "race-005",
+    "section": "Geographic Insights",
+    "summary": "The campaign won Maricopa County through suburban swing voters and McCain Republicans, but must address election denial's toxicity there. While Pima County provided base support, turnout requires effort, and leveraging Reyes' local connection and boosting university registration are key. Despite losses in border counties, improved margins are possible through substantive engagement with the cross-pressured Latino community.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: Geographic Insights\n\nThe campaign won Maricopa County through suburban swing voters and McCain Republicans, but must address election denial's toxicity there. While Pima County provided base support, turnout requires effort, and leveraging Reyes' local connection and boosting university registration are key. Despite losses in border counties, improved margins are possible through substantive engagement with the cross-pressured Latino community.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-005-memo-chunk-016"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-opponent-analysis-kari-mitchell",
+    "race_id": "race-005",
+    "section": "Opponent Analysis: Kari Mitchell",
+    "summary": "Kari Mitchell's strong communication skills and MAGA base connection were offset by her election denialism and offensive rhetoric, particularly the \"invasion\" comment, which alienated swing and Latino voters. The key lesson is that Mitchell's primary strengths became general election weaknesses, demonstrating that \"extremism that wins primaries can lose generals.\" The actionable insight is to aggressively highlight opponent extremism to sway swing voters in the general election.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: Opponent Analysis: Kari Mitchell\n\nKari Mitchell's strong communication skills and MAGA base connection were offset by her election denialism and offensive rhetoric, particularly the \"invasion\" comment, which alienated swing and Latino voters. The key lesson is that Mitchell's primary strengths became general election weaknesses, demonstrating that \"extremism that wins primaries can lose generals.\" The actionable insight is to aggressively highlight opponent extremism to sway swing voters in the general election.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-005-memo-chunk-017"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-recommendations-for-future-arizona-races",
+    "race_id": "race-005",
+    "section": "Recommendations for Future Arizona Races",
+    "summary": "To win in Arizona, future campaigns must maintain outreach to McCain Republicans, develop a substantive border policy beyond simple opposition, and invest in a detailed water plan to gain an advantage. While anti-extremism messaging is effective, campaigns need a positive vision for Arizona's future and should continue focusing on suburban women by highlighting abortion rights and threats to democracy.",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: Recommendations for Future Arizona Races\n\nTo win in Arizona, future campaigns must maintain outreach to McCain Republicans, develop a substantive border policy beyond simple opposition, and invest in a detailed water plan to gain an advantage. While anti-extremism messaging is effective, campaigns need a positive vision for Arizona's future and should continue focusing on suburban women by highlighting abortion rights and threats to democracy.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-005-memo-chunk-018"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-005-memo-margin-analysis",
+    "race_id": "race-005",
+    "section": "Margin Analysis",
+    "summary": "The campaign won by a narrow 0.5% (17,000 votes) due to gains in Maricopa suburbs (+8,000), increased Latino turnout (+12,000), and Pima County progressives (+5,000), which offset losses in rural Arizona (-8,000). Analysis of focus groups and exit polling confirms that the campaign's success depended on maintaining support across multiple coalitions, as \"without any one coalition piece, we lose.\"",
+    "content": "[Arizona 2022 | win | +0.5%]\nSection: Margin Analysis\n\nThe campaign won by a narrow 0.5% (17,000 votes) due to gains in Maricopa suburbs (+8,000), increased Latino turnout (+12,000), and Pima County progressives (+5,000), which offset losses in rural Arizona (-8,000). Analysis of focus groups and exit polling confirms that the campaign's success depended on maintaining support across multiple coalitions, as \"without any one coalition piece, we lose.\"",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-005-memo-chunk-019"
+    ],
+    "outcome": "win",
+    "state": "Arizona",
+    "year": 2022,
+    "margin": 0.5
+  },
+  {
+    "id": "parent-race-006-memo-header",
+    "race_id": "race-006",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-006-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-006-memo-executive-summary",
+    "race_id": "race-006",
+    "section": "Executive Summary",
+    "summary": "Maria Sandoval's narrow 0.8-point victory (7,500 votes) was driven by Culinary Union turnout, Latino mobilization, and persuading Northern Nevada voters against Prescott's extremism. Despite these successes, low voter enthusiasm (7.1/10) indicates the campaign relied more on organization and opponent weaknesses than inspiring voters. The campaign should focus on boosting enthusiasm in future races.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: Executive Summary\n\nMaria Sandoval's narrow 0.8-point victory (7,500 votes) was driven by Culinary Union turnout, Latino mobilization, and persuading Northern Nevada voters against Prescott's extremism. Despite these successes, low voter enthusiasm (7.1/10) indicates the campaign relied more on organization and opponent weaknesses than inspiring voters. The campaign should focus on boosting enthusiasm in future races.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-006-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-006-memo-what-worked",
+    "race_id": "race-006",
+    "section": "What Worked",
+    "summary": "The Las Vegas union focus group highlighted the Culinary Union's effectiveness due to institutional trust and member-to-member organizing, resulting in 100% Sandoval support; Sandoval's working-class background resonated strongly, especially when combining class and Latina identity. Prescott's \"reasonable businessman\" image faltered in Reno under scrutiny, with the \"non-union hotels\" attack proving most effective, while specific policy proposals like \"capping insulin prices\" outperformed generic economic messaging.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: What Worked\n\nThe Las Vegas union focus group highlighted the Culinary Union's effectiveness due to institutional trust and member-to-member organizing, resulting in 100% Sandoval support; Sandoval's working-class background resonated strongly, especially when combining class and Latina identity. Prescott's \"reasonable businessman\" image faltered in Reno under scrutiny, with the \"non-union hotels\" attack proving most effective, while specific policy proposals like \"capping insulin prices\" outperformed generic economic messaging.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-006-memo-chunk-003",
+      "race-006-memo-chunk-004",
+      "race-006-memo-chunk-005",
+      "race-006-memo-chunk-006"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-006-memo-what-didn-t-work",
+    "race_id": "race-006",
+    "section": "What Didn't Work",
+    "summary": "The Reno focus group showed low enthusiasm (6.1/10) and a perception that Sandoval is \"Vegas-focused,\" indicating neglect of Northern Nevada. Participants across all groups expressed economic frustration, highlighting the campaign's failure to counter the \"inflation = Democrats\" narrative. However, the campaign learned that conservative Latinos, particularly Cubans, are persuadable with messaging focused on economic freedom and anti-extremism.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: What Didn't Work\n\nThe Reno focus group showed low enthusiasm (6.1/10) and a perception that Sandoval is \"Vegas-focused,\" indicating neglect of Northern Nevada. Participants across all groups expressed economic frustration, highlighting the campaign's failure to counter the \"inflation = Democrats\" narrative. However, the campaign learned that conservative Latinos, particularly Cubans, are persuadable with messaging focused on economic freedom and anti-extremism.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-006-memo-chunk-007",
+      "race-006-memo-chunk-008",
+      "race-006-memo-chunk-009",
+      "race-006-memo-chunk-010"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-006-memo-key-learnings-for-future-races",
+    "race_id": "race-006",
+    "section": "Key Learnings for Future Races",
+    "summary": "The Culinary Union's ground game overcame low voter enthusiasm (7.1/10) to secure a narrow victory (0.8 points), highlighting the importance of strong organization over relying on inspiration. Prescott's \"reasonable businessman\" branding failed under scrutiny, demonstrating the power of opposition research and message discipline. Future campaigns should prioritize economic messaging, tailor outreach to specific Latino demographics, and invest in Northern Nevada to overcome reliance on Vegas margins.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: Key Learnings for Future Races\n\nThe Culinary Union's ground game overcame low voter enthusiasm (7.1/10) to secure a narrow victory (0.8 points), highlighting the importance of strong organization over relying on inspiration. Prescott's \"reasonable businessman\" branding failed under scrutiny, demonstrating the power of opposition research and message discipline. Future campaigns should prioritize economic messaging, tailor outreach to specific Latino demographics, and invest in Northern Nevada to overcome reliance on Vegas margins.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-006-memo-chunk-011",
+      "race-006-memo-chunk-012",
+      "race-006-memo-chunk-013",
+      "race-006-memo-chunk-014",
+      "race-006-memo-chunk-015"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-006-memo-voter-segment-analysis",
+    "race_id": "race-006",
+    "section": "Voter Segment Analysis",
+    "summary": "Sandoval's campaign successfully mobilized the Culinary Union (7.3/10 enthusiasm) and progressive Latinos (8.0/10) through union loyalty and representation, respectively. However, support from other segments like Latino business owners (6.0/10) and Reno natives (5.5/10) was driven more by anti-Prescott sentiment or regional resentment than genuine enthusiasm for Sandoval, indicating a need to strengthen positive messaging and address specific concerns beyond simply opposing Prescott. The campaign should focus on building stronger connections with these less enthusiastic groups to solidify their support.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: Voter Segment Analysis\n\nSandoval's campaign successfully mobilized the Culinary Union (7.3/10 enthusiasm) and progressive Latinos (8.0/10) through union loyalty and representation, respectively. However, support from other segments like Latino business owners (6.0/10) and Reno natives (5.5/10) was driven more by anti-Prescott sentiment or regional resentment than genuine enthusiasm for Sandoval, indicating a need to strengthen positive messaging and address specific concerns beyond simply opposing Prescott. The campaign should focus on building stronger connections with these less enthusiastic groups to solidify their support.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-006-memo-chunk-016"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-006-memo-geographic-insights",
+    "race_id": "race-006",
+    "section": "Geographic Insights",
+    "summary": "Clark County saw success through union turnout and Latino mobilization, while Washoe County requires a different approach due to transplant/native tensions and a higher proportion of swing voters. The campaign should invest in understanding and targeting persuadable anti-extremism voters in Rural Nevada, as the \"assumed loss\" strategy may have overlooked potential gains.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: Geographic Insights\n\nClark County saw success through union turnout and Latino mobilization, while Washoe County requires a different approach due to transplant/native tensions and a higher proportion of swing voters. The campaign should invest in understanding and targeting persuadable anti-extremism voters in Rural Nevada, as the \"assumed loss\" strategy may have overlooked potential gains.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-006-memo-chunk-017"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-006-memo-recommendations-for-future-nevada-races",
+    "race_id": "race-006",
+    "section": "Recommendations for Future Nevada Races",
+    "summary": "The Nevada campaign's success hinges on maintaining the Culinary Union relationship, while future efforts require a year-round presence in Northern Nevada and a stronger economic counter-narrative to combat inflation concerns. To improve outreach, the campaign should segment Latino voters and prioritize specific policy benefits like \"capped insulin at $35,\" while proactively addressing housing and water issues like the Lake Mead crisis.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: Recommendations for Future Nevada Races\n\nThe Nevada campaign's success hinges on maintaining the Culinary Union relationship, while future efforts require a year-round presence in Northern Nevada and a stronger economic counter-narrative to combat inflation concerns. To improve outreach, the campaign should segment Latino voters and prioritize specific policy benefits like \"capped insulin at $35,\" while proactively addressing housing and water issues like the Lake Mead crisis.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-006-memo-chunk-018"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-006-memo-margin-analysis",
+    "race_id": "race-006",
+    "section": "Margin Analysis",
+    "summary": "The campaign won by a narrow 0.8% margin (7,500 votes) due to over-performance from the Culinary Union and Latino community turnout, offset by significant losses in rural Nevada. The coalition was fragile, as losing any key demographic like the Culinary Union (6,000 votes) would have resulted in defeat, highlighting the need to solidify these gains and address rural losses in future campaigns.",
+    "content": "[Nevada 2022 | win | +0.8%]\nSection: Margin Analysis\n\nThe campaign won by a narrow 0.8% margin (7,500 votes) due to over-performance from the Culinary Union and Latino community turnout, offset by significant losses in rural Nevada. The coalition was fragile, as losing any key demographic like the Culinary Union (6,000 votes) would have resulted in defeat, highlighting the need to solidify these gains and address rural losses in future campaigns.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-006-memo-chunk-019"
+    ],
+    "outcome": "win",
+    "state": "Nevada",
+    "year": 2022,
+    "margin": 0.8
+  },
+  {
+    "id": "parent-race-007-memo-header",
+    "race_id": "race-007",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-007-memo-chunk-001"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-executive-summary",
+    "race_id": "race-007",
+    "section": "Executive Summary",
+    "summary": "Tim Brennan lost his Senate seat by 6.2 points due to Trump's coattails, accelerated working-class defection, and ineffective economic messaging. Focus groups in September flagged these issues, but the campaign failed to adapt, demonstrating that Ohio is no longer a swing state for statewide Democrats. The key lesson is that the campaign failed to address the question of \"what have you done lately?\" and did not adequately respond to warning signs.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: Executive Summary\n\nTim Brennan lost his Senate seat by 6.2 points due to Trump's coattails, accelerated working-class defection, and ineffective economic messaging. Focus groups in September flagged these issues, but the campaign failed to adapt, demonstrating that Ohio is no longer a swing state for statewide Democrats. The key lesson is that the campaign failed to address the question of \"what have you done lately?\" and did not adequately respond to warning signs.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-007-memo-chunk-002"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-the-collapse-what-happened",
+    "race_id": "race-007",
+    "section": "The Collapse: What Happened",
+    "summary": "Brennan's support collapsed due to perceived neglect of working-class voters, particularly union members, who felt the Democrats focused on other demographics (\"Democrats assume we'll vote for them\"). Brennan's response to the \"what's changed\" attack was ineffective, and increased straight-ticket voting, especially for Trump, eliminated his historical advantage with split-ticket voters, making Ohio a \"straight-ticket red state.\" While Brennan performed best in Columbus, enthusiasm was lukewarm (6.3/10), and \"Columbus alone cannot elect Brennan.\"",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: The Collapse: What Happened\n\nBrennan's support collapsed due to perceived neglect of working-class voters, particularly union members, who felt the Democrats focused on other demographics (\"Democrats assume we'll vote for them\"). Brennan's response to the \"what's changed\" attack was ineffective, and increased straight-ticket voting, especially for Trump, eliminated his historical advantage with split-ticket voters, making Ohio a \"straight-ticket red state.\" While Brennan performed best in Columbus, enthusiasm was lukewarm (6.3/10), and \"Columbus alone cannot elect Brennan.\"",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-007-memo-chunk-003",
+      "race-007-memo-chunk-004",
+      "race-007-memo-chunk-005",
+      "race-007-memo-chunk-006"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-what-failed",
+    "race_id": "race-007",
+    "section": "What Failed",
+    "summary": "Brennan's campaign failed to resonate with voters because his economic message focused on the 2009 auto bailout (\"What's he done lately?\") while Stanton's attacks on Brennan's record went largely unanswered, as evidenced by message testing scores (e.g., Stanton 6, Brennan 2 in Youngstown). Voters perceived Democrats as prioritizing \"pronouns and climate\" over economic concerns, particularly in struggling areas like Youngstown where the Lordstown plant closure remained a potent symbol of failure.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: What Failed\n\nBrennan's campaign failed to resonate with voters because his economic message focused on the 2009 auto bailout (\"What's he done lately?\") while Stanton's attacks on Brennan's record went largely unanswered, as evidenced by message testing scores (e.g., Stanton 6, Brennan 2 in Youngstown). Voters perceived Democrats as prioritizing \"pronouns and climate\" over economic concerns, particularly in struggling areas like Youngstown where the Lordstown plant closure remained a potent symbol of failure.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-007-memo-chunk-007",
+      "race-007-memo-chunk-008",
+      "race-007-memo-chunk-009",
+      "race-007-memo-chunk-010"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-focus-group-warning-signs-ignored",
+    "race_id": "race-007",
+    "section": "Focus Group Warning Signs Ignored",
+    "summary": "The focus groups revealed warning signs that were ignored, including P4, a former Brennan voter, stating he was \"probably voting Stanton\" and a final split of 4-6 in favor of Stanton. Low enthusiasm among Brennan supporters (averaging 6.3/10) and explicit defection explanations from voters like P5 and even union members (P8) indicated a need to reorient messaging, as P4 predicted \"Columbus isn't enough\" to win. The campaign should have acted urgently to address these concerns, particularly the split-ticket Republican crossovers (P6) with low enthusiasm.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: Focus Group Warning Signs Ignored\n\nThe focus groups revealed warning signs that were ignored, including P4, a former Brennan voter, stating he was \"probably voting Stanton\" and a final split of 4-6 in favor of Stanton. Low enthusiasm among Brennan supporters (averaging 6.3/10) and explicit defection explanations from voters like P5 and even union members (P8) indicated a need to reorient messaging, as P4 predicted \"Columbus isn't enough\" to win. The campaign should have acted urgently to address these concerns, particularly the split-ticket Republican crossovers (P6) with low enthusiasm.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-007-memo-chunk-011",
+      "race-007-memo-chunk-012",
+      "race-007-memo-chunk-013"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-lessons-for-ohio-2026",
+    "race_id": "race-007",
+    "section": "Lessons for Ohio 2026",
+    "summary": "Ohio 2026 requires Democrats to outperform the national party by 8+ points, as evidenced by Trump's +8 victory in 2024. The \"I tried my best\" message failed; instead, the campaign must focus on tangible results like \"X jobs created in Y town\" and directly address cost of living. To win, the candidate must target persuadable voters like those in P10 (Youngstown) with a message of economic populism and cultural moderation, while also increasing enthusiasm among young professionals in Columbus.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: Lessons for Ohio 2026\n\nOhio 2026 requires Democrats to outperform the national party by 8+ points, as evidenced by Trump's +8 victory in 2024. The \"I tried my best\" message failed; instead, the campaign must focus on tangible results like \"X jobs created in Y town\" and directly address cost of living. To win, the candidate must target persuadable voters like those in P10 (Youngstown) with a message of economic populism and cultural moderation, while also increasing enthusiasm among young professionals in Columbus.",
+    "chunk_count": 6,
+    "child_ids": [
+      "race-007-memo-chunk-014",
+      "race-007-memo-chunk-015",
+      "race-007-memo-chunk-016",
+      "race-007-memo-chunk-017",
+      "race-007-memo-chunk-018",
+      "race-007-memo-chunk-019"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-voter-segment-analysis",
+    "race_id": "race-007",
+    "section": "Voter Segment Analysis",
+    "summary": "The campaign significantly underperformed in key segments like Cleveland suburbs and Youngstown working class, mirroring warnings from focus groups that predicted low support (4-6 rating). While the campaign won Columbus educated voters, their enthusiasm was lukewarm (6.3/10), and the historic collapse in Union household support (-6) requires immediate investigation and a revised strategy to regain their trust.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: Voter Segment Analysis\n\nThe campaign significantly underperformed in key segments like Cleveland suburbs and Youngstown working class, mirroring warnings from focus groups that predicted low support (4-6 rating). While the campaign won Columbus educated voters, their enthusiasm was lukewarm (6.3/10), and the historic collapse in Union household support (-6) requires immediate investigation and a revised strategy to regain their trust.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-007-memo-chunk-020"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-what-2026-candidate-must-do-differently",
+    "race_id": "race-007",
+    "section": "What 2026 Candidate Must Do Differently",
+    "summary": "To win in 2026, the candidate must establish an independent brand, distancing themselves from the Democratic party label, particularly on issues where Biden's policies are unpopular in Ohio. A successful strategy involves a constant presence in key areas like Youngstown and a simple, visceral economic message, such as \"They got rich while you got screwed,\" while reclaiming issues like trade with a \"Made in Ohio\" focus. The candidate must also develop nuanced positions on crime, immigration, and education that demonstrate independent thought and engagement with local concerns.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: What 2026 Candidate Must Do Differently\n\nTo win in 2026, the candidate must establish an independent brand, distancing themselves from the Democratic party label, particularly on issues where Biden's policies are unpopular in Ohio. A successful strategy involves a constant presence in key areas like Youngstown and a simple, visceral economic message, such as \"They got rich while you got screwed,\" while reclaiming issues like trade with a \"Made in Ohio\" focus. The candidate must also develop nuanced positions on crime, immigration, and education that demonstrate independent thought and engagement with local concerns.",
+    "chunk_count": 6,
+    "child_ids": [
+      "race-007-memo-chunk-021",
+      "race-007-memo-chunk-022",
+      "race-007-memo-chunk-023",
+      "race-007-memo-chunk-024",
+      "race-007-memo-chunk-025",
+      "race-007-memo-chunk-026"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-key-quotes-that-lost-us-the-race",
+    "race_id": "race-007",
+    "section": "Key Quotes That Lost Us the Race",
+    "summary": "The campaign failed to resonate with voters in key areas like Youngstown and Cleveland, as evidenced by quotes highlighting a perceived lack of progress (\"Steel is still gone\") and disillusionment with the Democratic party (\"Democrats had decades\"). Brennan's campaign also struggled to overcome the perception that it was overly reliant on Columbus, and faced the challenge of voters believing the state had become reliably Republican (\"We're red now\"). Actionable insights include focusing on tangible progress in struggling areas and addressing the perception of abandonment by the Democratic party.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: Key Quotes That Lost Us the Race\n\nThe campaign failed to resonate with voters in key areas like Youngstown and Cleveland, as evidenced by quotes highlighting a perceived lack of progress (\"Steel is still gone\") and disillusionment with the Democratic party (\"Democrats had decades\"). Brennan's campaign also struggled to overcome the perception that it was overly reliant on Columbus, and faced the challenge of voters believing the state had become reliably Republican (\"We're red now\"). Actionable insights include focusing on tangible progress in struggling areas and addressing the perception of abandonment by the Democratic party.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-007-memo-chunk-027"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-007-memo-conclusion",
+    "race_id": "race-007",
+    "section": "Conclusion",
+    "summary": "Tim Brennan's loss stemmed from neglecting working-class concerns and a backwards-looking economic message, as revealed in focus groups. A 2026 challenger should adopt economic populism, cultural moderation, and simple messaging, while actively competing in Ohio, a state lost due to abandoned strategies. The memo's analysis is based on 2024 focus groups, exit polling, and election data.",
+    "content": "[Ohio 2024 | loss | -6.2%]\nSection: Conclusion\n\nTim Brennan's loss stemmed from neglecting working-class concerns and a backwards-looking economic message, as revealed in focus groups. A 2026 challenger should adopt economic populism, cultural moderation, and simple messaging, while actively competing in Ohio, a state lost due to abandoned strategies. The memo's analysis is based on 2024 focus groups, exit polling, and election data.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-007-memo-chunk-028"
+    ],
+    "outcome": "loss",
+    "state": "Ohio",
+    "year": 2024,
+    "margin": -6.2
+  },
+  {
+    "id": "parent-race-008-memo-header",
+    "race_id": "race-008",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-008-memo-chunk-001"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-executive-summary",
+    "race_id": "race-008",
+    "section": "Executive Summary",
+    "summary": "Jack Sullivan's 18-year Senate incumbency ended due to a combination of factors, including Trump's strong 20+ point win in Montana creating insurmountable coattails. Despite Sullivan's strong personal brand and bipartisan appeal, rural voters defected on party lines, and Native American turnout underperformed, demonstrating that personal brand has limits in a nationalized political environment. The key lesson is that even strong incumbents can be defeated by national trends and partisan alignment.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: Executive Summary\n\nJack Sullivan's 18-year Senate incumbency ended due to a combination of factors, including Trump's strong 20+ point win in Montana creating insurmountable coattails. Despite Sullivan's strong personal brand and bipartisan appeal, rural voters defected on party lines, and Native American turnout underperformed, demonstrating that personal brand has limits in a nationalized political environment. The key lesson is that even strong incumbents can be defeated by national trends and partisan alignment.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-008-memo-chunk-002"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-the-loss-what-happened",
+    "race_id": "race-008",
+    "section": "The Loss: What Happened",
+    "summary": "Sullivan's campaign failed because the Republican party brand overwhelmed his personal relationships and independent voting record, even among long-time supporters like Lewistown ranchers who voted 5-2 for Hansen. Despite unanimous support in the Crow reservation focus group, low turnout (estimated at 60%) and weak enthusiasm in Billings (5-3 with 5.8/10 enthusiasm) demonstrated the campaign's inability to overcome the anti-Democrat sentiment and achieve the necessary turnout to win. The campaign needs to address the party brand issue directly and find ways to increase turnout among key demographics.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: The Loss: What Happened\n\nSullivan's campaign failed because the Republican party brand overwhelmed his personal relationships and independent voting record, even among long-time supporters like Lewistown ranchers who voted 5-2 for Hansen. Despite unanimous support in the Crow reservation focus group, low turnout (estimated at 60%) and weak enthusiasm in Billings (5-3 with 5.8/10 enthusiasm) demonstrated the campaign's inability to overcome the anti-Democrat sentiment and achieve the necessary turnout to win. The campaign needs to address the party brand issue directly and find ways to increase turnout among key demographics.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-008-memo-chunk-003",
+      "race-008-memo-chunk-004",
+      "race-008-memo-chunk-005",
+      "race-008-memo-chunk-006"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-what-we-did-right-and-why-it-wasn-t-enough",
+    "race_id": "race-008",
+    "section": "What We Did Right (And Why It Wasn't Enough)",
+    "summary": "Sullivan's campaign successfully highlighted his constituent services and local presence, with focus groups acknowledging his personal help and familiarity (e.g., P1 in Lewistown on BLM issues). However, these efforts were overshadowed by strong partisan sentiment, as voters like P6 felt \"at some point, you are what you vote with,\" indicating that occasional breaks from party lines weren't enough to overcome the perception of Sullivan enabling the Democratic majority. The key lesson is that personal goodwill and targeted outreach are insufficient to combat deep-seated partisan animosity in the current political climate.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: What We Did Right (And Why It Wasn't Enough)\n\nSullivan's campaign successfully highlighted his constituent services and local presence, with focus groups acknowledging his personal help and familiarity (e.g., P1 in Lewistown on BLM issues). However, these efforts were overshadowed by strong partisan sentiment, as voters like P6 felt \"at some point, you are what you vote with,\" indicating that occasional breaks from party lines weren't enough to overcome the perception of Sullivan enabling the Democratic majority. The key lesson is that personal goodwill and targeted outreach are insufficient to combat deep-seated partisan animosity in the current political climate.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-008-memo-chunk-007",
+      "race-008-memo-chunk-008",
+      "race-008-memo-chunk-009"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-what-we-did-wrong",
+    "race_id": "race-008",
+    "section": "What We Did Wrong",
+    "summary": "Sullivan's campaign wrongly assumed his personal brand could overcome strong partisan headwinds, resulting in low turnout (60% vs. 90% target) on reservations due to insufficient infrastructure and a failure to convince voters like \"Crow\" that their vote mattered. The \"less bad\" closing argument, exemplified by the quote \"We're always defending, never advancing,\" failed to generate enthusiasm and ultimately proved ineffective.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: What We Did Wrong\n\nSullivan's campaign wrongly assumed his personal brand could overcome strong partisan headwinds, resulting in low turnout (60% vs. 90% target) on reservations due to insufficient infrastructure and a failure to convince voters like \"Crow\" that their vote mattered. The \"less bad\" closing argument, exemplified by the quote \"We're always defending, never advancing,\" failed to generate enthusiasm and ultimately proved ineffective.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-008-memo-chunk-010",
+      "race-008-memo-chunk-011",
+      "race-008-memo-chunk-012",
+      "race-008-memo-chunk-013"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-lessons-for-future-montana-campaigns",
+    "race_id": "race-008",
+    "section": "Lessons for Future Montana Campaigns",
+    "summary": "The Sullivan campaign's loss, despite his strong positioning in a red state, demonstrates the difficulty of Democrats winning statewide in Montana, where they need to outperform the national party by a significant margin. Future Democratic candidates must prioritize maximizing Native American turnout through sustained engagement and targeted support, as this is crucial for any path to victory. Ultimately, overcoming the Democratic party's image problem on key issues like guns and immigration requires broader, systemic change beyond the scope of a single campaign.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: Lessons for Future Montana Campaigns\n\nThe Sullivan campaign's loss, despite his strong positioning in a red state, demonstrates the difficulty of Democrats winning statewide in Montana, where they need to outperform the national party by a significant margin. Future Democratic candidates must prioritize maximizing Native American turnout through sustained engagement and targeted support, as this is crucial for any path to victory. Ultimately, overcoming the Democratic party's image problem on key issues like guns and immigration requires broader, systemic change beyond the scope of a single campaign.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-008-memo-chunk-014",
+      "race-008-memo-chunk-015",
+      "race-008-memo-chunk-016",
+      "race-008-memo-chunk-017"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-voter-segment-analysis",
+    "race_id": "race-008",
+    "section": "Voter Segment Analysis",
+    "summary": "Sullivan significantly underperformed in Billings urban areas and rural ranching communities compared to projected vote intent, with the latter experiencing a \"complete collapse\" of support. While Sullivan dominated Native reservations as expected, actual turnout lagged, suggesting untapped potential despite winning by 40 points. The campaign needs to address the \"enthusiasm gap\" in urban areas and completely reassess its strategy for rural ranching voters.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: Voter Segment Analysis\n\nSullivan significantly underperformed in Billings urban areas and rural ranching communities compared to projected vote intent, with the latter experiencing a \"complete collapse\" of support. While Sullivan dominated Native reservations as expected, actual turnout lagged, suggesting untapped potential despite winning by 40 points. The campaign needs to address the \"enthusiasm gap\" in urban areas and completely reassess its strategy for rural ranching voters.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-008-memo-chunk-018"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-the-p1-story-lewistown",
+    "race_id": "race-008",
+    "section": "The P1 Story (Lewistown)",
+    "summary": "The campaign lost a key demographic in Lewistown, exemplified by \"P1,\" a 62-year-old cattle rancher with a 30-year relationship with Sullivan, who is still likely voting for Hansen despite Sullivan's past help. Losing voters like P1, who represent long-time Montanans, indicates a failure to connect with the state's core values and necessitates a strategy shift to regain their support.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: The P1 Story (Lewistown)\n\nThe campaign lost a key demographic in Lewistown, exemplified by \"P1,\" a 62-year-old cattle rancher with a 30-year relationship with Sullivan, who is still likely voting for Hansen despite Sullivan's past help. Losing voters like P1, who represent long-time Montanans, indicates a failure to connect with the state's core values and necessitates a strategy shift to regain their support.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-008-memo-chunk-019"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-comparison-what-sullivan-had-vs-what-he-needed",
+    "race_id": "race-008",
+    "section": "Comparison: What Sullivan Had vs. What He Needed",
+    "summary": "Sullivan's high favorability and strong constituent service weren't enough to overcome the political environment, as evidenced by collapsing rural relationships and insufficient Native turnout despite 90%+ support. The campaign learned that even 18 years of incumbency and some crossover potential couldn't counteract a strong partisan wave, particularly \"in [a] Trump year,\" requiring a different strategy than relying on past strengths.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: Comparison: What Sullivan Had vs. What He Needed\n\nSullivan's high favorability and strong constituent service weren't enough to overcome the political environment, as evidenced by collapsing rural relationships and insufficient Native turnout despite 90%+ support. The campaign learned that even 18 years of incumbency and some crossover potential couldn't counteract a strong partisan wave, particularly \"in [a] Trump year,\" requiring a different strategy than relying on past strengths.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-008-memo-chunk-020"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-recommendations-for-future-red-state-democrats",
+    "race_id": "race-008",
+    "section": "Recommendations for Future Red-State Democrats",
+    "summary": "Winning statewide in Montana as a Democrat is extremely challenging, requiring near-perfect execution and opponent missteps. Key to success are non-negotiable investments in voter access (\"Transportation, ID help\"), year-round presence, and youth engagement, coupled with messaging on public lands and anti-corporate sentiment. While Senate races are difficult, focusing on Governor or Attorney General may be more viable, but ultimately requires a long-term strategy of rural outreach, cultural moderation, and economic populism to improve the Democratic brand.",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: Recommendations for Future Red-State Democrats\n\nWinning statewide in Montana as a Democrat is extremely challenging, requiring near-perfect execution and opponent missteps. Key to success are non-negotiable investments in voter access (\"Transportation, ID help\"), year-round presence, and youth engagement, coupled with messaging on public lands and anti-corporate sentiment. While Senate races are difficult, focusing on Governor or Attorney General may be more viable, but ultimately requires a long-term strategy of rural outreach, cultural moderation, and economic populism to improve the Democratic brand.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-008-memo-chunk-021",
+      "race-008-memo-chunk-022",
+      "race-008-memo-chunk-023",
+      "race-008-memo-chunk-024",
+      "race-008-memo-chunk-025"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-008-memo-conclusion",
+    "race_id": "race-008",
+    "section": "Conclusion",
+    "summary": "The Sullivan campaign's loss, despite strong execution, highlights a structural shift making Montana federal races unwinnable for Democrats in presidential years due to increasing party polarization. Future Democratic candidates must carefully consider whether to run at all, and if so, adopt a strategy drastically different from Sullivan's, as personal brand and independent voting are no longer sufficient (based on focus groups, exit polling, and election data).",
+    "content": "[Montana 2024 | loss | -4.8%]\nSection: Conclusion\n\nThe Sullivan campaign's loss, despite strong execution, highlights a structural shift making Montana federal races unwinnable for Democrats in presidential years due to increasing party polarization. Future Democratic candidates must carefully consider whether to run at all, and if so, adopt a strategy drastically different from Sullivan's, as personal brand and independent voting are no longer sufficient (based on focus groups, exit polling, and election data).",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-008-memo-chunk-026"
+    ],
+    "outcome": "loss",
+    "state": "Montana",
+    "year": 2024,
+    "margin": -4.8
+  },
+  {
+    "id": "parent-race-009-memo-header",
+    "race_id": "race-009",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-009-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-executive-summary",
+    "race_id": "race-009",
+    "section": "Executive Summary",
+    "summary": "Lisa Kowalski won by focusing on authenticity and economic identity, specifically leveraging her \"autoworker's daughter\" narrative to counter DeGroot's \"job creator\" image, which became a liability. Abortion also proved to be a key mobilizing issue in suburban areas, contributing to Kowalski's 4.2-point victory. The campaign should prioritize authentic messaging and economic narratives that resonate with working-class voters, while also recognizing the continued importance of abortion access as a motivator.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Executive Summary\n\nLisa Kowalski won by focusing on authenticity and economic identity, specifically leveraging her \"autoworker's daughter\" narrative to counter DeGroot's \"job creator\" image, which became a liability. Abortion also proved to be a key mobilizing issue in suburban areas, contributing to Kowalski's 4.2-point victory. The campaign should prioritize authentic messaging and economic narratives that resonate with working-class voters, while also recognizing the continued importance of abortion access as a motivator.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-009-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-what-worked",
+    "race_id": "race-009",
+    "section": "What Worked",
+    "summary": "The \"autoworker's daughter\" frame and Kowalski's hands-on response to the Flint water crisis, where she \"brought bottled water personally\" and \"got federal money,\" resonated deeply, even with Trump voters and management, securing a 10-0 lock in Flint. Conversely, DeGroot's extreme abortion stance alienated persuadable suburban women, and the \"job creator\" frame failed to connect with working-class voters who saw him as disconnected from their experiences, exemplified by comments like \"He's never held a hammer.\"",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: What Worked\n\nThe \"autoworker's daughter\" frame and Kowalski's hands-on response to the Flint water crisis, where she \"brought bottled water personally\" and \"got federal money,\" resonated deeply, even with Trump voters and management, securing a 10-0 lock in Flint. Conversely, DeGroot's extreme abortion stance alienated persuadable suburban women, and the \"job creator\" frame failed to connect with working-class voters who saw him as disconnected from their experiences, exemplified by comments like \"He's never held a hammer.\"",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-009-memo-chunk-003",
+      "race-009-memo-chunk-004",
+      "race-009-memo-chunk-005",
+      "race-009-memo-chunk-006"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-geographic-performance",
+    "race_id": "race-009",
+    "section": "Geographic Performance",
+    "summary": "Kowalski's campaign saw success in areas where local issues like the water crisis and union endorsements resonated, securing a 10-0 win in one focus group. While partisanship remained a factor, Kowalski gained support from unexpected voters (e.g., P4, a Trump 2020 voter) due to auto industry ties, and abortion motivated women voters (P1, P9) in more competitive areas, suggesting a need to emphasize these issues to sway undecided suburban voters in DeGroot's territory. Overall enthusiasm averaged 6.8-7.4 across groups, indicating a solid base to build upon.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Geographic Performance\n\nKowalski's campaign saw success in areas where local issues like the water crisis and union endorsements resonated, securing a 10-0 win in one focus group. While partisanship remained a factor, Kowalski gained support from unexpected voters (e.g., P4, a Trump 2020 voter) due to auto industry ties, and abortion motivated women voters (P1, P9) in more competitive areas, suggesting a need to emphasize these issues to sway undecided suburban voters in DeGroot's territory. Overall enthusiasm averaged 6.8-7.4 across groups, indicating a solid base to build upon.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-009-memo-chunk-007",
+      "race-009-memo-chunk-008",
+      "race-009-memo-chunk-009"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-what-didn-t-work",
+    "race_id": "race-009",
+    "section": "What Didn't Work",
+    "summary": "The campaign struggled to connect with some Grand Rapids business owners who perceived Kowalski's pro-union stance as \"anti-business,\" and her Flint roots raised concerns about understanding West Michigan. Additionally, some voters, even in supportive areas like Flint, desired more concrete evidence of positive change, as exemplified by the quote, \"What's actually better? I'm still broke.\" This highlights the need to tailor messaging to address business concerns in Grand Rapids and emphasize tangible achievements and future plans for economic improvement.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: What Didn't Work\n\nThe campaign struggled to connect with some Grand Rapids business owners who perceived Kowalski's pro-union stance as \"anti-business,\" and her Flint roots raised concerns about understanding West Michigan. Additionally, some voters, even in supportive areas like Flint, desired more concrete evidence of positive change, as exemplified by the quote, \"What's actually better? I'm still broke.\" This highlights the need to tailor messaging to address business concerns in Grand Rapids and emphasize tangible achievements and future plans for economic improvement.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-009-memo-chunk-010",
+      "race-009-memo-chunk-011",
+      "race-009-memo-chunk-012"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-key-learnings-for-future-races",
+    "race_id": "race-009",
+    "section": "Key Learnings for Future Races",
+    "summary": "Kowalski's success demonstrated that a genuine working-class background resonated more than DeGroot's business experience, highlighting the power of relatable identity in Michigan. The campaign learned that candidates present during the economic crisis built lasting loyalty, while abortion continues to drive turnout and shift votes in suburban areas, making Grand Rapids a competitive battleground due to demographic shifts. These insights suggest prioritizing candidates with authentic working-class narratives and focusing on abortion and education issues to appeal to suburban voters in future Michigan races.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Key Learnings for Future Races\n\nKowalski's success demonstrated that a genuine working-class background resonated more than DeGroot's business experience, highlighting the power of relatable identity in Michigan. The campaign learned that candidates present during the economic crisis built lasting loyalty, while abortion continues to drive turnout and shift votes in suburban areas, making Grand Rapids a competitive battleground due to demographic shifts. These insights suggest prioritizing candidates with authentic working-class narratives and focusing on abortion and education issues to appeal to suburban voters in future Michigan races.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-009-memo-chunk-013",
+      "race-009-memo-chunk-014",
+      "race-009-memo-chunk-015",
+      "race-009-memo-chunk-016",
+      "race-009-memo-chunk-017"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-voter-segment-analysis",
+    "race_id": "race-009",
+    "section": "Voter Segment Analysis",
+    "summary": "Kowalski performed strongly with the Flint/Saginaw base (10-0) and union households (90%+), driven by the water crisis and union endorsements respectively, but struggled with West Michigan business voters. While Kowalski leads in the Detroit and West Michigan suburbs, enthusiasm is moderate (6.8 and 6.5), suggesting a need to reinforce messaging around auto identity, abortion, and education to solidify support and increase turnout in these key areas.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Voter Segment Analysis\n\nKowalski performed strongly with the Flint/Saginaw base (10-0) and union households (90%+), driven by the water crisis and union endorsements respectively, but struggled with West Michigan business voters. While Kowalski leads in the Detroit and West Michigan suburbs, enthusiasm is moderate (6.8 and 6.5), suggesting a need to reinforce messaging around auto identity, abortion, and education to solidify support and increase turnout in these key areas.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-009-memo-chunk-018"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-crossover-analysis",
+    "race_id": "race-009",
+    "section": "Crossover Analysis",
+    "summary": "The crossover analysis reveals that Kowalski gained support from unexpected demographics by appealing to specific concerns: a retired GM manager voted for Kowalski due to his perceived understanding of the auto industry, highlighting that industry identity can override partisanship. Additionally, a traditionally Republican marketing director switched to Kowalski because of his stance on abortion, demonstrating that suburban women are persuadable on this issue, particularly regarding exceptions.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Crossover Analysis\n\nThe crossover analysis reveals that Kowalski gained support from unexpected demographics by appealing to specific concerns: a retired GM manager voted for Kowalski due to his perceived understanding of the auto industry, highlighting that industry identity can override partisanship. Additionally, a traditionally Republican marketing director switched to Kowalski because of his stance on abortion, demonstrating that suburban women are persuadable on this issue, particularly regarding exceptions.",
+    "chunk_count": 2,
+    "child_ids": [
+      "race-009-memo-chunk-019",
+      "race-009-memo-chunk-020"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-message-testing-results",
+    "race_id": "race-009",
+    "section": "Message Testing Results",
+    "summary": "Message testing revealed that highlighting Lisa Kowalski's personal connection to manufacturing resonated well due to its authenticity and emotional appeal, as exemplified by the positive response to the \"GM Flint\" narrative. Conversely, broad attacks labeling Kowalski a \"career politician\" failed because they lacked credibility given her relatively short tenure in office. The campaign should focus on Kowalski's personal story and avoid generic attacks.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Message Testing Results\n\nMessage testing revealed that highlighting Lisa Kowalski's personal connection to manufacturing resonated well due to its authenticity and emotional appeal, as exemplified by the positive response to the \"GM Flint\" narrative. Conversely, broad attacks labeling Kowalski a \"career politician\" failed because they lacked credibility given her relatively short tenure in office. The campaign should focus on Kowalski's personal story and avoid generic attacks.",
+    "chunk_count": 2,
+    "child_ids": [
+      "race-009-memo-chunk-021",
+      "race-009-memo-chunk-022"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-recommendations-for-michigan-democrats",
+    "race_id": "race-009",
+    "section": "Recommendations for Michigan Democrats",
+    "summary": "Michigan Democrats should prioritize recruiting working-class candidates and maintaining strong ties in Flint, as authenticity and the water crisis have proven politically effective. To win, they must keep abortion rights central to their message, actively compete in West Michigan (Grand Rapids), and target persuadable business owners with specific, job-focused proposals like \"10,000 jobs\" instead of broad slogans.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Recommendations for Michigan Democrats\n\nMichigan Democrats should prioritize recruiting working-class candidates and maintaining strong ties in Flint, as authenticity and the water crisis have proven politically effective. To win, they must keep abortion rights central to their message, actively compete in West Michigan (Grand Rapids), and target persuadable business owners with specific, job-focused proposals like \"10,000 jobs\" instead of broad slogans.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-009-memo-chunk-023"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-009-memo-margin-analysis",
+    "race_id": "race-009",
+    "section": "Margin Analysis",
+    "summary": "The campaign won by 4.2% (approximately 200,000 votes) due to over-performance in Flint/Saginaw (+60,000), a suburban shift in Oakland County (+80,000), and improvement in Kent County (+30,000), as informed by focus groups and exit polling. While outstate losses occurred, they were contained to -30,000 votes, indicating the coalition held across regions.",
+    "content": "[Michigan 2024 | win | +4.2%]\nSection: Margin Analysis\n\nThe campaign won by 4.2% (approximately 200,000 votes) due to over-performance in Flint/Saginaw (+60,000), a suburban shift in Oakland County (+80,000), and improvement in Kent County (+30,000), as informed by focus groups and exit polling. While outstate losses occurred, they were contained to -30,000 votes, indicating the coalition held across regions.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-009-memo-chunk-024"
+    ],
+    "outcome": "win",
+    "state": "Michigan",
+    "year": 2024,
+    "margin": 4.2
+  },
+  {
+    "id": "parent-race-010-memo-header",
+    "race_id": "race-010",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-010-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-executive-summary",
+    "race_id": "race-010",
+    "section": "Executive Summary",
+    "summary": "Angela Russo won the PA Senate race by 3.1 points by successfully attacking Hartley's pharmaceutical background on healthcare costs and driving strong turnout in suburban Philadelphia and Pittsburgh's union base. While NEPA remained soft, Russo's working-class identity helped consolidate support there, suggesting a winning formula of targeted attacks and relatable messaging.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: Executive Summary\n\nAngela Russo won the PA Senate race by 3.1 points by successfully attacking Hartley's pharmaceutical background on healthcare costs and driving strong turnout in suburban Philadelphia and Pittsburgh's union base. While NEPA remained soft, Russo's working-class identity helped consolidate support there, suggesting a winning formula of targeted attacks and relatable messaging.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-010-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-what-worked",
+    "race_id": "race-010",
+    "section": "What Worked",
+    "summary": "Hartley's pharma background was a major liability, particularly in the Philly suburbs, Pittsburgh, and NEPA, with voters citing concerns about drug prices (\"Those are the people charging $500 for insulin\"). Russo's Pittsburgh roots and Italian-American identity resonated strongly, especially in Pittsburgh (10-0 support) and NEPA, while her AG record and \"prosecutor fighting for consumers\" narrative provided credibility and helped win over voters in collar counties, particularly on healthcare and abortion issues. The \"prosecutor vs. executive\" frame proved highly effective.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: What Worked\n\nHartley's pharma background was a major liability, particularly in the Philly suburbs, Pittsburgh, and NEPA, with voters citing concerns about drug prices (\"Those are the people charging $500 for insulin\"). Russo's Pittsburgh roots and Italian-American identity resonated strongly, especially in Pittsburgh (10-0 support) and NEPA, while her AG record and \"prosecutor fighting for consumers\" narrative provided credibility and helped win over voters in collar counties, particularly on healthcare and abortion issues. The \"prosecutor vs. executive\" frame proved highly effective.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-010-memo-chunk-003",
+      "race-010-memo-chunk-004",
+      "race-010-memo-chunk-005",
+      "race-010-memo-chunk-006"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-what-didn-t-work",
+    "race_id": "race-010",
+    "section": "What Didn't Work",
+    "summary": "Enthusiasm in NEPA was low (5.7/10) due to feelings of being forgotten and alienated, with voters expressing sentiments like \"Whoever wins, nothing changes here\" and feeling labeled as \"racist, deplorable.\" While Russo won these voters, the relationship is fragile, and generic messaging like \"fighting for working families\" failed to resonate; voters demanded concrete economic plans, particularly regarding issues like gas prices. The campaign needs to address these specific concerns with targeted economic proposals to rebuild trust and energize the base in NEPA.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: What Didn't Work\n\nEnthusiasm in NEPA was low (5.7/10) due to feelings of being forgotten and alienated, with voters expressing sentiments like \"Whoever wins, nothing changes here\" and feeling labeled as \"racist, deplorable.\" While Russo won these voters, the relationship is fragile, and generic messaging like \"fighting for working families\" failed to resonate; voters demanded concrete economic plans, particularly regarding issues like gas prices. The campaign needs to address these specific concerns with targeted economic proposals to rebuild trust and energize the base in NEPA.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-010-memo-chunk-007",
+      "race-010-memo-chunk-008",
+      "race-010-memo-chunk-009"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-key-learnings-for-future-races",
+    "race_id": "race-010",
+    "section": "Key Learnings for Future Races",
+    "summary": "Hartley's opponent's pharma background proved a major liability in a healthcare-focused race. Russo's success in Pennsylvania stemmed from bridging Pittsburgh and NEPA, highlighting the need to connect with at least two of the state's key regions. The campaign identified the collar counties (Chester, Montgomery, Delaware, and Bucks) as crucial for Democratic victories, requiring a strategy of physical presence, economic specificity, and cultural respect.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: Key Learnings for Future Races\n\nHartley's opponent's pharma background proved a major liability in a healthcare-focused race. Russo's success in Pennsylvania stemmed from bridging Pittsburgh and NEPA, highlighting the need to connect with at least two of the state's key regions. The campaign identified the collar counties (Chester, Montgomery, Delaware, and Bucks) as crucial for Democratic victories, requiring a strategy of physical presence, economic specificity, and cultural respect.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-010-memo-chunk-010",
+      "race-010-memo-chunk-011",
+      "race-010-memo-chunk-012",
+      "race-010-memo-chunk-013",
+      "race-010-memo-chunk-014"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-voter-segment-analysis",
+    "race_id": "race-010",
+    "section": "Voter Segment Analysis",
+    "summary": "Russo performed strongly in all three key voter segments analyzed, particularly in Pittsburgh (10-0) due to regional identity and union support. While \"pharma attack\" messaging resonated in the Philly suburbs (7-2) and NEPA (7-1), NEPA's lower enthusiasm (5.7) suggests a need for more targeted engagement beyond simply relying on their \"default Democrat\" lean. The campaign should continue leveraging regional identity in Pittsburgh and refine messaging to boost enthusiasm in NEPA.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: Voter Segment Analysis\n\nRusso performed strongly in all three key voter segments analyzed, particularly in Pittsburgh (10-0) due to regional identity and union support. While \"pharma attack\" messaging resonated in the Philly suburbs (7-2) and NEPA (7-1), NEPA's lower enthusiasm (5.7) suggests a need for more targeted engagement beyond simply relying on their \"default Democrat\" lean. The campaign should continue leveraging regional identity in Pittsburgh and refine messaging to boost enthusiasm in NEPA.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-010-memo-chunk-015"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-geographic-performance",
+    "race_id": "race-010",
+    "section": "Geographic Performance",
+    "summary": "The campaign won decisively in the Philadelphia suburbs by mobilizing healthcare professionals and capitalizing on abortion concerns, but Hartley's \"moderate\" stance couldn't overcome negative perceptions related to the pharmaceutical industry. While Pittsburgh/Allegheny County saw strong base turnout and benefited from union endorsements and a powerful \"one of us\" regional identity, performance in NEPA was lackluster due to persistent cultural alienation and the effectiveness of attacks related to the pharmaceutical industry, indicating a need for long-term investment in the region.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: Geographic Performance\n\nThe campaign won decisively in the Philadelphia suburbs by mobilizing healthcare professionals and capitalizing on abortion concerns, but Hartley's \"moderate\" stance couldn't overcome negative perceptions related to the pharmaceutical industry. While Pittsburgh/Allegheny County saw strong base turnout and benefited from union endorsements and a powerful \"one of us\" regional identity, performance in NEPA was lackluster due to persistent cultural alienation and the effectiveness of attacks related to the pharmaceutical industry, indicating a need for long-term investment in the region.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-010-memo-chunk-016"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-the-pharma-frame",
+    "race_id": "race-010",
+    "section": "The Pharma Frame",
+    "summary": "The campaign successfully defined opponent Hartley through a \"Pharma Frame,\" highlighting her wealth derived from the pharmaceutical industry and its association with high drug prices. This framing, using messages like \"Made millions while drug prices soared,\" proved inescapable for Hartley, who lacked a convincing counter-narrative, demonstrating the power of opponent biography in shaping the race. The actionable insight is to aggressively define opponents early with clear, concise narratives that tie their background to negative consequences for voters.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: The Pharma Frame\n\nThe campaign successfully defined opponent Hartley through a \"Pharma Frame,\" highlighting her wealth derived from the pharmaceutical industry and its association with high drug prices. This framing, using messages like \"Made millions while drug prices soared,\" proved inescapable for Hartley, who lacked a convincing counter-narrative, demonstrating the power of opponent biography in shaping the race. The actionable insight is to aggressively define opponents early with clear, concise narratives that tie their background to negative consequences for voters.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-010-memo-chunk-017"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-recommendations-for-pennsylvania-democrats",
+    "race_id": "race-010",
+    "section": "Recommendations for Pennsylvania Democrats",
+    "summary": "Pennsylvania Democrats should prioritize healthcare cost messaging and highlight opponents' industry ties, while increasing physical presence in NEPA (\"Come here. A lot.\") and leveraging Italian-American heritage in Pittsburgh and NEPA. To counter cultural alienation from the \"deplorable\" comment, the campaign must shift from general promises to specific economic policies and coordinate closely with key unions like USW, building trades, and Teamsters.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: Recommendations for Pennsylvania Democrats\n\nPennsylvania Democrats should prioritize healthcare cost messaging and highlight opponents' industry ties, while increasing physical presence in NEPA (\"Come here. A lot.\") and leveraging Italian-American heritage in Pittsburgh and NEPA. To counter cultural alienation from the \"deplorable\" comment, the campaign must shift from general promises to specific economic policies and coordinate closely with key unions like USW, building trades, and Teamsters.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-010-memo-chunk-018"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-010-memo-margin-analysis",
+    "race_id": "race-010",
+    "section": "Margin Analysis",
+    "summary": "The campaign won by a 3.1% margin (210,000 votes), driven by strong performances in the Philadelphia suburbs (+150,000) and Pittsburgh/Allegheny (+80,000), as revealed by focus groups and exit polling.  However, NEPA underperformed (+10,000) and Rural PA saw a net loss (-30,000), indicating a regionally uneven coalition that requires future strategy adjustments.",
+    "content": "[Pennsylvania 2024 | win | +3.1%]\nSection: Margin Analysis\n\nThe campaign won by a 3.1% margin (210,000 votes), driven by strong performances in the Philadelphia suburbs (+150,000) and Pittsburgh/Allegheny (+80,000), as revealed by focus groups and exit polling.  However, NEPA underperformed (+10,000) and Rural PA saw a net loss (-30,000), indicating a regionally uneven coalition that requires future strategy adjustments.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-010-memo-chunk-019"
+    ],
+    "outcome": "win",
+    "state": "Pennsylvania",
+    "year": 2024,
+    "margin": 3.1
+  },
+  {
+    "id": "parent-race-011-memo-header",
+    "race_id": "race-011",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-011-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-executive-summary",
+    "race_id": "race-011",
+    "section": "Executive Summary",
+    "summary": "Will Patterson won the North Carolina governor's race due to Russell Chambers' unpalatable candidacy, marked by offensive online comments and extreme positions. Focus groups revealed unanimous opposition to Chambers, even among lifelong Republicans, highlighting the importance of candidate character and avoiding alienating moderate voters. The key lesson is that a flawed candidate can override partisan lean, suggesting a strategy of highlighting opponent weaknesses and character flaws.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: Executive Summary\n\nWill Patterson won the North Carolina governor's race due to Russell Chambers' unpalatable candidacy, marked by offensive online comments and extreme positions. Focus groups revealed unanimous opposition to Chambers, even among lifelong Republicans, highlighting the importance of candidate character and avoiding alienating moderate voters. The key lesson is that a flawed candidate can override partisan lean, suggesting a strategy of highlighting opponent weaknesses and character flaws.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-011-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-the-chambers-collapse",
+    "race_id": "race-011",
+    "section": "The Chambers Collapse",
+    "summary": "Chambers' campaign collapsed due to the revelation of offensive online comments, which alienated key demographics, including lifelong Republicans and conservatives, as evidenced by focus group participants like Charlotte P8 (\"I can't vote for him. Period.\") and Rural P7. The key lesson is that severe character flaws can override partisan loyalty, suggesting that future campaigns must rigorously vet candidates' online presence and proactively address potential vulnerabilities to avoid similar race-ending scandals.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: The Chambers Collapse\n\nChambers' campaign collapsed due to the revelation of offensive online comments, which alienated key demographics, including lifelong Republicans and conservatives, as evidenced by focus group participants like Charlotte P8 (\"I can't vote for him. Period.\") and Rural P7. The key lesson is that severe character flaws can override partisan loyalty, suggesting that future campaigns must rigorously vet candidates' online presence and proactively address potential vulnerabilities to avoid similar race-ending scandals.",
+    "chunk_count": 2,
+    "child_ids": [
+      "race-011-memo-chunk-003",
+      "race-011-memo-chunk-004"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-what-worked",
+    "race_id": "race-011",
+    "section": "What Worked",
+    "summary": "Patterson's military veteran background and \"acceptable\" image resonated with voters across all regions, securing decisive wins (10-0 in Charlotte/Triangle, 7-0 in rural areas). Chambers' extreme education policies and perceived anti-business stance alienated key demographics, particularly educators/parents (\"nightmare\") and the Charlotte business community (\"companies would run the other direction\"). The campaign should continue highlighting Patterson's credentials and contrasting them with Chambers' more controversial positions.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: What Worked\n\nPatterson's military veteran background and \"acceptable\" image resonated with voters across all regions, securing decisive wins (10-0 in Charlotte/Triangle, 7-0 in rural areas). Chambers' extreme education policies and perceived anti-business stance alienated key demographics, particularly educators/parents (\"nightmare\") and the Charlotte business community (\"companies would run the other direction\"). The campaign should continue highlighting Patterson's credentials and contrasting them with Chambers' more controversial positions.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-011-memo-chunk-005",
+      "race-011-memo-chunk-006",
+      "race-011-memo-chunk-007",
+      "race-011-memo-chunk-008"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-what-didn-t-work-for-chambers",
+    "race_id": "race-011",
+    "section": "What Didn't Work (For Chambers)",
+    "summary": "Chambers' campaign failed due to alienating his Republican base in rural areas (\"Might skip this race. Can't vote for either.\") with policy extremism that reinforced negative character narratives. The campaign's inability to effectively address credible character attacks proved fatal, demonstrating that policy positions alone cannot overcome pre-existing negative perceptions.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: What Didn't Work (For Chambers)\n\nChambers' campaign failed due to alienating his Republican base in rural areas (\"Might skip this race. Can't vote for either.\") with policy extremism that reinforced negative character narratives. The campaign's inability to effectively address credible character attacks proved fatal, demonstrating that policy positions alone cannot overcome pre-existing negative perceptions.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-011-memo-chunk-009",
+      "race-011-memo-chunk-010",
+      "race-011-memo-chunk-011"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-lessons-for-future-races",
+    "race_id": "race-011",
+    "section": "Lessons for Future Races",
+    "summary": "The Chambers campaign demonstrates that candidate character can override ideology, as Patterson won by appealing to Republicans seeking an alternative to Chambers. Chambers' anti-LGBTQ+ rhetoric galvanized opposition (\"This is personal\"), and framing his extremism as an economic threat resonated with Charlotte's business community. Future campaigns should prioritize candidate character screening and consider economic impact messaging when facing extremist opponents.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: Lessons for Future Races\n\nThe Chambers campaign demonstrates that candidate character can override ideology, as Patterson won by appealing to Republicans seeking an alternative to Chambers. Chambers' anti-LGBTQ+ rhetoric galvanized opposition (\"This is personal\"), and framing his extremism as an economic threat resonated with Charlotte's business community. Future campaigns should prioritize candidate character screening and consider economic impact messaging when facing extremist opponents.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-011-memo-chunk-012",
+      "race-011-memo-chunk-013",
+      "race-011-memo-chunk-014",
+      "race-011-memo-chunk-015",
+      "race-011-memo-chunk-016"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-voter-segment-analysis",
+    "race_id": "race-011",
+    "section": "Voter Segment Analysis",
+    "summary": "Patterson dominated key voter segments, winning the Charlotte suburbs and Research Triangle 10-0 due to character/business and education/LGBTQ+/science, respectively. While Patterson also won Rural Eastern NC (7-0) and secured Republican crossovers, the lower enthusiasm scores (4-5) among crossovers, driven by anecdotal \"This one time\" experiences, suggest a need to solidify their support with more consistent messaging. The lack of enthusiasm data for Rural Eastern NC also indicates a need for further research in that area.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: Voter Segment Analysis\n\nPatterson dominated key voter segments, winning the Charlotte suburbs and Research Triangle 10-0 due to character/business and education/LGBTQ+/science, respectively. While Patterson also won Rural Eastern NC (7-0) and secured Republican crossovers, the lower enthusiasm scores (4-5) among crossovers, driven by anecdotal \"This one time\" experiences, suggest a need to solidify their support with more consistent messaging. The lack of enthusiasm data for Rural Eastern NC also indicates a need for further research in that area.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-011-memo-chunk-017"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-crossover-analysis",
+    "race_id": "race-011",
+    "section": "Crossover Analysis",
+    "summary": "The campaign saw unprecedented Republican crossover driven by voters prioritizing character and decency over party, with quotes like \"Chambers is disqualifying\" and \"First non-Republican vote since Reagan\" highlighting the depth of dissatisfaction. Chambers' behavior provided these voters \"permission to vote Democrat,\" suggesting a successful strategy of contrasting values and focusing on character flaws of the opponent. The campaign should continue to emphasize these values and highlight Chambers' negative attributes to maintain and expand this crossover appeal.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: Crossover Analysis\n\nThe campaign saw unprecedented Republican crossover driven by voters prioritizing character and decency over party, with quotes like \"Chambers is disqualifying\" and \"First non-Republican vote since Reagan\" highlighting the depth of dissatisfaction. Chambers' behavior provided these voters \"permission to vote Democrat,\" suggesting a successful strategy of contrasting values and focusing on character flaws of the opponent. The campaign should continue to emphasize these values and highlight Chambers' negative attributes to maintain and expand this crossover appeal.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-011-memo-chunk-018",
+      "race-011-memo-chunk-019",
+      "race-011-memo-chunk-020",
+      "race-011-memo-chunk-021"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-recommendations-for-future-races",
+    "race_id": "race-011",
+    "section": "Recommendations for Future Races",
+    "summary": "The Chambers campaign demonstrates that candidate credentials like \"Prosecutor, military, business experience\" provide a \"safe harbor\" for crossover voters, but campaigns must build their own coalition rather than relying on opponent collapse. Future campaigns should prioritize candidate screening for character flaws, as seen with Chambers, and understand that social media history and demonstrated values, not just claimed ones, are crucial for voter trust, especially among evangelical voters.",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: Recommendations for Future Races\n\nThe Chambers campaign demonstrates that candidate credentials like \"Prosecutor, military, business experience\" provide a \"safe harbor\" for crossover voters, but campaigns must build their own coalition rather than relying on opponent collapse. Future campaigns should prioritize candidate screening for character flaws, as seen with Chambers, and understand that social media history and demonstrated values, not just claimed ones, are crucial for voter trust, especially among evangelical voters.",
+    "chunk_count": 2,
+    "child_ids": [
+      "race-011-memo-chunk-022",
+      "race-011-memo-chunk-023"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-011-memo-margin-analysis",
+    "race_id": "race-011",
+    "section": "Margin Analysis",
+    "summary": "The campaign won by 8.5% (approximately 350,000 votes) due to strong performance in Charlotte/Mecklenburg (+120,000), the Research Triangle (+150,000), Republican crossover (+100,000), and reduced losses in rural areas (+30,000 net improvement). While opponent weakness was key to this coalition, focus groups and election data suggest that future success requires a stronger, more proactive message than simply \"not Chambers.\"",
+    "content": "[North Carolina 2024 | win | +8.5%]\nSection: Margin Analysis\n\nThe campaign won by 8.5% (approximately 350,000 votes) due to strong performance in Charlotte/Mecklenburg (+120,000), the Research Triangle (+150,000), Republican crossover (+100,000), and reduced losses in rural areas (+30,000 net improvement). While opponent weakness was key to this coalition, focus groups and election data suggest that future success requires a stronger, more proactive message than simply \"not Chambers.\"",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-011-memo-chunk-024"
+    ],
+    "outcome": "win",
+    "state": "North Carolina",
+    "year": 2024,
+    "margin": 8.5
+  },
+  {
+    "id": "parent-race-012-memo-header",
+    "race_id": "race-012",
+    "section": "Header",
+    "summary": "Race metadata and basic information.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: Header\n\nRace metadata and basic information.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-012-memo-chunk-001"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-executive-summary",
+    "race_id": "race-012",
+    "section": "Executive Summary",
+    "summary": "Emily Schroeder won the Wisconsin Senate race by 2.8 points due to her authenticity as a working-class nurse, a resonant healthcare costs message, and Thompson's limited appeal. This victory, in contrast to the 2022 Senate loss, demonstrates that specific economic messages and authentic candidates can win in Wisconsin where \"generic populism failed.\" The campaign should prioritize authentic candidates and focus on targeted economic messaging.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: Executive Summary\n\nEmily Schroeder won the Wisconsin Senate race by 2.8 points due to her authenticity as a working-class nurse, a resonant healthcare costs message, and Thompson's limited appeal. This victory, in contrast to the 2022 Senate loss, demonstrates that specific economic messages and authentic candidates can win in Wisconsin where \"generic populism failed.\" The campaign should prioritize authentic candidates and focus on targeted economic messaging.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-012-memo-chunk-002"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-what-worked",
+    "race_id": "race-012",
+    "section": "What Worked",
+    "summary": "Schroeder's campaign successfully leveraged her Fox Valley roots and nursing background to inoculate against \"Madison liberal\" attacks and connect with voters on healthcare costs, particularly in the Fox Valley where she won decisively (8-2 in focus group). The \"nurse-to-politician\" narrative, exemplified by the message about patients skipping medications, resonated strongly, while Thompson's attacks failed to land due to Schroeder's local authenticity. The campaign should continue to emphasize Schroeder's local ties and healthcare expertise, while also capitalizing on enthusiasm from the progressive base in Madison.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: What Worked\n\nSchroeder's campaign successfully leveraged her Fox Valley roots and nursing background to inoculate against \"Madison liberal\" attacks and connect with voters on healthcare costs, particularly in the Fox Valley where she won decisively (8-2 in focus group). The \"nurse-to-politician\" narrative, exemplified by the message about patients skipping medications, resonated strongly, while Thompson's attacks failed to land due to Schroeder's local authenticity. The campaign should continue to emphasize Schroeder's local ties and healthcare expertise, while also capitalizing on enthusiasm from the progressive base in Madison.",
+    "chunk_count": 4,
+    "child_ids": [
+      "race-012-memo-chunk-003",
+      "race-012-memo-chunk-004",
+      "race-012-memo-chunk-005",
+      "race-012-memo-chunk-006"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-learning-from-2022",
+    "race_id": "race-012",
+    "section": "Learning from 2022",
+    "summary": "The 2022 Kowalski campaign's generic economic message and inauthentic \"populism\" failed to resonate, leading to losses in WOW counties and skepticism in the Fox Valley. In contrast, Schroeder's 2024 campaign succeeded by focusing on specific healthcare costs, leveraging his authentic working-class biography, and tailoring the message to improve performance in WOW counties (4-6 in focus group) and deliver in the Fox Valley (8-2 in focus group). The key lesson is that authenticity and specificity are crucial for resonating with voters.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: Learning from 2022\n\nThe 2022 Kowalski campaign's generic economic message and inauthentic \"populism\" failed to resonate, leading to losses in WOW counties and skepticism in the Fox Valley. In contrast, Schroeder's 2024 campaign succeeded by focusing on specific healthcare costs, leveraging his authentic working-class biography, and tailoring the message to improve performance in WOW counties (4-6 in focus group) and deliver in the Fox Valley (8-2 in focus group). The key lesson is that authenticity and specificity are crucial for resonating with voters.",
+    "chunk_count": 2,
+    "child_ids": [
+      "race-012-memo-chunk-007",
+      "race-012-memo-chunk-008"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-regional-analysis",
+    "race_id": "race-012",
+    "section": "Regional Analysis",
+    "summary": "Schroeder performed well in all three regional focus groups, particularly with her base and in her hometown, while Thompson struggled with abortion. Healthcare was a key issue that opened doors for Schroeder, even with traditional Republican voters, as evidenced by potential crossover votes in two regions. The campaign should capitalize on healthcare messaging and be prepared to mitigate damage from the abortion issue, while also leveraging the base's enthusiasm stemming from the 2011 protests.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: Regional Analysis\n\nSchroeder performed well in all three regional focus groups, particularly with her base and in her hometown, while Thompson struggled with abortion. Healthcare was a key issue that opened doors for Schroeder, even with traditional Republican voters, as evidenced by potential crossover votes in two regions. The campaign should capitalize on healthcare messaging and be prepared to mitigate damage from the abortion issue, while also leveraging the base's enthusiasm stemming from the 2011 protests.",
+    "chunk_count": 3,
+    "child_ids": [
+      "race-012-memo-chunk-009",
+      "race-012-memo-chunk-010",
+      "race-012-memo-chunk-011"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-what-didn-t-work",
+    "race_id": "race-012",
+    "section": "What Didn't Work",
+    "summary": "The campaign's generic, \"pro-business\" economic message, criticized as \"generic\" by WOW P6, failed to connect with voters due to a lack of specific policies and relevance to their daily lives. Attempts to nationalize opponent Schroeder by Thompson were unsuccessful, as her local roots in Appleton, as noted by Fox Valley P10, provided a strong defense against the attacks. The key lesson is that specific, locally-relevant messaging is crucial, and attacks on candidates with strong local ties are unlikely to resonate.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: What Didn't Work\n\nThe campaign's generic, \"pro-business\" economic message, criticized as \"generic\" by WOW P6, failed to connect with voters due to a lack of specific policies and relevance to their daily lives. Attempts to nationalize opponent Schroeder by Thompson were unsuccessful, as her local roots in Appleton, as noted by Fox Valley P10, provided a strong defense against the attacks. The key lesson is that specific, locally-relevant messaging is crucial, and attacks on candidates with strong local ties are unlikely to resonate.",
+    "chunk_count": 2,
+    "child_ids": [
+      "race-012-memo-chunk-012",
+      "race-012-memo-chunk-013"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-lessons-for-future-wisconsin-races",
+    "race_id": "race-012",
+    "section": "Lessons for Future Wisconsin Races",
+    "summary": "Schroeder's success demonstrated that authentic, working-class biographies and healthcare backgrounds resonate with Wisconsin voters, particularly in manufacturing regions like Appleton, Oshkosh, and Green Bay. Leveraging the memory of union fights proved effective, and focusing on healthcare and abortion can make inroads even in traditionally Republican suburbs.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: Lessons for Future Wisconsin Races\n\nSchroeder's success demonstrated that authentic, working-class biographies and healthcare backgrounds resonate with Wisconsin voters, particularly in manufacturing regions like Appleton, Oshkosh, and Green Bay. Leveraging the memory of union fights proved effective, and focusing on healthcare and abortion can make inroads even in traditionally Republican suburbs.",
+    "chunk_count": 5,
+    "child_ids": [
+      "race-012-memo-chunk-014",
+      "race-012-memo-chunk-015",
+      "race-012-memo-chunk-016",
+      "race-012-memo-chunk-017",
+      "race-012-memo-chunk-018"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-message-testing-results",
+    "race_id": "race-012",
+    "section": "Message Testing Results",
+    "summary": "Emily Schroeder's message highlighting her nursing background and patients skipping medications due to cost resonated strongly in message testing, winning 7-2 in Fox Valley and 5-3 in WOW counties. Generic economic messaging like \"Mark Thompson will cut taxes and grow the economy\" proved ineffective against Schroeder's specific narrative, suggesting a need to focus on relatable, personal stories.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: Message Testing Results\n\nEmily Schroeder's message highlighting her nursing background and patients skipping medications due to cost resonated strongly in message testing, winning 7-2 in Fox Valley and 5-3 in WOW counties. Generic economic messaging like \"Mark Thompson will cut taxes and grow the economy\" proved ineffective against Schroeder's specific narrative, suggesting a need to focus on relatable, personal stories.",
+    "chunk_count": 2,
+    "child_ids": [
+      "race-012-memo-chunk-019",
+      "race-012-memo-chunk-020"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-recommendations-for-wisconsin-democrats",
+    "race_id": "race-012",
+    "section": "Recommendations for Wisconsin Democrats",
+    "summary": "Wisconsin Democrats should prioritize recruiting working-class candidates and focusing on healthcare costs as their core economic message to resonate with voters, particularly in the persuadable Fox Valley region. They should leverage existing union networks and target WOW counties with healthcare and abortion messaging, while actively avoiding being labeled as \"Madison liberals\" to maximize appeal.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: Recommendations for Wisconsin Democrats\n\nWisconsin Democrats should prioritize recruiting working-class candidates and focusing on healthcare costs as their core economic message to resonate with voters, particularly in the persuadable Fox Valley region. They should leverage existing union networks and target WOW counties with healthcare and abortion messaging, while actively avoiding being labeled as \"Madison liberals\" to maximize appeal.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-012-memo-chunk-021"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  },
+  {
+    "id": "parent-race-012-memo-margin-analysis",
+    "race_id": "race-012",
+    "section": "Margin Analysis",
+    "summary": "The campaign won by a 2.8% margin (90,000 votes) due to a strong showing in Dane County (+100,000) and improved performance in the Fox Valley (+15,000) and WOW counties (+10,000) compared to 2022, offsetting increased rural losses (-35,000). Analysis of focus groups, exit polling, and election data indicates the winning coalition was built on an urban base and gains in swing regions.",
+    "content": "[Wisconsin 2024 | win | +2.8%]\nSection: Margin Analysis\n\nThe campaign won by a 2.8% margin (90,000 votes) due to a strong showing in Dane County (+100,000) and improved performance in the Fox Valley (+15,000) and WOW counties (+10,000) compared to 2022, offsetting increased rural losses (-35,000). Analysis of focus groups, exit polling, and election data indicates the winning coalition was built on an urban base and gains in swing regions.",
+    "chunk_count": 1,
+    "child_ids": [
+      "race-012-memo-chunk-022"
+    ],
+    "outcome": "win",
+    "state": "Wisconsin",
+    "year": 2024,
+    "margin": 2.8
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-003-memo-chunk-003",
+  "race_id": "race-003",
+  "content": "Our core economic message - \"fight for working families by taking on corporate greed and making sure the wealthy pay their fair share\" - was roundly rejected across all voter segments.\n\n**Focus group evidence:**\n\n| Group | Message Score | Representative Quote |\n|-------|---------------|---------------------|\n| WOW Counties | 1.5/5 | \"Corporate greed. Really? That's simplistic nonsense.\" |\n| Madison | 2.3/5 | \"This messaging was stale in 2010. It's beyond stale now.\" |\n| Fox Valley | 2.1/5 | \"This sounds like every Democrat ever. Things don't change.\" |\n\n**Why it failed:**\n\n1. **Not addressing the moment:** Voters were experiencing real inflation pain. \"Corporate greed\" felt like deflection, not solution.\n\n2. **Lack of specificity:** \"Fight for working families\" is meaningless without policy detail. Voters demanded numbers.\n\n3. **Stale language:** This messaging has been Democratic boilerplate for 30 years. Voters are immune to it.\n\n4. **No acknowledgment of inflation:** By blaming \"greed\" rather than acknowledging government policy role in inflation, we seemed out of touch.\n\n**Contrast with winning campaigns:** Michigan and Pennsylvania Democrats who won in 2022 moved to SPECIFIC policy messaging - \"$35 insulin cap,\" \"cut the gas tax,\" \"save $800/year.\" We never made that pivot.",
+  "section": "What Went Wrong",
+  "subsection": "1. Economic Messaging Was a Catastrophic Failure",
+  "state": "Wisconsin",
+  "year": 2022,
+  "outcome": "loss",
+  "margin": -1.1,
+  "office": "Senate",
+  "candidate_name": "Karen Kowalski",
+  "opponent_name": "Steve Lindquist",
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+  "line_number": 22
+}

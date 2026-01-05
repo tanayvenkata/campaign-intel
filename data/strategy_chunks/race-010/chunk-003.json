@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-010-memo-chunk-003",
+  "race_id": "race-010",
+  "content": "Hartley's pharma background was devastating across all three focus groups:\n\n**Philly suburbs (P10):** \"Pharma executive? After what they've done to drug prices? Absolutely not.\"\n\n**Pittsburgh (P8):** \"As a nurse, I can't support a pharma executive. The industry is part of the problem.\"\n\n**NEPA (P1):** \"Those are the people charging $500 for insulin.\"\n\nEven P2 (Philly suburbs), who works in pharma, voted Russo. The \"made millions while drug prices soared\" frame was unanswerable.",
+  "section": "What Worked",
+  "subsection": "1. Pharmaceutical Executive Attack",
+  "state": "Pennsylvania",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 3.1,
+  "office": "Senate",
+  "candidate_name": "Angela Russo",
+  "opponent_name": "Jeff Hartley",
+  "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+  "line_number": 20
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-006-memo-chunk-019",
+  "race_id": "race-006",
+  "content": "**Final margin: +0.8% (approximately 7,500 votes)**\n\n**Where it came from:**\n- Culinary Union over-performance: ~6,000 votes\n- Latino community turnout: ~5,000 votes\n- Reno anti-Prescott voters: ~3,000 votes\n- Rural Nevada losses: ~6,500 net loss\n\n**Coalition was just barely sufficient.** Any single piece missing = loss.\n\n---\n\n*This memo reflects analysis of three focus groups (Las Vegas union workers, Reno transplants/natives, Latino Vegas community) conducted September 2022, exit polling, and campaign performance data.*",
+  "section": "Margin Analysis",
+  "subsection": null,
+  "state": "Nevada",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.8,
+  "office": "Senate",
+  "candidate_name": "Maria Sandoval",
+  "opponent_name": "Adam Prescott",
+  "source_file": "political-consulting-corpus/races/race-006-nevada-senate-2022/strategy-memo.md",
+  "line_number": 190
+}

@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-009-memo-chunk-008",
+  "race_id": "race-009",
+  "content": "- Focus group: 10-0 Kowalski\n- Key dynamic: Water crisis loyalty + union endorsements = locked base\n- Even skeptics (P3, P7) came on board\n- Enthusiasm: 7.4 average",
+  "section": "Geographic Performance",
+  "subsection": "Flint/Saginaw (Base)",
+  "state": "Michigan",
+  "year": 2024,
+  "outcome": "win",
+  "margin": 4.2,
+  "office": "Senate",
+  "candidate_name": "Lisa Kowalski",
+  "opponent_name": "Mike DeGroot",
+  "source_file": "political-consulting-corpus/races/race-009-michigan-senate-2024/strategy-memo.md",
+  "line_number": 71
+}

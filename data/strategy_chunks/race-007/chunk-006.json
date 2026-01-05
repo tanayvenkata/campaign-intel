@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-006",
+  "race_id": "race-007",
+  "content": "The Columbus focus group showed our best numbers - 9 of 10 supporting Brennan. But:\n\n**P4:** \"Columbus alone cannot elect Brennan.\"\n\n**Average enthusiasm:** 6.3/10 among our supporters\n\nEven where we won, we didn't win big enough or enthusiastically enough to compensate for rural and working-class losses.\n\n---",
+  "section": "The Collapse: What Happened",
+  "subsection": "4. Columbus Couldn't Compensate",
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 55
+}

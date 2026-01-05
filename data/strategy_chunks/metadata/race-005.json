@@ -1,0 +1,24 @@
+{
+  "race_id": "race-005",
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "sections": [
+    "Executive Summary",
+    "Geographic Insights",
+    "Header",
+    "Key Learnings for Future Races",
+    "Margin Analysis",
+    "Opponent Analysis: Kari Mitchell",
+    "Recommendations for Future Arizona Races",
+    "Voter Segment Analysis",
+    "What Didn't Work",
+    "What Worked"
+  ],
+  "chunk_count": 19,
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md"
+}

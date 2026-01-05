@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-005-memo-chunk-015",
+  "race_id": "race-005",
+  "content": "| Segment | Vote | Enthusiasm | Key Drivers |\n|---------|------|------------|-------------|\n| McCain Republicans | Reyes | Moderate | Election denial disqualifying |\n| Maricopa swing voters | Reyes | Moderate-High | Democracy + abortion |\n| Phoenix Latinos | Reyes | High | Representation + turnout |\n| Border-connected Latinos | Lean Reyes | Moderate | Conflicted on border |\n| Tucson progressives | Reyes | High | Climate + abortion |\n| Environmentalists | Reyes | Very High | Water policy |\n\n---",
+  "section": "Voter Segment Analysis",
+  "subsection": null,
+  "state": "Arizona",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 0.5,
+  "office": "Governor",
+  "candidate_name": "Elena Reyes",
+  "opponent_name": "Kari Mitchell",
+  "source_file": "political-consulting-corpus/races/race-005-arizona-gov-2022/strategy-memo.md",
+  "line_number": 134
+}

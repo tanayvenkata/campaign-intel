@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-002-memo-chunk-014",
+  "race_id": "race-002",
+  "content": "2022 was supposed to be a tough year for Democrats nationally. Inflation, Biden's approval ratings, historical midterm patterns. But in Pennsylvania, candidate quality overwhelmed those headwinds.\n\n**When does candidate quality matter most?**\n- Open seat races\n- When opponent has clear vulnerabilities\n- When partisan environment is unfavorable (quality provides hedge)\n- When electorate is skeptical of both parties",
+  "section": "Key Learnings for Future Races",
+  "subsection": "4. Candidate Quality Can Override Partisan Environment",
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md",
+  "line_number": 148
+}

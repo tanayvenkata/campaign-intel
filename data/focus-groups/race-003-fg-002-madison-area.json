@@ -1,0 +1,49 @@
+{
+  "focus_group_id": "race-003-fg-002-madison-area",
+  "race_id": "race-003",
+  "race_name": "Wisconsin Senate 2022",
+  "outcome": "loss",
+  "location": "Madison Area (Dane County)",
+  "date": "September 20, 2022",
+  "moderator": "James Patterson",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Democratic base voters, motivation check",
+  "participants": {
+    "P1": "F, 28, Graduate student (political science), UW-Madison, activist background, volunteers for campaigns",
+    "P2": "M, 45, State government analyst, Middleton, reliable Democratic voter, policy wonk",
+    "P3": "F, 52, High school English teacher, Sun Prairie, union member (WEAC), Act 10 survivor",
+    "P4": "M, 34, Software developer, downtown Madison, Bernie supporter 2016/2020, progressive",
+    "P5": "F, 41, Nonprofit executive director (environmental), Fitchburg, climate-focused",
+    "P6": "M, 61, Retired professor (economics), near campus, \"New Deal Democrat\"",
+    "P7": "F, 37, Hospital nurse, UW Health, frontline COVID worker, healthcare focused",
+    "P8": "M, 29, Bartender and musician, near campus, first-time voter in 2020, intermittent engagement",
+    "P9": "F, 55, Small business owner (bookstore), Willy Street, progressive community pillar",
+    "P10": "M, 48, Public defender, Madison, criminal justice reform advocate"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Enthusiasm average of 5.6/10",
+      "P8 may not vote",
+      "Economic messaging is failing even with Democrats",
+      "Burnout is pervasive",
+      "Abortion is the only energy source",
+      "No ground game activation",
+      "Flood the zone with abortion messaging",
+      "Add climate message",
+      "Develop bold policy agenda",
+      "Madison ground game activation",
+      "Distance from Biden on inflation",
+      "Give young people a reason"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"I'll vote for Kowalski obviously, but I'm tired.\" - P1",
+      "\"I might vote? I haven't decided.\" - P8",
+      "\"This messaging was stale in 2010. It's beyond stale now.\" - P9",
+      "\"Generic Democrat. Doesn't speak to what I care about.\" - P4",
+      "\"If we lose this one, it's self-inflicted.\" - P1"
+    ],
+    "full_text": "\n### CRITICAL WARNING: BASE ENTHUSIASM DEFICIT\n\n**This focus group reveals serious problems in Democratic base territory.**\n\n1. **Enthusiasm average of 5.6/10** - In Dane County, the most Democratic county in Wisconsin, this should be 8+. This is a crisis.\n\n2. **P8 may not vote** - \"I might not vote\" from a 2020 voter in Madison is an alarming data point.\n\n3. **Economic messaging is failing even with Democrats** - \"Corporate greed\" scored 2.3/5 with BASE voters. If it doesn't work here, it doesn't work anywhere.\n\n4. **Burnout is pervasive** - \"Exhausted,\" \"tired,\" \"burnt out\" came up repeatedly. The coalition is fatigued.\n\n5. **Abortion is the only energy source** - 4.1/5 but campaign not leaning into it enough.\n\n6. **No ground game activation** - P2 (\"not doing doors\"), P7 (\"limited bandwidth\") - even reliable volunteers are sitting out.\n\n### Key Concerns Expressed by Base\n\n- Generic, stale messaging (\"same message for 30 years\")\n- No climate vision despite environmental voters\n- No criminal justice reform despite progressive base\n- Not differentiating from Biden/national Democratic brand\n- Playing it safe when boldness is needed\n\n### Participation Predictions\n\n- **Will definitely vote:** P1, P2, P3, P5, P6, P9, P10 (7)\n- **Will probably vote:** P4, P7 (2)\n- **Might not vote:** P8 (1)\n\nIn the base, 10% considering not voting is a red flag.\n\n### Comparison to 2020\n\nMultiple participants noted reduced enthusiasm vs. 2020 and even 2018. In a state decided by <1%, this enthusiasm gap could be decisive.\n\n### Urgent Recommendations\n\n1. **Flood the zone with abortion messaging** - Only energy source. Use it.\n\n2. **Add climate message** - Environmental voters are natural allies feeling ignored.\n\n3. **Develop bold policy agenda** - Student debt, Medicare expansion, something that gives people hope.\n\n4. **Madison ground game activation** - Need personal contact to overcome fatigue.\n\n5. **Distance from Biden on inflation** - Acknowledge the problem. Don't dismiss it.\n\n6. **Give young people a reason** - P8's disengagement is symptomatic of larger problem.\n\n### Verbatim Quotes Showing Trouble\n\n> \"I'll vote for Kowalski obviously, but I'm tired.\" - P1\n\n> \"I might vote? I haven't decided.\" - P8\n\n> \"This messaging was stale in 2010. It's beyond stale now.\" - P9\n\n> \"Generic Democrat. Doesn't speak to what I care about.\" - P4\n\n> \"If we lose this one, it's self-inflicted.\" - P1\n\n---\n\n*Transcript prepared by Capitol Research Associates*\n*September 21, 2022*\n*STATUS: WARNING - BASE ENTHUSIASM DEFICIT*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/focus-groups/fg-002-madison-area.md"
+}

@@ -1,0 +1,23 @@
+{
+  "race_id": "race-002",
+  "state": "Pennsylvania",
+  "year": 2022,
+  "outcome": "win",
+  "margin": 4.8,
+  "office": "Senate",
+  "candidate_name": "Tony Marchetti",
+  "opponent_name": "David Thornton",
+  "sections": [
+    "Executive Summary",
+    "Geographic Insights",
+    "Header",
+    "Key Learnings for Future Races",
+    "Quote Compilation for Future Use",
+    "Recommendations for 2024 and Beyond",
+    "Voter Segment Analysis",
+    "What Didn't Work",
+    "What Worked"
+  ],
+  "chunk_count": 19,
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/strategy-memo.md"
+}

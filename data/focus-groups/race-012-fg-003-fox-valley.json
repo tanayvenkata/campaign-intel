@@ -1,0 +1,40 @@
+{
+  "focus_group_id": "race-012-fg-003-fox-valley",
+  "race_id": "race-012",
+  "race_name": "Wisconsin Senate 2024",
+  "outcome": "win",
+  "location": "Fox Valley (Appleton/Outagamie County)",
+  "date": "October 2, 2024",
+  "moderator": "Brian Mueller",
+  "participant_count": 10,
+  "participant_summary": "10 (5F, 5M) - Manufacturing region, swing voters, Schroeder's home turf",
+  "participants": {
+    "P1": "M, 55, Paper mill worker, Kimberly, union, lifelong Democrat",
+    "P2": "F, 48, Nurse, ThedaCare, Appleton, knows Schroeder professionally",
+    "P3": "M, 38, Manufacturing supervisor, Neenah, swing voter, economic focus",
+    "P4": "F, 61, Retired teacher, Menasha, moderate Democrat",
+    "P5": "M, 44, Truck driver, Kaukauna, independent, cost of living concerns",
+    "P6": "F, 35, Healthcare aide, Oshkosh, working class, economic anxiety",
+    "P7": "M, 52, Small business owner (hardware store), Little Chute, Republican lean",
+    "P8": "F, 42, Insurance agent, Grand Chute, swing voter",
+    "P9": "M, 34, Factory worker (Appvion), Appleton, union",
+    "P10": "F, 58, Church secretary, Greenville, conservative, values focus"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Hometown advantage is decisive",
+      "Paper mill / manufacturing identity",
+      "P2's personal connection",
+      "Even Republicans consider crossing",
+      "\"Madison liberal\" attack fails"
+    ],
+    "vote_intent_summary": "**Schroeder:** 8",
+    "key_quotes": [
+      "\"She's not parachuting in. She lives here. Shops here. Knows people.\" - P2",
+      "\"Paper mill background, nurse, local - that's us.\" - P9",
+      "\"She's from Appleton. That attack doesn't land.\" - P10 (on \"Madison liberal\")"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Hometown advantage is decisive** - Schroeder's Appleton roots neutralize \"Madison liberal\" attack.\n\n2. **Paper mill / manufacturing identity** - The valley's industrial heritage shapes political identity.\n\n3. **P2's personal connection** - Worked with Schroeder at ThedaCare. Powerful testimonial.\n\n4. **Even Republicans consider crossing** - P7 and P10 are leaning Schroeder.\n\n5. **\"Madison liberal\" attack fails** - \"She's from Appleton\" is the response.\n\n### Vote Intent\n\n- **Schroeder:** 8\n- **Lean Schroeder:** 2 (P7, P10)\n\nSchroeder wins her home turf decisively.\n\n### Crossover Profiles\n\n- **P7 (Republican lean):** \"She's local\" overcomes party.\n- **P10 (conservative):** \"She's a good person even if she's Democrat.\"\n\n### Key Quotes\n\n> \"She's not parachuting in. She lives here. Shops here. Knows people.\" - P2\n\n> \"Paper mill background, nurse, local - that's us.\" - P9\n\n> \"She's from Appleton. That attack doesn't land.\" - P10 (on \"Madison liberal\")\n\n---\n\n*Transcript prepared by Fox Valley Research*\n*October 3, 2024*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-012-wisconsin-senate-2024/focus-groups/fg-003-fox-valley.md"
+}

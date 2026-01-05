@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-008",
+  "race_id": "race-007",
+  "content": "Stanton's attack - \"18 years and what's changed? Prices up, jobs gone\" - went largely unanswered.\n\n**Message test results:**\n- Cleveland suburbs: Stanton message 6, Brennan message 3\n- Columbus: Stanton message 5, Brennan message 4\n- Youngstown: Stanton message 6, Brennan message 2\n\nOur message lost in every focus group.",
+  "section": "What Failed",
+  "subsection": "2. Failure to Answer Economic Attack",
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 75
+}

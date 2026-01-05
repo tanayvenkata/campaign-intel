@@ -1,0 +1,52 @@
+{
+  "focus_group_id": "race-002-fg-001-philadelphia-suburbs",
+  "race_id": "race-002",
+  "race_name": "Pennsylvania Senate 2022",
+  "outcome": "win",
+  "location": "Philadelphia Suburbs (Montgomery County - King of Prussia)",
+  "date": "September 12, 2022",
+  "moderator": "David Chen",
+  "participant_count": 10,
+  "participant_summary": "10 (7F, 3M) - College-educated suburban voters, mixed partisans",
+  "participants": {
+    "P1": "F, 47, Pharmaceutical executive, Villanova, MBA, Romney-Clinton-Biden voter, two teenagers",
+    "P2": "F, 38, Pediatrician, Narberth, moderate Democrat, concerned about healthcare policy",
+    "P3": "M, 55, Financial advisor, Bryn Mawr, registered Republican, \"fiscally conservative, socially moderate\"",
+    "P4": "F, 42, Marketing VP at tech company, Ardmore, independent, divorced, one child",
+    "P5": "F, 51, High school principal, Radnor, Democrat, education as top issue",
+    "P6": "M, 63, Retired corporate attorney, Gladwyne, country club Republican, \"never Trump\"",
+    "P7": "F, 36, Nonprofit development director, Conshohocken, progressive lean but pragmatic",
+    "P8": "F, 44, Small business owner (boutique), Wayne, independent, stressed about economy",
+    "P9": "M, 48, Hospital CFO, Haverford, moderate, healthcare system insider",
+    "P10": "F, 33, Software engineer, Plymouth Meeting, first-time homeowner, student debt concerns"
+  },
+  "moderator_notes": {
+    "key_themes": [
+      "Candidate quality is decisive",
+      "Abortion has realigned the suburbs",
+      "Thornton's wealth is liability, not asset",
+      "\"Relatability gap\" favors Marchetti",
+      "Economic populism lands in affluent suburbs",
+      "Republican defections are real",
+      "Marchetti-Thornton contrast",
+      "Abortion protection",
+      "Character and authenticity",
+      "Lead with candidate contrast",
+      "Don't let Thornton soften",
+      "Economic message through character lens",
+      "Target suburban Republican women",
+      "Use \"buy a Senate seat\" carefully"
+    ],
+    "vote_intent_summary": "",
+    "key_quotes": [
+      "\"It's like two different worlds. One guy grew up working class. The other was born on third base and thinks he hit a triple.\" - P1",
+      "\"I'm a lifelong Republican and I barely recognize my party anymore.\" - P6",
+      "\"One seems real, one seems fake. I can't vote for fake.\" - P8",
+      "\"A vote for Thornton is a vote against abortion rights. Period.\" - P1",
+      "\"Probably Marchetti, which is strange for me to say.\" - P6",
+      "\"The relatability gap is huge.\" - P4"
+    ],
+    "full_text": "\n### Key Themes\n\n1. **Candidate quality is decisive** - The contrast between Marchetti's working-class authenticity and Thornton's hedge-fund elitism dominated discussion. Character matters more than policy specifics for these voters.\n\n2. **Abortion has realigned the suburbs** - Even traditionally Republican voters (P3, P6) are moving Democratic on this issue. The Dobbs decision mobilized this community profoundly.\n\n3. **Thornton's wealth is liability, not asset** - \"Never had to struggle,\" \"buy a Senate seat,\" \"born on third base\" - his background is being used against him effectively.\n\n4. **\"Relatability gap\" favors Marchetti** - Participants could imagine having dinner with Marchetti. Thornton feels like a \"different universe.\"\n\n5. **Economic populism lands in affluent suburbs** - Even wealthy professionals responded to working-class framing. The hedge fund vs. steelworker contrast resonates.\n\n6. **Republican defections are real** - P3 and P6 are traditional Republicans seriously considering voting Democratic. This represents realignment.\n\n### Strongest Messages Tested\n\n1. **Marchetti-Thornton contrast** - \"Son of a steelworker vs. wants to buy a Senate seat\" - universally effective\n2. **Abortion protection** - Direct, clear, tying Thornton to party position\n3. **Character and authenticity** - \"Real vs. fake\" emerged organically\n\n### Participant Movement\n\nAll 10 participants ended leaning or committed to Marchetti, including:\n- P3: Traditional Republican, \"torn but leaning Marchetti\"\n- P6: Country club Republican, \"probably Marchetti, which is strange\"\n\n### Demographic Notes\n\n- **Women (7 participants)** were unanimously energized by abortion, more likely to volunteer, highly engaged\n- **Higher-income participants** still responded to working-class framing - identifies with values, not circumstances\n- **Healthcare professionals** (P2, P9) particularly motivated by medical implications of abortion restrictions\n\n### Recommended Actions\n\n1. **Lead with candidate contrast** - Marchetti's biography vs. Thornton's background is the most powerful frame\n2. **Don't let Thornton soften** - Hold him to his party's position on abortion; \"won't commit\" is key phrase\n3. **Economic message through character lens** - \"Understands your struggles\" beats policy details\n4. **Target suburban Republican women** - This group is movable and motivated\n5. **Use \"buy a Senate seat\" carefully** - Powerful but ensure factual grounding\n\n### Verbatim Quotes for Campaign\n\n> \"It's like two different worlds. One guy grew up working class. The other was born on third base and thinks he hit a triple.\" - P1\n\n> \"I'm a lifelong Republican and I barely recognize my party anymore.\" - P6\n\n> \"One seems real, one seems fake. I can't vote for fake.\" - P8\n\n> \"A vote for Thornton is a vote against abortion rights. Period.\" - P1\n\n> \"Probably Marchetti, which is strange for me to say.\" - P6\n\n> \"The relatability gap is huge.\" - P4\n\n---\n\n*Transcript prepared by Delaware Valley Research Group*\n*September 13, 2022*\n"
+  },
+  "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/focus-groups/fg-001-philadelphia-suburbs.md"
+}

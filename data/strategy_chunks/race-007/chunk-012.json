@@ -1,0 +1,16 @@
+{
+  "chunk_id": "race-007-memo-chunk-012",
+  "race_id": "race-007",
+  "content": "- Enthusiasm averaging only 6.3/10 among Brennan supporters\n- P4 predicted loss: \"Columbus isn't enough\"\n- Split-ticket Republican crossovers (P6) at enthusiasm 4",
+  "section": "Focus Group Warning Signs Ignored",
+  "subsection": "Columbus - Warning Signs",
+  "state": "Ohio",
+  "year": 2024,
+  "outcome": "loss",
+  "margin": -6.2,
+  "office": "Senate",
+  "candidate_name": "Tim Brennan",
+  "opponent_name": "Jim Stanton",
+  "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+  "line_number": 114
+}
