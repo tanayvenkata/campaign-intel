@@ -24,7 +24,7 @@ class GroupedResult(BaseModel):
 class SearchRequest(BaseModel):
     query: str
     top_k: int = 5
-    score_threshold: float = 0.75
+    score_threshold: float = 0.50  # Lowered for OpenAI embeddings (which produce ~0.55-0.65 scores)
 
 class SearchResponse(BaseModel):
     results: List[GroupedResult]

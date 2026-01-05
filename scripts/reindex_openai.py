@@ -27,10 +27,11 @@ BATCH_SIZE = 100
 
 
 def load_all_chunks():
-    """Load all chunks from enriched data."""
+    """Load all chunks from enriched data (focus groups + strategy memos)."""
     chunks = []
 
     # Focus group chunks
+    print("  Loading focus group chunks...")
     chunks_dir = DATA_DIR / "chunks_enriched"
     for fg_dir in sorted(chunks_dir.iterdir()):
         if fg_dir.is_dir():
@@ -39,18 +40,50 @@ def load_all_chunks():
                 with open(chunk_file) as f:
                     fg_chunks = json.load(f)
                     chunks.extend(fg_chunks)
-                    print(f"  Loaded {len(fg_chunks)} chunks from {fg_dir.name}")
+                    print(f"    Loaded {len(fg_chunks)} chunks from {fg_dir.name}")
+
+    # Strategy memo chunks
+    print("  Loading strategy memo chunks...")
+    strategy_dir = DATA_DIR / "strategy_chunks"
+    for race_dir in sorted(strategy_dir.iterdir()):
+        if race_dir.is_dir() and race_dir.name.startswith("race-"):
+            chunk_file = race_dir / "all_chunks.json"
+            if chunk_file.exists():
+                with open(chunk_file) as f:
+                    strat_chunks = json.load(f)
+                    # Mark as strategy_memo type for filtering
+                    for chunk in strat_chunks:
+                        chunk["type"] = "strategy_memo"
+                    chunks.extend(strat_chunks)
+                    print(f"    Loaded {len(strat_chunks)} chunks from {race_dir.name}")
 
     return chunks
 
 
 def load_hierarchical_parents():
-    """Load parent chunks for hierarchical retrieval."""
-    parents_file = DATA_DIR / "hierarchical_parents.json"
-    if parents_file.exists():
-        with open(parents_file) as f:
-            return json.load(f)
-    return {}
+    """Load parent chunks for hierarchical retrieval (focus groups + strategy memos)."""
+    parents = []
+
+    # Focus group parents
+    fg_parents_file = DATA_DIR / "hierarchical_parents.json"
+    if fg_parents_file.exists():
+        with open(fg_parents_file) as f:
+            fg_parents = json.load(f)
+            parents.extend(fg_parents)
+            print(f"  Loaded {len(fg_parents)} focus group parents")
+
+    # Strategy memo parents
+    strat_parents_file = DATA_DIR / "strategy_chunks" / "hierarchical_parents.json"
+    if strat_parents_file.exists():
+        with open(strat_parents_file) as f:
+            strat_parents = json.load(f)
+            # Mark as strategy type for filtering
+            for parent in strat_parents:
+                parent["type"] = "strategy_parent"
+            parents.extend(strat_parents)
+            print(f"  Loaded {len(strat_parents)} strategy memo parents")
+
+    return parents
 
 
 def main():
@@ -92,20 +125,38 @@ def main():
     vectors = []
     for i, (chunk, embedding) in enumerate(zip(chunks, embeddings)):
         chunk_id = chunk.get("chunk_id", f"chunk-{i}")
+        chunk_type = chunk.get("type", "child")
 
-        # Metadata (same as original)
-        metadata = {
-            "focus_group_id": chunk.get("focus_group_id", ""),
-            "participant": chunk.get("participant", ""),
-            "participant_profile": chunk.get("participant_profile", ""),
-            "section": chunk.get("section", ""),
-            "content": chunk.get("content", "")[:1000],  # Truncate for Pinecone limit
-            "content_original": chunk.get("content", ""),
-            "source_file": chunk.get("source_file", ""),
-            "line_number": chunk.get("line_number", 0),
-            "preceding_moderator_q": chunk.get("preceding_moderator_q", ""),
-            "type": "child",  # Match original BGE-M3 index metadata
-        }
+        if chunk_type == "strategy_memo":
+            # Strategy memo metadata
+            metadata = {
+                "race_id": chunk.get("race_id", ""),
+                "section": chunk.get("section", ""),
+                "subsection": chunk.get("subsection", "") or "",
+                "content": chunk.get("content", "")[:1000],
+                "content_original": chunk.get("content", ""),
+                "state": chunk.get("state", ""),
+                "year": chunk.get("year", 0),
+                "outcome": chunk.get("outcome", ""),
+                "margin": chunk.get("margin", 0.0),
+                "source_file": chunk.get("source_file", ""),
+                "line_number": chunk.get("line_number", 0),
+                "type": "strategy_memo",
+            }
+        else:
+            # Focus group metadata (default)
+            metadata = {
+                "focus_group_id": chunk.get("focus_group_id", ""),
+                "participant": chunk.get("participant", ""),
+                "participant_profile": chunk.get("participant_profile", ""),
+                "section": chunk.get("section", ""),
+                "content": chunk.get("content", "")[:1000],
+                "content_original": chunk.get("content", ""),
+                "source_file": chunk.get("source_file", ""),
+                "line_number": chunk.get("line_number", 0),
+                "preceding_moderator_q": chunk.get("preceding_moderator_q", ""),
+                "type": "child",
+            }
 
         vectors.append({
             "id": chunk_id,
@@ -130,14 +181,28 @@ def main():
 
     for parent, embedding in zip(parents, parent_embeddings):
         parent_id = parent.get("id", "")
-        metadata = {
-            "focus_group_id": parent.get("focus_group_id", ""),
-            "section": parent.get("section", ""),
-            "content": parent.get("summary", parent.get("content", ""))[:1000],
-            "content_original": parent.get("summary", parent.get("content", "")),
-            "child_ids": json.dumps(parent.get("child_chunk_ids", [])),  # Match original field name
-            "type": "parent",  # Match original BGE-M3 index metadata
-        }
+        parent_type = parent.get("type", "parent")
+
+        if parent_type == "strategy_parent":
+            # Strategy memo parent metadata
+            metadata = {
+                "race_id": parent.get("race_id", ""),
+                "section": parent.get("section", ""),
+                "content": parent.get("summary", parent.get("content", ""))[:1000],
+                "content_original": parent.get("summary", parent.get("content", "")),
+                "child_ids": json.dumps(parent.get("child_chunk_ids", [])),
+                "type": "strategy_parent",
+            }
+        else:
+            # Focus group parent metadata (default)
+            metadata = {
+                "focus_group_id": parent.get("focus_group_id", ""),
+                "section": parent.get("section", ""),
+                "content": parent.get("summary", parent.get("content", ""))[:1000],
+                "content_original": parent.get("summary", parent.get("content", "")),
+                "child_ids": json.dumps(parent.get("child_chunk_ids", [])),
+                "type": "parent",
+            }
 
         parent_vectors.append({
             "id": parent_id,
