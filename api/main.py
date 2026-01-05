@@ -71,6 +71,15 @@ deep_summary_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
 # Unified macro cache: (query_hash, fg_ids_hash, race_ids_hash) -> synthesis string (1 hour TTL)
 unified_macro_cache: TTLCache = TTLCache(maxsize=100, ttl=3600)
 
+# Strategy light summary cache: (query_hash, race_id) -> summary string (1 hour TTL)
+strategy_light_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
+
+# Strategy deep summary cache: (query_hash, race_id) -> synthesis string (1 hour TTL)
+strategy_deep_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
+
+# Strategy macro cache: (query_hash, race_ids_hash) -> synthesis string (1 hour TTL)
+strategy_macro_cache: TTLCache = TTLCache(maxsize=100, ttl=3600)
+
 # Rate limiting: IP -> {"count": int, "date": date}
 rate_limits: Dict[str, Dict] = defaultdict(lambda: {"count": 0, "date": date.today()})
 DAILY_RATE_LIMIT = int(os.getenv("DAILY_RATE_LIMIT", "100"))
@@ -259,6 +268,46 @@ def _prewarm_query(query: str) -> None:
                     query=query
                 )
                 macro_synthesis_cache[macro_cache_key] = macro_result
+
+    # Pre-warm strategy light summaries
+    if lessons_results and synthesizer:
+        for race in lessons_results:
+            race_id = race.race_id
+            strategy_cache_key = f"strategy:{cache_key}:{race_id}"
+
+            if strategy_cache_key not in strategy_light_cache:
+                race_meta = race.race_metadata
+                race_name = f"{race_meta.get('state', 'Unknown')} {race_meta.get('year', '?')}"
+
+                # Build context from chunks for synthesis
+                chunks_text = []
+                for c in race.chunks:
+                    chunks_text.append(f"[{c.section}] {c.content}")
+                context = "\n\n".join(chunks_text)
+
+                prompt = f"""You are a senior political strategist summarizing campaign lessons.
+
+Query: "{query}"
+Race: {race_name}
+
+Strategy memo excerpts:
+{context}
+
+Write a 1-2 sentence summary of the key lesson(s) from this race relevant to the query.
+Be specific - include what worked/failed and why. No fluff."""
+
+                try:
+                    response = synthesizer.client.chat.completions.create(
+                        model=synthesizer.model,
+                        messages=[{"role": "user", "content": prompt}],
+                        max_tokens=150,
+                        temperature=0.3
+                    )
+                    summary = response.choices[0].message.content.strip()
+                    strategy_light_cache[strategy_cache_key] = summary
+                    print(f"    Pre-warmed strategy summary for {race_id}")
+                except Exception as e:
+                    print(f"    Failed to pre-warm strategy summary for {race_id}: {e}")
 
 
 @asynccontextmanager
@@ -1090,9 +1139,18 @@ async def synthesize_macro_deep(request: DeepMacroSynthesisRequest):
 
 @app.post("/synthesize/strategy/light")
 async def synthesize_strategy_light(request: StrategySynthesisRequest):
-    """Generate a light summary of strategy lessons for a single race."""
+    """Generate a light summary of strategy lessons for a single race (with caching)."""
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
+
+    # Get race_id for cache key
+    race_id = request.chunks[0].race_id if request.chunks else "unknown"
+    cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD, USE_HYBRID_RETRIEVAL)
+    strategy_cache_key = f"strategy:{cache_key}:{race_id}"
+
+    # Check cache first
+    if strategy_cache_key in strategy_light_cache:
+        return {"summary": strategy_light_cache[strategy_cache_key], "cached": True}
 
     # Build context from chunks
     chunks_text = []
@@ -1118,16 +1176,35 @@ Be specific - include what worked/failed and why. No fluff."""
             max_tokens=150,
             temperature=0.3
         )
-        return {"summary": response.choices[0].message.content.strip()}
+        summary = response.choices[0].message.content.strip()
+
+        # Cache the result
+        strategy_light_cache[strategy_cache_key] = summary
+
+        return {"summary": summary}
     except Exception as e:
         return {"summary": get_friendly_error(e)}
 
 
 @app.post("/synthesize/strategy/deep")
 async def synthesize_strategy_deep(request: StrategySynthesisRequest):
-    """Generate a deep analysis of strategy lessons (streaming)."""
+    """Generate a deep analysis of strategy lessons (streaming, with caching)."""
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
+
+    # Get race_id for cache key
+    race_id = request.chunks[0].race_id if request.chunks else "unknown"
+    cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD, USE_HYBRID_RETRIEVAL)
+    strategy_deep_key = f"strategy_deep:{cache_key}:{race_id}"
+
+    # Check cache first - return cached content as stream
+    if strategy_deep_key in strategy_deep_cache:
+        cached_content = strategy_deep_cache[strategy_deep_key]
+
+        async def cached_stream():
+            yield cached_content
+
+        return StreamingResponse(cached_stream(), media_type="text/event-stream")
 
     chunks_text = []
     for c in request.chunks:
@@ -1150,6 +1227,9 @@ Provide a detailed analysis that:
 
 Keep it to 2-3 paragraphs. Be analytical and specific."""
 
+    # Collect full response for caching
+    full_response = []
+
     async def stream_generator():
         try:
             stream = synthesizer.client.chat.completions.create(
@@ -1161,7 +1241,12 @@ Keep it to 2-3 paragraphs. Be analytical and specific."""
             )
             for chunk in stream:
                 if chunk.choices[0].delta.content:
-                    yield chunk.choices[0].delta.content
+                    content = chunk.choices[0].delta.content
+                    full_response.append(content)
+                    yield content
+
+            # Cache the full response after streaming completes
+            strategy_deep_cache[strategy_deep_key] = "".join(full_response)
         except Exception as e:
             yield get_friendly_error(e)
 
@@ -1170,9 +1255,23 @@ Keep it to 2-3 paragraphs. Be analytical and specific."""
 
 @app.post("/synthesize/strategy/macro")
 async def synthesize_strategy_macro(request: StrategyMacroSynthesisRequest):
-    """Generate cross-race strategy synthesis (streaming)."""
+    """Generate cross-race strategy synthesis (streaming, with caching)."""
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
+
+    # Generate cache key based on query + selected races
+    cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD, USE_HYBRID_RETRIEVAL)
+    race_ids_hash = hashlib.md5(",".join(sorted(request.race_summaries.keys())).encode()).hexdigest()[:8]
+    strategy_macro_key = f"strategy_macro:{cache_key}:{race_ids_hash}"
+
+    # Check cache first
+    if strategy_macro_key in strategy_macro_cache:
+        cached_content = strategy_macro_cache[strategy_macro_key]
+
+        async def cached_stream():
+            yield cached_content
+
+        return StreamingResponse(cached_stream(), media_type="text/event-stream")
 
     # Build summaries section
     summaries_text = ""
@@ -1208,6 +1307,9 @@ Provide a cross-race synthesis that:
 
 Be specific and actionable. Reference the races by name."""
 
+    # Collect full response for caching
+    full_response = []
+
     async def stream_generator():
         try:
             stream = synthesizer.client.chat.completions.create(
@@ -1219,7 +1321,12 @@ Be specific and actionable. Reference the races by name."""
             )
             for chunk in stream:
                 if chunk.choices[0].delta.content:
-                    yield chunk.choices[0].delta.content
+                    content = chunk.choices[0].delta.content
+                    full_response.append(content)
+                    yield content
+
+            # Cache the full response after streaming completes
+            strategy_macro_cache[strategy_macro_key] = "".join(full_response)
         except Exception as e:
             yield get_friendly_error(e)
 
