@@ -44,9 +44,18 @@ from scripts.retrieve import (
     format_strategy_results,
 )
 
-# Hybrid retrieval (BM25 + dense fusion)
-from scripts.retrieval.bm25 import BM25Retriever, BM25Result
-from scripts.retrieval.hybrid import HybridFocusGroupRetriever, HybridResult, FusionStrategy
+# Hybrid retrieval (BM25 + dense fusion) - lazy import to avoid rank_bm25 dependency in prod
+try:
+    from scripts.retrieval.bm25 import BM25Retriever, BM25Result
+    from scripts.retrieval.hybrid import HybridFocusGroupRetriever, HybridResult, FusionStrategy
+    _HYBRID_AVAILABLE = True
+except ImportError:
+    BM25Retriever = None
+    BM25Result = None
+    HybridFocusGroupRetriever = None
+    HybridResult = None
+    FusionStrategy = None
+    _HYBRID_AVAILABLE = False
 
 __all__ = [
     # Types

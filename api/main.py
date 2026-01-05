@@ -26,9 +26,16 @@ from scripts.retrieve import (
     FocusGroupRetrieverV2, LLMRouter, RetrievalResult,
     StrategyMemoRetriever, StrategyRetrievalResult, RouterResult
 )
-from scripts.retrieval.hybrid import HybridFocusGroupRetriever
 from scripts.synthesize import FocusGroupSynthesizer, get_friendly_error
 from eval.config import STRATEGY_TOP_K_PER_RACE, DATA_DIR, PROJECT_ROOT, USE_HYBRID_RETRIEVAL
+
+# Lazy import for hybrid retrieval (requires rank_bm25, not in prod requirements)
+HybridFocusGroupRetriever = None
+if USE_HYBRID_RETRIEVAL:
+    try:
+        from scripts.retrieval.hybrid import HybridFocusGroupRetriever
+    except ImportError:
+        print("Warning: HybridFocusGroupRetriever not available, falling back to dense retrieval")
 from api.schemas import (
     SearchRequest, SearchResponse, SynthesisRequest, MacroSynthesisRequest,
     GroupedResult, RetrievalChunk,
@@ -246,7 +253,7 @@ async def lifespan(app: FastAPI):
     # Note: app.py uses st.cache_resource, here we use global singletons
     # USE_RERANKER=false for production (512MB limit), true for local dev
     # USE_HYBRID_RETRIEVAL=false by default, enables BM25+dense fusion
-    if USE_HYBRID_RETRIEVAL:
+    if USE_HYBRID_RETRIEVAL and HybridFocusGroupRetriever is not None:
         retriever = HybridFocusGroupRetriever(use_router=True, use_reranker=USE_RERANKER, verbose=False)
     else:
         retriever = FocusGroupRetrieverV2(use_router=True, use_reranker=USE_RERANKER, verbose=False)
