@@ -18,14 +18,14 @@ from scripts.retrieve import (
     StrategyMemoRetriever, StrategyRetrievalResult, RouterResult
 )
 from scripts.synthesize import FocusGroupSynthesizer
-from eval.config import STRATEGY_TOP_K_PER_RACE
+from eval.config import STRATEGY_TOP_K_PER_RACE, DATA_DIR, PROJECT_ROOT
 from api.schemas import (
     SearchRequest, SearchResponse, SynthesisRequest, MacroSynthesisRequest,
     GroupedResult, RetrievalChunk,
     LightMacroSynthesisRequest, DeepMacroSynthesisRequest, DeepMacroResponse,
     StrategyChunk, StrategyGroupedResult, UnifiedSearchResponse,
     StrategySynthesisRequest, StrategyMacroSynthesisRequest,
-    UnifiedMacroSynthesisRequest
+    UnifiedMacroSynthesisRequest, CorpusItem, DocumentContent
 )
 from api.observability import (
     QueryTracer, log_retrieval_decision, log_score_distribution,
@@ -282,6 +282,12 @@ async def search_unified(request: SearchRequest):
                     all_fg_scores.extend([c.score for c in chunks])
                     if not chunks:
                         continue
+
+                    # Filter out FGs where top chunk is below threshold
+                    top_score = max(c.score for c in chunks)
+                    if top_score < request.score_threshold:
+                        continue
+
                     fg_meta = retriever._load_focus_group_metadata(fg_id)
                     api_chunks = [
                         RetrievalChunk(
@@ -412,6 +418,127 @@ async def search_unified(request: SearchRequest):
             "outcome_filter": route_result.outcome_filter
         }
     )
+
+
+
+# ============ Corpus Explorer Endpoints ============
+
+def _get_race_path_map() -> Dict[str, str]:
+    """Helper to map race_id to directory path."""
+    try:
+        race_index_path = PROJECT_ROOT / "political-consulting-corpus" / "race-index.json"
+        if race_index_path.exists():
+            with open(race_index_path) as f:
+                data = json.load(f)
+                # Map race-001 -> races/race-001-michigan-gov-2022
+                return {r["race_id"]: r["path"] for r in data.get("races", [])}
+    except Exception as e:
+        print(f"Error loading race index: {e}")
+    return {}
+
+@app.get("/corpus", response_model=List[CorpusItem])
+async def list_corpus():
+    """List all documents in the corpus."""
+    items = []
+    race_paths = _get_race_path_map()
+
+    # 1. Focus Groups
+    try:
+        manifest_path = DATA_DIR / "manifest.json"
+        if manifest_path.exists():
+            with open(manifest_path) as f:
+                fg_data = json.load(f)
+                for fg in fg_data.get("focus_groups", []):
+                    fg_id = fg["focus_group_id"]
+                    # race-XXX-fg-YYY-location
+                    parts = fg_id.split("-fg-")
+                    if len(parts) >= 2:
+                        race_id = parts[0]
+                        race_dir = race_paths.get(race_id, f"races/{race_id}")
+                        
+                        # Filename: fg-YYY-location.md
+                        filename_suffix = fg_id.replace(f"{race_id}-", "")
+                        file_path = f"{race_dir}/focus-groups/{filename_suffix}.md"
+                        
+                        items.append(CorpusItem(
+                            id=fg_id,
+                            type="focus_group",
+                            title=f"{fg.get('location', 'Unknown')} ({fg.get('race_name', 'Unknown')})",
+                            date=fg.get("date"),
+                            location=fg.get("location"),
+                            race_name=fg.get("race_name"),
+                            outcome=fg.get("outcome"),
+                            file_path=file_path
+                        ))
+    except Exception as e:
+        print(f"Error loading FG manifest: {e}")
+
+    # 2. Strategy Memos
+    try:
+        strategy_manifest = DATA_DIR / "strategy_chunks" / "manifest.json"
+        if strategy_manifest.exists():
+            with open(strategy_manifest) as f:
+                strat_data = json.load(f)
+                for memo in strat_data.get("memos", []):
+                    race_id = memo["race_id"]
+                    race_dir = race_paths.get(race_id, f"races/{race_id}")
+                    
+                    items.append(CorpusItem(
+                        id=race_id,
+                        type="strategy_memo",
+                        title=f"Strategy: {memo.get('state')} {memo.get('year')} ({memo.get('outcome')})",
+                        date=str(memo.get("year")),
+                        location=memo.get("state"),
+                        race_name=f"{memo.get('state')} {memo.get('office')}",
+                        outcome=memo.get("outcome"),
+                        file_path=f"{race_dir}/strategy-memo.md"
+                    ))
+    except Exception as e:
+        print(f"Error loading strategy manifest: {e}")
+        
+    return items
+
+@app.get("/corpus/{doc_type}/{doc_id}", response_model=DocumentContent)
+async def get_document(doc_type: str, doc_id: str):
+    """Get raw content of a document."""
+    file_path = None
+    race_paths = _get_race_path_map()
+    
+    # Resolve path based on type and ID
+    if doc_type == "focus_group":
+        manifest_path = DATA_DIR / "manifest.json"
+        if manifest_path.exists():
+            with open(manifest_path) as f:
+                fg_data = json.load(f)
+                for fg in fg_data.get("focus_groups", []):
+                    if fg["focus_group_id"] == doc_id:
+                        race_id = doc_id.split("-fg-")[0]
+                        race_dir = race_paths.get(race_id, f"races/{race_id}")
+                        filename_suffix = doc_id.replace(f"{race_id}-", "")
+                        file_path = f"{race_dir}/focus-groups/{filename_suffix}.md"
+                        break
+    elif doc_type == "strategy_memo":
+        race_dir = race_paths.get(doc_id, f"races/{doc_id}")
+        file_path = f"{race_dir}/strategy-memo.md"
+        
+    if not file_path:
+        raise HTTPException(status_code=404, detail="Document not found")
+        
+    # Read file
+    full_path = PROJECT_ROOT / "political-consulting-corpus" / file_path
+    if not full_path.exists():
+         raise HTTPException(status_code=404, detail=f"File not found on disk: {file_path}")
+         
+    try:
+        with open(full_path, "r") as f:
+            content = f.read()
+            
+        return DocumentContent(
+            content=content,
+            metadata={"source": str(file_path)}
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.post("/synthesize/light")

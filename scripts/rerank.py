@@ -4,11 +4,17 @@ Cross-Encoder Reranking for retrieval results.
 Uses sentence-transformers CrossEncoder models.
 """
 
+import math
 import sys
 from pathlib import Path
 from typing import List
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
+
+
+def sigmoid(x: float) -> float:
+    """Normalize unbounded score to 0-1 range."""
+    return 1 / (1 + math.exp(-x))
 
 
 class Reranker:
@@ -45,8 +51,13 @@ class Reranker:
         scored_results = list(zip(results, scores))
         scored_results.sort(key=lambda x: x[1], reverse=True)
 
-        # Return top_k
-        return [r for r, s in scored_results[:top_k]]
+        # Return top_k with updated scores (normalized to 0-1 via sigmoid)
+        # This allows threshold filtering to use reranker relevance
+        reranked = []
+        for r, s in scored_results[:top_k]:
+            r.score = sigmoid(float(s))
+            reranked.append(r)
+        return reranked
 
     def rerank_with_scores(self, query: str, results: List, top_k: int = 5) -> List[tuple]:
         """

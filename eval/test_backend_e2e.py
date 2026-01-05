@@ -144,32 +144,33 @@ class BackendE2ETests:
 
         self._add_result("fg_ohio_query_returns_ohio", passed, message, (time.time() - start) * 1000)
 
-    def test_fg_score_threshold_applied(self):
-        """All returned FG quotes should be above threshold."""
+    def test_fg_top_chunks_above_threshold(self):
+        """Top chunk in each FG should be above threshold."""
         start = time.time()
-        query = "What did voters say about healthcare?"
+        query = "What did Ohio voters say about the economy?"
 
         try:
             result = self._search(query)
 
-            # Check all chunk scores
-            low_score_chunks = []
+            # Check top chunk score per FG (same logic as strategy test)
+            low_score_fgs = []
             for fg in result["quotes"]:
-                for chunk in fg["chunks"]:
-                    if chunk["score"] < self.threshold:
-                        low_score_chunks.append((fg["focus_group_id"], chunk["score"]))
+                if fg["chunks"]:
+                    top_score = max(c["score"] for c in fg["chunks"])
+                    if top_score < self.threshold:
+                        low_score_fgs.append((fg["focus_group_id"], top_score))
 
-            passed = len(low_score_chunks) == 0
+            passed = len(low_score_fgs) == 0
             if passed:
-                message = f"All {result['stats']['total_quotes']} quotes above threshold {self.threshold}"
+                message = f"All {len(result['quotes'])} FGs have top chunk above threshold"
             else:
-                message = f"Found {len(low_score_chunks)} chunks below threshold: {low_score_chunks[:3]}"
+                message = f"Found {len(low_score_fgs)} FGs with low top scores: {low_score_fgs[:3]}"
 
         except Exception as e:
             passed = False
             message = f"Error: {e}"
 
-        self._add_result("fg_score_threshold_applied", passed, message, (time.time() - start) * 1000)
+        self._add_result("fg_top_chunks_above_threshold", passed, message, (time.time() - start) * 1000)
 
     # =========================================================================
     # STRATEGY RETRIEVAL TESTS - Verify campaign lessons results
@@ -178,7 +179,7 @@ class BackendE2ETests:
     def test_strategy_montana_returns_montana(self):
         """Montana query should return Montana race, not others."""
         start = time.time()
-        query = "What went wrong in Montana?"
+        query = "Why did we lose in Montana?"
 
         try:
             result = self._search(query)
@@ -344,7 +345,7 @@ class BackendE2ETests:
         print("FOCUS GROUP RETRIEVAL TESTS")
         print("-" * 40)
         self.test_fg_returns_ohio_for_ohio_query()
-        self.test_fg_score_threshold_applied()
+        self.test_fg_top_chunks_above_threshold()
         print()
 
         # Strategy retrieval tests

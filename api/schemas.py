@@ -146,3 +146,23 @@ class UnifiedMacroSynthesisRequest(BaseModel):
     strategy_metadata: Dict[str, Dict[str, Any]]  # race_id -> metadata
     # Query
     query: str
+
+
+# ============ Corpus Explorer Schemas ============
+
+class CorpusItem(BaseModel):
+    """A document in the corpus (focus group or strategy memo)."""
+    id: str  # Unique ID (fg_id or race_id/doc_id)
+    type: str  # "focus_group" or "strategy_memo"
+    title: str
+    date: Optional[str] = None
+    location: Optional[str] = None
+    race_name: Optional[str] = None
+    outcome: Optional[str] = None
+    file_path: str  # Relative to corpus root
+
+class DocumentContent(BaseModel):
+    """Content of a document."""
+    content: str
+    metadata: Dict[str, Any]
+

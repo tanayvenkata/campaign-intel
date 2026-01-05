@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { GroupedResult, StrategyGroupedResult } from '../types';
-import QuoteBlock from './QuoteBlock';
-import SynthesisPanel from './SynthesisPanel';
-import StrategySection from './StrategySection';
+import RaceGroupComponent from './RaceGroup';
+import { groupByRace, getSortedRaceGroups } from '../utils/groupByRace';
 import { exportToMarkdown } from '../utils/exportMarkdown';
 import { ENDPOINTS } from '../config/api';
+import { CorpusItem } from '../hooks/useCorpusIndex';
 
 interface SearchResultsProps {
     results: GroupedResult[];
@@ -20,71 +20,57 @@ interface SearchResultsProps {
         races_count?: number;
         retrieval_time_ms: number;
     };
+    onViewDocument?: (item: CorpusItem) => void;
 }
 
-export default function SearchResults({ results, lessons = [], query, stats }: SearchResultsProps) {
-    const [summaries, setSummaries] = useState<Record<string, string>>({});
-    const [loadingSummaries, setLoadingSummaries] = useState<Set<string>>(new Set());
+export default function SearchResults({ results, lessons = [], query, stats, onViewDocument }: SearchResultsProps) {
+    // Focus group summaries and selection
+    const [fgSummaries, setFgSummaries] = useState<Record<string, string>>({});
+    const [loadingFgSummaries, setLoadingFgSummaries] = useState<Set<string>>(new Set());
     const [selectedForMacro, setSelectedForMacro] = useState<Set<string>>(new Set());
-    const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+
+    // Strategy summaries and selection
+    const [strategySummaries, setStrategySummaries] = useState<Record<string, string>>({});
+    const [loadingStrategySummaries, setLoadingStrategySummaries] = useState<Set<string>>(new Set());
+    const [selectedRaces, setSelectedRaces] = useState<Set<string>>(new Set());
+
+    // Macro synthesis state
     const [macroResult, setMacroResult] = useState<string>('');
     const [isMacroLoading, setIsMacroLoading] = useState(false);
     const [isWaitingForSummaries, setIsWaitingForSummaries] = useState(false);
     const [isMacroPanelCollapsed, setIsMacroPanelCollapsed] = useState(false);
-    // Deep synthesis per focus group (from SynthesisPanel)
+
+    // Deep synthesis per focus group
     const [deepSyntheses, setDeepSyntheses] = useState<Record<string, string>>({});
-    // Keep deepMacroThemes for export compatibility
-    const [deepMacroThemes] = useState<Array<{ name: string; synthesis: string; focus_groups: string[] }>>([]);
-    // Strategy summaries (from StrategySection)
-    const [strategySummaries, setStrategySummaries] = useState<Record<string, string>>({});
-    // Selected strategy races for macro synthesis
-    const [selectedRaces, setSelectedRaces] = useState<Set<string>>(new Set());
-    // Track last synthesized set to prevent redundancy
     const [lastSynthesizedSet, setLastSynthesizedSet] = useState<string>('');
 
-    // Callback for SynthesisPanel to report deep synthesis
-    const handleDeepSynthesisComplete = (fgId: string, synthesis: string) => {
-        setDeepSyntheses(prev => ({ ...prev, [fgId]: synthesis }));
-    };
+    // Group results by race
+    const raceGroups = useMemo(() => {
+        const grouped = groupByRace(results, lessons);
+        return getSortedRaceGroups(grouped);
+    }, [results, lessons]);
 
-    // Callback for StrategySection to report all summaries
-    const handleStrategySummariesReady = (summaries: Record<string, string>) => {
-        setStrategySummaries(summaries);
-    };
-
-    // Toggle race selection
-    const toggleRaceSelection = (raceId: string) => {
-        setSelectedRaces(prev => {
-            const next = new Set(prev);
-            if (next.has(raceId)) {
-                next.delete(raceId);
-            } else {
-                next.add(raceId);
-            }
-            return next;
-        });
-    };
-
-    // Auto-select all races when lessons arrive
+    // Auto-select all on load
     useEffect(() => {
-        if (lessons.length > 0 && selectedRaces.size === 0) {
-            setSelectedRaces(new Set(lessons.map(r => r.race_id)));
+        if (results.length > 0 && selectedForMacro.size === 0) {
+            setSelectedForMacro(new Set(results.map(r => r.focus_group_id)));
         }
-    }, [lessons]);
+        if (lessons.length > 0 && selectedRaces.size === 0) {
+            setSelectedRaces(new Set(lessons.map(l => l.race_id)));
+        }
+    }, [results, lessons]);
 
-    // Auto-generate light summaries when results change
+    // Auto-generate FG summaries
     useEffect(() => {
         if (!results.length) return;
 
-        // Generate summaries for FGs that don't have one yet
         results.forEach(async (group, index) => {
             const fgId = group.focus_group_id;
-            if (summaries[fgId] || loadingSummaries.has(fgId)) return;
+            if (fgSummaries[fgId] || loadingFgSummaries.has(fgId)) return;
 
-            // Stagger requests to avoid overwhelming the server
             await new Promise(resolve => setTimeout(resolve, index * 200));
 
-            setLoadingSummaries(prev => new Set(prev).add(fgId));
+            setLoadingFgSummaries(prev => new Set(prev).add(fgId));
 
             try {
                 const res = await fetch(ENDPOINTS.synthesizeLight, {
@@ -99,12 +85,12 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
 
                 if (res.ok) {
                     const data = await res.json();
-                    setSummaries(prev => ({ ...prev, [fgId]: data.summary }));
+                    setFgSummaries(prev => ({ ...prev, [fgId]: data.summary }));
                 }
             } catch (e) {
                 console.error('Failed to generate summary for', fgId);
             } finally {
-                setLoadingSummaries(prev => {
+                setLoadingFgSummaries(prev => {
                     const next = new Set(prev);
                     next.delete(fgId);
                     return next;
@@ -113,42 +99,94 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
         });
     }, [results, query]);
 
-    const toggleExpanded = (fgId: string) => {
-        setExpandedCards(prev => {
-            const next = new Set(prev);
-            if (next.has(fgId)) {
-                next.delete(fgId);
-            } else {
-                next.add(fgId);
+    // Auto-generate strategy summaries
+    useEffect(() => {
+        if (!lessons.length) return;
+
+        lessons.forEach(async (race, index) => {
+            if (strategySummaries[race.race_id] || loadingStrategySummaries.has(race.race_id)) return;
+
+            await new Promise(resolve => setTimeout(resolve, index * 150));
+
+            setLoadingStrategySummaries(prev => new Set(prev).add(race.race_id));
+
+            const meta = race.race_metadata;
+            const raceName = `${meta.state || 'Unknown'} ${meta.year || ''}`;
+
+            try {
+                const res = await fetch(ENDPOINTS.synthesizeStrategyLight, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chunks: race.chunks,
+                        query,
+                        race_name: raceName,
+                    }),
+                });
+
+                if (res.ok) {
+                    const data = await res.json();
+                    setStrategySummaries(prev => ({ ...prev, [race.race_id]: data.summary }));
+                }
+            } catch (err) {
+                console.error('Strategy summary error:', err);
+            } finally {
+                setLoadingStrategySummaries(prev => {
+                    const next = new Set(prev);
+                    next.delete(race.race_id);
+                    return next;
+                });
             }
+        });
+    }, [lessons, query]);
+
+    // Callbacks
+    const handleDeepSynthesisComplete = (fgId: string, synthesis: string) => {
+        setDeepSyntheses(prev => ({ ...prev, [fgId]: synthesis }));
+    };
+
+    const toggleFocusGroupSelection = (fgId: string) => {
+        setSelectedForMacro(prev => {
+            const next = new Set(prev);
+            if (next.has(fgId)) next.delete(fgId);
+            else next.add(fgId);
             return next;
         });
     };
 
-    const toggleSelection = (fgId: string) => {
-        const newSet = new Set(selectedForMacro);
-        if (newSet.has(fgId)) {
-            newSet.delete(fgId);
-        } else {
-            newSet.add(fgId);
-        }
-        setSelectedForMacro(newSet);
+    const toggleRaceSelection = (raceId: string) => {
+        setSelectedRaces(prev => {
+            const next = new Set(prev);
+            if (next.has(raceId)) next.delete(raceId);
+            else next.add(raceId);
+            return next;
+        });
     };
 
     const selectAll = () => {
         setSelectedForMacro(new Set(results.map(r => r.focus_group_id)));
+        setSelectedRaces(new Set(lessons.map(l => l.race_id)));
     };
 
     const deselectAll = () => {
         setSelectedForMacro(new Set());
+        setSelectedRaces(new Set());
     };
 
-    const allSelected = results.length > 0 && selectedForMacro.size === results.length;
+    const allSelected = (results.length > 0 || lessons.length > 0) &&
+        selectedForMacro.size === results.length &&
+        selectedRaces.size === lessons.length;
 
-    // Track how many selected FGs have summaries ready
+    // Check if all summaries are ready
     const selectedFgIds = Array.from(selectedForMacro);
-    const summariesReady = selectedFgIds.filter(fgId => summaries[fgId]).length;
-    const allSummariesReady = selectedForMacro.size > 0 && summariesReady === selectedForMacro.size;
+    const fgSummariesReady = selectedFgIds.filter(fgId => fgSummaries[fgId]).length;
+    const allFgSummariesReady = selectedForMacro.size === 0 || fgSummariesReady === selectedForMacro.size;
+
+    const selectedRaceIds = Array.from(selectedRaces);
+    const strategySummariesReady = selectedRaceIds.filter(raceId => strategySummaries[raceId]).length;
+    const allStrategySummariesReady = selectedRaces.size === 0 || strategySummariesReady === selectedRaces.size;
+
+    const allSummariesReady = allFgSummariesReady && allStrategySummariesReady;
 
     // Auto-trigger macro synthesis when waiting and summaries become ready
     useEffect(() => {
@@ -156,16 +194,16 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
             setIsWaitingForSummaries(false);
             handleMacroSynthesis();
         }
-    }, [isWaitingForSummaries, allSummariesReady, summaries]);
+    }, [isWaitingForSummaries, allSummariesReady]);
 
     const handleExport = () => {
         exportToMarkdown({
             query,
             results,
-            summaries,
+            summaries: fgSummaries,
             deepSyntheses,
             macroResult,
-            deepMacroThemes,
+            deepMacroThemes: [],
             stats: stats ? {
                 ...stats,
                 total_lessons: stats.total_lessons,
@@ -177,9 +215,8 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
     };
 
     const handleMacroSynthesis = async () => {
-        if (selectedForMacro.size === 0) return;
+        if (selectedForMacro.size === 0 && selectedRaces.size === 0) return;
 
-        // If summaries aren't ready, queue it up
         if (!allSummariesReady) {
             setIsWaitingForSummaries(true);
             return;
@@ -188,20 +225,17 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
         setIsMacroLoading(true);
         setMacroResult('');
 
-        // Prepare FG data for macro synthesis
         const selectedResults = results.filter(r => selectedForMacro.has(r.focus_group_id));
-
         const fgQuotesPayload: Record<string, any[]> = {};
         const fgSummariesPayload: Record<string, string> = {};
         const fgMetadataPayload: Record<string, any> = {};
 
         selectedResults.forEach(r => {
             fgQuotesPayload[r.focus_group_id] = r.chunks;
-            fgSummariesPayload[r.focus_group_id] = summaries[r.focus_group_id] || "Summary not available";
+            fgSummariesPayload[r.focus_group_id] = fgSummaries[r.focus_group_id] || "Summary not available";
             fgMetadataPayload[r.focus_group_id] = r.focus_group_metadata;
         });
 
-        // Prepare strategy data if available (only selected races)
         const strategyChunksPayload: Record<string, any[]> = {};
         const strategySummariesPayload: Record<string, string> = {};
         const strategyMetadataPayload: Record<string, any> = {};
@@ -214,8 +248,7 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
         });
 
         try {
-            // Use unified endpoint if we have selected strategy races
-            const hasStrategy = selectedLessons.length > 0 && Object.keys(strategySummaries).length > 0;
+            const hasStrategy = selectedLessons.length > 0;
             const endpoint = hasStrategy ? ENDPOINTS.synthesizeUnifiedMacro : ENDPOINTS.synthesizeMacroLight;
 
             const payload = hasStrategy
@@ -255,22 +288,18 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
             setMacroResult("Error generating macro synthesis.");
         } finally {
             setIsMacroLoading(false);
-            // Save the signature of what we just synthesized
             const currentSignature = Array.from(selectedForMacro).sort().join(',') + '|' + Array.from(selectedRaces).sort().join(',');
             setLastSynthesizedSet(currentSignature);
         }
     };
 
-    // Check if current selection matches what we already synthesized
     const currentSelectionSignature = Array.from(selectedForMacro).sort().join(',') + '|' + Array.from(selectedRaces).sort().join(',');
     const isSelectionRedundant = macroResult && lastSynthesizedSet === currentSelectionSignature;
 
-    // Scroll to specific section
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            // Flash the card to indicate selection
             element.classList.add('ring-2', 'ring-slate-400', 'transition-all');
             setTimeout(() => {
                 element.classList.remove('ring-2', 'ring-slate-400');
@@ -278,20 +307,14 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
         }
     };
 
+    const totalSummariesNeeded = selectedForMacro.size + selectedRaces.size;
+    const totalSummariesReady = fgSummariesReady + strategySummariesReady;
+
     return (
         <div className="space-y-8 relative">
             {/* Export Button */}
             <div className="flex justify-end gap-3">
-                {/* Back to Top */}
-                <button
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="text-slate-400 hover:text-slate-600 text-xs font-mono uppercase tracking-wider flex items-center gap-1"
-                >
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                    </svg>
-                    Top
-                </button>
+
                 <button
                     onClick={handleExport}
                     className="flex items-center gap-2 bg-slate-100 text-slate-700 px-3 py-1.5 rounded-md hover:bg-slate-200 transition-colors text-xs font-bold font-mono uppercase tracking-wider"
@@ -303,219 +326,135 @@ export default function SearchResults({ results, lessons = [], query, stats }: S
                 </button>
             </div>
 
-            {/* Research Synthesis - moved to top as high-level overview */}
+            {/* Executive Synthesis Panel */}
             {(results.length > 0 || lessons.length > 0) && (
-                <div className="bg-slate-50 p-5 border border-slate-200 shadow-sm mb-4 transition-all">
-                    <div className="flex items-center justify-between">
+                <div className="bg-white border border-slate-200 shadow-xl shadow-slate-200/40 mb-8 transition-all rounded-sm overflow-hidden">
+                    <div className="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between">
                         <div className="flex items-center gap-3">
                             <button
                                 onClick={() => setIsMacroPanelCollapsed(!isMacroPanelCollapsed)}
-                                className="flex items-center gap-2 text-slate-700 hover:text-slate-900"
+                                className="flex items-center gap-3 text-slate-900 group"
                             >
                                 <svg
-                                    className={`w-4 h-4 transition-transform ${isMacroPanelCollapsed ? '' : 'rotate-90'}`}
+                                    className={`w-4 h-4 text-slate-400 group-hover:text-slate-900 transition-transform ${isMacroPanelCollapsed ? '' : 'rotate-90'}`}
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                 </svg>
-                                <h3 className="font-serif font-bold text-slate-800 uppercase tracking-wide text-sm">Executive Synthesis</h3>
+                                <h3 className="font-serif font-bold text-slate-900 uppercase tracking-widest text-sm">Executive Synthesis</h3>
                             </button>
                             {!isMacroPanelCollapsed && (
                                 <button
                                     onClick={allSelected ? deselectAll : selectAll}
-                                    className="text-xs font-mono text-slate-500 hover:text-slate-800 uppercase tracking-wider"
+                                    className="ml-2 text-[10px] font-mono font-bold text-slate-400 hover:text-slate-900 uppercase tracking-widest border border-slate-200 px-2 py-0.5 rounded-sm hover:border-slate-400 transition-colors"
                                 >
-                                    {allSelected ? '[Deselect All]' : '[Select All]'}
+                                    {allSelected ? 'Deselect All' : 'Select All'}
                                 </button>
                             )}
                             {isMacroPanelCollapsed && macroResult && (
-                                <span className="text-[10px] font-mono text-green-700 bg-green-50 border border-green-200 px-2 py-0.5 uppercase tracking-wider">
-                                    Ready
+                                <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 uppercase tracking-wider rounded-sm">
+                                    Memo Ready
                                 </span>
                             )}
                         </div>
                         {!isMacroPanelCollapsed && (
                             <div className="flex items-center gap-4">
-                                {/* Summary progress indicator */}
-                                {selectedForMacro.size > 0 && !allSummariesReady && (
-                                    <span className="text-xs font-mono text-amber-600 flex items-center gap-1.5 uppercase">
-                                        <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
-                                        Processing: {summariesReady}/{selectedForMacro.size}
+                                {totalSummariesNeeded > 0 && !allSummariesReady && (
+                                    <span className="text-xs font-mono text-slate-500 flex items-center gap-2 uppercase tracking-wide">
+                                        <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-pulse" />
+                                        Processing: {totalSummariesReady}/{totalSummariesNeeded}
                                     </span>
                                 )}
-                                {selectedForMacro.size > 0 && allSummariesReady && !isWaitingForSummaries && !isMacroLoading && (
-                                    <span className="text-xs font-mono text-green-700 flex items-center gap-1 uppercase">
-                                        <span className="w-2 h-2 bg-green-500 rounded-full" />
-                                        Ready
+                                {totalSummariesNeeded > 0 && allSummariesReady && !isWaitingForSummaries && !isMacroLoading && (
+                                    <span className="text-xs font-mono font-bold text-emerald-700 flex items-center gap-1.5 uppercase tracking-wide">
+                                        <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+                                        Context Ready
                                     </span>
                                 )}
                                 <button
                                     onClick={handleMacroSynthesis}
                                     disabled={(selectedForMacro.size === 0 && selectedRaces.size === 0) || isMacroLoading || isWaitingForSummaries || !!isSelectionRedundant}
-                                    className="bg-slate-800 text-white px-4 py-2 hover:bg-slate-700 disabled:opacity-50 disabled:cursor-not-allowed text-xs font-bold font-mono uppercase tracking-wider shadow-sm transition-colors"
+                                    className="bg-slate-900 text-white px-5 py-2 hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed text-[11px] font-bold font-mono uppercase tracking-widest shadow-sm transition-all active:scale-95 rounded-sm"
                                 >
                                     {isMacroLoading
-                                        ? 'PRODUCING MEMO...'
+                                        ? 'Drafting Memo...'
                                         : isSelectionRedundant
-                                            ? 'SYNTHESIS COMPLETE'
+                                            ? 'Memo Complete'
                                             : isWaitingForSummaries
-                                                ? `QUEUED (${summariesReady}/${selectedForMacro.size})`
-                                                : `SYNTHESIZE (${selectedForMacro.size + selectedRaces.size} sources)`}
+                                                ? `Queued`
+                                                : `Generate Memo`}
                                 </button>
                             </div>
                         )}
                     </div>
 
                     {!isMacroPanelCollapsed && (
-                        <>
-                            {/* Loading state for macro synthesis */}
+                        <div className="p-0">
                             {isMacroLoading && !macroResult && (
-                                <div className="mt-4 p-4 bg-white border border-slate-200">
-                                    <div className="space-y-2">
-                                        <div className="flex items-center gap-2 text-xs font-mono text-slate-500 uppercase">
-                                            <span className="w-3 h-3 border-2 border-slate-400 border-t-transparent rounded-full animate-spin" />
-                                            <span>Analyst is processing {selectedForMacro.size} sources...</span>
-                                        </div>
+                                <div className="p-12 text-center">
+                                    <div className="inline-flex flex-col items-center gap-3">
+                                        <div className="w-4 h-4 border-2 border-slate-900 border-t-transparent rounded-full animate-spin"></div>
+                                        <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-widest">Synthesizing Strategy...</span>
                                     </div>
                                 </div>
                             )}
 
-                            {/* Macro synthesis result */}
                             {macroResult && (
-                                <div className="mt-4 p-6 bg-paper border border-slate-200 max-h-[60vh] overflow-y-auto">
-                                    <div className="prose prose-sm max-w-none text-slate-800 font-serif leading-relaxed prose-headings:font-bold prose-headings:text-slate-900 prose-strong:text-slate-900">
+                                <div className="p-8 bg-white max-h-[70vh] overflow-y-auto">
+                                    <div className="prose prose-sm prose-slate max-w-4xl mx-auto text-slate-700 font-serif leading-relaxed prose-headings:font-bold prose-headings:font-serif prose-headings:tracking-tight prose-strong:text-slate-900 prose-a:text-blue-600 prose-p:my-3 prose-li:my-1">
                                         <ReactMarkdown>{macroResult}</ReactMarkdown>
                                     </div>
-                                    {isMacroLoading && <span className="inline-block w-2 h-4 ml-1 bg-slate-400 animate-pulse" />}
+                                    {isMacroLoading && <span className="inline-block w-2 h-4 ml-1 bg-slate-900 animate-pulse" />}
                                 </div>
                             )}
-                        </>
+                        </div>
                     )}
                 </div>
             )}
 
-            {/* Result Navigator (Pills) */}
-            {results.length > 0 && (
+            {/* Race Navigator Pills */}
+            {raceGroups.length > 0 && (
                 <div className="flex flex-wrap gap-3 pb-6 border-b border-slate-100">
                     <span className="text-xs font-mono font-bold text-slate-400 uppercase tracking-widest py-1.5">JUMP TO:</span>
-                    {results.map((r) => (
+                    {raceGroups.map((rg) => (
                         <button
-                            key={r.focus_group_id}
-                            onClick={() => scrollToSection(r.focus_group_id)}
-                            className="text-[10px] font-mono font-bold text-slate-500 bg-white border border-slate-200 px-3 py-1.5 hover:border-slate-400 hover:text-slate-800 transition-colors uppercase rounded-sm shadow-sm"
+                            key={rg.raceKey}
+                            onClick={() => scrollToSection(`race-${rg.raceKey}`)}
+                            className="text-[10px] font-mono font-bold text-slate-500 bg-white border border-slate-200 px-3 py-1.5 hover:border-slate-400 hover:text-slate-800 transition-colors uppercase rounded-sm shadow-sm flex items-center gap-2"
                         >
-                            {r.focus_group_metadata.location || r.focus_group_id}
+                            <span className={`w-1.5 h-1.5 rounded-full ${rg.raceMetadata.outcome === 'win' ? 'bg-emerald-500' : 'bg-rose-500'}`} />
+                            {rg.raceName}
                         </button>
                     ))}
                 </div>
             )}
 
-            {/* Strategy Section (Campaign Lessons) */}
-            <StrategySection
-                lessons={lessons}
-                query={query}
-                onSummariesReady={handleStrategySummariesReady}
-                selectedRaces={selectedRaces}
-                onToggleRace={toggleRaceSelection}
-            />
-
-            {/* List Results with staggered animation */}
-            {results.map((group, index) => {
-                const fgId = group.focus_group_id;
-                const isExpanded = expandedCards.has(fgId);
-                const summary = summaries[fgId];
-                const isLoadingSummary = loadingSummaries.has(fgId);
-
-                return (
-                    <div
-                        id={fgId}
-                        key={fgId}
-                        className="bg-white border border-slate-200 shadow-sm hover:border-slate-300 transition-all duration-300 animate-fadeIn scroll-mt-24"
-                        style={{ animationDelay: `${index * 75}ms` }}
-                    >
-                        {/* Memo Header */}
-                        <div className="bg-slate-50 border-b border-slate-200 px-6 py-4 flex items-start justify-between">
-                            <div className="flex items-center gap-3">
-                                <input
-                                    type="checkbox"
-                                    checked={selectedForMacro.has(fgId)}
-                                    onChange={() => toggleSelection(fgId)}
-                                    className="w-4 h-4 text-slate-800 rounded border-slate-300 focus:ring-slate-800 cursor-pointer"
-                                />
-                                <div>
-                                    <div className="flex items-center gap-3">
-                                        <h2 className="text-sm font-bold font-serif text-slate-900 tracking-wide uppercase">
-                                            {group.focus_group_metadata.location || fgId}
-                                        </h2>
-                                        <span className={`text-[10px] font-mono px-1.5 py-0.5 border ${group.focus_group_metadata.outcome === 'win'
-                                            ? 'bg-green-50 border-green-200 text-green-700'
-                                            : 'bg-red-50 border-red-200 text-red-700'
-                                            } uppercase`}>
-                                            {group.focus_group_metadata.outcome}
-                                        </span>
-                                    </div>
-                                    <div className="text-xs font-mono text-slate-500 mt-1">
-                                        {group.focus_group_metadata.race_name} • {group.focus_group_metadata.date}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="p-6">
-                            {/* Light Summary (auto-generated) */}
-                            <div className="mb-6">
-                                {isLoadingSummary ? (
-                                    <div className="bg-paper p-4 border-l-2 border-amber-200 animate-pulse">
-                                        <div className="h-4 bg-slate-100 rounded w-full mb-2" />
-                                        <div className="h-4 bg-slate-100 rounded w-3/4" />
-                                    </div>
-                                ) : summary ? (
-                                    <div className="bg-paper p-5 border-l-2 border-amber-400 text-sm text-slate-800 font-serif leading-relaxed">
-                                        <span className="font-bold text-amber-900/50 text-xs font-mono uppercase tracking-wider block mb-2">Moderator Note</span>
-                                        {summary}
-                                    </div>
-                                ) : null}
-                            </div>
-
-                            {/* Expandable Quotes Section */}
-                            <div>
-                                <button
-                                    onClick={() => toggleExpanded(fgId)}
-                                    className="flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-800 transition-colors uppercase tracking-wider"
-                                >
-                                    <svg
-                                        className={`w-3 h-3 transition-transform ${isExpanded ? 'rotate-90' : ''}`}
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
-                                    {isExpanded ? 'Hide' : 'Review'} {group.chunks.length} Verbatim Quotes
-                                </button>
-
-                                {isExpanded && (
-                                    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fadeIn">
-                                        {group.chunks.map((chunk) => (
-                                            <QuoteBlock key={chunk.chunk_id} chunk={chunk} />
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-
-                        <SynthesisPanel
-                            fgId={fgId}
-                            fgName={group.focus_group_metadata.location || fgId}
-                            quotes={group.chunks}
-                            query={query}
-                            onSynthesisComplete={handleDeepSynthesisComplete}
-                        />
-                    </div>
-                );
-            })}
+            {/* Race Groups */}
+            {raceGroups.map((raceGroup, index) => (
+                <div
+                    key={raceGroup.raceKey}
+                    id={`race-${raceGroup.raceKey}`}
+                    className="scroll-mt-36"
+                >
+                    <RaceGroupComponent
+                        raceGroup={raceGroup}
+                        query={query}
+                        selectedFocusGroups={selectedForMacro}
+                        onToggleFocusGroup={toggleFocusGroupSelection}
+                        selectedRaces={selectedRaces}
+                        onToggleRace={toggleRaceSelection}
+                        fgSummaries={fgSummaries}
+                        loadingFgSummaries={loadingFgSummaries}
+                        strategySummaries={strategySummaries}
+                        loadingStrategySummaries={loadingStrategySummaries}
+                        onViewDocument={onViewDocument}
+                        onDeepSynthesisComplete={handleDeepSynthesisComplete}
+                        animationDelay={index * 100}
+                    />
+                </div>
+            ))}
         </div>
     );
 }
