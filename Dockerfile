@@ -12,6 +12,7 @@ COPY api/ ./api/
 COPY scripts/ ./scripts/
 COPY eval/ ./eval/
 COPY data/ ./data/
+COPY prompts/ ./prompts/
 
 # Expose port
 EXPOSE 8000
