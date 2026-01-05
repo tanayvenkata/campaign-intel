@@ -25,7 +25,24 @@ export default function Home() {
     setQuery('');
     setSearchedQuery('');
     reset();
+    // Clean URL without adding to history
+    if (window.location.search) {
+      history.replaceState(null, '', window.location.pathname);
+    }
   };
+
+  // Handle browser back button to return to landing page
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      if (!e.state?.query) {
+        // No query in history state = landing page
+        clearSearch();
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Keyboard shortcut: Cmd+K to focus search
   useEffect(() => {
@@ -44,6 +61,8 @@ export default function Home() {
     if (query.trim()) {
       setSearchedQuery(query);
       search(query);
+      // Push to history so back button returns to landing
+      history.pushState({ query: query.trim() }, '', `?q=${encodeURIComponent(query.trim())}`);
     }
   };
 
@@ -194,6 +213,7 @@ export default function Home() {
                         setQuery(q);
                         setSearchedQuery(q);
                         search(q);
+                        history.pushState({ query: q }, '', `?q=${encodeURIComponent(q)}`);
                       }}
                       className="px-5 py-2.5 bg-white border border-slate-200 rounded-full text-sm font-medium text-slate-600 hover:text-slate-900 hover:border-slate-400 hover:shadow-sm transition-all active:scale-95"
                     >
