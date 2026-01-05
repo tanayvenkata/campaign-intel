@@ -1,0 +1,121 @@
+{
+  "description": "Test queries for hybrid vs dense retrieval comparison",
+  "queries": [
+    {
+      "id": "keyword-01",
+      "query": "What did P7 say about unions?",
+      "category": "keyword-heavy",
+      "expected_focus_groups": ["race-007-fg-003-youngstown-working-class", "race-002-fg-002-pittsburgh-area", "race-010-fg-002-pittsburgh"],
+      "expected_participant": "P7",
+      "notes": "Exact participant ID match - BM25 should find this"
+    },
+    {
+      "id": "keyword-02",
+      "query": "Republic Steel",
+      "category": "keyword-heavy",
+      "expected_focus_groups": ["race-007-fg-001-cleveland-suburbs"],
+      "expected_participant": "P4",
+      "expected_keywords": ["Republic Steel"],
+      "notes": "Exact entity name in corpus - BM25 should excel"
+    },
+    {
+      "id": "keyword-03",
+      "query": "retired steelworker quotes",
+      "category": "keyword-heavy",
+      "expected_focus_groups": ["race-007-fg-001-cleveland-suburbs", "race-007-fg-003-youngstown-working-class"],
+      "expected_keywords": ["steelworker"],
+      "notes": "Keyword in participant profile"
+    },
+    {
+      "id": "keyword-04",
+      "query": "Parma voters",
+      "category": "keyword-heavy",
+      "expected_focus_groups": ["race-007-fg-001-cleveland-suburbs"],
+      "expected_keywords": ["Parma"],
+      "notes": "Location keyword in participant profile"
+    },
+    {
+      "id": "keyword-05",
+      "query": "UAW union member",
+      "category": "keyword-heavy",
+      "expected_focus_groups": ["race-001-fg-001-detroit-suburbs", "race-009-fg-001-detroit-suburbs"],
+      "expected_keywords": ["UAW"],
+      "notes": "Union acronym in profiles"
+    },
+    {
+      "id": "keyword-06",
+      "query": "Lordstown GM plant",
+      "category": "keyword-heavy",
+      "expected_focus_groups": ["race-007-fg-003-youngstown-working-class"],
+      "expected_keywords": ["Lordstown", "GM"],
+      "notes": "Specific place/company mentioned in Ohio FGs"
+    },
+    {
+      "id": "keyword-07",
+      "query": "What did voters from Scranton say?",
+      "category": "keyword-heavy",
+      "expected_focus_groups": ["race-002-fg-003-scranton-working-class", "race-010-fg-003-scranton-nepa"],
+      "expected_keywords": ["Scranton"],
+      "notes": "Location in FG name and profiles"
+    },
+    {
+      "id": "semantic-01",
+      "query": "voters expressing distrust in institutions they used to support",
+      "category": "semantic",
+      "expected_focus_groups": null,
+      "notes": "Abstract concept - dense should capture meaning"
+    },
+    {
+      "id": "semantic-02",
+      "query": "feeling abandoned by the party",
+      "category": "semantic",
+      "expected_focus_groups": ["race-007-fg-003-youngstown-working-class"],
+      "notes": "Emotional/semantic theme"
+    },
+    {
+      "id": "semantic-03",
+      "query": "economic anxiety and cost of living concerns",
+      "category": "semantic",
+      "expected_focus_groups": null,
+      "notes": "Thematic search across all FGs"
+    },
+    {
+      "id": "semantic-04",
+      "query": "working class frustration with elites",
+      "category": "semantic",
+      "expected_focus_groups": null,
+      "notes": "Abstract class-based theme"
+    },
+    {
+      "id": "semantic-05",
+      "query": "hope for change and better future",
+      "category": "semantic",
+      "expected_focus_groups": null,
+      "notes": "Positive sentiment - tests semantic range"
+    },
+    {
+      "id": "mixed-01",
+      "query": "union members in Ohio talking about jobs",
+      "category": "mixed",
+      "expected_focus_groups": ["race-007-fg-001-cleveland-suburbs", "race-007-fg-002-columbus-educated", "race-007-fg-003-youngstown-working-class"],
+      "expected_keywords": ["union", "Ohio"],
+      "notes": "Keyword (union, Ohio) + semantic (jobs theme)"
+    },
+    {
+      "id": "mixed-02",
+      "query": "working-class voters feeling betrayed by Democrats",
+      "category": "mixed",
+      "expected_focus_groups": null,
+      "expected_keywords": ["working-class", "Democrats"],
+      "notes": "Demographic keyword + emotional theme"
+    },
+    {
+      "id": "mixed-03",
+      "query": "healthcare concerns in Pennsylvania",
+      "category": "mixed",
+      "expected_focus_groups": ["race-002-fg-001-philadelphia-suburbs", "race-002-fg-002-pittsburgh-area", "race-002-fg-003-scranton-working-class", "race-010-fg-001-philadelphia-suburbs", "race-010-fg-002-pittsburgh", "race-010-fg-003-scranton-nepa"],
+      "expected_keywords": ["Pennsylvania"],
+      "notes": "State keyword + topic theme"
+    }
+  ]
+}

@@ -26,8 +26,9 @@ from scripts.retrieve import (
     FocusGroupRetrieverV2, LLMRouter, RetrievalResult,
     StrategyMemoRetriever, StrategyRetrievalResult, RouterResult
 )
+from scripts.retrieval.hybrid import HybridFocusGroupRetriever
 from scripts.synthesize import FocusGroupSynthesizer, get_friendly_error
-from eval.config import STRATEGY_TOP_K_PER_RACE, DATA_DIR, PROJECT_ROOT
+from eval.config import STRATEGY_TOP_K_PER_RACE, DATA_DIR, PROJECT_ROOT, USE_HYBRID_RETRIEVAL
 from api.schemas import (
     SearchRequest, SearchResponse, SynthesisRequest, MacroSynthesisRequest,
     GroupedResult, RetrievalChunk,
@@ -62,9 +63,9 @@ rate_limits: Dict[str, Dict] = defaultdict(lambda: {"count": 0, "date": date.tod
 DAILY_RATE_LIMIT = int(os.getenv("DAILY_RATE_LIMIT", "100"))
 
 
-def _get_cache_key(query: str, top_k: int, score_threshold: float) -> str:
+def _get_cache_key(query: str, top_k: int, score_threshold: float, use_hybrid: bool = False) -> str:
     """Generate cache key from query parameters."""
-    raw = f"{query.lower().strip()}:{top_k}:{score_threshold}"
+    raw = f"{query.lower().strip()}:{top_k}:{score_threshold}:{use_hybrid}"
     return hashlib.md5(raw.encode()).hexdigest()
 
 
@@ -102,7 +103,7 @@ def _prewarm_query(query: str) -> None:
     """Execute a search query and cache the result. Used for pre-warming."""
     from api.schemas import GroupedResult, StrategyGroupedResult, RetrievalChunk, StrategyChunk
 
-    cache_key = _get_cache_key(query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD)
+    cache_key = _get_cache_key(query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD, USE_HYBRID_RETRIEVAL)
 
     # Skip if already cached
     if cache_key in search_cache:
@@ -240,11 +241,15 @@ def _prewarm_query(query: str) -> None:
 async def lifespan(app: FastAPI):
     """Initialize expensive resources on startup."""
     global retriever, strategy_retriever, router, synthesizer
-    print(f"Initializing resources (reranker={'enabled' if USE_RERANKER else 'disabled'})...")
+    print(f"Initializing resources (reranker={'enabled' if USE_RERANKER else 'disabled'}, hybrid={'enabled' if USE_HYBRID_RETRIEVAL else 'disabled'})...")
     # Initialize with same settings as app.py
     # Note: app.py uses st.cache_resource, here we use global singletons
     # USE_RERANKER=false for production (512MB limit), true for local dev
-    retriever = FocusGroupRetrieverV2(use_router=True, use_reranker=USE_RERANKER, verbose=False)
+    # USE_HYBRID_RETRIEVAL=false by default, enables BM25+dense fusion
+    if USE_HYBRID_RETRIEVAL:
+        retriever = HybridFocusGroupRetriever(use_router=True, use_reranker=USE_RERANKER, verbose=False)
+    else:
+        retriever = FocusGroupRetrieverV2(use_router=True, use_reranker=USE_RERANKER, verbose=False)
     strategy_retriever = StrategyMemoRetriever(use_reranker=USE_RERANKER, verbose=False)
     router = LLMRouter()
     synthesizer = FocusGroupSynthesizer(verbose=False)
@@ -464,7 +469,8 @@ async def search_unified(search_request: SearchRequest, request: Request):
     cache_key = _get_cache_key(
         search_request.query,
         search_request.top_k,
-        search_request.score_threshold
+        search_request.score_threshold,
+        USE_HYBRID_RETRIEVAL
     )
     if cache_key in search_cache:
         cached = search_cache[cache_key]
@@ -798,7 +804,7 @@ async def synthesize_light(request: SynthesisRequest):
     # Check cache if we have a focus group ID
     if request.quotes:
         fg_id = request.quotes[0].focus_group_id
-        cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD)
+        cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD, USE_HYBRID_RETRIEVAL)
         summary_cache_key = f"{cache_key}:{fg_id}"
 
         if summary_cache_key in light_summary_cache:
@@ -988,7 +994,7 @@ async def synthesize_macro_light(request: LightMacroSynthesisRequest):
         raise HTTPException(status_code=503, detail="Service not ready")
 
     # Check cache
-    cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD)
+    cache_key = _get_cache_key(request.query, DEFAULT_TOP_K, DEFAULT_SCORE_THRESHOLD, USE_HYBRID_RETRIEVAL)
     macro_cache_key = f"macro:{cache_key}"
 
     if macro_cache_key in macro_synthesis_cache:

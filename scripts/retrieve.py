@@ -300,11 +300,13 @@ class FocusGroupRetrieverV2:
         reranker_model: str = RERANKER_MODEL,
         verbose: bool = False
     ):
-        from scripts.retrieval.base import SharedResources
+        from scripts.retrieval.base import SharedResources, PINECONE_NAMESPACE, USE_OPENAI_EMBEDDINGS
 
         self.verbose = verbose
         self.use_router = use_router
         self.use_reranker = use_reranker
+        self.namespace = PINECONE_NAMESPACE
+        self.use_openai_embeddings = USE_OPENAI_EMBEDDINGS
 
         # Initialize router
         if use_router:
@@ -324,7 +326,8 @@ class FocusGroupRetrieverV2:
 
         # Use shared embedding model and Pinecone index (singleton pattern)
         if verbose:
-            print(f"Using shared embedding model: {EMBEDDING_MODEL_LOCAL}...")
+            model_name = "OpenAI API" if USE_OPENAI_EMBEDDINGS else EMBEDDING_MODEL_LOCAL
+            print(f"Using shared embedding model: {model_name}...")
         self.model = SharedResources.get_embedding_model()
         self.index = SharedResources.get_pinecone_index()
 
@@ -332,8 +335,12 @@ class FocusGroupRetrieverV2:
         self._fg_metadata_cache: Dict[str, Dict] = {}
 
     def _embed_query(self, query: str) -> List[float]:
-        """Embed query with sentence-transformer model (bge-m3 by default)."""
-        return self.model.encode(query).tolist()
+        """Embed query using shared model (OpenAI or local)."""
+        if self.use_openai_embeddings:
+            # OpenAI embedder returns list of embeddings
+            return self.model.encode([query])[0]
+        else:
+            return self.model.encode(query).tolist()
 
     def _load_focus_group_metadata(self, fg_id: str) -> Dict:
         """Load focus group metadata from file."""
@@ -394,7 +401,8 @@ class FocusGroupRetrieverV2:
             vector=query_embedding,
             top_k=parent_top_k,
             filter=filter_dict,
-            include_metadata=True
+            include_metadata=True,
+            namespace=self.namespace
         )
 
         if self.verbose:
@@ -429,7 +437,8 @@ class FocusGroupRetrieverV2:
             vector=query_embedding,
             top_k=candidate_k,
             filter=child_filter,
-            include_metadata=True
+            include_metadata=True,
+            namespace=self.namespace
         )
 
         # Filter to only children from matched parents and limit
@@ -507,7 +516,8 @@ class FocusGroupRetrieverV2:
             vector=query_embedding,
             top_k=top_k,
             filter=filter_dict,
-            include_metadata=True
+            include_metadata=True,
+            namespace=self.namespace
         )
 
         return [
@@ -703,7 +713,8 @@ class FocusGroupRetrieverV2:
                 vector=query_embedding,
                 top_k=search_k,
                 filter=filter_dict,
-                include_metadata=True
+                include_metadata=True,
+                namespace=self.namespace
             )
 
             # Convert to RetrievalResult and apply score threshold
@@ -816,10 +827,12 @@ class StrategyMemoRetriever:
         reranker_model: str = RERANKER_MODEL,
         verbose: bool = False
     ):
-        from scripts.retrieval.base import SharedResources
+        from scripts.retrieval.base import SharedResources, PINECONE_NAMESPACE, USE_OPENAI_EMBEDDINGS
 
         self.verbose = verbose
         self.use_reranker = use_reranker
+        self.namespace = PINECONE_NAMESPACE
+        self.use_openai_embeddings = USE_OPENAI_EMBEDDINGS
 
         # Initialize reranker (uses shared model if available)
         if use_reranker:
@@ -831,7 +844,8 @@ class StrategyMemoRetriever:
 
         # Use shared embedding model and Pinecone index (singleton pattern)
         if verbose:
-            print(f"Using shared embedding model: {EMBEDDING_MODEL_LOCAL}...")
+            model_name = "OpenAI API" if USE_OPENAI_EMBEDDINGS else EMBEDDING_MODEL_LOCAL
+            print(f"Using shared embedding model: {model_name}...")
         self.model = SharedResources.get_embedding_model()
         self.index = SharedResources.get_pinecone_index()
 
@@ -859,8 +873,11 @@ class StrategyMemoRetriever:
         return {}
 
     def _embed_query(self, query: str) -> List[float]:
-        """Embed query with sentence-transformer model."""
-        return self.model.encode(query).tolist()
+        """Embed query using shared model (OpenAI or local)."""
+        if self.use_openai_embeddings:
+            return self.model.encode([query])[0]
+        else:
+            return self.model.encode(query).tolist()
 
     def retrieve(
         self,
@@ -905,7 +922,8 @@ class StrategyMemoRetriever:
             vector=query_embedding,
             top_k=parent_top_k,
             filter=parent_filter,
-            include_metadata=True
+            include_metadata=True,
+            namespace=self.namespace
         )
 
         if self.verbose:
@@ -941,7 +959,8 @@ class StrategyMemoRetriever:
             vector=query_embedding,
             top_k=candidate_k,
             filter=child_filter,
-            include_metadata=True
+            include_metadata=True,
+            namespace=self.namespace
         )
 
         # Filter to children from matched parents
@@ -1014,7 +1033,8 @@ class StrategyMemoRetriever:
             vector=query_embedding,
             top_k=top_k,
             filter=filter_dict,
-            include_metadata=True
+            include_metadata=True,
+            namespace=self.namespace
         )
 
         return [

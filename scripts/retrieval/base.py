@@ -3,6 +3,7 @@ Shared base class and resources for retrievers.
 Implements singleton pattern for expensive resources (embedding model, Pinecone index).
 """
 
+import os
 import sys
 from pathlib import Path
 from typing import Optional
@@ -21,8 +22,13 @@ MODEL_DIMENSIONS = {
     "BAAI/bge-m3": 1024,
     "intfloat/e5-base-v2": 768,
     "BAAI/bge-base-en-v1.5": 768,
+    "text-embedding-3-small": 1024,
 }
 DIMENSION = MODEL_DIMENSIONS.get(EMBEDDING_MODEL_LOCAL, 1024)
+
+# OpenAI embeddings config - use API in production for speed
+USE_OPENAI_EMBEDDINGS = os.getenv("USE_OPENAI_EMBEDDINGS", "true").lower() == "true"
+PINECONE_NAMESPACE = "openai" if USE_OPENAI_EMBEDDINGS else ""  # Empty = default namespace
 
 
 class SharedResources:
@@ -37,11 +43,16 @@ class SharedResources:
 
     @classmethod
     def get_embedding_model(cls):
-        """Get or create shared embedding model."""
+        """Get or create shared embedding model (OpenAI or local)."""
         if cls._embedding_model is None:
-            from sentence_transformers import SentenceTransformer
-            print(f"Loading embedding model: {EMBEDDING_MODEL_LOCAL}")
-            cls._embedding_model = SentenceTransformer(EMBEDDING_MODEL_LOCAL)
+            if USE_OPENAI_EMBEDDINGS:
+                from scripts.embeddings import OpenAIEmbedder
+                print("Loading embedding model: OpenAI text-embedding-3-small (API)")
+                cls._embedding_model = OpenAIEmbedder(dimensions=1024)
+            else:
+                from sentence_transformers import SentenceTransformer
+                print(f"Loading embedding model: {EMBEDDING_MODEL_LOCAL}")
+                cls._embedding_model = SentenceTransformer(EMBEDDING_MODEL_LOCAL)
         return cls._embedding_model
 
     @classmethod
@@ -91,8 +102,14 @@ class BaseRetriever:
             self.reranker = None
 
     def embed_query(self, query: str):
-        """Embed a query using the shared model."""
-        return self.model.encode(query).tolist()
+        """Embed a query using the shared model (OpenAI or local)."""
+        if USE_OPENAI_EMBEDDINGS:
+            # OpenAI embedder returns list of embeddings for list of texts
+            embeddings = self.model.encode([query])
+            return embeddings[0]
+        else:
+            # SentenceTransformer returns numpy array for single text
+            return self.model.encode(query).tolist()
 
     def log(self, message: str):
         """Print message if verbose mode is enabled."""

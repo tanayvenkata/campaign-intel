@@ -53,6 +53,13 @@ EVAL_DIR = PROJECT_ROOT / "eval"
 STRATEGY_TOP_K_PER_RACE = int(os.getenv("STRATEGY_TOP_K_PER_RACE", "2"))
 FG_SCORE_THRESHOLD = float(os.getenv("FG_SCORE_THRESHOLD", "0.50"))
 
+# Hybrid retrieval settings (feature flag)
+USE_HYBRID_RETRIEVAL = os.getenv("USE_HYBRID_RETRIEVAL", "false").lower() == "true"
+HYBRID_FUSION_STRATEGY = os.getenv("HYBRID_FUSION_STRATEGY", "rrf")  # "rrf" or "weighted"
+HYBRID_RRF_K = int(os.getenv("HYBRID_RRF_K", "60"))
+HYBRID_DENSE_WEIGHT = float(os.getenv("HYBRID_DENSE_WEIGHT", "0.6"))
+HYBRID_BM25_WEIGHT = float(os.getenv("HYBRID_BM25_WEIGHT", "0.4"))
+
 # Evaluation targets (based on Rachel's requirements)
 EVAL_TARGETS = {
     "faithfulness": 1.0,        # 100% - "One bad hallucination and I'm done"

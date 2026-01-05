@@ -1,18 +1,14 @@
-# Production requirements - API only (no GPU, no dev tools)
+# Production requirements - API only (no GPU, no local models)
+# Uses OpenAI API for embeddings (fast) instead of local BGE-M3 (slow on CPU)
 
 # Web framework
 fastapi>=0.100.0
 uvicorn[standard]>=0.22.0
 pydantic>=2.0.0
 
-# LLM & Embeddings (API-based, no local models)
+# LLM & Embeddings (API-based)
 openai>=1.0.0
 pinecone>=3.0.0
-
-# Reranker - CPU only version of torch
---extra-index-url https://download.pytorch.org/whl/cpu
-torch
-sentence-transformers>=2.2.0
 
 # Utilities
 python-dotenv>=1.0.0

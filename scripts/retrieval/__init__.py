@@ -44,6 +44,10 @@ from scripts.retrieve import (
     format_strategy_results,
 )
 
+# Hybrid retrieval (BM25 + dense fusion)
+from scripts.retrieval.bm25 import BM25Retriever, BM25Result
+from scripts.retrieval.hybrid import HybridFocusGroupRetriever, HybridResult, FusionStrategy
+
 __all__ = [
     # Types
     "RetrievalResult",
@@ -61,6 +65,12 @@ __all__ = [
     # Retrievers
     "FocusGroupRetrieverV2",
     "StrategyMemoRetriever",
+    "BM25Retriever",
+    "HybridFocusGroupRetriever",
+    # Result types
+    "BM25Result",
+    "HybridResult",
+    "FusionStrategy",
     # Formatters
     "format_results_for_display",
     "format_strategy_results",
