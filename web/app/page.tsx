@@ -6,6 +6,7 @@ import StepLoader from './components/StepLoader';
 import EmptyState from './components/EmptyState';
 import CorpusSidebar from './components/CorpusSidebar';
 import DocumentViewer from './components/DocumentViewer';
+import LandingVisual from './components/LandingVisual';
 import { CorpusItem } from './hooks/useCorpusIndex';
 import { useStreamingSearch } from './hooks/useStreamingSearch';
 import { prefetchSearch } from './utils/prefetch';
@@ -149,15 +150,19 @@ export default function Home() {
           {/* Unified Landing State - Hero Search */}
           {/* Dashboard State (Landing) */}
           {!data && !isSearching && (
-            <div className="max-w-4xl mx-auto mt-12 fade-in-up px-4">
-              <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight mb-6 text-balance">
+            <div className="max-w-4xl mx-auto mt-8 fade-in-up px-4">
+              <div className="text-center mb-10">
+                <h1 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 tracking-tight mb-4 text-balance">
                   Intelligence Dashboard
                 </h1>
-                <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto leading-relaxed text-balance">
+                <p className="text-slate-500 text-base font-light max-w-2xl mx-auto leading-relaxed text-balance">
                   Welcome to the Meridian strategic analysis terminal. <br className="hidden md:block" />
                   Select a suggested inquiry or enter a new protocol above.
                 </p>
+              </div>
+
+              <div className="max-w-2xl mx-auto mb-10">
+                <LandingVisual className="shadow-sm" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-200 rounded-lg overflow-hidden border border-slate-200 shadow-sm mb-12">
