@@ -17,7 +17,7 @@ from scripts.retrieve import (
     FocusGroupRetrieverV2, LLMRouter, RetrievalResult,
     StrategyMemoRetriever, StrategyRetrievalResult, RouterResult
 )
-from scripts.synthesize import FocusGroupSynthesizer
+from scripts.synthesize import FocusGroupSynthesizer, get_friendly_error
 from eval.config import STRATEGY_TOP_K_PER_RACE, DATA_DIR, PROJECT_ROOT
 from api.schemas import (
     SearchRequest, SearchResponse, SynthesisRequest, MacroSynthesisRequest,
@@ -803,14 +803,16 @@ Strategy memo excerpts:
 Write a 1-2 sentence summary of the key lesson(s) from this race relevant to the query.
 Be specific - include what worked/failed and why. No fluff."""
 
-    response = synthesizer.client.chat.completions.create(
-        model=synthesizer.model,
-        messages=[{"role": "user", "content": prompt}],
-        max_tokens=150,
-        temperature=0.3
-    )
-
-    return {"summary": response.choices[0].message.content.strip()}
+    try:
+        response = synthesizer.client.chat.completions.create(
+            model=synthesizer.model,
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=150,
+            temperature=0.3
+        )
+        return {"summary": response.choices[0].message.content.strip()}
+    except Exception as e:
+        return {"summary": get_friendly_error(e)}
 
 
 @app.post("/synthesize/strategy/deep")
@@ -841,16 +843,19 @@ Provide a detailed analysis that:
 Keep it to 2-3 paragraphs. Be analytical and specific."""
 
     async def stream_generator():
-        stream = synthesizer.client.chat.completions.create(
-            model=synthesizer.model,
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=800,
-            temperature=0.4,
-            stream=True
-        )
-        for chunk in stream:
-            if chunk.choices[0].delta.content:
-                yield chunk.choices[0].delta.content
+        try:
+            stream = synthesizer.client.chat.completions.create(
+                model=synthesizer.model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=800,
+                temperature=0.4,
+                stream=True
+            )
+            for chunk in stream:
+                if chunk.choices[0].delta.content:
+                    yield chunk.choices[0].delta.content
+        except Exception as e:
+            yield get_friendly_error(e)
 
     return StreamingResponse(stream_generator(), media_type="text/event-stream")
 
@@ -896,16 +901,19 @@ Provide a cross-race synthesis that:
 Be specific and actionable. Reference the races by name."""
 
     async def stream_generator():
-        stream = synthesizer.client.chat.completions.create(
-            model=synthesizer.model,
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=1000,
-            temperature=0.4,
-            stream=True
-        )
-        for chunk in stream:
-            if chunk.choices[0].delta.content:
-                yield chunk.choices[0].delta.content
+        try:
+            stream = synthesizer.client.chat.completions.create(
+                model=synthesizer.model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=1000,
+                temperature=0.4,
+                stream=True
+            )
+            for chunk in stream:
+                if chunk.choices[0].delta.content:
+                    yield chunk.choices[0].delta.content
+        except Exception as e:
+            yield get_friendly_error(e)
 
     return StreamingResponse(stream_generator(), media_type="text/event-stream")
 
@@ -975,16 +983,19 @@ Provide a unified synthesis that:
 Structure your response with clear themes. Reference specific focus groups and races."""
 
     async def stream_generator():
-        stream = synthesizer.client.chat.completions.create(
-            model=synthesizer.model,
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=1200,
-            temperature=0.4,
-            stream=True
-        )
-        for chunk in stream:
-            if chunk.choices[0].delta.content:
-                yield chunk.choices[0].delta.content
+        try:
+            stream = synthesizer.client.chat.completions.create(
+                model=synthesizer.model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=1200,
+                temperature=0.4,
+                stream=True
+            )
+            for chunk in stream:
+                if chunk.choices[0].delta.content:
+                    yield chunk.choices[0].delta.content
+        except Exception as e:
+            yield get_friendly_error(e)
 
     return StreamingResponse(stream_generator(), media_type="text/event-stream")
 

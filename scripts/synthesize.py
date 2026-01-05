@@ -13,8 +13,32 @@ from dataclasses import dataclass
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from openai import OpenAI
+from openai import OpenAI, APIError, RateLimitError, APIStatusError
 from eval.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL, SYNTHESIS_MODEL
+
+
+# User-friendly error messages for API issues
+RATE_LIMIT_MSG = "⏳ High demand right now. Please try again in a moment."
+CREDIT_LIMIT_MSG = "📊 Demo usage limit reached for this month. [Contact Tanay](https://tanayv.com) for a full demo."
+GENERIC_ERROR_MSG = "Unable to generate synthesis. Please try again."
+
+
+def get_friendly_error(e: Exception) -> str:
+    """Convert API errors to user-friendly messages."""
+    error_str = str(e).lower()
+
+    # Check for rate limiting
+    if isinstance(e, RateLimitError) or "429" in error_str or "rate" in error_str:
+        return RATE_LIMIT_MSG
+
+    # Check for credit/payment issues (OpenRouter returns 402 or mentions credits)
+    if isinstance(e, APIStatusError) and hasattr(e, 'status_code') and e.status_code == 402:
+        return CREDIT_LIMIT_MSG
+    if "402" in error_str or "credit" in error_str or "insufficient" in error_str or "limit" in error_str or "quota" in error_str:
+        return CREDIT_LIMIT_MSG
+
+    # Generic error
+    return GENERIC_ERROR_MSG
 
 
 @dataclass
@@ -95,7 +119,7 @@ Summary:"""
         except Exception as e:
             if self.verbose:
                 print(f"Error generating light summary: {e}")
-            return "Unable to generate summary."
+            return get_friendly_error(e)
 
     def deep_synthesis(
         self,
@@ -160,7 +184,7 @@ Keep it to 2-3 paragraphs. Be analytical, not just descriptive."""
         except Exception as e:
             if self.verbose:
                 print(f"Error generating deep synthesis: {e}")
-            return "Unable to generate synthesis."
+            return get_friendly_error(e)
 
     def macro_synthesis(
         self,
@@ -233,7 +257,7 @@ Be specific and analytical. Avoid generic observations."""
         except Exception as e:
             if self.verbose:
                 print(f"Error generating macro synthesis: {e}")
-            return "Unable to generate synthesis."
+            return get_friendly_error(e)
 
     def light_macro_synthesis(
         self,
@@ -313,7 +337,7 @@ Be specific and analytical. Every claim needs a citation. Avoid generic observat
         except Exception as e:
             if self.verbose:
                 print(f"Error generating light macro synthesis: {e}")
-            return "Unable to generate synthesis."
+            return get_friendly_error(e)
 
     def light_macro_synthesis_stream(
         self,
@@ -381,7 +405,7 @@ Be specific and analytical. Every claim needs a citation. Avoid generic observat
         except Exception as e:
             if self.verbose:
                 print(f"Error generating light macro synthesis: {e}")
-            yield "Unable to generate synthesis."
+            yield get_friendly_error(e)
 
     def deep_macro_synthesis(
         self,
