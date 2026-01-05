@@ -184,9 +184,9 @@ export default function Home() {
                 <div className="flex flex-wrap justify-center gap-3">
                   {[
                     "Ohio voters on economy",
-                    "Working-class frustration",
-                    "Montana loss analysis",
-                    "Trust in Wisconsin"
+                    "What messaging mistakes did campaigns make?",
+                    "Where did Democratic messaging fail with union voters?",
+                    "What do swing voters want to hear about inflation?"
                   ].map((q) => (
                     <button
                       key={q}

@@ -313,6 +313,64 @@ class BackendE2ETests:
         self._add_result("latency_acceptable", passed, message, (time.time() - start) * 1000)
 
     # =========================================================================
+    # CACHING & RATE LIMIT TESTS
+    # =========================================================================
+
+    def test_cache_hit_faster(self):
+        """Second identical query should be much faster (cached)."""
+        start = time.time()
+        query = "What did Ohio voters say about the economy?"
+
+        try:
+            # First query - should be slow (cache miss)
+            result1 = self._search(query)
+            first_time = result1["stats"]["retrieval_time_ms"]
+
+            # Second query - should be fast (cache hit)
+            result2 = self._search(query)
+            second_time = result2["stats"]["retrieval_time_ms"]
+
+            # Cache hit should have "cached": True in stats
+            is_cached = result2["stats"].get("cached", False)
+
+            # Second should be much faster or marked as cached
+            passed = is_cached or second_time < first_time / 2
+            message = f"1st: {first_time:.0f}ms, 2nd: {second_time:.0f}ms, cached={is_cached}"
+
+        except Exception as e:
+            passed = False
+            message = f"Error: {e}"
+
+        self._add_result("cache_hit_faster", passed, message, (time.time() - start) * 1000)
+
+    def test_rate_limit_headers(self):
+        """Rate limit should not block normal usage (under 100/day)."""
+        start = time.time()
+        query = "What did voters say?"
+
+        try:
+            # Make a few requests - should all succeed
+            for i in range(3):
+                result = self._search(query)
+
+            # Should not hit rate limit with just 3 requests
+            passed = True
+            message = "3 requests succeeded without rate limiting"
+
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 429:
+                passed = False
+                message = "Rate limited too aggressively"
+            else:
+                passed = False
+                message = f"HTTP Error: {e}"
+        except Exception as e:
+            passed = False
+            message = f"Error: {e}"
+
+        self._add_result("rate_limit_not_aggressive", passed, message, (time.time() - start) * 1000)
+
+    # =========================================================================
     # RUN ALL TESTS
     # =========================================================================
 
@@ -362,6 +420,13 @@ class BackendE2ETests:
         self.test_empty_query_handled()
         self.test_irrelevant_query_returns_empty_or_low_results()
         self.test_latency_acceptable()
+        print()
+
+        # Caching & rate limit tests
+        print("CACHING & RATE LIMIT TESTS")
+        print("-" * 40)
+        self.test_cache_hit_faster()
+        self.test_rate_limit_headers()
         print()
 
         # Print results

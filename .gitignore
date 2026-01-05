@@ -57,3 +57,6 @@ eval/comprehensive_results/
 # Logs
 *.log
 logs/
+
+# Internal notes (not for repo)
+client-notes.md
