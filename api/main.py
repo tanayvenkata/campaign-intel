@@ -1,4 +1,5 @@
 import sys
+import os
 from pathlib import Path
 import time
 import json
@@ -8,6 +9,9 @@ from contextlib import asynccontextmanager
 # Add project root to sys.path to allow imports from scripts/
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
+
+# Production config: disable reranker to stay under 512MB memory limit
+USE_RERANKER = os.getenv("USE_RERANKER", "false").lower() == "true"
 
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
@@ -42,12 +46,12 @@ synthesizer: Optional[FocusGroupSynthesizer] = None
 async def lifespan(app: FastAPI):
     """Initialize expensive resources on startup."""
     global retriever, strategy_retriever, router, synthesizer
-    print("Initializing resources...")
+    print(f"Initializing resources (reranker={'enabled' if USE_RERANKER else 'disabled'})...")
     # Initialize with same settings as app.py
     # Note: app.py uses st.cache_resource, here we use global singletons
-    retriever = FocusGroupRetrieverV2(use_router=True, use_reranker=True, verbose=False)
-    # Reranking for strategy improves race recall by 10% with no precision loss
-    strategy_retriever = StrategyMemoRetriever(use_reranker=True, verbose=False)
+    # USE_RERANKER=false for production (512MB limit), true for local dev
+    retriever = FocusGroupRetrieverV2(use_router=True, use_reranker=USE_RERANKER, verbose=False)
+    strategy_retriever = StrategyMemoRetriever(use_reranker=USE_RERANKER, verbose=False)
     router = LLMRouter()
     synthesizer = FocusGroupSynthesizer(verbose=False)
     print("Resources initialized.")
@@ -60,7 +64,11 @@ app = FastAPI(title="Focus Group Search API", lifespan=lifespan)
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Next.js default port
+    allow_origins=[
+        "http://localhost:3000",  # Local dev
+        "https://campaign-intel.vercel.app",  # Production frontend
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",  # Preview deployments
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
