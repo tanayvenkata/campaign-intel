@@ -120,6 +120,62 @@ EXAMPLE_QUERIES = [
 DEFAULT_TOP_K = 5
 DEFAULT_SCORE_THRESHOLD = 0.50
 
+# Persistent demo cache file (committed to repo for zero-cost demo queries)
+DEMO_CACHE_FILE = PROJECT_ROOT / "data" / "demo_cache.json"
+
+
+def _load_demo_cache() -> bool:
+    """Load pre-generated demo cache from JSON file. Returns True if loaded."""
+    if not DEMO_CACHE_FILE.exists():
+        return False
+
+    try:
+        with open(DEMO_CACHE_FILE) as f:
+            demo_cache = json.load(f)
+
+        queries_loaded = 0
+        for query, cache_data in demo_cache.get("queries", {}).items():
+            cache_key = cache_data["cache_key"]
+
+            # Load search results
+            search_cache[cache_key] = cache_data["search_results"]
+
+            # Load light summaries
+            for fg_id, summary in cache_data.get("light_summaries", {}).items():
+                light_summary_cache[f"{cache_key}:{fg_id}"] = summary
+
+            # Load deep summaries
+            for fg_id, synthesis in cache_data.get("deep_summaries", {}).items():
+                deep_summary_cache[f"deep:{cache_key}:{fg_id}"] = synthesis
+
+            # Load macro synthesis
+            if cache_data.get("macro_synthesis"):
+                macro_synthesis_cache[f"macro:{cache_key}"] = cache_data["macro_synthesis"]
+
+            # Load strategy light summaries
+            for race_id, summary in cache_data.get("strategy_light", {}).items():
+                strategy_light_cache[f"strategy:{cache_key}:{race_id}"] = summary
+
+            # Load strategy deep summaries
+            for race_id, synthesis in cache_data.get("strategy_deep", {}).items():
+                strategy_deep_cache[f"strategy_deep:{cache_key}:{race_id}"] = synthesis
+
+            # Load strategy macro (if exists)
+            if cache_data.get("strategy_macro"):
+                # Compute race_ids_hash for the key
+                race_ids = list(cache_data.get("strategy_light", {}).keys())
+                race_ids_hash = hashlib.md5(",".join(sorted(race_ids)).encode()).hexdigest()[:8]
+                strategy_macro_cache[f"strategy_macro:{cache_key}:{race_ids_hash}"] = cache_data["strategy_macro"]
+
+            queries_loaded += 1
+            print(f"  Loaded cache: {query}")
+
+        print(f"Loaded {queries_loaded} queries from demo cache ({DEMO_CACHE_FILE})")
+        return True
+    except Exception as e:
+        print(f"Failed to load demo cache: {e}")
+        return False
+
 
 def _prewarm_query(query: str) -> None:
     """Execute a search query and cache the result. Used for pre-warming."""
@@ -328,16 +384,21 @@ async def lifespan(app: FastAPI):
     synthesizer = FocusGroupSynthesizer(verbose=False)
     print("Resources initialized.")
 
-    # Pre-warm cache with example queries (async, don't block startup)
+    # Load demo cache from JSON (zero LLM cost) or fall back to live pre-warming
     if os.getenv("PREWARM_CACHE", "true").lower() == "true":
-        print(f"Pre-warming cache with {len(EXAMPLE_QUERIES)} example queries...")
-        for query in EXAMPLE_QUERIES:
-            try:
-                _prewarm_query(query)
-                print(f"  Cached: {query}")
-            except Exception as e:
-                print(f"  Failed to cache '{query}': {e}")
-        print("Cache pre-warming complete.")
+        # Try loading from persistent JSON cache first
+        if _load_demo_cache():
+            print("Demo cache loaded from file (no LLM calls needed).")
+        else:
+            # Fall back to live pre-warming (makes LLM calls)
+            print(f"Pre-warming cache with {len(EXAMPLE_QUERIES)} example queries...")
+            for query in EXAMPLE_QUERIES:
+                try:
+                    _prewarm_query(query)
+                    print(f"  Cached: {query}")
+                except Exception as e:
+                    print(f"  Failed to cache '{query}': {e}")
+            print("Cache pre-warming complete.")
 
     yield
     # Cleanup if needed

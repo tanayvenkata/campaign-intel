@@ -1,0 +1,798 @@
+{
+  "queries": {
+    "Ohio voters on economy": {
+      "cache_key": "16c41bef43c44f7f7d7b07a67dd1d5de",
+      "search_results": {
+        "content_type": "quotes",
+        "quotes": [
+          {
+            "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+            "focus_group_metadata": {
+              "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+              "race_id": "race-007",
+              "race_name": "Ohio Senate 2024",
+              "outcome": "loss",
+              "location": "Cleveland Suburbs (Cuyahoga County - Parma/Strongsville)",
+              "date": "September 18, 2024",
+              "moderator": "Jennifer Walsh",
+              "participant_count": 10,
+              "participant_summary": "10 (5F, 5M) - Suburban swing voters, mix of Biden 2020 and Trump 2020",
+              "participants": {
+                "P1": "F, 48, Nurse, Parma, Biden 2020, healthcare concerns, Polish-American",
+                "P2": "M, 55, Manufacturing supervisor, Strongsville, Trump 2020, economic voter",
+                "P3": "F, 34, Marketing manager, Westlake, Biden 2020, suburban professional",
+                "P4": "M, 62, Retired steelworker, Parma, union member, voted Obama twice then Trump",
+                "P5": "F, 51, Real estate agent, Medina, Trump 2020, economic concerns",
+                "P6": "M, 41, IT manager, Lakewood, Biden 2020, moderate Democrat",
+                "P7": "F, 44, Small business owner, North Olmsted, independent, economic focus",
+                "P8": "M, 58, Truck driver, Parma Heights, Trump 2016/2020, union skeptic",
+                "P9": "F, 37, Teacher, Rocky River, Biden 2020, education concerns",
+                "P10": "M, 45, Police officer, Strongsville, Trump 2020, law and order focus"
+              },
+              "moderator_notes": {
+                "key_themes": [
+                  "Working-class defection is real",
+                  "\"What have you done lately?\"",
+                  "Stanton's simplicity beats Brennan's complexity",
+                  "Ohio is no longer a swing state",
+                  "Cultural issues are cutting Republican",
+                  "Enthusiasm problem",
+                  "Update economic message",
+                  "Simplify",
+                  "Address cultural issues",
+                  "P4 is the race"
+                ],
+                "vote_intent_summary": "**Brennan:** 4",
+                "key_quotes": [
+                  "\"What's actually changed? Steel is still gone. Jobs are still leaving.\" - P4",
+                  "\"The Democrats abandoned working people. They talk about pronouns and climate while our towns die.\" - P2",
+                  "\"He's saying things that make sense on the economy. Even if he's full of it, at least he's saying them.\" - P4",
+                  "\"We're not a swing state anymore. We're red now.\" - P4"
+                ],
+                "full_text": "\n### Key Themes - WARNING SIGNS\n\n1. **Working-class defection is real** - P4 (steelworker, union, voted Brennan before) is moving to Stanton. This is catastrophic if representative.\n\n2. **\"What have you done lately?\"** - Auto bailout was 15 years ago. Message feels dated. Need contemporary wins.\n\n3. **Stanton's simplicity beats Brennan's complexity** - \"Cut taxes, bring jobs\" is easier to understand than infrastructure and CHIPS Act timelines.\n\n4. **Ohio is no longer a swing state** - P4's observation: \"We're red now.\" Trump coattails in presidential year are devastating.\n\n5. **Cultural issues are cutting Republican** - Immigration, crime, education. Brennan's economic focus isn't enough.\n\n6. **Enthusiasm problem** - Even Brennan supporters (P1, P3) are defensive, not excited.\n\n### Vote Intent\n\n- **Brennan:** 4\n- **Stanton:** 5\n- **Leaning Stanton:** 1\n\nThis is a LOSING focus group. 6-4 in favor of opponent among swing voters.\n\n### Critical Defector Profile (P4)\n\n- **Background:** 62, retired steelworker, union member, Polish-American, Parma\n- **Vote history:** Obama 2008, Obama 2012, Trump 2016, Trump 2020, Brennan previous Senate races\n- **Why defecting:** \"What's actually changed?\" Economic despair, party frustration\n- **Quote:** \"I don't blame Tim. I just wonder if it matters anymore.\"\n\n### Recommendations (URGENT)\n\n1. **Update economic message** - Auto bailout is ancient history. Need current wins, current plan.\n2. **Simplify** - Stanton's \"cut taxes, bring jobs\" beats complex policy explanations.\n3. **Address cultural issues** - Cannot cede crime, immigration, education entirely.\n4. **P4 is the race** - Working-class union voters defecting = loss.\n\n### Key Quotes\n\n> \"What's actually changed? Steel is still gone. Jobs are still leaving.\" - P4\n\n> \"The Democrats abandoned working people. They talk about pronouns and climate while our towns die.\" - P2\n\n> \"He's saying things that make sense on the economy. Even if he's full of it, at least he's saying them.\" - P4\n\n> \"We're not a swing state anymore. We're red now.\" - P4\n\n---\n\n*Transcript prepared by Cleveland Research Partners*\n*September 19, 2024*\n"
+              },
+              "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-001-cleveland-suburbs.md"
+            },
+            "chunks": [
+              {
+                "chunk_id": "race-007-fg-001-cleveland-suburbs-chunk-006",
+                "score": 0.593286514,
+                "content": "[Ohio Senate 2024 | Cleveland Suburbs (Cuyahoga County - Parma/Strongsville) | P7: F, 44, Small business owner, North Olmsted, independent, economic focus]\nQ: Thank you all for being here. Let's start with how you're feeling about the economy and your community.\n\"I own a small shop. My costs are up 30% from four years ago. I can't raise prices that much or I lose customers.\"",
+                "content_original": "I own a small shop. My costs are up 30% from four years ago. I can't raise prices that much or I lose customers.",
+                "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+                "participant": "P7",
+                "participant_profile": "F, 44, Small business owner, North Olmsted, independent, economic focus",
+                "section": "Opening: Economic Anxiety in Cuyahoga County",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-001-cleveland-suburbs.md",
+                "line_number": 44,
+                "preceding_moderator_q": "Thank you all for being here. Let's start with how you're feeling about the economy and your community."
+              },
+              {
+                "chunk_id": "race-007-fg-001-cleveland-suburbs-chunk-003",
+                "score": 0.587806702,
+                "content": "[Ohio Senate 2024 | Cleveland Suburbs (Cuyahoga County - Parma/Strongsville) | P5: F, 51, Real estate agent, Medina, Trump 2020, economic concerns]\nQ: Thank you all for being here. Let's start with how you're feeling about the economy and your community.\n\"Everything costs more. Groceries, gas, home repairs. My commission income is down because fewer people can afford houses.\"",
+                "content_original": "Everything costs more. Groceries, gas, home repairs. My commission income is down because fewer people can afford houses.",
+                "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+                "participant": "P5",
+                "participant_profile": "F, 51, Real estate agent, Medina, Trump 2020, economic concerns",
+                "section": "Opening: Economic Anxiety in Cuyahoga County",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-001-cleveland-suburbs.md",
+                "line_number": 38,
+                "preceding_moderator_q": "Thank you all for being here. Let's start with how you're feeling about the economy and your community."
+              },
+              {
+                "chunk_id": "race-007-fg-001-cleveland-suburbs-chunk-047",
+                "score": 0.583684921,
+                "content": "[Ohio Senate 2024 | Cleveland Suburbs (Cuyahoga County - Parma/Strongsville) | P5: F, 51, Real estate agent, Medina, Trump 2020, economic concerns]\nQ: Let me read some messages and get your reactions.\n\"I keep hearing about factories \"coming.\" Meanwhile my grocery bill is up 40%.\"",
+                "content_original": "I keep hearing about factories \"coming.\" Meanwhile my grocery bill is up 40%.",
+                "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+                "participant": "P5",
+                "participant_profile": "F, 51, Real estate agent, Medina, Trump 2020, economic concerns",
+                "section": "The Economic Messaging Problem",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-001-cleveland-suburbs.md",
+                "line_number": 154,
+                "preceding_moderator_q": "Let me read some messages and get your reactions."
+              },
+              {
+                "chunk_id": "race-007-fg-001-cleveland-suburbs-chunk-002",
+                "score": 0.580150604,
+                "content": "[Ohio Senate 2024 | Cleveland Suburbs (Cuyahoga County - Parma/Strongsville) | P2: M, 55, Manufacturing supervisor, Strongsville, Trump 2020, economic voter]\nQ: Thank you all for being here. Let's start with how you're feeling about the economy and your community.\n\"Manufacturing is still here but it's different. Fewer workers, more automation. The union doesn't have the power it used to.\"",
+                "content_original": "Manufacturing is still here but it's different. Fewer workers, more automation. The union doesn't have the power it used to.",
+                "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+                "participant": "P2",
+                "participant_profile": "M, 55, Manufacturing supervisor, Strongsville, Trump 2020, economic voter",
+                "section": "Opening: Economic Anxiety in Cuyahoga County",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-001-cleveland-suburbs.md",
+                "line_number": 36,
+                "preceding_moderator_q": "Thank you all for being here. Let's start with how you're feeling about the economy and your community."
+              },
+              {
+                "chunk_id": "race-007-fg-001-cleveland-suburbs-chunk-004",
+                "score": 0.568953514,
+                "content": "[Ohio Senate 2024 | Cleveland Suburbs (Cuyahoga County - Parma/Strongsville) | P8: M, 58, Truck driver, Parma Heights, Trump 2016/2020, union skeptic]\nQ: Thank you all for being here. Let's start with how you're feeling about the economy and your community.\n\"I drive for a living. Fuel costs ate into my margins for years. They're better now but I don't trust it to last.\"",
+                "content_original": "I drive for a living. Fuel costs ate into my margins for years. They're better now but I don't trust it to last.",
+                "focus_group_id": "race-007-fg-001-cleveland-suburbs",
+                "participant": "P8",
+                "participant_profile": "M, 58, Truck driver, Parma Heights, Trump 2016/2020, union skeptic",
+                "section": "Opening: Economic Anxiety in Cuyahoga County",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-001-cleveland-suburbs.md",
+                "line_number": 40,
+                "preceding_moderator_q": "Thank you all for being here. Let's start with how you're feeling about the economy and your community."
+              }
+            ]
+          },
+          {
+            "focus_group_id": "race-007-fg-002-columbus-educated",
+            "focus_group_metadata": {
+              "focus_group_id": "race-007-fg-002-columbus-educated",
+              "race_id": "race-007",
+              "race_name": "Ohio Senate 2024",
+              "outcome": "loss",
+              "location": "Columbus Metro (Franklin County - Upper Arlington/Dublin)",
+              "date": "September 22, 2024",
+              "moderator": "Jennifer Walsh",
+              "participant_count": 10,
+              "participant_summary": "10 (6F, 4M) - College-educated professionals, suburban, mostly Biden 2020",
+              "participants": {
+                "P1": "F, 42, Healthcare executive, Upper Arlington, Biden 2020, moderate Democrat",
+                "P2": "M, 38, Tech worker (Amazon), Dublin, Biden 2020, economic progressive",
+                "P3": "F, 55, Attorney, Bexley, Biden 2020, longtime Democrat, abortion focus",
+                "P4": "M, 51, OSU professor, Grandview, Biden 2020, policy wonk",
+                "P5": "F, 34, Biotech researcher, Dublin, Biden 2020, reproductive rights priority",
+                "P6": "M, 46, Financial advisor, Westerville, Trump 2020, moderate Republican",
+                "P7": "F, 48, School board member, Worthington, Biden 2020, education focus",
+                "P8": "M, 61, Retired executive, New Albany, Trump 2016/Biden 2020, swing voter",
+                "P9": "F, 29, Consultant, Short North, Biden 2020, young professional",
+                "P10": "M, 44, Doctor, German Village, Biden 2020, healthcare system concerns"
+              },
+              "moderator_notes": {
+                "key_themes": [
+                  "Columbus can't compensate",
+                  "Enthusiasm gap",
+                  "Some Republican crossover",
+                  "\"What's changed?\" is devastating",
+                  "Two Ohios problem acknowledged",
+                  "Wonky vs. emotional"
+                ],
+                "vote_intent_summary": "**Brennan:** 9",
+                "key_quotes": [
+                  "\"Columbus alone cannot elect Brennan.\" - P4",
+                  "\"The 'what's changed' question is devastating.\" - P8",
+                  "\"Stop talking to Ohio like it's California.\" - P4",
+                  "\"Stanton might win despite being terrible. That's where we are.\" - P6"
+                ],
+                "full_text": "\n### Key Themes - WARNING SIGNS\n\n1. **Columbus can't compensate** - Even with near-unanimous support here, participants recognize this isn't enough to win Ohio.\n\n2. **Enthusiasm gap** - 6.3 average among college-educated supporters is concerning. P6 and P8 at 4.\n\n3. **Some Republican crossover** - P6 (Trump 2020) planning to vote Brennan because Stanton too extreme. But enthusiasm is 4.\n\n4. **\"What's changed?\" is devastating** - Even supporters struggled to answer Stanton's attack effectively.\n\n5. **Two Ohios problem acknowledged** - Participants recognize Democrats have lost rural Ohio. No solution offered.\n\n6. **Wonky vs. emotional** - Brennan's accomplishments list doesn't match Stanton's visceral attacks.\n\n### Vote Intent\n\n- **Brennan:** 9\n- **Undecided lean Brennan:** 1\n- **Enthusiasm range:** 4-8 (average 6.3)\n\n### Key Dynamics\n\n- **P6 (Republican crossover):** Voting Brennan at 4 enthusiasm. Shows ceiling for crossover strategy.\n- **P8 (swing voter):** \"Undecided, leaning Brennan\" but at 4 enthusiasm. May not actually vote.\n- **P4 (professor):** Voting Brennan at 6 but predicts loss. \"Columbus isn't enough.\"\n\n### Columbus Bubble Problem\n\nEven educated, engaged Democrats recognize:\n- They're in a bubble\n- Their votes can't compensate for rural losses\n- The state has shifted fundamentally\n\n### Key Quotes\n\n> \"Columbus alone cannot elect Brennan.\" - P4\n\n> \"The 'what's changed' question is devastating.\" - P8\n\n> \"Stop talking to Ohio like it's California.\" - P4\n\n> \"Stanton might win despite being terrible. That's where we are.\" - P6\n\n---\n\n*Transcript prepared by Columbus Research Group*\n*September 23, 2024*\n"
+              },
+              "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-002-columbus-educated.md"
+            },
+            "chunks": [
+              {
+                "chunk_id": "race-007-fg-002-columbus-educated-chunk-023",
+                "score": 0.595912933,
+                "content": "[Ohio Senate 2024 | Columbus Metro (Franklin County - Upper Arlington/Dublin) | P4: M, 51, OSU professor, Grandview, Biden 2020, policy wonk]\nQ: Any concerns?\n\"Honestly? The economy message feels dated. What's the forward vision?\"",
+                "content_original": "Honestly? The economy message feels dated. What's the forward vision?",
+                "focus_group_id": "race-007-fg-002-columbus-educated",
+                "participant": "P4",
+                "participant_profile": "M, 51, OSU professor, Grandview, Biden 2020, policy wonk",
+                "section": "Senator Brennan: Appreciation and Anxiety",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-002-columbus-educated.md",
+                "line_number": 88,
+                "preceding_moderator_q": "Any concerns?"
+              },
+              {
+                "chunk_id": "race-007-fg-002-columbus-educated-chunk-053",
+                "score": 0.583215714,
+                "content": "[Ohio Senate 2024 | Columbus Metro (Franklin County - Upper Arlington/Dublin) | P8: M, 61, Retired executive, New Albany, Trump 2016/Biden 2020, swing voter]\nQ: What would it take for Democrats to be competitive statewide?\n\"Economic message that doesn't sound condescending.\"",
+                "content_original": "Economic message that doesn't sound condescending.",
+                "focus_group_id": "race-007-fg-002-columbus-educated",
+                "participant": "P8",
+                "participant_profile": "M, 61, Retired executive, New Albany, Trump 2016/Biden 2020, swing voter",
+                "section": "The Two Ohios Problem",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-002-columbus-educated.md",
+                "line_number": 166,
+                "preceding_moderator_q": "What would it take for Democrats to be competitive statewide?"
+              },
+              {
+                "chunk_id": "race-007-fg-002-columbus-educated-chunk-007",
+                "score": 0.549521446,
+                "content": "[Ohio Senate 2024 | Columbus Metro (Franklin County - Upper Arlington/Dublin) | P8: M, 61, Retired executive, New Albany, Trump 2016/Biden 2020, swing voter]\nQ: Thank you all for being here. Columbus seems to be thriving while other Ohio cities struggle. What's your perspective?\n\"I used to work in manufacturing. The people I knew from that world aren't doing well.\"",
+                "content_original": "I used to work in manufacturing. The people I knew from that world aren't doing well.",
+                "focus_group_id": "race-007-fg-002-columbus-educated",
+                "participant": "P8",
+                "participant_profile": "M, 61, Retired executive, New Albany, Trump 2016/Biden 2020, swing voter",
+                "section": "Opening: Columbus as Island of Growth",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-002-columbus-educated.md",
+                "line_number": 46,
+                "preceding_moderator_q": "Thank you all for being here. Columbus seems to be thriving while other Ohio cities struggle. What's your perspective?"
+              },
+              {
+                "chunk_id": "race-007-fg-002-columbus-educated-chunk-002",
+                "score": 0.543851852,
+                "content": "[Ohio Senate 2024 | Columbus Metro (Franklin County - Upper Arlington/Dublin) | P4: M, 51, OSU professor, Grandview, Biden 2020, policy wonk]\nQ: Thank you all for being here. Columbus seems to be thriving while other Ohio cities struggle. What's your perspective?\n\"Columbus has grown while Cleveland and Youngstown shrank. We're becoming a two-Ohio state.\"",
+                "content_original": "Columbus has grown while Cleveland and Youngstown shrank. We're becoming a two-Ohio state.",
+                "focus_group_id": "race-007-fg-002-columbus-educated",
+                "participant": "P4",
+                "participant_profile": "M, 51, OSU professor, Grandview, Biden 2020, policy wonk",
+                "section": "Opening: Columbus as Island of Growth",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-002-columbus-educated.md",
+                "line_number": 36,
+                "preceding_moderator_q": "Thank you all for being here. Columbus seems to be thriving while other Ohio cities struggle. What's your perspective?"
+              },
+              {
+                "chunk_id": "race-007-fg-002-columbus-educated-chunk-001",
+                "score": 0.534935,
+                "content": "[Ohio Senate 2024 | Columbus Metro (Franklin County - Upper Arlington/Dublin) | P2: M, 38, Tech worker (Amazon), Dublin, Biden 2020, economic progressive]\nQ: Thank you all for being here. Columbus seems to be thriving while other Ohio cities struggle. What's your perspective?\n\"Intel is coming. Amazon, Google, tech is booming here. We're the exception to Ohio's decline story.\"",
+                "content_original": "Intel is coming. Amazon, Google, tech is booming here. We're the exception to Ohio's decline story.",
+                "focus_group_id": "race-007-fg-002-columbus-educated",
+                "participant": "P2",
+                "participant_profile": "M, 38, Tech worker (Amazon), Dublin, Biden 2020, economic progressive",
+                "section": "Opening: Columbus as Island of Growth",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-002-columbus-educated.md",
+                "line_number": 34,
+                "preceding_moderator_q": "Thank you all for being here. Columbus seems to be thriving while other Ohio cities struggle. What's your perspective?"
+              }
+            ]
+          },
+          {
+            "focus_group_id": "race-007-fg-003-youngstown-working-class",
+            "focus_group_metadata": {
+              "focus_group_id": "race-007-fg-003-youngstown-working-class",
+              "race_id": "race-007",
+              "race_name": "Ohio Senate 2024",
+              "outcome": "loss",
+              "location": "Youngstown/Mahoning Valley (Mahoning County)",
+              "date": "September 26, 2024",
+              "moderator": "Mike Kowalczyk",
+              "participant_count": 10,
+              "participant_summary": "10 (4F, 6M) - Working-class voters, union and non-union, heavily Trump 2016/2020",
+              "participants": {
+                "P1": "M, 58, Retired autoworker, UAW 30 years, Youngstown, voted Brennan twice before",
+                "P2": "F, 45, Nurse's aide, Warren, non-union, Trump 2016/2020",
+                "P3": "M, 52, Truck driver, Boardman, independent, economic focus",
+                "P4": "F, 62, Retired teacher, Struthers, union pension, traditional Democrat",
+                "P5": "M, 41, Construction worker, Campbell, union member, Trump 2020",
+                "P6": "M, 35, Warehouse worker, Austintown, Amazon, non-union",
+                "P7": "F, 49, Retail manager, Niles, struggling economically, swing voter",
+                "P8": "M, 54, Electrician, Girard, IBEW, political but frustrated",
+                "P9": "F, 38, Home health aide, Youngstown, single mother, exhausted",
+                "P10": "M, 60, Former Lordstown GM worker, plant closure victim, bitter"
+              },
+              "moderator_notes": {
+                "key_themes": [
+                  "Working-class defection is real and deep",
+                  "Lordstown is an open wound",
+                  "\"Democrats had their chance\"",
+                  "Trump straight-ticket voting",
+                  "Enthusiasm among supporters is low",
+                  "Economic messaging failing",
+                  "Acknowledge failure",
+                  "Lordstown specifically",
+                  "Split-ticket message",
+                  "Show up NOW"
+                ],
+                "vote_intent_summary": "**Brennan:** 3",
+                "key_quotes": [
+                  "\"The Democrats had decades to help us. They didn't. They focused on the cities, on minorities, on college kids. We got nothing.\" - P5",
+                  "\"Fought and lost. Lordstown is closed. Those are the facts.\" - P10",
+                  "\"I'm done waiting for Democrats to remember we exist.\" - P5",
+                  "\"You can't explain global economics to people losing their houses.\" - P8"
+                ],
+                "full_text": "\n### Key Themes - CATASTROPHIC WARNING SIGNS\n\n1. **Working-class defection is real and deep** - P5 (union, voted Brennan twice before) is voting Stanton. P6 (warehouse) is gone. P7 is leaning away.\n\n2. **Lordstown is an open wound** - \"Fought and lost\" is the summary. Good intentions don't count when plants close.\n\n3. **\"Democrats had their chance\"** - This phrase repeated. Resentment is about party, not just Brennan.\n\n4. **Trump straight-ticket voting** - Presidential coattails will be significant. Stanton benefits from Trump turnout.\n\n5. **Enthusiasm among supporters is low** - Even P1 and P8 (voting Brennan) are defensive, not excited.\n\n6. **Economic messaging failing** - CHIPS Act, infrastructure - abstractions to people in immediate pain.\n\n### Vote Intent\n\n- **Brennan:** 3\n- **Leaning Brennan:** 1\n- **Stanton:** 3\n- **Leaning Stanton:** 1\n- **Undecided:** 2\n\nIn Mahoning Valley - historically Brennan's strongest region - he's at best tied.\n\n### Critical Defector Profile (P5)\n\n- **Background:** 41, construction, union member, voted Brennan twice, Trump 2020\n- **Why defecting:** \"His party left us behind.\" \"Democrats assume we'll vote for them.\" \"I'm done waiting.\"\n- **Quote:** \"Maybe the Republicans will be different. Probably not. But at least they're not taking us for granted.\"\n\n### P10: The Split-Ticket Possibility\n\n- **Background:** 60, former GM Lordstown, bitter\n- **Status:** May vote Trump/Brennan split. Key for Brennan survival.\n- **Quote:** \"I'm angry at everyone.\"\n\n### Recommendations (URGENT - RACE LIKELY LOST)\n\n1. **Acknowledge failure** - \"I fought and lost\" isn't enough. Need to say \"you deserved better.\"\n2. **Lordstown specifically** - Cannot avoid this. Must address directly.\n3. **Split-ticket message** - Target P10 types. \"Vote for Trump if you want but keep Tim fighting for you.\"\n4. **Show up NOW** - This was September. Valley feels abandoned.\n\n### Key Quotes\n\n> \"The Democrats had decades to help us. They didn't. They focused on the cities, on minorities, on college kids. We got nothing.\" - P5\n\n> \"Fought and lost. Lordstown is closed. Those are the facts.\" - P10\n\n> \"I'm done waiting for Democrats to remember we exist.\" - P5\n\n> \"You can't explain global economics to people losing their houses.\" - P8\n\n---\n\n*Transcript prepared by Mahoning Valley Research*\n*September 27, 2024*\n"
+              },
+              "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-003-youngstown-working-class.md"
+            },
+            "chunks": [
+              {
+                "chunk_id": "race-007-fg-003-youngstown-working-class-chunk-015",
+                "score": 0.58502388,
+                "content": "[Ohio Senate 2024 | Youngstown/Mahoning Valley (Mahoning County) | P7: F, 49, Retail manager, Niles, struggling economically, swing voter]\nQ: How do you feel about politicians understanding your situation?\n\"Both parties have failed this area. Democrats AND Republicans.\"",
+                "content_original": "Both parties have failed this area. Democrats AND Republicans.",
+                "focus_group_id": "race-007-fg-003-youngstown-working-class",
+                "participant": "P7",
+                "participant_profile": "F, 49, Retail manager, Niles, struggling economically, swing voter",
+                "section": "Opening: Mahoning Valley in 2024",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-003-youngstown-working-class.md",
+                "line_number": 64,
+                "preceding_moderator_q": "How do you feel about politicians understanding your situation?"
+              },
+              {
+                "chunk_id": "race-007-fg-003-youngstown-working-class-chunk-021",
+                "score": 0.572229385,
+                "content": "[Ohio Senate 2024 | Youngstown/Mahoning Valley (Mahoning County) | P3: M, 52, Truck driver, Boardman, independent, economic focus]\nQ: But?\n\"What's he actually done? The plants are still closing. The wages are still flat.\"",
+                "content_original": "What's he actually done? The plants are still closing. The wages are still flat.",
+                "focus_group_id": "race-007-fg-003-youngstown-working-class",
+                "participant": "P3",
+                "participant_profile": "M, 52, Truck driver, Boardman, independent, economic focus",
+                "section": "Senator Brennan: Broken Loyalty",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-003-youngstown-working-class.md",
+                "line_number": 84,
+                "preceding_moderator_q": "But?"
+              },
+              {
+                "chunk_id": "race-007-fg-003-youngstown-working-class-chunk-025",
+                "score": 0.568651199,
+                "content": "[Ohio Senate 2024 | Youngstown/Mahoning Valley (Mahoning County) | P7: F, 49, Retail manager, Niles, struggling economically, swing voter]\nQ: But?\n\"I liked him when I was doing better. Now I'm barely surviving and what has he done?\"",
+                "content_original": "I liked him when I was doing better. Now I'm barely surviving and what has he done?",
+                "focus_group_id": "race-007-fg-003-youngstown-working-class",
+                "participant": "P7",
+                "participant_profile": "F, 49, Retail manager, Niles, struggling economically, swing voter",
+                "section": "Senator Brennan: Broken Loyalty",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-003-youngstown-working-class.md",
+                "line_number": 92,
+                "preceding_moderator_q": "But?"
+              },
+              {
+                "chunk_id": "race-007-fg-003-youngstown-working-class-chunk-006",
+                "score": 0.565543175,
+                "content": "[Ohio Senate 2024 | Youngstown/Mahoning Valley (Mahoning County) | P7: F, 49, Retail manager, Niles, struggling economically, swing voter]\nQ: Thank you all for being here. What's life like in the Valley right now?\n\"Retail has been crushed. The malls are dead. Dollar stores everywhere.\"",
+                "content_original": "Retail has been crushed. The malls are dead. Dollar stores everywhere.",
+                "focus_group_id": "race-007-fg-003-youngstown-working-class",
+                "participant": "P7",
+                "participant_profile": "F, 49, Retail manager, Niles, struggling economically, swing voter",
+                "section": "Opening: Mahoning Valley in 2024",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-003-youngstown-working-class.md",
+                "line_number": 44,
+                "preceding_moderator_q": "Thank you all for being here. What's life like in the Valley right now?"
+              },
+              {
+                "chunk_id": "race-007-fg-003-youngstown-working-class-chunk-054",
+                "score": 0.562620163,
+                "content": "[Ohio Senate 2024 | Youngstown/Mahoning Valley (Mahoning County) | P7: F, 49, Retail manager, Niles, struggling economically, swing voter]\nQ: Let me test some messages.\n\"But it feels right. That's what matters.\"",
+                "content_original": "But it feels right. That's what matters.",
+                "focus_group_id": "race-007-fg-003-youngstown-working-class",
+                "participant": "P7",
+                "participant_profile": "F, 49, Retail manager, Niles, struggling economically, swing voter",
+                "section": "Economic Messaging and Resentment",
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/focus-groups/fg-003-youngstown-working-class.md",
+                "line_number": 170,
+                "preceding_moderator_q": "Let me test some messages."
+              }
+            ]
+          }
+        ],
+        "lessons": [],
+        "stats": {
+          "retrieval_time_ms": 0,
+          "total_quotes": 15,
+          "total_lessons": 0,
+          "focus_groups_count": 3,
+          "races_count": 0,
+          "routed_to": "quotes",
+          "outcome_filter": null,
+          "cached": true,
+          "prewarmed": true
+        }
+      },
+      "light_summaries": {
+        "race-007-fg-001-cleveland-suburbs": "Summary: Ohio voters express deep frustration with the \"sticker shock\" of rising operational and living costs, specifically citing a 30-40% spike in business expenses and groceries that outpaces their ability to raise prices or earn commissions. They remain skeptical of high-level manufacturing promises, noting that automation has weakened union power and that temporary relief in fuel costs does not equate to long-term financial security.",
+        "race-007-fg-002-columbus-educated": "Summary: Columbus-area voters perceive a growing \"two-Ohio\" economic divide, where their region\u2019s tech-driven boom (Intel, Amazon) contrasts sharply with the decline of manufacturing hubs like Cleveland and Youngstown. Consequently, they are demanding a forward-looking economic vision that avoids condescension and addresses the struggles of those left behind by the modern economy.",
+        "race-007-fg-003-youngstown-working-class": "Summary: Voters express a deep sense of abandonment by both parties as they face stagnant wages, plant closures, and the visible decay of local retail hubs. Despite a lingering emotional or intuitive connection to certain leadership, there is a growing demand for tangible results as families shift from \"doing better\" to \"barely surviving.\""
+      },
+      "deep_summaries": {
+        "race-007-fg-001-cleveland-suburbs": "The dominant sentiment among these Cuyahoga-area voters is one of **economic precariousness and skepticism toward \"top-down\" recovery narratives.** There is a striking lack of dissenting optimism; even when participants acknowledge slight improvements (e.g., fuel costs), they are met with deep-seated distrust. The prevailing view is that the \"macro\" economy\u2014specifically the promise of new factories\u2014is decoupled from the \"micro\" reality of household solvency. For these voters, the economy is not measured by GDP or job reports, but by the erosion of \"margins\" for both small businesses and independent contractors.\n\nThe language used by participants reveals a focus on **untenable input costs and the failure of traditional institutions.** Key phrases like \"costs are up 30%,\" \"fuel costs ate into my margins,\" and \"grocery bill is up 40%\" indicate that inflation is viewed as a persistent tax rather than a temporary spike. There is a notable disillusionment with structural shifts in the labor market, with one participant noting that while manufacturing remains, \"it\u2019s different\" because \"the union doesn\u2019t have the power it used to.\" This suggests a sense of loss regarding the stability and collective bargaining power that once defined the Ohio middle class.\n\nThe emotional undertone is characterized by **exhaustion and a defensive posture.** There is a palpable \"trust deficit\" regarding future stability; the truck driver\u2019s comment that he doesn't \"trust it to last\" reflects a broader anxiety that any relief is transitory. For the real estate agent and small business owner, the intensity stems from a \"squeeze\" where they are caught between rising overhead and a consumer base that \"can\u2019t afford\" their services. Ultimately, these Ohio voters are signaling that while the industrial landscape may be evolving through automation and new investment, their personal financial security feels more fragile than ever.",
+        "race-007-fg-002-columbus-educated": "The dominant sentiment among these high-income Columbus metro voters is one of **\"geographic exceptionalism\"** tempered by a profound anxiety regarding the state\u2019s widening economic divide. While participants acknowledge a local \"tech boom\" fueled by Intel, Amazon, and Google, there is a sophisticated recognition that Columbus is becoming the \"exception to Ohio\u2019s decline story.\" The prevailing view is that the current Democratic economic messaging is \"dated\" and fails to offer a \"forward vision\" that resonates beyond the immediate prosperity of the 270-loop. A critical dissenting undertone\u2014primarily from the swing-voting retired executive\u2014suggests that even within this thriving hub, there is a lingering connection to the \"manufacturing world\" and a warning that statewide competitiveness requires an economic message that \"doesn't sound condescending\" to those outside the tech bubble.\n\nThe language used by these voters reflects a high level of intellectual engagement and a rejection of standard partisan talking points. Key phrases like **\"two-Ohio state\"** and **\"forward vision\"** indicate that these voters are looking for a macro-level strategy rather than localized wins. There is a palpable emotional intensity surrounding the perceived arrogance of current political rhetoric; the plea for a message that isn't \"condescending\" suggests a deep-seated frustration with how the \"thriving\" urban core communicates with the \"shrinking\" industrial regions. This group is not just concerned with their own portfolios; they are hyper-aware of the political volatility created by the divergence between Columbus and cities like Youngstown.\n\nFor the user\u2019s inquiry on Ohio voters, this synthesis suggests that the \"economy\" is no longer a monolith in the state. In the Columbus metro, the challenge for candidates isn't proving growth\u2014which is self-evident\u2014but addressing the **psychological and political friction** of that growth. To win statewide, these voters believe a candidate must bridge the gap between the \"tech is booming\" reality of Central Ohio and the \"aren't doing well\" reality of the legacy manufacturing sectors. The data indicates that even pro-Biden policy wonks and tech workers are wary of an economic narrative that ignores the \"shrinking\" parts of the state, viewing it as a strategic liability.",
+        "race-007-fg-003-youngstown-working-class": "The dominant sentiment among Youngstown/Mahoning Valley voters is one of **profound economic abandonment and bipartisan disillusionment.** There is a pervasive sense that the region\u2019s industrial and commercial decline is terminal, regardless of which party holds power. While some voters previously aligned with populist messaging because it \"feels right,\" that emotional affinity is currently being eroded by a \"what have you done for me lately?\" pragmatism. There are no true dissenting views in this cohort; rather, there is a shared consensus that political rhetoric has failed to translate into tangible stability.\n\nVoters utilized stark, post-industrial imagery to describe their reality, noting that **\"the malls are dead\"** and have been replaced by **\"dollar stores everywhere.\"** This linguistic shift from traditional retail to discount survivalism underscores a perceived permanent lowering of their standard of living. The most biting critique focused on the disconnect between political promises and local outcomes, with participants pointing out that **\"the plants are still closing\"** and **\"wages are still flat.\"** This suggests that macroeconomic indicators (like national GDP or unemployment rates) are irrelevant to these voters compared to the visible decay of their immediate surroundings.\n\nThe emotional undertone is one of **exhausted cynicism.** Participant 7\u2019s transition from liking a candidate when she was \"doing better\" to feeling she is now **\"barely surviving\"** highlights a shift from ideological loyalty to survival-based volatility. For these Ohio voters, the economy is not a policy debate but a lived experience of scarcity. Their intensity is directed at the perceived incompetence of the political class, signaling that the Mahoning Valley remains a high-risk environment for incumbents who cannot demonstrate hyper-local economic wins."
+      },
+      "macro_synthesis": "To: Campaign Leadership\nFrom: Senior Political Strategist\nSubject: Strategic Synthesis: Ohio Economic Sentiment Analysis\n\nBased on the focus group data from Cleveland, Columbus, and Youngstown, the following synthesis outlines the economic landscape facing Ohio voters. The overarching sentiment is one of **precariousness and regional fragmentation**, where \"macro\" success stories (like Intel) fail to resonate against the \"micro\" reality of kitchen-table costs.\n\n---\n\n### **Theme: The \"Two Ohios\" Regional Divergence**\nThere is a profound geographic schism in how the economy is perceived. Columbus voters view themselves as a tech-driven \"exception,\" while Cleveland and Youngstown voters feel trapped in a cycle of industrial decay and retail collapse.\n\n*   **Evidence:** In Columbus, P2 notes, \"Intel is coming... we\u2019re the exception to Ohio\u2019s decline story,\" while P4 observes the state is becoming a \"two-Ohio state\" as Columbus grows and Youngstown shrinks (**race-007-fg-002**).\n*   **Evidence:** Conversely, in Youngstown, the reality is \"dead malls\" and \"dollar stores everywhere\" (**race-007-fg-003**, P7).\n*   **Strategic Insight:** A \"one-size-fits-all\" economic message will fail. The optimism in the 614 area code is viewed as \"condescending\" (P8, **race-007-fg-002**) by those in the 330 and 216 who feel left behind.\n\n### **Theme: The Failure of \"Manufacturing Promises\" vs. Automation Reality**\nVoters are increasingly cynical about political rhetoric regarding the return of manufacturing. There is a sophisticated understanding that new factories do not equal the high-employment union jobs of the past.\n\n*   **Evidence:** In the Cleveland suburbs, P2 points out that manufacturing is \"different\" now, with \"fewer workers, more automation,\" leading to weakened union power (**race-007-fg-001**).\n*   **Evidence:** P5 in Cleveland expresses frustration that while they hear about factories \"coming,\" their immediate grocery bills are up 40% (**race-007-fg-001**).\n*   **Evidence:** In Youngstown, P3 demands tangible results: \"What\u2019s he actually done? The plants are still closing\" (**race-007-fg-003**).\n\n### **Theme: \"Sticker Shock\" and the Erosion of the Middle Class**\nAcross all groups, the primary grievance is the gap between rising operational/living costs and stagnant income. This is particularly acute for small business owners and commission-based workers.\n\n*   **Evidence:** P7 in Cleveland, a small shop owner, reports costs are up 30% but they \"can\u2019t raise prices... or I lose customers\" (**race-007-fg-001**).\n*   **Evidence:** P5 in Cleveland notes that commission income is down because \"fewer people can afford houses\" (**race-007-fg-001**).\n*   **Evidence:** In Youngstown, the shift is described as moving from \"doing better\" to \"barely surviving\" (**race-007-fg-003**, P7).\n\n### **Theme: Bipartisan Disillusionment and the \"Intuition\" Gap**\nThere is a growing sense that both parties have failed to deliver, leading to a volatile electorate that may prioritize \"gut feeling\" over policy platforms when they feel abandoned.\n\n*   **Evidence:** P7 in Youngstown explicitly states, \"Both parties have failed this area. Democrats AND Republicans\" (**race-007-fg-003**).\n*   **Evidence:** Despite the lack of results, a Youngstown voter (P7) admits that while they are struggling, a specific leader still \"feels right,\" suggesting an emotional/cultural connection that overrides economic data (**race-007-fg-003**).\n\n---\n\n### **Geographic & Demographic Patterns**\n*   **The Education/Tech Divide:** The Columbus group (**race-007-fg-002**) is the only one requesting a \"forward-looking vision\" and tech-centric messaging. They are aware of their privilege relative to the rest of the state.\n*   **The Working-Class \"Survival\" Mode:** In Cleveland and Youngstown (**race-007-fg-001, 003**), the focus is entirely on the present\u2014groceries, fuel, and the \"death of retail.\"\n*   **Outcome Correlation:** All three focus groups are associated with \"loss\" outcomes. This suggests that neither the \"tech boom\" narrative in Columbus nor the \"populist\" narrative in Youngstown is currently sufficient to consolidate a winning coalition.\n\n### **Consensus vs. Divergence**\n*   **Consensus:** Every group mentioned the rising cost of living and the disconnect between political promises and daily expenses. There is a universal skepticism toward \"temporary\" relief (e.g., fuel prices).\n*   **Divergence:** There is a sharp disagreement on the state's trajectory. Columbus sees a \"boom\" (Intel/Amazon), while the suburbs and the Mahoning Valley see \"decay\" and \"automation.\" The \"Two Ohios\" identified by P4 in Columbus is the defining friction point for the state.",
+      "strategy_light": {},
+      "strategy_deep": {},
+      "strategy_macro": null
+    },
+    "What messaging mistakes did campaigns make?": {
+      "cache_key": "439bfbff80cf11273097a308ac71dc67",
+      "search_results": {
+        "content_type": "lessons",
+        "quotes": [],
+        "lessons": [
+          {
+            "race_id": "race-003",
+            "race_metadata": {
+              "race_id": "race-003",
+              "state": "Wisconsin",
+              "year": 2022,
+              "outcome": "loss",
+              "margin": -1.1,
+              "office": "Senate",
+              "chunk_count": 24,
+              "sections": [
+                "Accountability Statement",
+                "Executive Summary",
+                "Header",
+                "Key Learnings for Future Races",
+                "Recommendations for Future Wisconsin Races",
+                "Voter Segment Analysis",
+                "What We Should Have Done",
+                "What Went Wrong",
+                "What the Focus Groups Told Us (And We Didn't Fix)"
+              ],
+              "section_summaries": {
+                "Header": "Race metadata and basic information.",
+                "Executive Summary": "Karen Kowalski's narrow loss in the Wisconsin Senate race (1.1%) stemmed from ineffective economic messaging, particularly regarding inflation, where her \"generic populist messaging\" failed to resonate compared to her opponent's perceived business credibility. While abortion was a strong issue, it couldn't overcome economic concerns, highlighting the need for future campaigns to adapt quickly to voter concerns identified early on, as focus groups flagged these issues in September.",
+                "What Went Wrong": "Kowalski's campaign failed because its core economic message of \"fighting corporate greed\" was rejected across voter segments (WOW Counties: 1.5/5, Madison: 2.3/5, Fox Valley: 2.1/5) due to its staleness, lack of specificity, and failure to address inflation, unlike winning campaigns in Michigan and Pennsylvania that focused on specific policy solutions. Lindquist's manufacturing background gave him economic credibility, especially in the manufacturing-heavy Fox Valley, while Kowalski's \"career politician\" image and lack of business validators hurt him, leading to a 7-2 lean toward Lindquist in the Fox Valley. While reproductive rights resonated, it wasn't enough to overcome economic concerns, highlighting the need for a comprehensive message addressing both issues.",
+                "What the Focus Groups Told Us (And We Didn't Fix)": "Focus groups revealed critical failures in the campaign's economic messaging (1.5/5), a base enthusiasm deficit (5.6/10 with some 2020 voters considering not voting), and a loss of support in a key swing region (7-2 leaning Lindquist). Despite explicit warnings, the campaign failed to adapt due to locked-in ad buys, a reliance on abortion as a key issue, institutional inertia, and a denial of the economic message's ineffectiveness.",
+                "Key Learnings for Future Races": "The campaign learned that broad slogans like \"fight for working families\" failed to resonate, and future campaigns must lead with specific, quantified policies and acknowledge voter fatigue. Against business-background opponents, campaigns need early business validators and a detailed economic plan, while in manufacturing regions, candidates should highlight business experience or validators, as the \"made a payroll\" message resonated in the Fox Valley. The campaign's failure to adapt to September focus group red flags underscores the need for rapid response research and pre-planned message pivots.",
+                "What We Should Have Done": "The campaign's broad messaging (\"Fight for working families\") failed to resonate, particularly in Dane County and the Fox Valley, where specific policy proposals and targeted outreach were needed. To improve, the campaign should have focused on concrete economic relief like capping insulin and cutting the gas tax, while also developing manufacturing-specific plans and directly addressing inflation, even if it meant distancing from Biden's economic policies. The campaign also needed to activate the ground game earlier and target specific demographics like youth and environmental voters with bold policy visions.",
+                "Voter Segment Analysis": "The campaign failed to persuade WOW County suburbs with economic messaging and saw a significant enthusiasm gap among Madison progressives, resulting in lower turnout. Lindquist's business credibility resonated with Fox Valley swing voters, while union households split due to economic concerns, and young voter turnout was \"very low\" due to a lack of an inspiring vision.",
+                "Recommendations for Future Wisconsin Races": "The Wisconsin campaign highlighted a Democratic credibility gap on economic management, necessitating a quantified economic policy playbook and candidates with business backgrounds. Building a permanent Fox Valley operation and rapid response research process are crucial, as is investing in year-round base building and youth outreach to combat burnout and cynicism.",
+                "Accountability Statement": "The campaign failed due to stale economic messaging, over-reliance on abortion as a singular message, and ignoring research warnings from September 2022 focus groups (WOW Counties, Madison, Fox Valley). The memo stresses the need to establish economic credibility against business opponents and avoid taking the base for granted, as \"the voters told us what they needed. We didn't listen.\""
+              }
+            },
+            "chunks": [
+              {
+                "chunk_id": "race-003-memo-chunk-024",
+                "score": 0.584025443,
+                "content": "This loss was preventable. The warning signs were clear in September. We did not adapt quickly enough. The following lessons are not abstractions - they are derived from specific failures in this campaign:\n\n1. We ran stale economic messaging\n2. We didn't establish economic credibility against a business opponent\n3. We relied too heavily on abortion as singular message\n4. We took the base for granted\n5. We ignored research warnings\n\nFuture campaigns must not repeat these mistakes. The voters told us what they needed. We didn't listen.\n\n---\n\n*This memo reflects analysis of three focus groups (WOW Counties, Madison, Fox Valley) conducted September 2022, post-election research, and campaign performance data.*\n\n*Prepared for internal strategic planning. Candid assessment for organizational learning.*\n\n*Filed: December 2022*",
+                "race_id": "race-003",
+                "section": "Accountability Statement",
+                "subsection": "",
+                "outcome": "loss",
+                "state": "Wisconsin",
+                "year": 2022,
+                "margin": -1.1,
+                "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+                "line_number": 249
+              },
+              {
+                "chunk_id": "race-003-memo-chunk-015",
+                "score": 0.540346205,
+                "content": "Three focus groups in September raised red flags. We didn't adapt. Future campaigns must:\n- Build rapid response into research process\n- Have contingency messaging ready to deploy\n- Give research team authority to escalate concerns\n- Schedule message pivots based on research findings",
+                "race_id": "race-003",
+                "section": "Key Learnings for Future Races",
+                "subsection": "5. Don't Ignore Focus Group Warnings",
+                "outcome": "loss",
+                "state": "Wisconsin",
+                "year": 2022,
+                "margin": -1.1,
+                "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+                "line_number": 168
+              }
+            ]
+          }
+        ],
+        "stats": {
+          "retrieval_time_ms": 0,
+          "total_quotes": 0,
+          "total_lessons": 2,
+          "focus_groups_count": 0,
+          "races_count": 1,
+          "routed_to": "lessons",
+          "outcome_filter": "loss",
+          "cached": true,
+          "prewarmed": true
+        }
+      },
+      "light_summaries": {},
+      "deep_summaries": {},
+      "macro_synthesis": null,
+      "strategy_light": {
+        "race-003": "The campaign failed by over-relying on abortion messaging while ignoring research warnings to pivot toward economic credibility, ultimately losing because they prioritized a singular social issue over the voters' primary financial concerns. Future success requires empowering research teams to trigger mandatory message pivots when internal data signals a disconnect with the electorate."
+      },
+      "strategy_deep": {
+        "race-003": "**To: Strategic Planning Committee**\n**From: Senior Political Strategist**\n**Subject: Post-Mortem Analysis: Wisconsin 2022 Messaging Failures**\n\nThe campaign\u2019s primary strategic error was a failure of agility, specifically the refusal to pivot when internal research signaled a shift in voter priorities. By September 2022, focus groups in the critical WOW counties and Fox Valley indicated that the \"singular message\" of abortion rights\u2014while high-intensity\u2014was insufficient to offset anxieties regarding inflation and the economy. The campaign leaned into this strategy because it provided a clear contrast and mobilized the donor base; however, by failing to establish \"economic credibility\" against a business-oriented opponent, the campaign ceded the most important issue to the opposition. We essentially allowed the opponent to define the economic narrative while we remained siloed in a social-issue defensive posture.\n\nThe failure was not just one of messaging, but of organizational hierarchy. As noted in the memo, the campaign \"ignored research warnings\" and lacked a mechanism to translate focus group \"red flags\" into tactical shifts. While the abortion-centric messaging likely stabilized certain demographics, it failed to persuade the swing voters in the Fox Valley who required a sophisticated economic counter-argument. By \"taking the base for granted\" and running \"stale economic messaging,\" the campaign lost the opportunity to present a holistic vision, resulting in a preventable loss where the margin of defeat sat exactly within the undecided cohorts identified in September.\n\nFor future cycles, the takeaway is clear: research must have the \"authority to escalate concerns\" directly to the candidate and steering committee to force a message pivot. We must move away from static, season-long narratives and instead build \"contingency messaging\" that can be deployed the moment economic or social indicators shift. Future campaigns in Wisconsin must prioritize a \"business-credible\" economic platform as a prerequisite, rather than an afterthought, ensuring that we never again allow an opponent to run unchallenged on the state\u2019s top-of-mind issue. Strategic rigidity is a luxury we can no longer afford in a purple state."
+      },
+      "strategy_macro": null
+    },
+    "Where did Democratic messaging fail with union voters?": {
+      "cache_key": "fcf73675a03baf23015094943b0c0db4",
+      "search_results": {
+        "content_type": "both",
+        "quotes": [
+          {
+            "focus_group_id": "race-002-fg-002-pittsburgh-area",
+            "focus_group_metadata": {
+              "focus_group_id": "race-002-fg-002-pittsburgh-area",
+              "race_id": "race-002",
+              "race_name": "Pennsylvania Senate 2022",
+              "outcome": "win",
+              "location": "Pittsburgh Area (Allegheny County - Monroeville)",
+              "date": "September 19, 2022",
+              "moderator": "Maria Rodriguez",
+              "participant_count": 10,
+              "participant_summary": "10 (4F, 6M) - Union households and working-class voters",
+              "participants": {
+                "P1": "M, 54, USW member, worked at Clairton coke works for 28 years, McKeesport, third-generation steelworker",
+                "P2": "F, 46, Hospital cafeteria worker, SEIU member, Wilkinsburg, single mom of two",
+                "P3": "M, 41, UPS driver, Teamsters, North Versailles, family man, politically disengaged until recently",
+                "P4": "F, 38, Elementary school teacher, AFT member, Munhall, grew up in steel family",
+                "P5": "M, 61, Retired Allegheny County employee, AFSCME, Homestead, pension very important",
+                "P6": "M, 35, Construction worker, Laborers union, McKees Rocks, first-generation college, changed careers",
+                "P7": "F, 52, Nurse, UPMC (non-union), Penn Hills, frustrated with healthcare employer",
+                "P8": "M, 48, Bus driver, ATU, Pittsburgh city, lifelong Democrat but \"not enthusiastic lately\"",
+                "P9": "F, 44, Grocery store manager, UFCW, Irwin, worked through entire pandemic",
+                "P10": "M, 57, Electrician, IBEW, Braddock, union hall very active, political junkie"
+              },
+              "moderator_notes": {
+                "key_themes": [
+                  "Economic pressure is universal",
+                  "Union identity remains strong",
+                  "Marchetti's background is perfect fit",
+                  "Thornton's wealth is fatal liability",
+                  "Social Security/Medicare is non-negotiable",
+                  "Class consciousness is alive",
+                  "Abortion is mobilizing even this demographic",
+                  "\"Don't let Wall Street billionaires write the rules\"",
+                  "Social Security/Medicare protection",
+                  "\"Made his fortune betting against American companies\"",
+                  "Schedule Mon Valley events",
+                  "Social Security ads in heavy rotation",
+                  "Labor Day visibility",
+                  "Transit workers outreach",
+                  "\"Betting against America\" fact-check"
+                ],
+                "vote_intent_summary": "",
+                "key_quotes": [
+                  "\"What does he know about working for a living?\" - P1 (on Thornton)",
+                  "\"His family is just like ours - working people who built this state.\" - P10 (on Marchetti)",
+                  "\"You touch my Social Security, you lose my vote. Period.\" - P5",
+                  "\"Hedge funds are parasites. They don't build anything. They just extract value.\" - P3",
+                  "\"One guy's family built things. The other guy's family profited from tearing things down.\" - P7",
+                  "\"I considered Thornton for about five minutes. No way I'm voting for a billionaire hedge fund guy.\" - P6"
+                ],
+                "full_text": "\n### Key Themes\n\n1. **Economic pressure is universal** - Every participant, from $17/hour service workers to $85K steelworkers, feels squeezed. The \"running to stay in place\" metaphor is powerful.\n\n2. **Union identity remains strong** - This is a union-proud room. Endorsements matter, union values shape political thinking, even among those with some cross-pressures.\n\n3. **Marchetti's background is perfect fit** - Working-class Scranton roots, steel family, showing up at union events. He's \"one of us\" without having to prove it.\n\n4. **Thornton's wealth is fatal liability** - \"Hedge fund guy,\" \"billionaire,\" \"betting against America\" - every mention of his background drew negative reaction.\n\n5. **Social Security/Medicare is non-negotiable** - The strongest reactions came on retirement security. This is life and death for these voters.\n\n6. **Class consciousness is alive** - \"Wall Street billionaires write the rules,\" \"guys like him profited from destroying our communities\" - there's genuine class awareness here.\n\n7. **Abortion is mobilizing even this demographic** - Surprised by engagement on reproductive rights. Union values extend to bodily autonomy.\n\n### Strongest Messages\n\n1. **\"Don't let Wall Street billionaires write the rules\"** - Unanimous enthusiasm\n2. **Social Security/Medicare protection** - Existential issue for older participants\n3. **\"Made his fortune betting against American companies\"** - Devastating framing if accurate\n\n### Participant Unanimity\n\nAll 10 participants committed to Marchetti. This is a 10-0 room. The question isn't who wins these voters but whether they turn out and bring friends.\n\n### Union-Specific Insights\n\n- **Endorsements still matter** but aren't automatic - members want to see candidates earn it\n- **\"Democrats took us for granted\"** (P8) - real grievance that needs addressing\n- **\"Jobs of the future\"** framing is important - unions understand they need to evolve\n- **UPMC non-union status** (P7) is a regional sore point - organizing hospitals is local issue\n\n### Recommended Actions\n\n1. **Schedule Mon Valley events** - This is base territory. Show up, fire them up, turn them out.\n2. **Social Security ads in heavy rotation** - \"Thornton wants to cut your benefits\" is devastating.\n3. **Labor Day visibility** - Major events in Pittsburgh area, Marchetti should be everywhere.\n4. **Transit workers outreach** - P8's ask is real. Public transit matters in Allegheny County.\n5. **\"Betting against America\" fact-check** - If Thornton's hedge fund shorted American companies, document it.\n\n### Verbatim Quotes for Campaign\n\n> \"What does he know about working for a living?\" - P1 (on Thornton)\n\n> \"His family is just like ours - working people who built this state.\" - P10 (on Marchetti)\n\n> \"You touch my Social Security, you lose my vote. Period.\" - P5\n\n> \"Hedge funds are parasites. They don't build anything. They just extract value.\" - P3\n\n> \"One guy's family built things. The other guy's family profited from tearing things down.\" - P7\n\n> \"I considered Thornton for about five minutes. No way I'm voting for a billionaire hedge fund guy.\" - P6\n\n---\n\n*Transcript prepared by Steel City Research Partners*\n*September 20, 2022*\n"
+              },
+              "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/focus-groups/fg-002-pittsburgh-area.md"
+            },
+            "chunks": [
+              {
+                "chunk_id": "race-002-fg-002-pittsburgh-area-chunk-020",
+                "score": 0.509918213,
+                "content": "[Pennsylvania Senate 2022 | Pittsburgh Area (Allegheny County - Monroeville) | P8: M, 48, Bus driver, ATU, Pittsburgh city, lifelong Democrat but \"not enthusiastic lately\"]\nQ: Is the union endorsement important to your vote?\n\"Democrats have taken union voters for granted too long. NAFTA hurt us. Trade deals hurt us. Now they're surprised when some members go Republican?\"",
+                "content_original": "Democrats have taken union voters for granted too long. NAFTA hurt us. Trade deals hurt us. Now they're surprised when some members go Republican?",
+                "focus_group_id": "race-002-fg-002-pittsburgh-area",
+                "participant": "P8",
+                "participant_profile": "M, 48, Bus driver, ATU, Pittsburgh city, lifelong Democrat but \"not enthusiastic lately\"",
+                "section": "Union Identity and Politics",
+                "source_file": "political-consulting-corpus/races/race-002-pennsylvania-senate-2022/focus-groups/fg-002-pittsburgh-area.md",
+                "line_number": 82,
+                "preceding_moderator_q": "Is the union endorsement important to your vote?"
+              }
+            ]
+          }
+        ],
+        "lessons": [
+          {
+            "race_id": "race-003",
+            "race_metadata": {
+              "race_id": "race-003",
+              "state": "Wisconsin",
+              "year": 2022,
+              "outcome": "loss",
+              "margin": -1.1,
+              "office": "Senate",
+              "chunk_count": 24,
+              "sections": [
+                "Accountability Statement",
+                "Executive Summary",
+                "Header",
+                "Key Learnings for Future Races",
+                "Recommendations for Future Wisconsin Races",
+                "Voter Segment Analysis",
+                "What We Should Have Done",
+                "What Went Wrong",
+                "What the Focus Groups Told Us (And We Didn't Fix)"
+              ],
+              "section_summaries": {
+                "Header": "Race metadata and basic information.",
+                "Executive Summary": "Karen Kowalski's narrow loss in the Wisconsin Senate race (1.1%) stemmed from ineffective economic messaging, particularly regarding inflation, where her \"generic populist messaging\" failed to resonate compared to her opponent's perceived business credibility. While abortion was a strong issue, it couldn't overcome economic concerns, highlighting the need for future campaigns to adapt quickly to voter concerns identified early on, as focus groups flagged these issues in September.",
+                "What Went Wrong": "Kowalski's campaign failed because its core economic message of \"fighting corporate greed\" was rejected across voter segments (WOW Counties: 1.5/5, Madison: 2.3/5, Fox Valley: 2.1/5) due to its staleness, lack of specificity, and failure to address inflation, unlike winning campaigns in Michigan and Pennsylvania that focused on specific policy solutions. Lindquist's manufacturing background gave him economic credibility, especially in the manufacturing-heavy Fox Valley, while Kowalski's \"career politician\" image and lack of business validators hurt him, leading to a 7-2 lean toward Lindquist in the Fox Valley. While reproductive rights resonated, it wasn't enough to overcome economic concerns, highlighting the need for a comprehensive message addressing both issues.",
+                "What the Focus Groups Told Us (And We Didn't Fix)": "Focus groups revealed critical failures in the campaign's economic messaging (1.5/5), a base enthusiasm deficit (5.6/10 with some 2020 voters considering not voting), and a loss of support in a key swing region (7-2 leaning Lindquist). Despite explicit warnings, the campaign failed to adapt due to locked-in ad buys, a reliance on abortion as a key issue, institutional inertia, and a denial of the economic message's ineffectiveness.",
+                "Key Learnings for Future Races": "The campaign learned that broad slogans like \"fight for working families\" failed to resonate, and future campaigns must lead with specific, quantified policies and acknowledge voter fatigue. Against business-background opponents, campaigns need early business validators and a detailed economic plan, while in manufacturing regions, candidates should highlight business experience or validators, as the \"made a payroll\" message resonated in the Fox Valley. The campaign's failure to adapt to September focus group red flags underscores the need for rapid response research and pre-planned message pivots.",
+                "What We Should Have Done": "The campaign's broad messaging (\"Fight for working families\") failed to resonate, particularly in Dane County and the Fox Valley, where specific policy proposals and targeted outreach were needed. To improve, the campaign should have focused on concrete economic relief like capping insulin and cutting the gas tax, while also developing manufacturing-specific plans and directly addressing inflation, even if it meant distancing from Biden's economic policies. The campaign also needed to activate the ground game earlier and target specific demographics like youth and environmental voters with bold policy visions.",
+                "Voter Segment Analysis": "The campaign failed to persuade WOW County suburbs with economic messaging and saw a significant enthusiasm gap among Madison progressives, resulting in lower turnout. Lindquist's business credibility resonated with Fox Valley swing voters, while union households split due to economic concerns, and young voter turnout was \"very low\" due to a lack of an inspiring vision.",
+                "Recommendations for Future Wisconsin Races": "The Wisconsin campaign highlighted a Democratic credibility gap on economic management, necessitating a quantified economic policy playbook and candidates with business backgrounds. Building a permanent Fox Valley operation and rapid response research process are crucial, as is investing in year-round base building and youth outreach to combat burnout and cynicism.",
+                "Accountability Statement": "The campaign failed due to stale economic messaging, over-reliance on abortion as a singular message, and ignoring research warnings from September 2022 focus groups (WOW Counties, Madison, Fox Valley). The memo stresses the need to establish economic credibility against business opponents and avoid taking the base for granted, as \"the voters told us what they needed. We didn't listen.\""
+              }
+            },
+            "chunks": [
+              {
+                "chunk_id": "race-003-memo-chunk-003",
+                "score": 0.643806517,
+                "content": "Our core economic message - \"fight for working families by taking on corporate greed and making sure the wealthy pay their fair share\" - was roundly rejected across all voter segments.\n\n**Focus group evidence:**\n\n| Group | Message Score | Representative Quote |\n|-------|---------------|---------------------|\n| WOW Counties | 1.5/5 | \"Corporate greed. Really? That's simplistic nonsense.\" |\n| Madison | 2.3/5 | \"This messaging was stale in 2010. It's beyond stale now.\" |\n| Fox Valley | 2.1/5 | \"This sounds like every Democrat ever. Things don't change.\" |\n\n**Why it failed:**\n\n1. **Not addressing the moment:** Voters were experiencing real inflation pain. \"Corporate greed\" felt like deflection, not solution.\n\n2. **Lack of specificity:** \"Fight for working families\" is meaningless without policy detail. Voters demanded numbers.\n\n3. **Stale language:** This messaging has been Democratic boilerplate for 30 years. Voters are immune to it.\n\n4. **No acknowledgment of inflation:** By blaming \"gre",
+                "race_id": "race-003",
+                "section": "What Went Wrong",
+                "subsection": "1. Economic Messaging Was a Catastrophic Failure",
+                "outcome": "loss",
+                "state": "Wisconsin",
+                "year": 2022,
+                "margin": -1.1,
+                "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+                "line_number": 22
+              },
+              {
+                "chunk_id": "race-003-memo-chunk-007",
+                "score": 0.535607398,
+                "content": "The Fox Valley focus group showed 7-2 lean toward Lindquist - in a region that should be competitive. Key failures:\n\n1. **Union voters persuadable to Republicans:** P1 (union paper mill worker) leaning Lindquist despite union endorsement\n2. **Economic credibility gap decisive:** Business background > union endorsement for swing voters\n3. **Generic messaging rejected even by potential supporters**\n\n---",
+                "race_id": "race-003",
+                "section": "What Went Wrong",
+                "subsection": "5. We Lost the Swing Region (Fox Valley)",
+                "outcome": "loss",
+                "state": "Wisconsin",
+                "year": 2022,
+                "margin": -1.1,
+                "source_file": "political-consulting-corpus/races/race-003-wisconsin-senate-2022/strategy-memo.md",
+                "line_number": 98
+              }
+            ]
+          },
+          {
+            "race_id": "race-007",
+            "race_metadata": {
+              "race_id": "race-007",
+              "state": "Ohio",
+              "year": 2024,
+              "outcome": "loss",
+              "margin": -6.2,
+              "office": "Senate",
+              "chunk_count": 28,
+              "sections": [
+                "Conclusion",
+                "Executive Summary",
+                "Focus Group Warning Signs Ignored",
+                "Header",
+                "Key Quotes That Lost Us the Race",
+                "Lessons for Ohio 2026",
+                "The Collapse: What Happened",
+                "Voter Segment Analysis",
+                "What 2026 Candidate Must Do Differently",
+                "What Failed"
+              ],
+              "section_summaries": {
+                "Header": "Race metadata and basic information.",
+                "Executive Summary": "Tim Brennan lost his Senate seat by 6.2 points due to Trump's coattails, accelerated working-class defection, and ineffective economic messaging. Focus groups in September flagged these issues, but the campaign failed to adapt, demonstrating that Ohio is no longer a swing state for statewide Democrats. The key lesson is that the campaign failed to address the question of \"what have you done lately?\" and did not adequately respond to warning signs.",
+                "The Collapse: What Happened": "Brennan's support collapsed due to perceived neglect of working-class voters, particularly union members, who felt the Democrats focused on other demographics (\"Democrats assume we'll vote for them\"). Brennan's response to the \"what's changed\" attack was ineffective, and increased straight-ticket voting, especially for Trump, eliminated his historical advantage with split-ticket voters, making Ohio a \"straight-ticket red state.\" While Brennan performed best in Columbus, enthusiasm was lukewarm (6.3/10), and \"Columbus alone cannot elect Brennan.\"",
+                "What Failed": "Brennan's campaign failed to resonate with voters because his economic message focused on the 2009 auto bailout (\"What's he done lately?\") while Stanton's attacks on Brennan's record went largely unanswered, as evidenced by message testing scores (e.g., Stanton 6, Brennan 2 in Youngstown). Voters perceived Democrats as prioritizing \"pronouns and climate\" over economic concerns, particularly in struggling areas like Youngstown where the Lordstown plant closure remained a potent symbol of failure.",
+                "Focus Group Warning Signs Ignored": "The focus groups revealed warning signs that were ignored, including P4, a former Brennan voter, stating he was \"probably voting Stanton\" and a final split of 4-6 in favor of Stanton. Low enthusiasm among Brennan supporters (averaging 6.3/10) and explicit defection explanations from voters like P5 and even union members (P8) indicated a need to reorient messaging, as P4 predicted \"Columbus isn't enough\" to win. The campaign should have acted urgently to address these concerns, particularly the split-ticket Republican crossovers (P6) with low enthusiasm.",
+                "Lessons for Ohio 2026": "Ohio 2026 requires Democrats to outperform the national party by 8+ points, as evidenced by Trump's +8 victory in 2024. The \"I tried my best\" message failed; instead, the campaign must focus on tangible results like \"X jobs created in Y town\" and directly address cost of living. To win, the candidate must target persuadable voters like those in P10 (Youngstown) with a message of economic populism and cultural moderation, while also increasing enthusiasm among young professionals in Columbus.",
+                "Voter Segment Analysis": "The campaign significantly underperformed in key segments like Cleveland suburbs and Youngstown working class, mirroring warnings from focus groups that predicted low support (4-6 rating). While the campaign won Columbus educated voters, their enthusiasm was lukewarm (6.3/10), and the historic collapse in Union household support (-6) requires immediate investigation and a revised strategy to regain their trust.",
+                "What 2026 Candidate Must Do Differently": "To win in 2026, the candidate must establish an independent brand, distancing themselves from the Democratic party label, particularly on issues where Biden's policies are unpopular in Ohio. A successful strategy involves a constant presence in key areas like Youngstown and a simple, visceral economic message, such as \"They got rich while you got screwed,\" while reclaiming issues like trade with a \"Made in Ohio\" focus. The candidate must also develop nuanced positions on crime, immigration, and education that demonstrate independent thought and engagement with local concerns.",
+                "Key Quotes That Lost Us the Race": "The campaign failed to resonate with voters in key areas like Youngstown and Cleveland, as evidenced by quotes highlighting a perceived lack of progress (\"Steel is still gone\") and disillusionment with the Democratic party (\"Democrats had decades\"). Brennan's campaign also struggled to overcome the perception that it was overly reliant on Columbus, and faced the challenge of voters believing the state had become reliably Republican (\"We're red now\"). Actionable insights include focusing on tangible progress in struggling areas and addressing the perception of abandonment by the Democratic party.",
+                "Conclusion": "Tim Brennan's loss stemmed from neglecting working-class concerns and a backwards-looking economic message, as revealed in focus groups. A 2026 challenger should adopt economic populism, cultural moderation, and simple messaging, while actively competing in Ohio, a state lost due to abandoned strategies. The memo's analysis is based on 2024 focus groups, exit polling, and election data."
+              }
+            },
+            "chunks": [
+              {
+                "chunk_id": "race-007-memo-chunk-003",
+                "score": 0.548202574,
+                "content": "The Youngstown focus group was prophetic. P5 (construction, union, voted Brennan twice before) said it clearly:\n\n> \"The Democrats had decades to help us. They didn't. They focused on the cities, on minorities, on college kids. We got nothing.\"\n\n**Final result in Mahoning County:** Brennan -8 vs. his 2018 performance. The union base crumbled.\n\n**Key defector profile:**\n- Union members who voted Obama twice, Trump twice, and Brennan for Senate\n- When party frustration exceeded personal loyalty to Brennan, they left\n- \"Democrats assume we'll vote for them\" - this resentment was fatal",
+                "race_id": "race-007",
+                "section": "The Collapse: What Happened",
+                "subsection": "1. Working-Class Defection",
+                "outcome": "loss",
+                "state": "Ohio",
+                "year": 2024,
+                "margin": -6.2,
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+                "line_number": 20
+              },
+              {
+                "chunk_id": "race-007-memo-chunk-013",
+                "score": 0.508464873,
+                "content": "- Focus group split: 3 Brennan, 4 Stanton, 3 undecided\n- P5's explicit defection explanation should have reoriented messaging\n- Even union members (P8) \"understand why people are leaving\"\n\n---",
+                "race_id": "race-007",
+                "section": "Focus Group Warning Signs Ignored",
+                "subsection": "Youngstown - Warning Signs",
+                "outcome": "loss",
+                "state": "Ohio",
+                "year": 2024,
+                "margin": -6.2,
+                "source_file": "political-consulting-corpus/races/race-007-ohio-senate-2024/strategy-memo.md",
+                "line_number": 120
+              }
+            ]
+          }
+        ],
+        "stats": {
+          "retrieval_time_ms": 0,
+          "total_quotes": 1,
+          "total_lessons": 4,
+          "focus_groups_count": 1,
+          "races_count": 2,
+          "routed_to": "both",
+          "outcome_filter": "loss",
+          "cached": true,
+          "prewarmed": true
+        }
+      },
+      "light_summaries": {
+        "race-002-fg-002-pittsburgh-area": "Summary: Union voters feel neglected and \"taken for granted\" by a Democratic party that they hold responsible for the long-term economic damage caused by trade deals like NAFTA. This historical resentment over trade policy has eroded traditional party loyalty, leading to a lack of enthusiasm and an increased openness to voting Republican."
+      },
+      "deep_summaries": {
+        "race-002-fg-002-pittsburgh-area": "The dominant sentiment among these voters is one of **institutional betrayal and historical resentment**, rooted in the perception that the Democratic Party has shifted from a partner to a fair-weather friend. The primary grievance is not based on current policy alone, but on a perceived legacy of economic negligence. There is a clear disconnect between leadership endorsements and rank-and-file loyalty; voters feel the party has **\"taken union voters for granted too long,\"** viewing the relationship as extractive rather than reciprocal. While the participant remains a \"lifelong Democrat,\" the lack of enthusiasm suggests a transition from active support to a state of political homelessness.\n\nThe language used by participants is notably retrospective, citing specific policy failures like **\"NAFTA\"** and **\"trade deals\"** as the primary catalysts for their disillusionment. These terms serve as linguistic shorthand for a broader sense of being \"hurt\" by the party\u2019s globalist leanings. The emotional undertone is one of **defiant exhaustion**\u2014there is no longer a sense of \"surprise\" that members are defecting to the GOP. Instead, the shift is framed as a logical consequence of the party\u2019s failure to protect local interests. The intensity of this feeling suggests that for these voters, the Democratic brand is currently synonymous with economic displacement.\n\nTo answer the user\u2019s question: Democratic messaging failed because it focused on current legislative wins while failing to address the **unhealed scar tissue** of past trade policies. By ignoring the long-term trauma of NAFTA and similar deals, the party allowed a vacuum to form, which Republican populist rhetoric has successfully filled. The failure is not just in the \"what\" of the message, but in the \"who\"\u2014the messaging feels disconnected from the lived experience of the Pittsburgh worker who views the party\u2019s recent outreach as too little, too late."
+      },
+      "macro_synthesis": null,
+      "strategy_light": {
+        "race-003": "The 2022 Wisconsin campaign failed with union voters because its \"corporate greed\" rhetoric was rejected as a stale, deflective clich\u00e9 that lacked the specific policy details needed to address real-time inflation pain. Consequently, even endorsed union members in key regions like the Fox Valley defected to the opposition, prioritizing a candidate\u2019s perceived business credibility over generic Democratic economic boilerplate.",
+        "race-007": "The 2024 Ohio race demonstrates that Democratic messaging failed by prioritizing urban and collegiate demographics over the union base, fostering a fatal resentment among long-term loyalists who felt culturally and economically abandoned. The campaign collapsed because it relied on historical party loyalty rather than addressing specific grievances, causing even multi-cycle crossover voters to defect once institutional frustration outweighed personal affinity for the candidate."
+      },
+      "strategy_deep": {
+        "race-003": "### Analysis: Wisconsin 2022 Democratic Messaging Failure\n\n**Campaign Strategy and Intent**\nThe campaign relied on a traditional populist framework, attempting to mobilize union voters by framing the economic crisis as a moral struggle against \"corporate greed\" and advocating for the wealthy to \"pay their fair share.\" This strategy was rooted in the historical Democratic playbook of using class-based rhetoric to consolidate the labor vote. By utilizing broad, boilerplate language like \"fighting for working families,\" the campaign aimed to create a wide umbrella of appeal that could theoretically bridge the gap between urban Madison progressives and industrial Fox Valley workers. The intent was to deflect blame for rising costs away from administration policy and toward private sector actors, hoping to tap into long-standing labor skepticism of corporate interests.\n\n**Execution and Failure Points**\nThe strategy failed because it prioritized ideological consistency over economic reality. According to focus group data, the \"corporate greed\" narrative was dismissed as \"simplistic nonsense\" and \"deflection\" by voters experiencing the immediate pain of inflation. In the Fox Valley\u2014a critical swing region\u2014the campaign suffered a decisive \"economic credibility gap.\" Union paper mill workers, traditionally a core constituency, favored the Republican opponent\u2019s business background over the Democratic candidate\u2019s union endorsements. The messaging was criticized as \"stale\" and \"meaningless,\" with voters in Madison and the WOW counties rejecting the lack of policy specificity. By failing to provide concrete numbers or acknowledge the mechanics of inflation, the campaign appeared out of touch, leading even \"persuadable\" union members to view the Democratic platform as a collection of empty slogans rather than a viable economic plan.\n\n**Key Takeaways for Future Campaigns**\n1. **Prioritize Economic Utility over Populist Rhetoric:** Future campaigns must replace generic phrases like \"fighting for families\" with hyper-specific policy details and \"numbers\" that address the cost of living. Union voters in 2022 demonstrated that a candidate\u2019s perceived business acumen can outweigh a formal union endorsement if the candidate offers a more credible solution to inflation.\n2. **Retire \"Boilerplate\" Language:** The 30-year-old Democratic lexicon has reached a point of total saturation and immunity. Strategists must develop new linguistic frameworks that acknowledge current macroeconomic realities (like supply chains and monetary policy) rather than relying on 2010-era tropes.\n3. **Address the \"Credibility Gap\" Directly:** In",
+        "race-007": "This analysis examines the strategic collapse of the Brennan campaign in Ohio\u2019s industrial heartland, specifically focusing on the erosion of the \"Obama-Trump-Brennan\" crossover voter.\n\n**1. Campaign Strategy and Execution**\nThe Brennan campaign relied on a strategy of \"residual loyalty,\" assuming that the candidate\u2019s historical ties to organized labor and his 2018 overperformance would insulate him from national brand decay. By prioritizing messaging tailored to \"cities, minorities, and college kids,\" the campaign attempted to build a coalition of the ascendant while treating the union base as a captured demographic. This was a resource-allocation play: they spent their messaging capital on turnout in urban centers, believing that Brennan\u2019s personal brand in places like Mahoning County would hold the line without a dedicated, labor-centric economic offensive.\n\n**2. Analysis of Failure**\nThe failure was not one of policy, but of perceived prioritization. As P5 noted in the Youngstown focus group, the \"Democrats assume we'll vote for them\" sentiment transformed from a grievance into a justification for defection. The campaign failed to recognize that for union voters, personal loyalty to Brennan had a breaking point; when the national party\u2019s focus shifted toward cultural and collegiate issues, the \"party frustration\" finally outweighed the \"candidate affinity.\" The 8-point drop in Mahoning County proves that a \"labor-lite\" approach\u2014relying on past endorsements rather than active, present-tense advocacy\u2014is fatal. The campaign ignored the \"P8 warning sign,\" where even those who stayed with Brennan expressed empathy for those leaving, signaling a total collapse of the social pressure within unions to vote Democratic.\n\n**3. Key Takeaways for Future Campaigns**\nFuture campaigns must treat union voters as a \"persuasion\" demographic rather than a \"base\" demographic. First, messaging must explicitly address the \"neglect narrative\" by centering industrial policy over social signaling; if a construction worker feels they are fourth on the priority list behind urban and collegiate interests, they will defect. Second, focus group data like the P5 defection must be treated as a fire alarm, not an outlier. Actionable strategy requires \"hyper-local economic validation\"\u2014specific, localized wins that counter the \"we got nothing\" sentiment. Finally, the \"Obama-Trump-Democrat\" voter is no longer a reliable archetype; without a constant, aggressive re-litigation of why the Democratic"
+      },
+      "strategy_macro": "As a senior strategist, looking at the data from Wisconsin 2022 and Ohio 2024 reveals a systemic breakdown in the \"Blue Wall\" communication architecture. The failure wasn't just a matter of bad slogans; it was a failure of **authenticity, specificity, and cultural alignment.**\n\nHere are the three cross-cutting themes that emerge when synthesizing these campaigns:\n\n### 1. The \"Genericism Trap\": Rhetoric vs. Real-Time Pain\nBoth campaigns suffered from a disconnect between high-level political messaging and the kitchen-table reality of union members. \n*   **The Pattern:** In Wisconsin, the \"corporate greed\" narrative was dismissed as a deflective clich\u00e9; in Ohio, the campaign relied on \"historical loyalty\" rather than current grievances. \n*   **The Lesson:** Union voters are increasingly sophisticated economic actors who can distinguish between **boilerplate populism** and **credible policy.** When Democrats use generic scripts to explain away inflation or job loss, they cede \"business credibility\" to the opposition. To win, messaging must move past \"who to blame\" (corporations/the past) and toward \"how to fix it\" (specific sectoral investments and inflation mitigation).\n\n### 2. The Cultural \"Abandonment\" Feedback Loop\nA lethal pattern has emerged where the prioritization of urban/collegiate voters is perceived by union members not just as a strategic choice, but as a cultural rejection.\n*   **The Pattern:** Ohio saw a \"fatal resentment\" among loyalists who felt culturally abandoned, while Wisconsin saw union members in the Fox Valley defect toward candidates with \"business credibility.\" \n*   **The Lesson:** The Democratic brand is suffering from a **relatability deficit.** When the campaign\u2019s aesthetic and priorities lean too heavily into the collegiate/urban orbit, it triggers a defensive reaction in the labor base. This isn't just about policy; it\u2019s about *"
+    },
+    "What do swing voters want to hear about inflation?": {
+      "cache_key": "412f586805f5ac6963e07d7e43ea88f7",
+      "search_results": {
+        "content_type": "both",
+        "quotes": [],
+        "lessons": [
+          {
+            "race_id": "race-010",
+            "race_metadata": {
+              "race_id": "race-010",
+              "state": "Pennsylvania",
+              "year": 2024,
+              "outcome": "win",
+              "margin": 3.1,
+              "office": "Senate",
+              "chunk_count": 19,
+              "sections": [
+                "Executive Summary",
+                "Geographic Performance",
+                "Header",
+                "Key Learnings for Future Races",
+                "Margin Analysis",
+                "Recommendations for Pennsylvania Democrats",
+                "The Pharma Frame",
+                "Voter Segment Analysis",
+                "What Didn't Work",
+                "What Worked"
+              ],
+              "section_summaries": {
+                "Header": "Race metadata and basic information.",
+                "Executive Summary": "Angela Russo won the PA Senate race by 3.1 points by successfully attacking Hartley's pharmaceutical background on healthcare costs and driving strong turnout in suburban Philadelphia and Pittsburgh's union base. While NEPA remained soft, Russo's working-class identity helped consolidate support there, suggesting a winning formula of targeted attacks and relatable messaging.",
+                "What Worked": "Hartley's pharma background was a major liability, particularly in the Philly suburbs, Pittsburgh, and NEPA, with voters citing concerns about drug prices (\"Those are the people charging $500 for insulin\"). Russo's Pittsburgh roots and Italian-American identity resonated strongly, especially in Pittsburgh (10-0 support) and NEPA, while her AG record and \"prosecutor fighting for consumers\" narrative provided credibility and helped win over voters in collar counties, particularly on healthcare and abortion issues. The \"prosecutor vs. executive\" frame proved highly effective.",
+                "What Didn't Work": "Enthusiasm in NEPA was low (5.7/10) due to feelings of being forgotten and alienated, with voters expressing sentiments like \"Whoever wins, nothing changes here\" and feeling labeled as \"racist, deplorable.\" While Russo won these voters, the relationship is fragile, and generic messaging like \"fighting for working families\" failed to resonate; voters demanded concrete economic plans, particularly regarding issues like gas prices. The campaign needs to address these specific concerns with targeted economic proposals to rebuild trust and energize the base in NEPA.",
+                "Key Learnings for Future Races": "Hartley's opponent's pharma background proved a major liability in a healthcare-focused race. Russo's success in Pennsylvania stemmed from bridging Pittsburgh and NEPA, highlighting the need to connect with at least two of the state's key regions. The campaign identified the collar counties (Chester, Montgomery, Delaware, and Bucks) as crucial for Democratic victories, requiring a strategy of physical presence, economic specificity, and cultural respect.",
+                "Voter Segment Analysis": "Russo performed strongly in all three key voter segments analyzed, particularly in Pittsburgh (10-0) due to regional identity and union support. While \"pharma attack\" messaging resonated in the Philly suburbs (7-2) and NEPA (7-1), NEPA's lower enthusiasm (5.7) suggests a need for more targeted engagement beyond simply relying on their \"default Democrat\" lean. The campaign should continue leveraging regional identity in Pittsburgh and refine messaging to boost enthusiasm in NEPA.",
+                "Geographic Performance": "The campaign won decisively in the Philadelphia suburbs by mobilizing healthcare professionals and capitalizing on abortion concerns, but Hartley's \"moderate\" stance couldn't overcome negative perceptions related to the pharmaceutical industry. While Pittsburgh/Allegheny County saw strong base turnout and benefited from union endorsements and a powerful \"one of us\" regional identity, performance in NEPA was lackluster due to persistent cultural alienation and the effectiveness of attacks related to the pharmaceutical industry, indicating a need for long-term investment in the region.",
+                "The Pharma Frame": "The campaign successfully defined opponent Hartley through a \"Pharma Frame,\" highlighting her wealth derived from the pharmaceutical industry and its association with high drug prices. This framing, using messages like \"Made millions while drug prices soared,\" proved inescapable for Hartley, who lacked a convincing counter-narrative, demonstrating the power of opponent biography in shaping the race. The actionable insight is to aggressively define opponents early with clear, concise narratives that tie their background to negative consequences for voters.",
+                "Recommendations for Pennsylvania Democrats": "Pennsylvania Democrats should prioritize healthcare cost messaging and highlight opponents' industry ties, while increasing physical presence in NEPA (\"Come here. A lot.\") and leveraging Italian-American heritage in Pittsburgh and NEPA. To counter cultural alienation from the \"deplorable\" comment, the campaign must shift from general promises to specific economic policies and coordinate closely with key unions like USW, building trades, and Teamsters.",
+                "Margin Analysis": "The campaign won by a 3.1% margin (210,000 votes), driven by strong performances in the Philadelphia suburbs (+150,000) and Pittsburgh/Allegheny (+80,000), as revealed by focus groups and exit polling.  However, NEPA underperformed (+10,000) and Rural PA saw a net loss (-30,000), indicating a regionally uneven coalition that requires future strategy adjustments."
+              }
+            },
+            "chunks": [
+              {
+                "chunk_id": "race-010-memo-chunk-009",
+                "score": 0.516052306,
+                "content": "Across focus groups, voters wanted more concrete economic plans:\n\n**Scranton P5:** \"What's she going to do about gas prices? That's what I need to know.\"\n\nGeneric \"fighting for working families\" language is wearing thin.\n\n---",
+                "race_id": "race-010",
+                "section": "What Didn't Work",
+                "subsection": "3. Economic Specificity Wanted",
+                "outcome": "win",
+                "state": "Pennsylvania",
+                "year": 2024,
+                "margin": 3.1,
+                "source_file": "political-consulting-corpus/races/race-010-pennsylvania-senate-2024/strategy-memo.md",
+                "line_number": 81
+              }
+            ]
+          }
+        ],
+        "stats": {
+          "retrieval_time_ms": 0,
+          "total_quotes": 0,
+          "total_lessons": 1,
+          "focus_groups_count": 0,
+          "races_count": 1,
+          "routed_to": "both",
+          "outcome_filter": null,
+          "cached": true,
+          "prewarmed": true
+        }
+      },
+      "light_summaries": {},
+      "deep_summaries": {},
+      "macro_synthesis": null,
+      "strategy_light": {
+        "race-010": "Swing voters in Pennsylvania rejected generic populist rhetoric in favor of granular policy details, specifically demanding concrete plans to lower the direct costs of gas and groceries. The failure of \"working families\" messaging proves that 2024 voters prioritize immediate price-point relief over abstract economic empathy."
+      },
+      "strategy_deep": {
+        "race-010": "To win Pennsylvania in 2024, the campaign initially relied on a \"macro-stability\" narrative, emphasizing cooling inflation percentages and job growth numbers. This strategy was designed to project competence and contrast with the perceived volatility of the opposition. However, as the Scranton focus groups reveal, this approach failed because it prioritized economic indicators over the \"kitchen table\" reality. By using generic platitudes like \"fighting for working families,\" the campaign inadvertently signaled a disconnect from the immediate financial pressures\u2014specifically gas and grocery volatility\u2014that define the daily lives of swing voters in the Commonwealth\u2019s post-industrial corridors.\n\nThe failure of this strategy lies in the gap between statistical recovery and perceived affordability. While the campaign\u2019s messaging was factually accurate regarding downward trends in inflation, it lacked the \"concrete economic plans\" demanded by voters like those in the Scranton P5 group. Swing voters in Pennsylvania do not experience \"inflation\" as a CPI percentage; they experience it as a specific dollar amount at the pump. The reliance on \"generic language\" acted as a rhetorical shield that voters interpreted as an evasion of responsibility, leading to a trust deficit that overshadowed broader legislative achievements.\n\nThe key takeaway for future campaigns is that **specificity is the only antidote to economic anxiety.** To move the needle in PA, campaigns must pivot from \"fighting for\" to \"fixing by.\" Future strategies should replace broad slogans with granular, actionable policies\u2014such as specific tax credits for commuters or targeted investigations into regional price gouging\u2014that directly address the \"gas price\" metric mentioned in the memo. In a high-stakes swing state, a voter\u2019s sense of economic security is tied to their ability to forecast their own monthly budget; if a candidate cannot provide a concrete roadmap for lowering costs, the voter will view their rhetoric as noise rather than a solution."
+      },
+      "strategy_macro": null
+    }
+  },
+  "generated_at": "2026-01-06T15:50:53.980413Z",
+  "version": "1.0"
+}
