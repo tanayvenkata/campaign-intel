@@ -9,7 +9,7 @@ from contextlib import asynccontextmanager
 from datetime import date
 from collections import defaultdict
 
-from cachetools import TTLCache
+# Demo cache: simple dicts populated from JSON on startup (no TTLCache needed)
 
 # Add project root to sys.path to allow imports from scripts/
 project_root = Path(__file__).parent.parent
@@ -55,30 +55,16 @@ strategy_retriever: Optional[StrategyMemoRetriever] = None
 router: Optional[LLMRouter] = None
 synthesizer: Optional[FocusGroupSynthesizer] = None
 
-# === Caching & Rate Limiting ===
-# Query cache: (query_hash) -> response dict (1 hour TTL, 100 entries max)
-search_cache: TTLCache = TTLCache(maxsize=100, ttl=3600)
-
-# Light summary cache: (query_hash, fg_id) -> summary string (1 hour TTL)
-light_summary_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
-
-# Macro synthesis cache: (query_hash) -> synthesis string (1 hour TTL)
-macro_synthesis_cache: TTLCache = TTLCache(maxsize=100, ttl=3600)
-
-# Deep summary cache: (query_hash, fg_id) -> synthesis string (1 hour TTL)
-deep_summary_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
-
-# Unified macro cache: (query_hash, fg_ids_hash, race_ids_hash) -> synthesis string (1 hour TTL)
-unified_macro_cache: TTLCache = TTLCache(maxsize=100, ttl=3600)
-
-# Strategy light summary cache: (query_hash, race_id) -> summary string (1 hour TTL)
-strategy_light_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
-
-# Strategy deep summary cache: (query_hash, race_id) -> synthesis string (1 hour TTL)
-strategy_deep_cache: TTLCache = TTLCache(maxsize=500, ttl=3600)
-
-# Strategy macro cache: (query_hash, race_ids_hash) -> synthesis string (1 hour TTL)
-strategy_macro_cache: TTLCache = TTLCache(maxsize=100, ttl=3600)
+# === Demo Cache (populated from JSON on startup, never modified at runtime) ===
+# Only the 4 suggested queries are cached - all other queries make fresh LLM calls
+search_cache: Dict[str, dict] = {}
+light_summary_cache: Dict[str, str] = {}
+macro_synthesis_cache: Dict[str, str] = {}
+deep_summary_cache: Dict[str, str] = {}
+unified_macro_cache: Dict[str, str] = {}
+strategy_light_cache: Dict[str, str] = {}
+strategy_deep_cache: Dict[str, str] = {}
+strategy_macro_cache: Dict[str, str] = {}
 
 # Rate limiting: IP -> {"count": int, "date": date}
 rate_limits: Dict[str, Dict] = defaultdict(lambda: {"count": 0, "date": date.today()})
@@ -796,15 +782,6 @@ async def search_unified(search_request: SearchRequest, request: Request):
         }
     }
 
-    # Store in cache (convert Pydantic models to dicts for caching)
-    cache_data = {
-        "content_type": content_type,
-        "quotes": [q.model_dump() for q in quotes_results],
-        "lessons": [l.model_dump() for l in lessons_results],
-        "stats": response_data["stats"]
-    }
-    search_cache[cache_key] = cache_data
-
     return UnifiedSearchResponse(**response_data)
 
 
@@ -956,15 +933,11 @@ async def synthesize_light(request: SynthesisRequest):
         focus_group_name=request.focus_group_name
     )
 
-    # Cache the result
-    if request.quotes:
-        light_summary_cache[summary_cache_key] = summary
-
     return {"summary": summary}
 
 @app.post("/synthesize/deep")
 async def synthesize_deep(request: SynthesisRequest):
-    """Generate a deep synthesis (streaming, with caching)."""
+    """Generate a deep synthesis (streaming)."""
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
 
@@ -1018,9 +991,6 @@ Provide a synthesis that:
 
 Keep it to 2-3 paragraphs. Be analytical, not just descriptive."""
 
-    # Collect full response for caching while streaming
-    full_response = []
-
     async def stream_generator():
         stream = synthesizer.client.chat.completions.create(
             model=synthesizer.model,
@@ -1031,12 +1001,7 @@ Keep it to 2-3 paragraphs. Be analytical, not just descriptive."""
         )
         for chunk in stream:
             if chunk.choices[0].delta.content:
-                content = chunk.choices[0].delta.content
-                full_response.append(content)
-                yield content
-
-        # Cache the full response after streaming completes
-        deep_summary_cache[deep_cache_key] = "".join(full_response)
+                yield chunk.choices[0].delta.content
 
     return StreamingResponse(stream_generator(), media_type="text/event-stream")
 
@@ -1144,9 +1109,6 @@ async def synthesize_macro_light(request: LightMacroSynthesisRequest):
             RetrievalResult(**c.model_dump()) for c in chunks
         ]
 
-    # Collect full response for caching while streaming
-    full_response = []
-
     async def stream_generator():
         for chunk in synthesizer.light_macro_synthesis_stream(
             fg_summaries=request.fg_summaries,
@@ -1154,11 +1116,7 @@ async def synthesize_macro_light(request: LightMacroSynthesisRequest):
             fg_metadata=request.fg_metadata,
             query=request.query
         ):
-            full_response.append(chunk)
             yield chunk
-
-        # Cache the full response after streaming completes
-        macro_synthesis_cache[macro_cache_key] = "".join(full_response)
 
     return StreamingResponse(stream_generator(), media_type="text/event-stream")
 
@@ -1200,7 +1158,7 @@ async def synthesize_macro_deep(request: DeepMacroSynthesisRequest):
 
 @app.post("/synthesize/strategy/light")
 async def synthesize_strategy_light(request: StrategySynthesisRequest):
-    """Generate a light summary of strategy lessons for a single race (with caching)."""
+    """Generate a light summary of strategy lessons for a single race."""
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
 
@@ -1238,10 +1196,6 @@ Be specific - include what worked/failed and why. No fluff."""
             temperature=0.3
         )
         summary = response.choices[0].message.content.strip()
-
-        # Cache the result
-        strategy_light_cache[strategy_cache_key] = summary
-
         return {"summary": summary}
     except Exception as e:
         return {"summary": get_friendly_error(e)}
@@ -1249,7 +1203,7 @@ Be specific - include what worked/failed and why. No fluff."""
 
 @app.post("/synthesize/strategy/deep")
 async def synthesize_strategy_deep(request: StrategySynthesisRequest):
-    """Generate a deep analysis of strategy lessons (streaming, with caching)."""
+    """Generate a deep analysis of strategy lessons (streaming)."""
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
 
@@ -1288,9 +1242,6 @@ Provide a detailed analysis that:
 
 Keep it to 2-3 paragraphs. Be analytical and specific."""
 
-    # Collect full response for caching
-    full_response = []
-
     async def stream_generator():
         try:
             stream = synthesizer.client.chat.completions.create(
@@ -1302,12 +1253,7 @@ Keep it to 2-3 paragraphs. Be analytical and specific."""
             )
             for chunk in stream:
                 if chunk.choices[0].delta.content:
-                    content = chunk.choices[0].delta.content
-                    full_response.append(content)
-                    yield content
-
-            # Cache the full response after streaming completes
-            strategy_deep_cache[strategy_deep_key] = "".join(full_response)
+                    yield chunk.choices[0].delta.content
         except Exception as e:
             yield get_friendly_error(e)
 
@@ -1316,7 +1262,7 @@ Keep it to 2-3 paragraphs. Be analytical and specific."""
 
 @app.post("/synthesize/strategy/macro")
 async def synthesize_strategy_macro(request: StrategyMacroSynthesisRequest):
-    """Generate cross-race strategy synthesis (streaming, with caching)."""
+    """Generate cross-race strategy synthesis (streaming)."""
     if not synthesizer:
         raise HTTPException(status_code=503, detail="Service not ready")
 
@@ -1368,9 +1314,6 @@ Provide a cross-race synthesis that:
 
 Be specific and actionable. Reference the races by name."""
 
-    # Collect full response for caching
-    full_response = []
-
     async def stream_generator():
         try:
             stream = synthesizer.client.chat.completions.create(
@@ -1382,12 +1325,7 @@ Be specific and actionable. Reference the races by name."""
             )
             for chunk in stream:
                 if chunk.choices[0].delta.content:
-                    content = chunk.choices[0].delta.content
-                    full_response.append(content)
-                    yield content
-
-            # Cache the full response after streaming completes
-            strategy_macro_cache[strategy_macro_key] = "".join(full_response)
+                    yield chunk.choices[0].delta.content
         except Exception as e:
             yield get_friendly_error(e)
 
@@ -1473,9 +1411,6 @@ Provide a unified synthesis that:
 
 Structure your response with clear themes. Reference specific focus groups and races."""
 
-    # Collect full response for caching
-    full_response = []
-
     async def stream_generator():
         try:
             stream = synthesizer.client.chat.completions.create(
@@ -1487,12 +1422,7 @@ Structure your response with clear themes. Reference specific focus groups and r
             )
             for chunk in stream:
                 if chunk.choices[0].delta.content:
-                    content = chunk.choices[0].delta.content
-                    full_response.append(content)
-                    yield content
-
-            # Cache the full response after streaming completes
-            unified_macro_cache[unified_cache_key] = "".join(full_response)
+                    yield chunk.choices[0].delta.content
         except Exception as e:
             yield get_friendly_error(e)
 

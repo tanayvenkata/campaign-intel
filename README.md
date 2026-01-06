@@ -17,7 +17,7 @@ Political consulting firms run hundreds of focus groups over years, but that qua
 - **LLM-powered query routing** — Automatically decides whether to search focus group quotes, strategy memos, or both
 - **Semantic search** — OpenAI embeddings (production) or BGE-M3 (local dev) with optional cross-encoder reranking
 - **Multi-level synthesis** — Light summaries, deep per-source analysis, cross-source themes
-- **Intelligent caching** — All synthesis endpoints cached with 1-hour TTL; suggested queries pre-warmed at startup for instant demo experience
+- **Demo caching** — 4 suggested queries permanently cached via JSON file for instant demo experience
 - **Zero hallucination design** — Retrieval-focused with source citations; "I don't know" is acceptable, wrong answers are not
 - **Streaming UI** — Real-time search progress and synthesis generation
 
@@ -31,7 +31,7 @@ Political consulting firms run hundreds of focus groups over years, but that qua
 | Reranking | cross-encoder/ms-marco-MiniLM-L6-v2 (optional) |
 | Vector DB | Pinecone (two indexes: focus-groups, strategy-memos) |
 | LLM | Gemini Flash (via OpenRouter) |
-| Caching | cachetools TTLCache (1hr TTL) |
+| Caching | JSON file (suggested queries only) |
 
 ## Quick Start
 
@@ -89,8 +89,8 @@ Open http://localhost:3000
 │                      FastAPI Backend (Railway)                       │
 │                                                                      │
 │  ┌───────────────────────────────────────────────────────────────┐  │
-│  │                    TTLCache Layer (1hr)                        │  │
-│  │    search results, light/deep/macro summaries (FG + Strategy)  │  │
+│  │              Demo Cache (data/demo_cache.json)                 │  │
+│  │         4 suggested queries only — all else uncached           │  │
 │  └───────────────────────────────────────────────────────────────┘  │
 │                                │                                     │
 │  ┌─────────────┐  ┌────────────┴───────────┐  ┌──────────────────┐  │

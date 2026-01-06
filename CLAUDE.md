@@ -82,22 +82,17 @@ Both use the same Pinecone index but different namespaces (`openai` vs default).
    - Deep: 2-3 paragraph per-source analysis
    - Macro: Cross-source thematic synthesis
 
-### Caching Architecture
+### Caching
 
-All synthesis endpoints use TTLCache (1 hour TTL) to avoid redundant LLM calls:
+Only the 4 suggested queries are cached (permanently via `data/demo_cache.json`):
+- "Ohio voters on economy"
+- "What messaging mistakes did campaigns make?"
+- "Where did Democratic messaging fail with union voters?"
+- "What do swing voters want to hear about inflation?"
 
-| Cache | Endpoint | Pre-warmed |
-|-------|----------|------------|
-| `search_cache` | `/search/unified` | ✓ (4 suggested queries) |
-| `light_summary_cache` | `/synthesize/light` | ✓ |
-| `deep_summary_cache` | `/synthesize/deep` | ✓ |
-| `macro_synthesis_cache` | `/synthesize/macro/light` | ✓ |
-| `strategy_light_cache` | `/synthesize/strategy/light` | ✓ |
-| `strategy_deep_cache` | `/synthesize/strategy/deep` | Lazy |
-| `strategy_macro_cache` | `/synthesize/strategy/macro` | Lazy |
-| `unified_macro_cache` | `/synthesize/unified/macro` | Lazy |
+All other queries make fresh LLM calls. No in-memory caching (TTLCache removed - 1hr TTL was useless since users don't repeat exact queries).
 
-**Pre-warming**: On startup, the backend pre-warms caches for 4 suggested queries (defined in `EXAMPLE_QUERIES`) so demo clicks are instant. Controlled by `PREWARM_CACHE=true` env var.
+**On startup**: Backend loads `demo_cache.json`. If missing, falls back to live LLM calls (controlled by `PREWARM_CACHE=true`).
 
 ### Key Files
 

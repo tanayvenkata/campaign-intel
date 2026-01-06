@@ -13,4 +13,3 @@ pinecone>=3.0.0
 # Utilities
 python-dotenv>=1.0.0
 numpy
-cachetools>=5.0.0
